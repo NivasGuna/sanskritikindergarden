@@ -5,12 +5,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
+import { useAuth } from "@/components/providers/auth-provider";
 import content from "./navbar-content.json";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
+  const { isLoggedIn } = useAuth();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -65,6 +67,16 @@ export default function Navbar() {
               </li>
             );
           })}
+
+          {/* ── App Name (shown only when logged in) ── */}
+          {isLoggedIn && (
+            <li className="ml-2 flex items-center gap-2">
+              <span className="inline-flex items-center gap-2 rounded-full bg-premium-forest/10 px-4 py-2 text-sm font-bold text-premium-forest">
+                <span className="size-2 rounded-full bg-premium-forest animate-pulse" />
+                Sanskriti Kindergarten
+              </span>
+            </li>
+          )}
         </ul>
 
 
@@ -105,6 +117,16 @@ export default function Navbar() {
                 </li>
               );
             })}
+
+            {/* ── Mobile: App Name (shown only when logged in) ── */}
+            {isLoggedIn && (
+              <li className="border-t border-premium-line pt-3 mt-2">
+                <span className="flex items-center gap-2 px-4 py-2 text-sm font-bold text-premium-forest">
+                  <span className="size-2 rounded-full bg-premium-forest animate-pulse" />
+                  Sanskriti Kindergarten
+                </span>
+              </li>
+            )}
           </ul>
 
         </div>
@@ -112,3 +134,4 @@ export default function Navbar() {
     </header>
   );
 }
+

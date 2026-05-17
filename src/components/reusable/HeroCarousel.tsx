@@ -93,6 +93,7 @@ export default function HeroCarousel({
             {slide.primaryAction ? (
               <Button
                 render={<Link href={slide.primaryAction.href} />}
+                nativeButton={false}
                 variant={slide.primaryAction.variant ?? "secondary"}
                 className="shadow-premium-sm h-13 rounded-full border border-amber-600 bg-amber-600 px-8 text-sm font-bold text-white transition hover:bg-amber-700"
               >
@@ -103,6 +104,7 @@ export default function HeroCarousel({
             {slide.secondaryAction ? (
               <Button
                 render={<Link href={slide.secondaryAction.href} />}
+                nativeButton={false}
                 variant={slide.secondaryAction.variant ?? "outline"}
                 className="h-13 rounded-full border border-slate-200 bg-white/76 px-8 text-sm font-bold text-slate-950 shadow-none backdrop-blur-md transition hover:bg-white"
               >

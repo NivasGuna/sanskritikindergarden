@@ -6,8 +6,8 @@ import {
 import "./globals.css";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { MotionProvider } from "@/components/providers/motion-provider";
-import Footer from "@/components/footer/Footer";
-import Navbar from "@/components/navbar/Navbar";
+import { AuthProvider } from "@/components/providers/auth-provider";
+import LayoutShell from "@/components/providers/layout-shell";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -36,14 +36,14 @@ export default function RootLayout({
       lang="en"
       className={`${sans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col">
-        <MotionProvider>
-          <TooltipProvider>
-            <Navbar />
-            {children}
-            <Footer />
-          </TooltipProvider>
-        </MotionProvider>
+      <body className="flex min-h-full flex-col" suppressHydrationWarning>
+        <AuthProvider>
+          <MotionProvider>
+            <TooltipProvider>
+              <LayoutShell>{children}</LayoutShell>
+            </TooltipProvider>
+          </MotionProvider>
+        </AuthProvider>
       </body>
     </html>
   );
