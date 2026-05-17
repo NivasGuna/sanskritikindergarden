@@ -7,7 +7,6 @@ import {
   Mail,
   MapPin,
   Phone,
-  Sparkles,
   Star,
 } from "lucide-react";
 import HeroBanner from "@/components/reusable/HeroBanner";
@@ -22,13 +21,8 @@ const contactIconMap = {
   phone: Phone,
 } as const;
 
-const noteIconMap = {
-  calendar: CalendarDays,
-  sparkles: Sparkles,
-  star: Star,
-} as const;
-
 type ContactKey = keyof typeof content.contact;
+type ContactDetail = (typeof content.contactDetails)[number];
 type ContactHrefType = (typeof content.contactDetails)[number]["hrefType"];
 
 const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
@@ -53,29 +47,56 @@ function getContactHref(type: ContactHrefType) {
   }
 }
 
-export default function ContactPage() {
+function ContactDetailLink({ detail }: { detail: ContactDetail }) {
+  const Icon = contactIconMap[detail.icon as keyof typeof contactIconMap];
+  const value = content.contact[detail.valueKey as ContactKey];
+
   return (
-    <main className="min-h-screen overflow-hidden bg-premium-bg font-sans text-premium-ink">
-      <HeroBanner
-        image={content.hero.image}
+    <a
+      href={getContactHref(detail.hrefType)}
+      className="group border-premium-line shadow-premium-sm hover:shadow-premium-md flex min-w-0 items-start gap-4 rounded-[1rem] border bg-white/96 p-4 transition-all hover:-translate-y-0.5"
+    >
+      <span
+        className={`flex size-11 shrink-0 items-center justify-center rounded-2xl ${detail.accent}`}
       >
-        <div className="container relative z-10 mx-auto flex min-h-[100svh] items-center px-6 py-24">
-          <div className="w-full min-w-0 max-w-[330px] overflow-hidden sm:max-w-[620px] min-[1000px]:max-w-3xl min-[1000px]:overflow-visible motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-left-12 duration-1000">
+        <Icon className="size-5" />
+      </span>
+      <span className="max-w-full min-w-0">
+        <span className="text-premium-forest block text-[11px] font-black tracking-[0.25em] uppercase">
+          {detail.title}
+        </span>
+        <span className="text-premium-ink mt-1 block max-w-full text-sm leading-6 font-bold break-words whitespace-normal sm:text-base">
+          {value}
+        </span>
+      </span>
+    </a>
+  );
+}
+
+export default function ContactPage() {
+  const [addressDetail, phoneDetail, emailDetail, hoursDetail] =
+    content.contactDetails;
+
+  return (
+    <main className="bg-premium-bg text-premium-ink min-h-screen overflow-hidden font-sans">
+      <HeroBanner image={content.hero.image}>
+        <div className="relative z-10 container mx-auto flex min-h-[100svh] items-center px-6 py-24">
+          <div className="motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-left-12 w-full max-w-[330px] min-w-0 overflow-hidden duration-1000 min-[1000px]:max-w-3xl min-[1000px]:overflow-visible sm:max-w-[620px]">
             <div className="mb-6 inline-flex items-center gap-3 md:mb-8">
               <span className="h-px w-6 bg-amber-600" />
-              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-amber-700">
+              <span className="text-[10px] font-black tracking-[0.3em] text-amber-700 uppercase">
                 {content.hero.badge}
               </span>
             </div>
 
-            <h1 className="max-w-full break-words text-4xl font-medium leading-[1.1] tracking-tight text-premium-ink drop-shadow-sm md:text-6xl">
+            <h1 className="text-premium-ink max-w-full text-4xl leading-[1.1] font-medium tracking-tight break-words drop-shadow-sm md:text-6xl">
               {content.hero.title.line1}{" "}
-              <span className="block italic text-premium-forest min-[1000px]:inline">
+              <span className="text-premium-forest block italic min-[1000px]:inline">
                 {content.hero.title.highlight}
               </span>
             </h1>
 
-            <p className="mt-6 max-w-xl break-words text-base font-medium leading-relaxed text-premium-muted md:text-xl">
+            <p className="text-premium-muted mt-6 max-w-xl text-base leading-relaxed font-medium break-words md:text-xl">
               {content.hero.subtitle}
             </p>
 
@@ -83,14 +104,14 @@ export default function ContactPage() {
               <div className="flex w-full flex-col gap-4 sm:w-auto sm:flex-row">
                 <a
                   href={phoneHref}
-                  className="inline-flex h-14 w-full items-center justify-center rounded-full bg-premium-forest px-8 text-base font-bold text-white shadow-premium-md transition-all hover:-translate-y-0.5 hover:bg-premium-forest/90 sm:w-auto"
+                  className="bg-premium-forest shadow-premium-md hover:bg-premium-forest/90 inline-flex h-14 w-full items-center justify-center rounded-full px-8 text-base font-bold text-white transition-all hover:-translate-y-0.5 sm:w-auto"
                 >
                   {content.hero.buttons.primary.text}
                   <Phone className="ml-3 size-5" />
                 </a>
                 <a
                   href={content.hero.buttons.secondary.link}
-                  className="inline-flex h-14 w-full items-center justify-center rounded-full border border-premium-line bg-white/80 px-8 text-base font-bold text-premium-ink backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-white sm:w-auto"
+                  className="border-premium-line text-premium-ink inline-flex h-14 w-full items-center justify-center rounded-full border bg-white/80 px-8 text-base font-bold backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-white sm:w-auto"
                 >
                   {content.hero.buttons.secondary.text}
                   <ArrowRight className="ml-3 size-5" />
@@ -101,115 +122,87 @@ export default function ContactPage() {
         </div>
       </HeroBanner>
 
-      <section className="bg-white py-16 md:py-28">
+      <section className="bg-white py-14 md:py-20">
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="grid items-center gap-12 lg:grid-cols-[0.95fr_1.05fr]">
-            <div>
-              <span className="text-[11px] font-black uppercase tracking-[0.3em] text-premium-forest">
+          <div className="grid items-center gap-8 lg:grid-cols-[0.84fr_1.16fr] xl:gap-10">
+            <div className="relative z-10 min-w-0">
+              <span className="inline-flex items-center rounded-full border border-amber-100 bg-amber-50 px-4 py-2 text-[10px] font-black tracking-[0.25em] text-amber-700 uppercase">
                 {content.detailsSection.badge}
               </span>
-              <h2 className="mt-4 max-w-xl font-serif text-3xl font-medium leading-tight text-premium-ink sm:text-4xl md:text-6xl">
+              <h2 className="text-premium-ink mt-5 max-w-xl text-3xl leading-tight font-bold sm:text-4xl md:text-5xl">
                 {content.detailsSection.title}
               </h2>
-              <p className="mt-5 max-w-xl text-base leading-7 text-premium-muted md:text-lg md:leading-8">
+              <p className="text-premium-muted mt-4 max-w-xl text-base leading-7 md:text-lg md:leading-8">
                 {content.detailsSection.description}
               </p>
 
-              <div className="mt-10 grid gap-4">
-                {content.contactDetails.map((detail) => {
-                  const Icon =
-                    contactIconMap[
-                      detail.icon as keyof typeof contactIconMap
-                    ];
-                  const value =
-                    content.contact[detail.valueKey as ContactKey];
+              <div className="mt-7 grid gap-3">
+                <ContactDetailLink detail={addressDetail} />
+                <ContactDetailLink detail={phoneDetail} />
+                <ContactDetailLink detail={emailDetail} />
+                <ContactDetailLink detail={hoursDetail} />
+              </div>
 
-                  return (
-                    <a
-                      key={detail.title}
-                      href={getContactHref(detail.hrefType)}
-                      className="group flex min-w-0 flex-col items-start gap-4 rounded-[1.25rem] border border-premium-line bg-premium-bg p-4 shadow-premium-sm transition-all hover:-translate-y-0.5 hover:shadow-premium-md sm:flex-row sm:gap-5 sm:rounded-[1.5rem] sm:p-5"
-                    >
-                      <span
-                        className={`flex size-11 shrink-0 items-center justify-center rounded-2xl sm:size-12 ${detail.accent}`}
-                      >
-                        <Icon className="size-5" />
-                      </span>
-                      <span className="min-w-0 max-w-full">
-                        <span className="block text-[11px] font-black uppercase tracking-[0.25em] text-premium-forest">
-                          {detail.title}
-                        </span>
-                        <span className="mt-1 block max-w-full whitespace-normal break-words text-base font-bold leading-7 text-premium-ink sm:text-lg">
-                          {value}
-                        </span>
-                      </span>
-                    </a>
-                  );
-                })}
+              <div className="shadow-premium-sm mt-6 flex min-w-0 flex-col gap-4 rounded-[1.25rem] border border-emerald-100 bg-emerald-50/50 p-5 sm:flex-row sm:items-center">
+                <span className="text-premium-forest flex size-12 shrink-0 items-center justify-center rounded-2xl bg-white">
+                  <CalendarDays className="size-5" />
+                </span>
+                <span className="min-w-0 flex-1">
+                  <span className="text-premium-ink block text-base font-bold">
+                    {content.visitCta.title}
+                  </span>
+                  <span className="text-premium-muted mt-1 block text-sm leading-6">
+                    {content.visitCta.text}
+                  </span>
+                </span>
+                <a
+                  href={phoneHref}
+                  className="bg-premium-forest hover:bg-premium-forest/90 inline-flex h-12 shrink-0 items-center justify-center rounded-full px-6 text-sm font-bold text-white transition-all hover:-translate-y-0.5"
+                >
+                  {content.visitCta.button.text}
+                  <ArrowRight className="ml-3 size-4" />
+                </a>
               </div>
             </div>
 
-            <div className="relative">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[2.5rem] border-8 border-premium-bg shadow-premium-md md:aspect-[5/4] lg:aspect-[4/5]">
+            <div className="relative min-w-0">
+              <div className="relative h-[440px] w-full overflow-hidden sm:h-[560px] lg:h-[720px] xl:h-[780px]">
                 <Image
                   src={content.detailsSection.image.src}
                   alt={content.detailsSection.image.alt}
                   fill
-                  className="object-cover"
+                  className="object-contain object-center"
                   sizes="(min-width: 1024px) 48vw, 100vw"
                 />
               </div>
-              <div className="absolute -bottom-8 -left-6 hidden max-w-sm rounded-[1.5rem] border border-premium-line bg-white p-6 shadow-premium-md md:block">
-                <p className="font-serif text-2xl font-medium leading-snug text-premium-ink">
-                  {content.detailsSection.callout}
-                </p>
-              </div>
             </div>
-          </div>
-
-          <div className="mt-16 grid gap-5 md:grid-cols-3">
-            {content.visitNotes.map((note) => {
-              const Icon = noteIconMap[note.icon as keyof typeof noteIconMap];
-
-              return (
-                <div
-                  key={note.title}
-                  className="rounded-[1.5rem] border border-premium-line bg-premium-bg p-6 shadow-premium-sm"
-                >
-                  <div className="mb-5 flex size-11 items-center justify-center rounded-2xl bg-white text-premium-forest">
-                    <Icon className="size-5" />
-                  </div>
-                  <h3 className="font-bold text-premium-ink">{note.title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-premium-muted">
-                    {note.text}
-                  </p>
-                </div>
-              );
-            })}
           </div>
         </div>
       </section>
 
-      <section id={content.mapSection.id} className="bg-white py-10 md:py-16">
+      <section
+        id={content.mapSection.id}
+        className="bg-[#f4f9ef] py-14 md:py-24"
+      >
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="overflow-hidden rounded-[1.25rem] border border-premium-line bg-premium-bg shadow-premium-sm sm:rounded-[1.5rem] lg:grid lg:min-h-[420px] lg:grid-cols-[0.34fr_0.66fr]">
-            <div className="flex flex-col justify-center p-5 text-premium-ink sm:p-6 lg:p-8">
-              <span className="text-[10px] font-black uppercase tracking-[0.28em] text-premium-forest sm:text-[11px]">
+          <div className="shadow-premium-md overflow-hidden rounded-[1.5rem] border border-emerald-100 bg-white lg:grid lg:min-h-[460px] lg:grid-cols-[0.36fr_0.64fr]">
+            <div className="text-premium-ink flex flex-col justify-center bg-[#fbfff7] p-5 sm:p-7 lg:p-9">
+              <span className="text-premium-forest w-fit rounded-full border border-emerald-100 bg-white px-4 py-2 text-[10px] font-black tracking-[0.24em] uppercase sm:text-[11px]">
                 {content.mapSection.badge}
               </span>
-              <h2 className="mt-4 font-serif text-2xl font-medium leading-tight sm:text-3xl md:text-4xl">
+              <h2 className="mt-5 text-2xl leading-tight font-bold sm:text-3xl md:text-4xl">
                 {content.mapSection.title}
               </h2>
-              <p className="mt-4 break-words text-sm leading-6 text-premium-muted md:text-base md:leading-7">
+              <p className="text-premium-muted mt-4 text-sm leading-6 break-words md:text-base md:leading-7">
                 {content.contact.address}
               </p>
 
               <div className="mt-5 flex flex-wrap items-center gap-3">
-                <span className="inline-flex items-center gap-2 rounded-full border border-premium-line bg-white px-4 py-2 text-sm font-bold text-premium-ink">
+                <span className="border-premium-line text-premium-ink inline-flex items-center gap-2 rounded-full border bg-white px-4 py-2 text-sm font-bold">
                   <Star className="size-4 fill-amber-400 text-amber-400" />
                   {content.mapSection.rating}
                 </span>
-                <span className="text-sm font-semibold text-premium-muted">
+                <span className="text-premium-muted text-sm font-semibold">
                   {content.mapSection.reviews}
                 </span>
               </div>
@@ -218,22 +211,24 @@ export default function ContactPage() {
                 href={mapsHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-6 inline-flex h-12 w-full items-center justify-center rounded-full bg-premium-forest px-7 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-premium-forest/90 sm:w-fit"
+                className="bg-premium-forest hover:bg-premium-forest/90 mt-7 inline-flex h-12 w-full items-center justify-center rounded-full px-7 text-sm font-bold text-white transition-all hover:-translate-y-0.5 sm:w-fit"
               >
                 {content.mapSection.button.text}
                 <ArrowRight className="ml-3 size-5" />
               </a>
             </div>
 
-            <div className="relative h-[300px] w-full sm:h-[340px] lg:h-auto lg:min-h-full">
-              <iframe
-                title={`${content.school.name} location map`}
-                src={mapSrc}
-                className="absolute inset-0 h-full w-full border-0"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                allowFullScreen
-              />
+            <div className="bg-white p-3 sm:p-4">
+              <div className="relative h-[320px] w-full overflow-hidden rounded-[1.25rem] sm:h-[380px] lg:h-full lg:min-h-full">
+                <iframe
+                  title={`${content.school.name} location map`}
+                  src={mapSrc}
+                  className="absolute inset-0 h-full w-full border-0"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
+                />
+              </div>
             </div>
           </div>
         </div>

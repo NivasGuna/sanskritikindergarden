@@ -40,7 +40,7 @@
     "title": "Talk to us before you visit.",
     "description": "Our team can help with admission questions, tour availability, school hours, and the right program for your child.",
     "image": {
-      "src": "/images/contact-classroom.png",
+      "src": "/images/contact-hero-sanskriti-reception.png",
       "alt": "Children learning in a warm Sanskriti classroom"
     },
     "callout": "Private campus tours are available on weekdays."
@@ -92,6 +92,13 @@
       "icon": "sparkles"
     }
   ],
+  "visitCta": {
+    "title": "Ready to visit?",
+    "text": "Call us to schedule a guided tour and meet our teachers.",
+    "button": {
+      "text": "Book a tour"
+    }
+  },
   "mapSection": {
     "id": "map",
     "badge": "Visit us",
