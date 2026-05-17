@@ -1,0 +1,47 @@
+import type { Metadata } from "next";
+import LocationProgramPage from "@/components/reusable/LocationProgramPage";
+import content from "./play-school-content.json";
+
+export const metadata: Metadata = content.metadata;
+
+const pageConfig = {
+  heroActions: [
+    { text: "Enquire About Play School Admission", href: "/contact" },
+    { text: "Read FAQ", href: "/faq" },
+  ],
+  heroCallout: {
+    eyebrow: "A gentle first step",
+    text: "A play school rhythm shaped around trust, familiarity, and joyful participation.",
+  },
+  experience: {
+    eyebrow: "Play School Start",
+    title: "A soft, encouraging beginning to school life.",
+    description:
+      "Parents can see how children settle, play, communicate, and become comfortable with group learning.",
+    assurances: [
+      {
+        icon: "HeartHandshake",
+        title: "Gentle separation",
+        description:
+          "Children are supported as they warm up to teachers, routines, and new spaces.",
+      },
+      {
+        icon: "Sparkles",
+        title: "Joyful play",
+        description:
+          "Simple play, movement, stories, and creative tasks make school feel familiar.",
+      },
+      {
+        icon: "ShieldCheck",
+        title: "Parent reassurance",
+        description:
+          "Clear communication and patient routines help families feel included and confident.",
+      },
+    ],
+    icons: ["HeartHandshake", "Sparkles", "MapPin"],
+  },
+};
+
+export default function PlaySchoolInVelacheryPage() {
+  return <LocationProgramPage content={content} {...pageConfig} />;
+}

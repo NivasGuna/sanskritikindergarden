@@ -1,0 +1,105 @@
+{
+  "metadata": {
+    "title": "Contact | Sanskriti Kindergarden",
+    "description": "Contact Sanskriti Kindergarden for admissions, campus tours, classroom routines, and parent support."
+  },
+  "school": {
+    "name": "Sanskriti Kindergarten Guindy",
+    "mapQuery": "Sanskriti kindergarten guindy, No.20B, Cart Track Road, Gopalakrishnan Street, opposite to kala flats, Ramapuram, Mosque Colony, Maduvinkarai, Guindy, Chennai, Tamil Nadu 600032"
+  },
+  "contact": {
+    "address": "No. 20B, Cart Track Road, Gopalakrishnan Street, Opposite Kala Flats, Chennai, Tamil Nadu 600032",
+    "phone": "+91 78455 19020",
+    "email": "sanskritivelachery@gmail.com",
+    "hours": "Mon-Fri: 8:30 AM - 4:00 PM"
+  },
+  "hero": {
+    "badge": "Contact Sanskriti",
+    "title": {
+      "line1": "Let's plan your child's",
+      "highlight": "first visit."
+    },
+    "subtitle": "Reach us for admissions, campus tours, timings, and parent support. We will help you choose the right next step.",
+    "image": {
+      "src": "/images/contact-banner.jpeg",
+      "alt": "Welcoming classroom"
+    },
+    "buttons": {
+      "primary": {
+        "text": "Call now",
+        "hrefType": "phone"
+      },
+      "secondary": {
+        "text": "View location",
+        "link": "#map"
+      }
+    }
+  },
+  "detailsSection": {
+    "badge": "Contact details",
+    "title": "Talk to us before you visit.",
+    "description": "Our team can help with admission questions, tour availability, school hours, and the right program for your child.",
+    "image": {
+      "src": "/images/contact-classroom.png",
+      "alt": "Children learning in a warm Sanskriti classroom"
+    },
+    "callout": "Private campus tours are available on weekdays."
+  },
+  "contactDetails": [
+    {
+      "title": "Address",
+      "valueKey": "address",
+      "hrefType": "maps",
+      "icon": "mapPin",
+      "accent": "bg-sky-50 text-sky-700"
+    },
+    {
+      "title": "Phone",
+      "valueKey": "phone",
+      "hrefType": "phone",
+      "icon": "phone",
+      "accent": "bg-emerald-50 text-emerald-700"
+    },
+    {
+      "title": "Email",
+      "valueKey": "email",
+      "hrefType": "email",
+      "icon": "mail",
+      "accent": "bg-amber-50 text-amber-700"
+    },
+    {
+      "title": "Hours",
+      "valueKey": "hours",
+      "hrefType": "mapAnchor",
+      "icon": "clock",
+      "accent": "bg-rose-50 text-rose-700"
+    }
+  ],
+  "visitNotes": [
+    {
+      "title": "Google rating",
+      "text": "4.9 rating from 50 reviews",
+      "icon": "star"
+    },
+    {
+      "title": "Tours",
+      "text": "Weekday slots by appointment",
+      "icon": "calendar"
+    },
+    {
+      "title": "Admissions",
+      "text": "Programs for ages 2 to 6",
+      "icon": "sparkles"
+    }
+  ],
+  "mapSection": {
+    "id": "map",
+    "badge": "Visit us",
+    "title": "Find our location",
+    "rating": "4.9",
+    "reviews": "50 Google reviews",
+    "button": {
+      "text": "Open in Maps"
+    }
+  }
+}

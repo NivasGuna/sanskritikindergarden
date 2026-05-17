@@ -1,0 +1,129 @@
+{
+  "metadata": {
+    "title": "Gallery | Sanskriti Kindergarten",
+    "description": "Explore photos and videos from Sanskriti Kindergarten, including classroom moments, play-based learning, celebrations, and joyful early childhood experiences."
+  },
+  "hero": {
+    "badge": "School Gallery",
+    "title": "Little moments, beautifully remembered",
+    "subtitle": "A warm look at the learning, play, celebrations, friendships, and everyday confidence growing inside Sanskriti Kindergarten.",
+    "image": {
+      "src": "/images/gallery-hero-banner.jpeg",
+      "alt": "A warm kindergarten gallery wall with photos of children learning and playing"
+    },
+    "buttons": {
+      "primary": {
+        "text": "View Gallery",
+        "link": "#gallery-media"
+      },
+      "secondary": {
+        "text": "Visit Us",
+        "link": "/contact"
+      }
+    }
+  },
+  "media": {
+    "badge": "Photos & Videos",
+    "title": "See the Sanskriti day in motion",
+    "description": "Switch between images and videos to explore the spaces, activities, and child-centered experiences that shape our school day.",
+    "tabs": {
+      "images": "Images",
+      "videos": "Videos"
+    }
+  },
+  "images": [
+    {
+      "src": "/images/galleryImg1.jpeg",
+      "alt": "Sanskriti Kindergarten gallery moment 1",
+      "title": "Creative classroom"
+    },
+    {
+      "src": "/images/galleryImg2.jpeg",
+      "alt": "Sanskriti Kindergarten gallery moment 2",
+      "title": "Joyful learning"
+    },
+    {
+      "src": "/images/galleryImg3.jpeg",
+      "alt": "Sanskriti Kindergarten gallery moment 3",
+      "title": "Hands-on play"
+    },
+    {
+      "src": "/images/galleryImg4.jpeg",
+      "alt": "Sanskriti Kindergarten gallery moment 4",
+      "title": "Celebration time"
+    },
+    {
+      "src": "/images/galleryImg5.jpeg",
+      "alt": "Sanskriti Kindergarten gallery moment 5",
+      "title": "Story moments"
+    },
+    {
+      "src": "/images/galleryImg6.jpeg",
+      "alt": "Sanskriti Kindergarten gallery moment 6",
+      "title": "Playful discovery"
+    },
+    {
+      "src": "/images/galleryImg7.jpeg",
+      "alt": "Sanskriti Kindergarten gallery moment 7",
+      "title": "Building confidence"
+    },
+    {
+      "src": "/images/galleryImg8.jpeg",
+      "alt": "Sanskriti Kindergarten gallery moment 8",
+      "title": "Group activities"
+    },
+    {
+      "src": "/images/galleryImg9.jpeg",
+      "alt": "Sanskriti Kindergarten gallery moment 9",
+      "title": "Art and expression"
+    },
+    {
+      "src": "/images/galleryImg10.jpeg",
+      "alt": "Sanskriti Kindergarten gallery moment 10",
+      "title": "Curious minds"
+    },
+    {
+      "src": "/images/galleryImg11.jpeg",
+      "alt": "Sanskriti Kindergarten gallery moment 11",
+      "title": "Classroom rhythm"
+    },
+    {
+      "src": "/images/galleryImg12.jpeg",
+      "alt": "Sanskriti Kindergarten gallery moment 12",
+      "title": "Early friendships"
+    },
+    {
+      "src": "/images/galleryImg13.jpeg",
+      "alt": "Sanskriti Kindergarten gallery moment 13",
+      "title": "School memories"
+    },
+    {
+      "src": "/images/galleryImg14.jpeg",
+      "alt": "Sanskriti Kindergarten gallery moment 14",
+      "title": "Learning through play"
+    },
+    {
+      "src": "/images/galleryImg15.jpeg",
+      "alt": "Sanskriti Kindergarten gallery moment 15",
+      "title": "Happy beginnings"
+    }
+  ],
+  "videos": [
+    {
+      "src": "https://www.youtube.com/embed/NEcdQ7j8olI?si=0GY7vj-P_QFEzlk4",
+      "title": "Kindergarten Video 1"
+    },
+    {
+      "src": "https://www.youtube.com/embed/a_YT7TK9fcs?si=QYwClXQOTIwa8G5D",
+      "title": "Kindergarten Video 2"
+    }
+  ],
+  "cta": {
+    "title": "Come see the warmth in person.",
+    "description": "Photos show the moments. A visit helps you feel the rhythm, care, and calm of the school day.",
+    "button": {
+      "text": "Contact Us",
+      "link": "/contact"
+    }
+  }
+}

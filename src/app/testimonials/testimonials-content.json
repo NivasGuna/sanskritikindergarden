@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "title": "Testimonials | Sanskriti Kindergarten",
+    "description": "Read what parents say about Sanskriti Kindergarten and our nurturing, safe early childhood environment."
+  },
+  "hero": {
+    "badge": "Testimonials",
+    "title": {
+      "line1": "Trusted guidance",
+      "highlight": "for every child",
+      "line2": "within a premium kindergarten experience"
+    },
+    "subtitle": "Discover the voices of families who trust Sanskriti for thoughtful care, joyful learning, and real growth.",
+    "image": {
+      "src": "/images/testimonials.jpeg",
+      "alt": "Children enjoying a premium kindergarten classroom"
+    },
+    "buttons": {
+      "primary": {
+        "text": "Book a Tour",
+        "link": "/contact"
+      },
+      "secondary": {
+        "text": "See Admissions",
+        "link": "/contact"
+      }
+    }
+  },
+  "testimonialsSection": {
+    "badge": "Parent Stories",
+    "title": "Real families. Trusted experiences.",
+    "subtitle": "Hear why parents choose Sanskriti for safe, engaging, and nurturing early education."
+  },
+  "testimonials": [
+    {
+      "quote": "Really it's a good, safe and friendly place for our kids. My daughter loves Sanskriti very much. She likes all food in daycare also. All teachers and other staff also so kind to my daughter. We missed Sanskriti so much due to my transfer!",
+      "author": "Sathya B."
+    },
+    {
+      "quote": "I would highly recommend Sanskriti school as it is run by an excellent team. They do a great job of making learning fun for kids and thereby making it easy for the parents too. They ensure overall development and not just academics. This will definitely be a great place to start your child's education.",
+      "author": "Chan Drika."
+    },
+    {
+      "quote": "Good activity centre near by this area. Daycare also well maintained by the management.",
+      "author": "Ashwini Shiva."
+    }
+  ],
+  "cta": {
+    "title": "Discover how Sanskriti nurtures every child.",
+    "description": "Reach out to explore our premium learning environment and meet the educators who guide your child with care and confidence.",
+    "button": {
+      "text": "Schedule a Visit",
+      "link": "/contact"
+    }
+  }
+}

@@ -1,0 +1,47 @@
+import type { Metadata } from "next";
+import LocationProgramPage from "@/components/reusable/LocationProgramPage";
+import content from "./daycare-content.json";
+
+export const metadata: Metadata = content.metadata;
+
+const pageConfig = {
+  heroActions: [
+    { text: "Apply for Daycare Information", href: "/contact" },
+    { text: "Read FAQ", href: "/faq" },
+  ],
+  heroCallout: {
+    eyebrow: "Care with continuity",
+    text: "A daycare rhythm shaped around warmth, supervision, and daily family trust.",
+  },
+  experience: {
+    eyebrow: "Daycare Support",
+    title: "Care, routine, and continuity for young children.",
+    description:
+      "Parents can quickly understand how the day feels: supervised, steady, connected, and practical for family schedules.",
+    assurances: [
+      {
+        icon: "ShieldCheck",
+        title: "Warm supervision",
+        description:
+          "Children spend the day with caring adults, steady attention, and a comfortable rhythm.",
+      },
+      {
+        icon: "Clock3",
+        title: "Reliable routine",
+        description:
+          "A balanced flow of play, rest, conversation, and transitions helps the day feel familiar.",
+      },
+      {
+        icon: "BookOpenCheck",
+        title: "Learning continuity",
+        description:
+          "Daycare connects naturally with the preschool environment instead of feeling separate.",
+      },
+    ],
+    icons: ["HeartHandshake", "Clock3", "MapPin"],
+  },
+};
+
+export default function DaycareInVelacheryPage() {
+  return <LocationProgramPage content={content} {...pageConfig} />;
+}

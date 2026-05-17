@@ -1,0 +1,104 @@
+{
+  "metadata": {
+    "title": "FAQ | Sanskriti Kindergarden",
+    "description": "Answers to common parent questions about Sanskriti Kindergarden programs, timings, meals, transport, and child progress updates."
+  },
+  "hero": {
+    "badge": "Parent questions",
+    "title": {
+      "line1": "Frequently Asked",
+      "highlight": "Questions"
+    },
+    "subtitle": "Clear, practical answers for families getting to know Sanskriti Kindergarden.",
+    "image": {
+      "src": "/images/faq-banner.jpeg",
+      "alt": "Children learning together in a bright kindergarten classroom"
+    },
+    "buttons": {
+      "primary": {
+        "text": "View answers",
+        "link": "#questions"
+      },
+      "secondary": {
+        "text": "Connect with us",
+        "link": "/contact"
+      }
+    }
+  },
+  "sidebar": {
+    "badge": "STILL NEED HELP?",
+    "title": {
+      "main": "Talk to our",
+      "highlight": "support team"
+    },
+    "description": "Reach out for admissions, classroom guidance, schedules, or anything related to your child's learning journey.",
+    "button": {
+      "text": "Contact Support",
+      "link": "/contact"
+    },
+    "image": {
+      "src": "/images/faq.png",
+      "alt": "Premium kindergarten environment"
+    }
+  },
+  "questionsSection": {
+    "badge": "FAQ",
+    "title": {
+      "main": "Questions we hear most often"
+    }
+  },
+  "faqs": [
+    {
+      "q": "What age groups do you accept?",
+      "a": "We accept children aged 2 to 6 years. Our programs are tailored to each developmental stage: Toddlers (2-3), Pre-K (3-4), and Kindergarten (4-6)."
+    },
+    {
+      "q": "What are the school hours and daycare options?",
+      "a": "Our standard school hours are 9:00 AM to 1:30 PM for Pre-K and until 3:00 PM for Kindergarten. We also offer an extended daycare facility until 6:00 PM for working parents."
+    },
+    {
+      "q": "What is the teacher-to-child ratio?",
+      "a": "To ensure individual attention, we maintain a small ratio of 1:10. Each classroom has a lead teacher and a trained assistant, plus specialized support staff for activities."
+    },
+    {
+      "q": "What is your philosophy on education?",
+      "a": "We follow a Reggio-inspired, play-based philosophy. We believe children are capable, resilient, and full of potential, learning best through creative expression and discovery."
+    },
+    {
+      "q": "Do you provide healthy meals?",
+      "a": "Yes, we have an in-house kitchen that prepares fresh, nutritious vegetarian meals daily. We focus on a balanced diet and also accommodate specific allergies or dietary needs."
+    },
+    {
+      "q": "How do you handle safety and security?",
+      "a": "Your child's safety is our priority. Our campus is fully CCTV monitored, has gated entry with security personnel, and all our staff are background-verified and first-aid trained."
+    },
+    {
+      "q": "Is there a school uniform?",
+      "a": "Yes, we have a comfortable, child-friendly uniform for regular days and a specific sports uniform for activity days. This helps foster a sense of belonging and equality."
+    },
+    {
+      "q": "How do you handle potty training?",
+      "a": "We partner with parents during this transition. Our staff is patient and experienced in supporting children who are in the process of becoming toilet independent."
+    },
+    {
+      "q": "How do parents stay updated about daily activities?",
+      "a": "We maintain regular communication through daily highlights, weekly observations, and personal interactions so families always feel deeply connected to their child's learning journey."
+    },
+    {
+      "q": "Do you focus only on academics?",
+      "a": "No. Our holistic approach balances foundational literacy and numeracy with a strong emphasis on creative arts, emotional intelligence, social confidence, and independent critical thinking."
+    }
+  ],
+  "cta": {
+    "badge": "NEXT STEP",
+    "title": {
+      "main": "Let's plan your",
+      "highlight": "first visit."
+    },
+    "description": "Share your child's age and our team will help you find the right classroom, timing, and tour slot.",
+    "button": {
+      "text": "Schedule a Visit",
+      "link": "/contact"
+    }
+  }
+}

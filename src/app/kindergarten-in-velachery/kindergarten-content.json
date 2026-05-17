@@ -1,0 +1,114 @@
+{
+  "metadata": {
+    "title": "Kindergarten in Velachery, Chennai | Sanskriti Kindergarten",
+    "description": "Sanskriti Kindergarten offers age-appropriate kindergarten in Velachery with steady routines, child-friendly learning, and convenient access for South Chennai families."
+  },
+  "hero": {
+    "badge": "Velachery Kindergarten",
+    "title": "Kindergarten in Velachery, Chennai",
+    "description": "Choosing a kindergarten in Velachery is often about finding the right balance between structure and warmth. Parents want children to grow in confidence while still feeling supported every day.",
+    "image": {
+      "src": "/images/kindergarten-velachery-hero-banner.jpeg",
+      "alt": "A bright kindergarten classroom with children learning through creative activities"
+    }
+  },
+  "highlights": [
+    {
+      "title": "Preschool Programs",
+      "description": "Age-appropriate routines for early learners, from playful beginnings to more confident classroom participation."
+    },
+    {
+      "title": "Daycare Support",
+      "description": "A warm daily rhythm with supervised care, guided activities, and a reassuring environment for working families."
+    },
+    {
+      "title": "Convenient Location",
+      "description": "A Velachery location that also serves families coming from Guindy and nearby neighborhoods across South Chennai."
+    }
+  ],
+  "sections": [
+    {
+      "eyebrow": "Routine",
+      "title": "Steady, age-appropriate learning",
+      "lead": "Families looking for a kindergarten in Velachery usually want children to become confident in group learning without losing the joy of early childhood.",
+      "points": [
+        "A bridge between playful preschool experiences and more structured school habits.",
+        "Support for listening, expression, independence, and participation.",
+        "Guidance that helps children feel ready without pushing too quickly."
+      ],
+      "closing": "School readiness includes attention, communication, curiosity, confidence, and happy participation with others."
+    },
+    {
+      "eyebrow": "Learning",
+      "title": "Growth through meaningful experiences",
+      "lead": "A good kindergarten program strengthens language, early thinking, listening, and classroom habits through daily experiences children can connect with.",
+      "points": [
+        "Movement, conversation, stories, songs, creative tasks, and guided play.",
+        "Child-friendly learning methods that avoid making the classroom too formal too soon.",
+        "Teachers who notice small improvements and help children trust their abilities."
+      ],
+      "closing": "When learning feels natural, parents can see the difference in everyday confidence."
+    },
+    {
+      "eyebrow": "Location",
+      "title": "Practical for Velachery families",
+      "lead": "Parents often prefer a kindergarten location that works for the family schedule as well as the child.",
+      "points": [
+        "A manageable commute can make mornings smoother and routines more consistent.",
+        "Convenient for Velachery, Guindy, Adambakkam, Madipakkam, Taramani, Perungudi, Nanganallur, and Saidapet.",
+        "Best evaluated through admissions details, the gallery, FAQs, and a direct conversation."
+      ],
+      "closing": "A steady school routine helps young children settle into kindergarten with confidence."
+    }
+  ],
+  "families": {
+    "title": "Families We Commonly Serve",
+    "description": "Our kindergarten programs are especially relevant for families in Velachery, while also remaining convenient for parents traveling from Guindy, Adambakkam, Madipakkam, Taramani, Perungudi, Nanganallur, and Saidapet.",
+    "notes": [
+      "Velachery kindergarten for growing independence",
+      "Convenient for Guindy and South Chennai families",
+      "A steady bridge into structured learning"
+    ],
+    "areas": [
+      "Velachery",
+      "Guindy",
+      "Adambakkam",
+      "Madipakkam",
+      "Taramani",
+      "Perungudi",
+      "Nanganallur",
+      "Saidapet"
+    ]
+  },
+  "cta": {
+    "badge": "Plan Your Next Step",
+    "title": "Explore kindergarten admissions at Sanskriti",
+    "description": "Explore more of the school, review practical information, and then reach out when you are ready to discuss admissions or daycare support for your child.",
+    "image": {
+      "src": "/images/kindergarten-velachery-hero-banner.jpeg",
+      "alt": "A bright kindergarten classroom with children learning through creative activities"
+    },
+    "actions": [
+      {
+        "text": "Apply for Kindergarten Admission",
+        "href": "/contact",
+        "variant": "primary"
+      },
+      {
+        "text": "View Gallery",
+        "href": "/gallery",
+        "variant": "secondary"
+      },
+      {
+        "text": "Read FAQ",
+        "href": "/faq",
+        "variant": "secondary"
+      },
+      {
+        "text": "Contact Us",
+        "href": "/contact",
+        "variant": "secondary"
+      }
+    ]
+  }
+}

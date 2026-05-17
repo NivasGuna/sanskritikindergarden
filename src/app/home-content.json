@@ -1,0 +1,57 @@
+{
+  "hero": {
+    "slides": [
+      {
+        "src": "/images/hero-bg.jpg",
+        "alt": "Children drawing together in a bright early learning classroom",
+        "eyebrow": "Welcome to Sanskriti Kindergarten",
+        "title": "Where every child shines bright!",
+        "description": "A nurturing space for curiosity, creativity, and joyful learning.",
+        "primaryAction": {
+          "text": "Apply Now",
+          "href": "/contact",
+          "variant": "secondary"
+        },
+        "secondaryAction": {
+          "text": "Learn More",
+          "href": "/about",
+          "variant": "outline"
+        }
+      },
+      {
+        "src": "/images/hero-bg2.jpg",
+        "alt": "A warm preschool classroom with children engaged in play-based learning",
+        "eyebrow": "Welcome to Sanskriti Kindergarten",
+        "title": "Inspiring little learners every day.",
+        "description": "Gentle routines, kind teachers, and meaningful early childhood experiences.",
+        "primaryAction": {
+          "text": "Apply Now",
+          "href": "/contact",
+          "variant": "secondary"
+        },
+        "secondaryAction": {
+          "text": "Learn More",
+          "href": "/about",
+          "variant": "outline"
+        }
+      },
+      {
+        "src": "/images/hero-bg3.jpg",
+        "alt": "Happy children exploring creative activities with their teacher",
+        "eyebrow": "Welcome to Sanskriti Kindergarten",
+        "title": "Joyful learning begins here.",
+        "description": "A premium preschool setting designed for growth, wonder, and confidence.",
+        "primaryAction": {
+          "text": "Apply Now",
+          "href": "/contact",
+          "variant": "secondary"
+        },
+        "secondaryAction": {
+          "text": "Learn More",
+          "href": "/about",
+          "variant": "outline"
+        }
+      }
+    ]
+  }
+}

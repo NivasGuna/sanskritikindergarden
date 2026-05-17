@@ -1,0 +1,16 @@
+{
+  "brand": {
+    "name": "Sanskriti",
+    "logo": "/images/sans_logo.jpg",
+    "logoAlt": "Sanskriti Kindergarten Logo"
+  },
+  "links": [
+    { "name": "Home", "href": "/" },
+    { "name": "About", "href": "/about" },
+    { "name": "Curriculum", "href": "/curriculum" },
+    { "name": "FAQ", "href": "/faq" },
+    { "name": "Testimonials", "href": "/testimonials" },
+    { "name": "Gallery", "href": "/gallery" },
+    { "name": "Contact", "href": "/contact" }
+  ]
+}
