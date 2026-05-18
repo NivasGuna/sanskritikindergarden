@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import {
+  Baloo_2,
   Geist_Mono,
+  Nunito,
   Roboto,
 } from "next/font/google";
 import "./globals.css";
@@ -21,6 +23,20 @@ const sans = Roboto({
   display: "swap",
 });
 
+const playfulDisplay = Baloo_2({
+  variable: "--playful-display-family",
+  subsets: ["latin"],
+  weight: ["600", "700", "800"],
+  display: "swap",
+});
+
+const roundedBody = Nunito({
+  variable: "--rounded-body-family",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Sanskriti Kindergarten",
   description: "A premium early childhood education center.",
@@ -34,7 +50,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${sans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${sans.variable} ${geistMono.variable} ${playfulDisplay.variable} ${roundedBody.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col" suppressHydrationWarning>
         <AuthProvider>
