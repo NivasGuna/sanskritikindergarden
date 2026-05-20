@@ -1,6 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { constructMetadata } from "@/lib/seo";
+import { getBreadcrumbSchema } from "@/lib/schema";
+import Schema from "@/components/Schema";
 import {
   ArrowRight,
   GraduationCap,
@@ -30,7 +33,11 @@ import type {
   VisionIcon,
 } from "./types";
 
-export const metadata: Metadata = content.metadata;
+export const metadata: Metadata = constructMetadata({
+  title: content.metadata.title,
+  description: content.metadata.description,
+  canonicalUrl: "/about",
+});
 
 const featureIconMap = {
   GraduationCap,
@@ -103,29 +110,34 @@ function getInitials(name: string) {
 export default function AboutPage() {
   return (
     <main className="bg-sage-mist font-rounded-body text-forest-dark min-h-screen overflow-hidden">
+      <Schema
+        data={getBreadcrumbSchema([
+          { name: "Home", url: "" },
+          { name: "About Us", url: "/about" },
+        ])}
+      />
       <HeroBanner
         image={content.hero.image}
         imageClassName="object-[64%_center] md:object-center"
-        overlayClassName="bg-gradient-to-r from-slate-950/92 via-slate-950/70 to-slate-950/18"
       >
         <div className="relative z-10 container mx-auto flex min-h-[100svh] items-center px-6 py-24">
           <div className="motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-left-12 max-w-[32rem] duration-1000">
-            <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-white/24 bg-white/14 px-4 py-2 shadow-[0_14px_35px_rgb(15_23_42_/_18%)] backdrop-blur-md">
-              <span className="size-2 rounded-full bg-amber-200" />
-              <span className="text-[10px] font-black tracking-[0.26em] text-white uppercase">
+            <div className="mb-7 inline-flex items-center gap-3">
+              <span className="size-2 rounded-full bg-gold" />
+              <span className="text-gold-ink text-[10px] font-black tracking-[0.26em] uppercase drop-shadow-[0_2px_8px_rgb(255_255_255_/_90%)]">
                 {content.hero.badge}
               </span>
             </div>
 
-            <h1 className="font-premium-display max-w-[32rem] text-[2.85rem] leading-[1.04] font-bold text-white drop-shadow-[0_8px_28px_rgb(0_0_0_/_46%)] sm:text-5xl md:text-6xl">
+            <h1 className="font-premium-display text-forest-dark max-w-[32rem] text-[2.85rem] leading-[1.04] font-bold drop-shadow-[0_4px_14px_rgb(255_255_255_/_88%)] sm:text-5xl md:text-6xl">
               {content.hero.title.line1}{" "}
-              <span className="text-amber-100">
+              <span className="text-gold-ink">
                 {content.hero.title.highlight}
               </span>{" "}
-              <span className="text-sky-mist">{content.hero.title.line2}</span>
+              <span className="text-sky-ink">{content.hero.title.line2}</span>
             </h1>
 
-            <p className="mt-6 max-w-[32rem] text-base leading-8 font-bold text-white drop-shadow-[0_4px_18px_rgb(0_0_0_/_52%)] md:text-xl">
+            <p className="text-forest-soft mt-6 max-w-[32rem] text-base leading-8 font-bold drop-shadow-[0_3px_12px_rgb(255_255_255_/_90%)] md:text-xl">
               {content.hero.subtitle}
             </p>
 
@@ -142,7 +154,7 @@ export default function AboutPage() {
                 render={<Link href={content.hero.buttons.secondary.link} />}
                 nativeButton={false}
                 variant="outline"
-                className="h-14 rounded-full border-white/45 bg-white/14 px-8 text-base font-black text-white backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-white/20"
+                className="text-forest-dark h-14 rounded-full border-forest-dark/20 bg-white/76 px-8 text-base font-black backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-white/88"
               >
                 {content.hero.buttons.secondary.text}
               </Button>

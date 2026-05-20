@@ -11,10 +11,10 @@
   --font-serif: var(--font-sans);
   --font-mono: var(--font-geist-mono);
   --font-heading: var(--font-sans);
-  --font-playful-display: var(--playful-display-family);
+  --font-playful-display: var(--font-sans);
   --font-premium-display: var(--premium-display-family);
   --font-rounded-body: var(--rounded-body-family);
-  --font-rounded-heading: var(--playful-display-family);
+  --font-rounded-heading: var(--font-sans);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-border: var(--border);

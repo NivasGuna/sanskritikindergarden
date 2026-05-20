@@ -79,7 +79,7 @@ const whyItems: {
     title: "Experienced Teachers",
     description:
       "Dedicated educators with years of experience in early childhood development.",
-    className: "border-rose-100 bg-rose-50 text-rose-700",
+    className: "border-teal-100 bg-teal-50 text-teal-700",
   },
   {
     icon: Smile,
@@ -296,7 +296,7 @@ export default function Home() {
               className="object-cover"
               sizes="100vw"
             />
-            <div className="absolute inset-0 bg-forest-dark/72" />
+            <div className="absolute inset-0 bg-[#2f3446]/64" />
             <div className="relative z-10 grid min-h-[360px] gap-8 px-6 py-10 text-white md:grid-cols-[1fr_auto] md:items-end md:px-10 md:py-14">
               <div className="max-w-2xl">
                 <span className="inline-flex rounded-full border border-white/20 bg-white/12 px-4 py-2 text-[11px] font-black text-amber-100 uppercase backdrop-blur-md">

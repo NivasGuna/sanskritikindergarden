@@ -28,9 +28,9 @@ const iconMap: Record<string, LucideIcon> = {
 };
 
 const accentMap: Record<string, string> = {
-  coral: "bg-rose-200",
+  coral: "bg-coral-line",
   gold: "bg-amber-200",
-  mint: "bg-emerald-200",
+  mint: "bg-teal-200",
   sky: "bg-sky-200",
 };
 

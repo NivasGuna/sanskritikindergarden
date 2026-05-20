@@ -2,9 +2,6 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
-const defaultOverlayClassName =
-  "bg-gradient-to-b from-white/76 via-white/54 to-white/70 min-[1000px]:hidden";
-
 interface HeroBannerProps {
   image: {
     src: string;
@@ -30,7 +27,7 @@ export default function HeroBanner({
   return (
     <section
       className={cn(
-        "relative min-h-[100svh] w-full overflow-hidden",
+        "font-premium-display relative min-h-[100svh] w-full overflow-hidden",
         className
       )}
     >
@@ -42,9 +39,9 @@ export default function HeroBanner({
         priority={priority}
         sizes={sizes}
       />
-      <div
-        className={cn("absolute inset-0", defaultOverlayClassName, overlayClassName)}
-      />
+      {overlayClassName ? (
+        <div className={cn("pointer-events-none absolute inset-0", overlayClassName)} />
+      ) : null}
       {children}
     </section>
   );

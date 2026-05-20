@@ -57,26 +57,29 @@ export default function AnnouncementPopup() {
   return (
     <>
       <Dialog open={open} onOpenChange={handleClose}>
-        <DialogContent className="w-[45vw] max-w-[1160px] sm:max-w-[1160px] max-h-[92vh] overflow-hidden rounded-[28px] p-0 shadow-2xl" showCloseButton={false}>
-          <div className="relative overflow-hidden">
+        <DialogContent className="!flex max-h-[92svh] w-[min(94vw,760px)] overflow-hidden rounded-[28px] p-0 shadow-2xl sm:max-w-[760px]" showCloseButton={false}>
+          <div className="relative flex max-h-[92svh] min-h-0 w-full flex-col overflow-hidden">
             <DialogClose className="absolute right-4 top-4 z-10 rounded-full bg-white/90 p-2 shadow hover:bg-white">
               <X className="size-5 text-slate-900" />
               <span className="sr-only">Close announcement</span>
             </DialogClose>
 
             {announcement.imageUrl ? (
-              <div className="relative flex h-[36vh] min-h-[260px] w-full items-center justify-center overflow-hidden bg-slate-100 sm:h-[40vh]">
+              <button
+                type="button"
+                className="relative flex h-[32svh] min-h-[190px] w-full shrink-0 items-center justify-center overflow-hidden bg-slate-100 sm:h-[38svh] sm:min-h-[250px]"
+                onClick={() => setLightboxOpen(true)}
+              >
                 <Image
                   src={announcement.imageUrl!}
                   alt={announcement.title}
                   fill
-                  className="object-cover object-top cursor-pointer hover:opacity-95 transition-opacity"
-                  onClick={() => setLightboxOpen(true)}
+                  className="object-cover object-top transition-opacity hover:opacity-95"
                 />
-              </div>
+              </button>
             ) : null}
 
-            <div className="max-h-[calc(92vh-22rem)] overflow-y-auto bg-white p-6 sm:p-8">
+            <div className="min-h-0 flex-1 overflow-y-auto bg-white p-6 sm:p-8">
               <h2 className="text-3xl font-semibold text-slate-900 break-words">{announcement.title}</h2>
               <p className="mt-4 text-base leading-7 text-slate-600 whitespace-pre-line break-words">{announcement.description}</p>
             </div>
@@ -91,8 +94,8 @@ export default function AnnouncementPopup() {
               <X className="size-5 text-white" />
               <span className="sr-only">Close lightbox</span>
             </DialogClose>
-            <div className="flex items-center justify-center max-h-[calc(92vh-4rem)] overflow-hidden px-2">
-              <div className="relative w-full max-h-[86vh]">
+            <div className="flex max-h-[calc(92vh-4rem)] items-center justify-center overflow-hidden px-2">
+              <div className="relative h-[calc(92vh-4rem)] w-full">
                 <Image
                   src={announcement.imageUrl!}
                   alt={announcement.title}

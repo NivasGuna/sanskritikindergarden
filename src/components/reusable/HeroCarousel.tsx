@@ -53,7 +53,10 @@ export default function HeroCarousel({
 
   return (
     <section
-      className={cn("relative min-h-[100svh] w-full overflow-hidden", className)}
+      className={cn(
+        "font-premium-display relative min-h-[100svh] w-full overflow-hidden",
+        className
+      )}
     >
       {slides.map((slideItem, index) => (
         <div
@@ -70,21 +73,19 @@ export default function HeroCarousel({
             className="object-cover object-center"
             priority={index === 0}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-forest-dark/44 via-forest-dark/20 to-forest-dark/46" />
-          <div className="absolute inset-0 bg-gradient-to-t from-coral/20 via-transparent to-transparent" />
         </div>
       ))}
 
       <div className="relative z-20 container mx-auto flex min-h-[100svh] items-center justify-center px-6 pt-32 pb-20 text-center">
         <div className="w-full max-w-5xl">
-          <div>
-            <p className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/18 px-4 py-2 text-xs font-black tracking-[0.24em] text-white uppercase shadow-warm-badge backdrop-blur-md">
+          <div className="mx-auto max-w-5xl">
+            <p className="inline-flex items-center gap-2 text-xs font-black tracking-[0.24em] text-amber-50 uppercase drop-shadow-[0_4px_14px_rgba(15,23,42,0.78)]">
               {slide.eyebrow}
             </p>
-            <h1 className="font-playful-display mx-auto mt-6 max-w-5xl text-5xl leading-[0.98] font-extrabold tracking-normal text-white drop-shadow-[0_6px_28px_rgba(15,23,42,0.34)] sm:text-6xl md:text-7xl lg:text-8xl">
+            <h1 className="font-premium-display mx-auto mt-6 max-w-5xl text-5xl leading-[0.98] font-extrabold tracking-normal text-white drop-shadow-[0_10px_34px_rgba(15,23,42,0.74)] sm:text-6xl md:text-7xl lg:text-8xl">
               {slide.title}
             </h1>
-            <p className="mx-auto mt-6 max-w-3xl text-base leading-8 font-semibold text-white drop-shadow-md sm:text-lg md:text-2xl">
+            <p className="mx-auto mt-6 max-w-3xl text-base leading-8 font-black text-white drop-shadow-[0_6px_22px_rgba(15,23,42,0.72)] sm:text-lg md:text-2xl">
               {slide.description}
             </p>
           </div>

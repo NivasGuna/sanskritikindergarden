@@ -96,7 +96,7 @@ const highlightIconNames = ["School", "HeartHandshake", "MapPin"];
 
 const accentClassNames = [
   "border-amber-100 bg-amber-50 text-amber-700",
-  "border-rose-100 bg-rose-50 text-rose-700",
+  "border-teal-100 bg-teal-50 text-teal-700",
   "border-sky-100 bg-sky-50 text-sky-700",
 ];
 
@@ -169,7 +169,7 @@ export default function LocationProgramPage({
 
   return (
     <main className="box-border w-full max-w-[100vw] overflow-x-hidden bg-white text-slate-950">
-      <section className="box-border w-full max-w-[100vw] overflow-x-hidden bg-[#fff8ed] pt-28 pb-16 md:pt-36 md:pb-24">
+      <section className="font-premium-display box-border w-full max-w-[100vw] overflow-x-hidden bg-[#fff8ed] pt-28 pb-16 md:pt-36 md:pb-24">
         <div className="mx-auto box-border w-full max-w-7xl px-6">
           <div className="grid min-w-0 items-center gap-10 lg:grid-cols-[0.92fr_1.08fr]">
             <div className="min-w-0">

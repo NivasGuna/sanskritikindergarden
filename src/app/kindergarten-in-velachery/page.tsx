@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
+import { constructMetadata } from "@/lib/seo";
 import LocationProgramPage from "@/components/reusable/LocationProgramPage";
 import content from "./kindergarten-content.json";
 
-export const metadata: Metadata = content.metadata;
+export const metadata: Metadata = constructMetadata({
+  title: content.metadata.title,
+  description: content.metadata.description,
+  canonicalUrl: "/kindergarten-in-velachery",
+});
 
 const pageConfig = {
   heroActions: [

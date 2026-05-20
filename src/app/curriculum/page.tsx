@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { constructMetadata } from "@/lib/seo";
 import {
   ArrowRight,
   Blocks,
@@ -29,7 +30,11 @@ import { Button } from "@/components/ui/button";
 import HeroBanner from "@/components/reusable/HeroBanner";
 import content from "./curriculum-content.json";
 
-export const metadata: Metadata = content.metadata;
+export const metadata: Metadata = constructMetadata({
+  title: content.metadata.title,
+  description: content.metadata.description,
+  canonicalUrl: "/curriculum",
+});
 
 const iconMap = {
   Blocks,
@@ -54,12 +59,12 @@ const iconMap = {
 
 const cardAccentClassNames = [
   "border-amber-100 bg-amber-50/70 text-amber-700",
-  "border-rose-100 bg-rose-50/75 text-rose-700",
+  "border-teal-100 bg-teal-50/75 text-teal-700",
   "border-sky-100 bg-sky-50/75 text-sky-700",
   "border-violet-100 bg-violet-50/70 text-violet-700",
   "border-orange-100 bg-orange-50/70 text-orange-700",
   "border-yellow-100 bg-yellow-50/70 text-yellow-700",
-  "border-pink-100 bg-pink-50/70 text-pink-700",
+  "border-cyan-100 bg-cyan-50/70 text-cyan-700",
 ];
 
 const cigmaBreakdown = [
@@ -160,13 +165,13 @@ function ActivityListSection({
   title: string;
   items: readonly string[];
   surface?: "white" | "muted";
-  accent?: "amber" | "rose";
+  accent?: "amber" | "teal";
 }) {
   const accentClassName =
     accent === "amber"
       ? "border-amber-100 bg-amber-50 text-amber-700"
-      : "border-rose-100 bg-rose-50 text-rose-700";
-  const dotClassName = accent === "amber" ? "text-amber-600" : "text-rose-600";
+      : "border-teal-100 bg-teal-50 text-teal-700";
+  const dotClassName = accent === "amber" ? "text-amber-600" : "text-teal-600";
 
   return (
     <section
@@ -214,29 +219,28 @@ export default function CurriculumPage() {
       <HeroBanner
         image={content.hero.image}
         imageClassName="object-[68%_center] min-[1000px]:object-center"
-        overlayClassName="bg-gradient-to-r from-slate-950/92 via-slate-950/70 to-slate-950/18"
       >
         <div className="relative z-10 container mx-auto flex min-h-[100svh] items-center px-6 py-28">
           <div className="motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-left-12 max-w-[32rem] duration-1000">
-            <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-white/24 bg-white/14 px-4 py-2 shadow-[0_14px_35px_rgb(15_23_42_/_18%)] backdrop-blur-md">
-              <span className="size-2 rounded-full bg-amber-200" />
-              <span className="text-[10px] font-black tracking-[0.26em] text-white uppercase">
+            <div className="mb-8 inline-flex items-center gap-3">
+              <span className="size-2 rounded-full bg-mint" />
+              <span className="text-mint-ink text-[10px] font-black tracking-[0.26em] uppercase drop-shadow-[0_2px_8px_rgb(255_255_255_/_90%)]">
                 {content.hero.badge}
               </span>
             </div>
 
-            <h1 className="font-premium-display max-w-[32rem] text-[2.85rem] leading-[1.04] font-bold text-white drop-shadow-[0_8px_28px_rgb(0_0_0_/_46%)] sm:text-5xl md:text-6xl">
+            <h1 className="font-premium-display text-forest-dark max-w-[32rem] text-[2.85rem] leading-[1.04] font-bold drop-shadow-[0_4px_14px_rgb(255_255_255_/_88%)] sm:text-5xl md:text-6xl">
               {content.hero.title.line1}{" "}
-              <span className="text-amber-100">
+              <span className="text-gold-ink">
                 {content.hero.title.highlight}
               </span>
             </h1>
 
-            <p className="text-sky-mist mt-5 max-w-[32rem] text-lg leading-snug font-bold drop-shadow-[0_4px_18px_rgb(0_0_0_/_52%)] md:text-2xl">
+            <p className="text-sky-ink mt-5 max-w-[32rem] text-lg leading-snug font-bold drop-shadow-[0_3px_12px_rgb(255_255_255_/_90%)] md:text-2xl">
               {content.hero.subtitle}
             </p>
 
-            <p className="mt-6 max-w-[32rem] text-base leading-relaxed font-semibold text-white/88 drop-shadow-[0_4px_18px_rgb(0_0_0_/_52%)] md:text-lg">
+            <p className="text-forest-soft mt-6 max-w-[32rem] text-base leading-relaxed font-semibold drop-shadow-[0_3px_12px_rgb(255_255_255_/_90%)] md:text-lg">
               {content.hero.description}
             </p>
 
@@ -253,7 +257,7 @@ export default function CurriculumPage() {
                 render={<Link href={content.hero.buttons.secondary.link} />}
                 nativeButton={false}
                 variant="outline"
-                className="h-14 rounded-full border-white/45 bg-white/14 px-8 text-base font-black text-white backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-white/20 sm:px-10"
+                className="text-forest-dark h-14 rounded-full border-forest-dark/20 bg-white/76 px-8 text-base font-black backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-white/88 sm:px-10"
               >
                 {content.hero.buttons.secondary.text}
               </Button>
@@ -595,7 +599,7 @@ export default function CurriculumPage() {
                     index === 0
                       ? "bg-amber-50 text-amber-700"
                       : index === 1
-                        ? "bg-rose-50 text-rose-700"
+                        ? "bg-teal-50 text-teal-700"
                         : "bg-sky-50 text-sky-700"
                   }`}
                 >
@@ -624,12 +628,12 @@ export default function CurriculumPage() {
         title={content.extraCurricular.title}
         items={content.extraCurricular.items}
         surface="muted"
-        accent="rose"
+        accent="teal"
       />
 
       <section id="admissions-open" className="bg-white py-16 md:py-24">
         <div className="container mx-auto px-6">
-          <div className="border-premium-line shadow-premium-md bg-premium-ink relative min-h-[430px] overflow-hidden rounded-[2rem] border">
+          <div className="border-premium-line shadow-premium-md relative min-h-[430px] overflow-hidden rounded-[2rem] border bg-[#2f3446]">
             <Image
               src={content.cta.image.src}
               alt={content.cta.image.alt}
@@ -637,7 +641,7 @@ export default function CurriculumPage() {
               className="object-cover"
               sizes="100vw"
             />
-            <div className="bg-premium-ink/72 absolute inset-0" />
+            <div className="absolute inset-0 bg-[#2f3446]/62" />
             <div className="relative z-10 grid min-h-[430px] gap-8 px-6 py-10 text-white md:grid-cols-[1fr_auto] md:items-end md:px-10 md:py-14 lg:px-14">
               <div className="max-w-3xl">
                 <span className="inline-flex rounded-full border border-white/20 bg-white/12 px-4 py-2 text-[11px] font-black text-amber-100 uppercase backdrop-blur-md">

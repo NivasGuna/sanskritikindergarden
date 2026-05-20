@@ -1,53 +1,46 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import {
   Baloo_2,
-  Fraunces,
   Geist_Mono,
-  Nunito,
-  Roboto,
+  Quicksand,
 } from "next/font/google";
 import "./globals.css";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { MotionProvider } from "@/components/providers/motion-provider";
 import { AuthProvider } from "@/components/providers/auth-provider";
 import LayoutShell from "@/components/providers/layout-shell";
+import { constructMetadata } from "@/lib/seo";
+import { getLocalBusinessSchema } from "@/lib/schema";
+import Schema from "@/components/Schema";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
-const sans = Roboto({
+const sans = Quicksand({
   variable: "--font-sans",
   subsets: ["latin"],
-  weight: ["400", "500", "700", "900"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
-const playfulDisplay = Baloo_2({
-  variable: "--playful-display-family",
-  subsets: ["latin"],
-  weight: ["600", "700", "800"],
-  display: "swap",
-});
-
-const premiumDisplay = Fraunces({
+const premiumDisplay = Baloo_2({
   variable: "--premium-display-family",
   subsets: ["latin"],
   weight: ["600", "700", "800"],
   display: "swap",
 });
 
-const roundedBody = Nunito({
-  variable: "--rounded-body-family",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
-  display: "swap",
+export const metadata: Metadata = constructMetadata({
+  title: "Best Preschool & Daycare in Velachery",
+  description: "Best preschool and daycare in Velachery, Chennai offering activity-based learning, phonics, and child-focused education.",
 });
 
-export const metadata: Metadata = {
-  title: "Sanskriti Kindergarten",
-  description: "A premium early childhood education center.",
+export const viewport: Viewport = {
+  themeColor: "#ffffff",
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
@@ -58,13 +51,15 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${sans.variable} ${geistMono.variable} ${playfulDisplay.variable} ${premiumDisplay.variable} ${roundedBody.variable} h-full antialiased`}
+      data-scroll-behavior="smooth"
+      className={`${sans.variable} ${geistMono.variable} ${premiumDisplay.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col" suppressHydrationWarning>
         <AuthProvider>
           <MotionProvider>
             <TooltipProvider>
               <LayoutShell>{children}</LayoutShell>
+              <Schema data={getLocalBusinessSchema()} />
             </TooltipProvider>
           </MotionProvider>
         </AuthProvider>
