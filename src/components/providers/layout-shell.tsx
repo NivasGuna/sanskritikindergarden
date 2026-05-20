@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import type { ReactNode } from "react";
 
 /** Hides the Navbar and Footer on standalone pages like /login */
@@ -21,6 +22,7 @@ export default function LayoutShell({ children }: { children: ReactNode }) {
       <Navbar />
       {children}
       <Footer />
+      <WhatsAppButton />
     </>
   );
 }

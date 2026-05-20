@@ -90,19 +90,17 @@ function SectionIntro({
   return (
     <div
       className={
-        align === "center"
-          ? "mx-auto max-w-3xl text-center"
-          : "max-w-3xl"
+        align === "center" ? "mx-auto max-w-3xl text-center" : "max-w-3xl"
       }
     >
-      <span className="text-premium-forest text-[11px] font-black uppercase">
+      <span className="border-coral-line bg-coral-mist text-coral-ink inline-flex rounded-full border px-4 py-2 text-[10px] font-black tracking-[0.24em] uppercase">
         {badge}
       </span>
-      <h2 className="text-premium-ink mt-4 text-2xl leading-tight font-semibold md:text-4xl">
+      <h2 className="font-playful-display text-forest-dark mt-5 text-4xl leading-[1.03] font-extrabold md:text-6xl">
         {title}
       </h2>
       {description ? (
-        <p className="text-premium-muted mt-4 text-base leading-7 md:text-[17px] md:leading-8">
+        <p className="text-forest-muted mt-4 text-base leading-7 font-semibold md:text-[17px] md:leading-8">
           {description}
         </p>
       ) : null}
@@ -137,7 +135,7 @@ function FramedImage({
           sizes="(min-width: 1024px) 48vw, 100vw"
         />
       </div>
-      <div className="absolute inset-x-4 bottom-4 rounded-2xl border border-white/60 bg-white/90 p-4 shadow-premium-sm backdrop-blur-md">
+      <div className="shadow-premium-sm absolute inset-x-4 bottom-4 rounded-2xl border border-white/60 bg-white/90 p-4 backdrop-blur-md">
         <p className="text-premium-forest text-[11px] font-black uppercase">
           {badge}
         </p>
@@ -185,7 +183,7 @@ function ActivityListSection({
             {items.map((item, index) => (
               <div
                 key={item}
-                className="border-premium-line flex min-h-14 items-center gap-3 rounded-xl border bg-white px-4 py-3 text-sm font-bold text-premium-ink shadow-premium-sm"
+                className="border-premium-line text-premium-ink shadow-premium-sm flex min-h-14 items-center gap-3 rounded-xl border bg-white px-4 py-3 text-sm font-bold"
               >
                 {index < 3 ? (
                   <span
@@ -212,33 +210,33 @@ function ActivityListSection({
 
 export default function CurriculumPage() {
   return (
-    <main className="min-h-screen overflow-hidden bg-white text-premium-ink">
+    <main className="font-rounded-body bg-sage-mist text-forest-dark min-h-screen overflow-hidden">
       <HeroBanner
         image={content.hero.image}
         imageClassName="object-[68%_center] min-[1000px]:object-center"
-        overlayClassName="bg-gradient-to-b from-white/86 via-white/62 to-white/80 min-[1000px]:bg-gradient-to-r min-[1000px]:from-white/88 min-[1000px]:via-white/44 min-[1000px]:to-transparent"
+        overlayClassName="bg-gradient-to-r from-slate-950/92 via-slate-950/70 to-slate-950/18"
       >
-        <div className="container relative z-10 mx-auto flex min-h-[100svh] items-center px-6 py-28">
-          <div className="motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-left-12 max-w-3xl duration-1000">
-            <div className="mb-8 inline-flex items-center gap-3">
-              <span className="h-px w-6 bg-amber-600" />
-              <span className="text-[10px] font-black uppercase text-amber-700">
+        <div className="relative z-10 container mx-auto flex min-h-[100svh] items-center px-6 py-28">
+          <div className="motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-left-12 max-w-[32rem] duration-1000">
+            <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-white/24 bg-white/14 px-4 py-2 shadow-[0_14px_35px_rgb(15_23_42_/_18%)] backdrop-blur-md">
+              <span className="size-2 rounded-full bg-amber-200" />
+              <span className="text-[10px] font-black tracking-[0.26em] text-white uppercase">
                 {content.hero.badge}
               </span>
             </div>
 
-            <h1 className="text-premium-ink text-4xl leading-[1.1] font-semibold drop-shadow-sm md:text-5xl">
+            <h1 className="font-premium-display max-w-[32rem] text-[2.85rem] leading-[1.04] font-bold text-white drop-shadow-[0_8px_28px_rgb(0_0_0_/_46%)] sm:text-5xl md:text-6xl">
               {content.hero.title.line1}{" "}
-              <span className="text-premium-forest italic">
+              <span className="text-amber-100">
                 {content.hero.title.highlight}
               </span>
             </h1>
 
-            <p className="text-premium-forest mt-5 max-w-2xl text-xl leading-snug font-semibold md:text-2xl">
+            <p className="text-sky-mist mt-5 max-w-[32rem] text-lg leading-snug font-bold drop-shadow-[0_4px_18px_rgb(0_0_0_/_52%)] md:text-2xl">
               {content.hero.subtitle}
             </p>
 
-            <p className="text-premium-muted mt-6 max-w-xl text-base leading-relaxed font-medium md:text-lg">
+            <p className="mt-6 max-w-[32rem] text-base leading-relaxed font-semibold text-white/88 drop-shadow-[0_4px_18px_rgb(0_0_0_/_52%)] md:text-lg">
               {content.hero.description}
             </p>
 
@@ -246,7 +244,7 @@ export default function CurriculumPage() {
               <Button
                 render={<Link href={content.hero.buttons.primary.link} />}
                 nativeButton={false}
-                className="bg-premium-forest shadow-premium-md hover:bg-premium-forest/90 h-14 rounded-full px-8 text-base font-bold text-white transition-all hover:-translate-y-0.5 sm:px-10"
+                className="bg-coral shadow-coral-button hover:bg-coral-dark h-14 rounded-full px-8 text-base font-black text-white transition-all hover:-translate-y-0.5 sm:px-10"
               >
                 {content.hero.buttons.primary.text}
                 <ArrowRight className="ml-2 size-5" />
@@ -255,7 +253,7 @@ export default function CurriculumPage() {
                 render={<Link href={content.hero.buttons.secondary.link} />}
                 nativeButton={false}
                 variant="outline"
-                className="border-premium-line text-premium-ink h-14 rounded-full bg-white/75 px-8 text-base font-bold backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-white sm:px-10"
+                className="h-14 rounded-full border-white/45 bg-white/14 px-8 text-base font-black text-white backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-white/20 sm:px-10"
               >
                 {content.hero.buttons.secondary.text}
               </Button>
@@ -306,12 +304,12 @@ export default function CurriculumPage() {
             {cigmaBreakdown.map((item) => (
               <div
                 key={item.letter}
-                className="border-premium-line rounded-[1rem] border bg-[#fff8ed] p-4 text-center shadow-premium-sm"
+                className="border-premium-line shadow-premium-sm rounded-[1rem] border bg-[#fff8ed] p-4 text-center"
               >
                 <p className="text-3xl font-black text-amber-700">
                   {item.letter}
                 </p>
-                <p className="mt-1 text-xs font-bold text-premium-muted">
+                <p className="text-premium-muted mt-1 text-xs font-bold">
                   {item.label}
                 </p>
               </div>
@@ -325,16 +323,14 @@ export default function CurriculumPage() {
               return (
                 <article
                   key={pillar.title}
-                  className="border-premium-line min-h-[220px] rounded-[1.25rem] border bg-white p-5 shadow-premium-sm"
+                  className="border-premium-line shadow-premium-sm min-h-[220px] rounded-[1.25rem] border bg-white p-5"
                 >
                   <div
                     className={`mb-4 flex size-10 items-center justify-center rounded-2xl border ${cardAccentClassNames[index]}`}
                   >
                     <Icon className="size-5" />
                   </div>
-                  <h3 className="text-premium-ink font-bold">
-                    {pillar.title}
-                  </h3>
+                  <h3 className="text-premium-ink font-bold">{pillar.title}</h3>
                   <p className="text-premium-muted mt-2 text-sm leading-6">
                     {pillar.description}
                   </p>
@@ -345,7 +341,7 @@ export default function CurriculumPage() {
         </div>
       </section>
 
-      <section className="bg-[#fff8ed] py-16 md:py-24">
+      <section className="bg-gold-mist py-16 md:py-24">
         <div className="container mx-auto px-6">
           <div className="grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr]">
             <FramedImage
@@ -369,7 +365,7 @@ export default function CurriculumPage() {
                   return (
                     <article
                       key={item.title}
-                      className="border-premium-line bg-white shadow-premium-sm min-h-[210px] rounded-[1.25rem] border p-5"
+                      className="border-premium-line shadow-premium-sm min-h-[210px] rounded-[1.25rem] border bg-white p-5"
                     >
                       <div className="mb-4 flex items-center gap-3">
                         <span
@@ -410,7 +406,7 @@ export default function CurriculumPage() {
                   return (
                     <article
                       key={group.title}
-                      className="border-premium-line rounded-[1.5rem] border bg-[#fff8ed] p-5 shadow-premium-sm md:p-6"
+                      className="border-premium-line shadow-premium-sm rounded-[1.5rem] border bg-[#fff8ed] p-5 md:p-6"
                     >
                       <div className="grid gap-5 md:grid-cols-[0.95fr_1.05fr]">
                         <div className="flex items-start gap-4">
@@ -437,7 +433,7 @@ export default function CurriculumPage() {
                             {group.skills.map((skill) => (
                               <div
                                 key={skill}
-                                className="border-premium-line flex min-h-11 items-center gap-3 rounded-xl border bg-white px-3 py-2 text-sm font-bold text-premium-ink"
+                                className="border-premium-line text-premium-ink flex min-h-11 items-center gap-3 rounded-xl border bg-white px-3 py-2 text-sm font-bold"
                               >
                                 <Check className="text-premium-forest size-4 shrink-0" />
                                 {skill}
@@ -449,7 +445,7 @@ export default function CurriculumPage() {
                             {group.activities.map((activity) => (
                               <span
                                 key={activity}
-                                className="border-premium-line rounded-full border bg-white px-3 py-1.5 text-xs font-semibold text-premium-muted"
+                                className="border-premium-line text-premium-muted rounded-full border bg-white px-3 py-1.5 text-xs font-semibold"
                               >
                                 {activity}
                               </span>
@@ -473,7 +469,7 @@ export default function CurriculumPage() {
         </div>
       </section>
 
-      <section className="bg-[#fff8ed] py-16 md:py-24">
+      <section className="bg-sage-mist py-16 md:py-24">
         <div className="container mx-auto px-6">
           <SectionIntro
             badge={content.developmentSpheres.badge}
@@ -501,14 +497,16 @@ export default function CurriculumPage() {
               return (
                 <article
                   key={item.title}
-                  className={`border-premium-line bg-white shadow-premium-sm rounded-[1.25rem] border p-6 ${
+                  className={`border-premium-line shadow-premium-sm rounded-[1.25rem] border bg-white p-6 ${
                     index === 6 ? "lg:col-span-3" : ""
                   }`}
                 >
                   <div className="flex gap-4">
                     <div
                       className={`flex size-11 shrink-0 items-center justify-center rounded-2xl border ${
-                        cardAccentClassNames[index % cardAccentClassNames.length]
+                        cardAccentClassNames[
+                          index % cardAccentClassNames.length
+                        ]
                       }`}
                     >
                       <Icon className="size-5" />
@@ -546,7 +544,7 @@ export default function CurriculumPage() {
                   return (
                     <article
                       key={item.title}
-                      className="border-premium-line min-h-[230px] rounded-[1.25rem] border bg-[#fff8ed] p-5 shadow-premium-sm"
+                      className="border-premium-line shadow-premium-sm min-h-[230px] rounded-[1.25rem] border bg-[#fff8ed] p-5"
                     >
                       <div
                         className={`mb-5 flex size-11 items-center justify-center rounded-2xl border ${cardAccentClassNames[index]}`}
@@ -575,7 +573,7 @@ export default function CurriculumPage() {
         </div>
       </section>
 
-      <section className="bg-[#fff8ed] py-16 md:py-24">
+      <section className="bg-gold-mist py-16 md:py-24">
         <div className="container mx-auto px-6">
           <SectionIntro
             badge={content.teacherRatio.badge}
@@ -587,7 +585,7 @@ export default function CurriculumPage() {
             {content.teacherRatio.items.map((item, index) => (
               <article
                 key={item.program}
-                className="border-premium-line bg-white shadow-premium-sm rounded-[1.25rem] border p-6 text-center transition-all hover:-translate-y-0.5 hover:shadow-premium-md"
+                className="border-premium-line shadow-premium-sm hover:shadow-premium-md rounded-[1.25rem] border bg-white p-6 text-center transition-all hover:-translate-y-0.5"
               >
                 <p className="text-premium-forest text-[11px] font-black uppercase">
                   {item.program}
@@ -631,7 +629,7 @@ export default function CurriculumPage() {
 
       <section id="admissions-open" className="bg-white py-16 md:py-24">
         <div className="container mx-auto px-6">
-          <div className="border-premium-line shadow-premium-md relative min-h-[430px] overflow-hidden rounded-[2rem] border bg-premium-ink">
+          <div className="border-premium-line shadow-premium-md bg-premium-ink relative min-h-[430px] overflow-hidden rounded-[2rem] border">
             <Image
               src={content.cta.image.src}
               alt={content.cta.image.alt}
@@ -639,10 +637,10 @@ export default function CurriculumPage() {
               className="object-cover"
               sizes="100vw"
             />
-            <div className="absolute inset-0 bg-premium-ink/72" />
+            <div className="bg-premium-ink/72 absolute inset-0" />
             <div className="relative z-10 grid min-h-[430px] gap-8 px-6 py-10 text-white md:grid-cols-[1fr_auto] md:items-end md:px-10 md:py-14 lg:px-14">
               <div className="max-w-3xl">
-                <span className="inline-flex rounded-full border border-white/20 bg-white/12 px-4 py-2 text-[11px] font-black uppercase text-amber-100 backdrop-blur-md">
+                <span className="inline-flex rounded-full border border-white/20 bg-white/12 px-4 py-2 text-[11px] font-black text-amber-100 uppercase backdrop-blur-md">
                   {content.cta.badge}
                 </span>
                 <h2 className="mt-5 text-3xl leading-tight font-semibold md:text-4xl">
@@ -657,7 +655,7 @@ export default function CurriculumPage() {
                 <Button
                   render={<Link href={content.cta.buttons.primary.link} />}
                   nativeButton={false}
-                  className="h-13 rounded-full bg-white px-8 text-sm font-bold text-premium-ink transition-all hover:-translate-y-0.5 hover:bg-amber-50"
+                  className="text-premium-ink h-[3.25rem] rounded-full bg-white px-8 text-sm font-bold transition-all hover:-translate-y-0.5 hover:bg-amber-50"
                 >
                   {content.cta.buttons.primary.text}
                   <ArrowRight className="ml-2 size-4" />
@@ -666,7 +664,7 @@ export default function CurriculumPage() {
                   render={<Link href={content.cta.buttons.secondary.link} />}
                   nativeButton={false}
                   variant="outline"
-                  className="h-13 rounded-full border-white/35 bg-white/8 px-8 text-sm font-bold text-white backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-white/14"
+                  className="h-[3.25rem] rounded-full border-white/35 bg-white/8 px-8 text-sm font-bold text-white backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-white/14"
                 >
                   {content.cta.buttons.secondary.text}
                 </Button>

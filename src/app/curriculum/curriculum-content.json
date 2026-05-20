@@ -281,7 +281,7 @@
     "buttons": {
       "primary": {
         "text": "Start Admissions",
-        "link": "/contact"
+        "link": "/admissions"
       },
       "secondary": {
         "text": "Talk to Us",

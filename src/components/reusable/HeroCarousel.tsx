@@ -53,7 +53,7 @@ export default function HeroCarousel({
 
   return (
     <section
-      className={cn("relative min-h-[100svh] overflow-hidden", className)}
+      className={cn("relative min-h-[100svh] w-full overflow-hidden", className)}
     >
       {slides.map((slideItem, index) => (
         <div
@@ -70,32 +70,32 @@ export default function HeroCarousel({
             className="object-cover object-center"
             priority={index === 0}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-white/88 via-white/52 to-white/8" />
-          <div className="absolute inset-0 bg-gradient-to-t from-white/42 via-transparent to-white/18" />
+          <div className="absolute inset-0 bg-gradient-to-b from-forest-dark/44 via-forest-dark/20 to-forest-dark/46" />
+          <div className="absolute inset-0 bg-gradient-to-t from-coral/20 via-transparent to-transparent" />
         </div>
       ))}
 
-      <div className="relative z-20 container mx-auto flex min-h-[100svh] items-center px-6 py-24">
-        <div className="w-full max-w-3xl">
+      <div className="relative z-20 container mx-auto flex min-h-[100svh] items-center justify-center px-6 pt-32 pb-20 text-center">
+        <div className="w-full max-w-5xl">
           <div>
-            <p className="inline-flex items-center gap-2 text-xs font-black tracking-[0.28em] text-amber-700 uppercase">
+            <p className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/18 px-4 py-2 text-xs font-black tracking-[0.24em] text-white uppercase shadow-warm-badge backdrop-blur-md">
               {slide.eyebrow}
             </p>
-            <h1 className="mt-6 text-4xl leading-[1.08] font-semibold tracking-tight text-slate-950 sm:text-5xl md:text-6xl">
+            <h1 className="font-playful-display mx-auto mt-6 max-w-5xl text-5xl leading-[0.98] font-extrabold tracking-normal text-white drop-shadow-[0_6px_28px_rgba(15,23,42,0.34)] sm:text-6xl md:text-7xl lg:text-8xl">
               {slide.title}
             </h1>
-            <p className="mt-5 max-w-2xl text-base leading-7 text-slate-700 sm:text-lg md:text-xl">
+            <p className="mx-auto mt-6 max-w-3xl text-base leading-8 font-semibold text-white drop-shadow-md sm:text-lg md:text-2xl">
               {slide.description}
             </p>
           </div>
 
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row sm:flex-wrap">
             {slide.primaryAction ? (
               <Button
                 render={<Link href={slide.primaryAction.href} />}
                 nativeButton={false}
                 variant={slide.primaryAction.variant ?? "secondary"}
-                className="shadow-premium-sm h-13 rounded-full border border-amber-600 bg-amber-600 px-8 text-sm font-bold text-white transition hover:bg-amber-700"
+                className="h-14 rounded-full border border-coral bg-coral px-10 text-base font-black text-white shadow-coral-button transition hover:-translate-y-0.5 hover:bg-coral-dark"
               >
                 {slide.primaryAction.text}
                 <ArrowRight className="ml-2 size-4" />
@@ -106,7 +106,7 @@ export default function HeroCarousel({
                 render={<Link href={slide.secondaryAction.href} />}
                 nativeButton={false}
                 variant={slide.secondaryAction.variant ?? "outline"}
-                className="h-13 rounded-full border border-slate-200 bg-white/76 px-8 text-sm font-bold text-slate-950 shadow-none backdrop-blur-md transition hover:bg-white"
+                className="h-14 rounded-full border border-white/80 bg-white/92 px-10 text-base font-black text-forest-dark shadow-[0_16px_40px_rgba(15,23,42,0.14)] backdrop-blur-md transition hover:-translate-y-0.5 hover:bg-white"
               >
                 {slide.secondaryAction.text}
               </Button>
@@ -122,8 +122,9 @@ export default function HeroCarousel({
             type="button"
             onClick={() => setActiveIndex(index)}
             className={`h-3 w-3 rounded-full transition-all ${
-              index === activeIndex ? "w-8 bg-amber-600" : "bg-slate-400/45"
+              index === activeIndex ? "w-8 bg-coral" : "bg-white/70"
             }`}
+            aria-label={`Show slide ${index + 1}`}
           />
         ))}
       </div>

@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "title": "About | Sanskriti Kindergarden",
-    "description": "Learn about Sanskriti Kindergarden's early childhood philosophy, values, mission, and nurturing learning environment."
+    "title": "About | Sanskriti Kindergarten",
+    "description": "Learn about Sanskriti Kindergarten's early childhood philosophy, values, mission, and nurturing learning environment."
   },
   "hero": {
     "badge": "Established 2012",
@@ -27,7 +27,7 @@
     },
     "image": {
       "src": "/images/about.webp",
-      "alt": "Sanskriti Kindergarden campus"
+      "alt": "Sanskriti Kindergarten campus"
     }
   },
   "whyChoose": {

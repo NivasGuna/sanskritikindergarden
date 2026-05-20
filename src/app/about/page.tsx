@@ -102,32 +102,30 @@ function getInitials(name: string) {
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen overflow-hidden bg-sage-mist font-rounded-body text-forest-dark">
+    <main className="bg-sage-mist font-rounded-body text-forest-dark min-h-screen overflow-hidden">
       <HeroBanner
         image={content.hero.image}
         imageClassName="object-[64%_center] md:object-center"
-        overlayClassName="bg-gradient-to-r from-cream-glow via-cream-glow-soft to-sky-glow"
+        overlayClassName="bg-gradient-to-r from-slate-950/92 via-slate-950/70 to-slate-950/18"
       >
         <div className="relative z-10 container mx-auto flex min-h-[100svh] items-center px-6 py-24">
-          <div className="motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-left-12 max-w-3xl duration-1000">
-            <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-amber-line bg-white/78 px-4 py-2 shadow-warm-badge backdrop-blur-md">
-              <span className="size-2 rounded-full bg-coral" />
-              <span className="text-[10px] font-black tracking-[0.28em] text-amber-ink uppercase">
+          <div className="motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-left-12 max-w-[32rem] duration-1000">
+            <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-white/24 bg-white/14 px-4 py-2 shadow-[0_14px_35px_rgb(15_23_42_/_18%)] backdrop-blur-md">
+              <span className="size-2 rounded-full bg-amber-200" />
+              <span className="text-[10px] font-black tracking-[0.26em] text-white uppercase">
                 {content.hero.badge}
               </span>
             </div>
 
-            <h1 className="max-w-3xl font-playful-display text-5xl leading-[0.98] font-extrabold text-forest-deep md:text-7xl">
-              {content.hero.title.line1} <br />
-              <span className="text-coral">
+            <h1 className="font-premium-display max-w-[32rem] text-[2.85rem] leading-[1.04] font-bold text-white drop-shadow-[0_8px_28px_rgb(0_0_0_/_46%)] sm:text-5xl md:text-6xl">
+              {content.hero.title.line1}{" "}
+              <span className="text-amber-100">
                 {content.hero.title.highlight}
               </span>{" "}
-              <span className="text-mint">
-                {content.hero.title.line2}
-              </span>
+              <span className="text-sky-mist">{content.hero.title.line2}</span>
             </h1>
 
-            <p className="mt-6 max-w-xl text-lg leading-8 font-bold text-forest-smoke md:text-xl">
+            <p className="mt-6 max-w-[32rem] text-base leading-8 font-bold text-white drop-shadow-[0_4px_18px_rgb(0_0_0_/_52%)] md:text-xl">
               {content.hero.subtitle}
             </p>
 
@@ -135,7 +133,7 @@ export default function AboutPage() {
               <Button
                 render={<Link href={content.hero.buttons.primary.link} />}
                 nativeButton={false}
-                className="h-14 rounded-full bg-coral px-8 text-base font-black text-white shadow-coral-button transition-all hover:-translate-y-0.5 hover:bg-coral-dark"
+                className="bg-coral shadow-coral-button hover:bg-coral-dark h-14 rounded-full px-8 text-base font-black text-white transition-all hover:-translate-y-0.5"
               >
                 {content.hero.buttons.primary.text}
                 <ArrowRight className="ml-2 size-5" />
@@ -144,7 +142,7 @@ export default function AboutPage() {
                 render={<Link href={content.hero.buttons.secondary.link} />}
                 nativeButton={false}
                 variant="outline"
-                className="h-14 rounded-full border-mint-line bg-white/82 px-8 text-base font-black text-forest-dark backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-white"
+                className="h-14 rounded-full border-white/45 bg-white/14 px-8 text-base font-black text-white backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-white/20"
               >
                 {content.hero.buttons.secondary.text}
               </Button>
@@ -157,14 +155,14 @@ export default function AboutPage() {
         <div className="container mx-auto px-6">
           <div className="grid items-end gap-7 lg:grid-cols-[0.9fr_1.1fr]">
             <div>
-              <span className="inline-flex rounded-full border border-mint-line bg-white px-4 py-2 text-[10px] font-black tracking-[0.24em] text-mint-ink uppercase">
+              <span className="border-mint-line text-mint-ink inline-flex rounded-full border bg-white px-4 py-2 text-[10px] font-black tracking-[0.24em] uppercase">
                 {content.whyChoose.badge.text}
               </span>
-              <h2 className="mt-5 max-w-xl font-playful-display text-4xl leading-[1.02] font-extrabold text-forest-dark md:text-6xl">
+              <h2 className="font-playful-display text-forest-dark mt-5 max-w-xl text-4xl leading-[1.02] font-extrabold md:text-6xl">
                 {content.whyChoose.title}
               </h2>
             </div>
-            <p className="max-w-2xl text-base leading-7 font-semibold text-forest-muted md:text-lg">
+            <p className="text-forest-muted max-w-2xl text-base leading-7 font-semibold md:text-lg">
               {content.whyChoose.subtitle}
             </p>
           </div>
@@ -180,7 +178,7 @@ export default function AboutPage() {
                 <article
                   key={feature.title}
                   className={cn(
-                    "relative min-h-[250px] overflow-hidden rounded-[1.5rem] border p-6 shadow-forest-card transition-all hover:-translate-y-1",
+                    "shadow-forest-card relative min-h-[250px] overflow-hidden rounded-[1.5rem] border p-6 transition-all hover:-translate-y-1",
                     accent.card
                   )}
                 >
@@ -189,16 +187,16 @@ export default function AboutPage() {
                   </div>
                   <div
                     className={cn(
-                      "relative z-10 mb-6 flex size-14 items-center justify-center rounded-2xl shadow-forest-icon",
+                      "shadow-forest-icon relative z-10 mb-6 flex size-14 items-center justify-center rounded-2xl",
                       accent.icon
                     )}
                   >
                     <Icon className="size-7" />
                   </div>
-                  <h3 className="relative z-10 font-playful-display text-2xl leading-tight font-extrabold text-forest-dark">
+                  <h3 className="font-playful-display text-forest-dark relative z-10 text-2xl leading-tight font-extrabold">
                     {feature.title}
                   </h3>
-                  <p className="relative z-10 mt-3 text-sm leading-6 font-semibold text-forest-soft">
+                  <p className="text-forest-soft relative z-10 mt-3 text-sm leading-6 font-semibold">
                     {feature.description}
                   </p>
                   <div
@@ -217,7 +215,7 @@ export default function AboutPage() {
       <section className="bg-white py-16 md:py-24">
         <div className="container mx-auto px-6">
           <div className="grid items-center gap-10 lg:grid-cols-[1.08fr_0.92fr]">
-            <div className="relative min-h-[430px] overflow-hidden rounded-[2rem] bg-sky-wash shadow-sky-media">
+            <div className="bg-sky-wash shadow-sky-media relative min-h-[430px] overflow-hidden rounded-[2rem]">
               <Image
                 src={content.philosophy.image.src}
                 alt={content.philosophy.image.alt}
@@ -225,24 +223,24 @@ export default function AboutPage() {
                 className="object-cover"
                 sizes="(min-width: 1024px) 54vw, 100vw"
               />
-              <div className="absolute bottom-5 left-5 max-w-xs rounded-[1.25rem] bg-white/90 p-5 shadow-forest-floating backdrop-blur-md">
-                <p className="font-playful-display text-2xl leading-tight font-extrabold text-coral">
+              <div className="shadow-forest-floating absolute bottom-5 left-5 max-w-xs rounded-[1.25rem] bg-white/90 p-5 backdrop-blur-md">
+                <p className="font-playful-display text-coral text-2xl leading-tight font-extrabold">
                   {content.philosophy.floatingQuote}
                 </p>
               </div>
             </div>
 
             <div>
-              <span className="inline-flex rounded-full border border-peach-line bg-peach-mist px-4 py-2 text-[10px] font-black tracking-[0.24em] text-peach-ink uppercase">
+              <span className="border-peach-line bg-peach-mist text-peach-ink inline-flex rounded-full border px-4 py-2 text-[10px] font-black tracking-[0.24em] uppercase">
                 {content.philosophy.badge.text}
               </span>
-              <h2 className="mt-5 font-playful-display text-4xl leading-[1.03] font-extrabold text-forest-dark md:text-6xl">
+              <h2 className="font-playful-display text-forest-dark mt-5 text-4xl leading-[1.03] font-extrabold md:text-6xl">
                 {content.philosophy.title.main}{" "}
                 <span className="text-sky">
                   {content.philosophy.title.accent}
                 </span>
               </h2>
-              <p className="mt-5 text-base leading-8 font-semibold text-forest-muted md:text-lg">
+              <p className="text-forest-muted mt-5 text-base leading-8 font-semibold md:text-lg">
                 {content.philosophy.description}
               </p>
 
@@ -260,10 +258,10 @@ export default function AboutPage() {
                         accent.card
                       )}
                     >
-                      <h3 className="font-playful-display text-2xl font-extrabold text-forest-dark">
+                      <h3 className="font-playful-display text-forest-dark text-2xl font-extrabold">
                         {pillar.title}
                       </h3>
-                      <p className="mt-2 text-sm leading-6 font-semibold text-forest-soft">
+                      <p className="text-forest-soft mt-2 text-sm leading-6 font-semibold">
                         {pillar.description}
                       </p>
                     </article>
@@ -271,7 +269,7 @@ export default function AboutPage() {
                 })}
               </div>
 
-              <blockquote className="mt-7 rounded-[1.5rem] border border-lavender-line bg-lavender-mist p-6 text-lg leading-8 font-extrabold text-lavender-ink">
+              <blockquote className="border-lavender-line bg-lavender-mist text-lavender-ink mt-7 rounded-[1.5rem] border p-6 text-lg leading-8 font-extrabold">
                 {content.quote.text}
               </blockquote>
             </div>
@@ -283,13 +281,13 @@ export default function AboutPage() {
         <div className="container mx-auto px-6">
           <div className="grid items-center gap-10 lg:grid-cols-[0.78fr_1.22fr]">
             <div>
-              <span className="inline-flex rounded-full border border-sky-line bg-white px-4 py-2 text-[10px] font-black tracking-[0.24em] text-sky-ink uppercase">
+              <span className="border-sky-line text-sky-ink inline-flex rounded-full border bg-white px-4 py-2 text-[10px] font-black tracking-[0.24em] uppercase">
                 {content.vision.badge.text}
               </span>
-              <h2 className="mt-5 max-w-xl font-playful-display text-4xl leading-[1.03] font-extrabold text-forest-dark md:text-6xl">
+              <h2 className="font-playful-display text-forest-dark mt-5 max-w-xl text-4xl leading-[1.03] font-extrabold md:text-6xl">
                 {content.vision.title}
               </h2>
-              <p className="mt-5 max-w-xl text-base leading-8 font-semibold text-teal-muted md:text-lg">
+              <p className="text-teal-muted mt-5 max-w-xl text-base leading-8 font-semibold md:text-lg">
                 {content.philosophy.description}
               </p>
             </div>
@@ -305,17 +303,17 @@ export default function AboutPage() {
                   <article
                     key={item.id}
                     className={cn(
-                      "min-h-[290px] rounded-[1.75rem] border p-7 shadow-sky-card",
+                      "shadow-sky-card min-h-[290px] rounded-[1.75rem] border p-7",
                       cardClass
                     )}
                   >
-                    <div className="mb-6 flex size-14 items-center justify-center rounded-2xl bg-white text-forest-dark shadow-forest-icon">
+                    <div className="text-forest-dark shadow-forest-icon mb-6 flex size-14 items-center justify-center rounded-2xl bg-white">
                       <Icon className="size-7" />
                     </div>
-                    <h3 className="font-playful-display text-3xl font-extrabold text-forest-dark">
+                    <h3 className="font-playful-display text-forest-dark text-3xl font-extrabold">
                       {item.label}
                     </h3>
-                    <p className="mt-4 text-sm leading-7 font-semibold text-forest-soft">
+                    <p className="text-forest-soft mt-4 text-sm leading-7 font-semibold">
                       {item.content}
                     </p>
                   </article>
@@ -329,13 +327,13 @@ export default function AboutPage() {
       <section className="bg-white py-16 md:py-24">
         <div className="container mx-auto px-6">
           <div className="mx-auto max-w-3xl text-center">
-            <span className="inline-flex rounded-full border border-coral-line bg-coral-mist px-4 py-2 text-[10px] font-black tracking-[0.24em] text-coral-ink uppercase">
+            <span className="border-coral-line bg-coral-mist text-coral-ink inline-flex rounded-full border px-4 py-2 text-[10px] font-black tracking-[0.24em] uppercase">
               {content.teachersSection.badge}
             </span>
-            <h2 className="mt-5 font-playful-display text-4xl leading-[1.03] font-extrabold text-forest-dark md:text-6xl">
+            <h2 className="font-playful-display text-forest-dark mt-5 text-4xl leading-[1.03] font-extrabold md:text-6xl">
               {content.teachersSection.title}
             </h2>
-            <p className="mt-4 text-base leading-7 font-semibold text-forest-muted md:text-lg">
+            <p className="text-forest-muted mt-4 text-base leading-7 font-semibold md:text-lg">
               {content.teachersSection.subtitle}
             </p>
           </div>
@@ -345,13 +343,13 @@ export default function AboutPage() {
               <article
                 key={teacher.name}
                 className={cn(
-                  "w-full rounded-3xl border p-6 shadow-forest-card transition-all hover:-translate-y-1 sm:w-[290px]",
+                  "shadow-forest-card w-full rounded-3xl border p-6 transition-all hover:-translate-y-1 sm:w-[290px]",
                   valueColorClasses[index % valueColorClasses.length]
                 )}
               >
                 <div className="flex items-center justify-center gap-4">
                   {teacher.image ? (
-                    <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-[1.25rem] border-4 border-white bg-white shadow-forest-avatar">
+                    <div className="shadow-forest-avatar relative h-20 w-20 shrink-0 overflow-hidden rounded-[1.25rem] border-4 border-white bg-white">
                       <Image
                         src={teacher.image.src}
                         alt={teacher.image.alt}
@@ -361,12 +359,12 @@ export default function AboutPage() {
                       />
                     </div>
                   ) : (
-                    <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-[1.25rem] border-4 border-white bg-white text-lg font-black shadow-forest-avatar">
+                    <div className="shadow-forest-avatar flex h-20 w-20 shrink-0 items-center justify-center rounded-[1.25rem] border-4 border-white bg-white text-lg font-black">
                       {getInitials(teacher.name)}
                     </div>
                   )}
                   <div className="min-w-0">
-                    <h3 className="break-words font-playful-display text-2xl leading-tight font-extrabold text-forest-dark">
+                    <h3 className="font-playful-display text-forest-dark text-2xl leading-tight font-extrabold break-words">
                       {teacher.name}
                     </h3>
                     <p className="mt-1 text-xs font-black tracking-[0.18em] uppercase">
@@ -380,11 +378,11 @@ export default function AboutPage() {
                     <p className="text-xs font-black tracking-[0.2em] uppercase">
                       Experience
                     </p>
-                    <p className="mt-2 text-sm leading-6 font-semibold text-forest-soft">
+                    <p className="text-forest-soft mt-2 text-sm leading-6 font-semibold">
                       {teacher.experience}
                     </p>
                     {teacher.experienceDetails?.length ? (
-                      <ul className="mt-3 list-disc space-y-1 pl-5 text-sm leading-6 font-semibold text-forest-soft">
+                      <ul className="text-forest-soft mt-3 list-disc space-y-1 pl-5 text-sm leading-6 font-semibold">
                         {teacher.experienceDetails.map((detail) => (
                           <li key={detail}>{detail}</li>
                         ))}
@@ -400,7 +398,7 @@ export default function AboutPage() {
                       {teacher.qualifications?.map((qualification) => (
                         <span
                           key={qualification}
-                          className="rounded-full border border-white/70 bg-white/70 px-3 py-1.5 text-xs font-black text-forest-dark"
+                          className="text-forest-dark rounded-full border border-white/70 bg-white/70 px-3 py-1.5 text-xs font-black"
                         >
                           {qualification}
                         </span>
@@ -413,7 +411,7 @@ export default function AboutPage() {
                       <p className="text-xs font-black tracking-[0.2em] uppercase">
                         Achievement
                       </p>
-                      <p className="mt-2 text-sm leading-6 font-semibold text-forest-soft">
+                      <p className="text-forest-soft mt-2 text-sm leading-6 font-semibold">
                         {teacher.achievement}
                       </p>
                     </div>
@@ -428,10 +426,10 @@ export default function AboutPage() {
       <section className="bg-gold-mist py-16 md:py-24">
         <div className="container mx-auto px-6">
           <div className="mb-10 max-w-3xl">
-            <span className="inline-flex rounded-full border border-gold-line bg-white px-4 py-2 text-[10px] font-black tracking-[0.24em] text-gold-ink uppercase">
+            <span className="border-gold-line text-gold-ink inline-flex rounded-full border bg-white px-4 py-2 text-[10px] font-black tracking-[0.24em] uppercase">
               {content.values.badge.text}
             </span>
-            <h2 className="mt-5 font-playful-display text-4xl leading-[1.03] font-extrabold text-forest-dark md:text-6xl">
+            <h2 className="font-playful-display text-forest-dark mt-5 text-4xl leading-[1.03] font-extrabold md:text-6xl">
               {content.values.title}
             </h2>
           </div>
@@ -444,18 +442,18 @@ export default function AboutPage() {
                 <article
                   key={item.title}
                   className={cn(
-                    "flex min-h-[155px] gap-4 rounded-[1.25rem] border p-5 shadow-forest-value",
+                    "shadow-forest-value flex min-h-[155px] gap-4 rounded-[1.25rem] border p-5",
                     valueColorClasses[index % valueColorClasses.length]
                   )}
                 >
-                  <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-white/86 text-forest-dark">
+                  <div className="text-forest-dark flex size-12 shrink-0 items-center justify-center rounded-2xl bg-white/86">
                     <Icon className="size-6" />
                   </div>
                   <div>
-                    <h3 className="font-playful-display text-2xl font-extrabold text-forest-dark">
+                    <h3 className="font-playful-display text-forest-dark text-2xl font-extrabold">
                       {item.title}
                     </h3>
-                    <p className="mt-2 text-sm leading-6 font-semibold text-forest-soft">
+                    <p className="text-forest-soft mt-2 text-sm leading-6 font-semibold">
                       {item.description}
                     </p>
                   </div>

@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "title": "Contact | Sanskriti Kindergarden",
-    "description": "Contact Sanskriti Kindergarden for admissions, campus tours, classroom routines, and parent support."
+    "title": "Contact | Sanskriti Kindergarten",
+    "description": "Contact Sanskriti Kindergarten for admissions, campus tours, classroom routines, and parent support."
   },
   "school": {
     "name": "Sanskriti Kindergarten Guindy",
@@ -16,23 +16,16 @@
   "hero": {
     "badge": "Contact Sanskriti",
     "title": {
-      "line1": "Let's plan your child's",
-      "highlight": "first visit."
+      "line1": "We'd Love to",
+      "word1": "Hear",
+      "word2": "From",
+      "word3": "You!"
     },
-    "subtitle": "Reach us for admissions, campus tours, timings, and parent support. We will help you choose the right next step.",
+    "subtitle": "Have a question, want to schedule a visit, or learn more about our preschool?",
+    "subtitleHighlight": "We're here to help!",
     "image": {
       "src": "/images/contact-banner.jpeg",
-      "alt": "Welcoming classroom"
-    },
-    "buttons": {
-      "primary": {
-        "text": "Call now",
-        "hrefType": "phone"
-      },
-      "secondary": {
-        "text": "View location",
-        "link": "#map"
-      }
+      "alt": "Happy children playing"
     }
   },
   "detailsSection": {
@@ -51,28 +44,28 @@
       "valueKey": "address",
       "hrefType": "maps",
       "icon": "mapPin",
-      "accent": "bg-sky-50 text-sky-700"
+      "accent": "bg-sky-mist text-sky-ink"
     },
     {
       "title": "Phone",
       "valueKey": "phone",
       "hrefType": "phone",
       "icon": "phone",
-      "accent": "bg-emerald-50 text-emerald-700"
+      "accent": "bg-mint-mist text-mint-ink"
     },
     {
       "title": "Email",
       "valueKey": "email",
       "hrefType": "email",
       "icon": "mail",
-      "accent": "bg-amber-50 text-amber-700"
+      "accent": "bg-gold-mist text-gold-ink"
     },
     {
       "title": "Hours",
       "valueKey": "hours",
       "hrefType": "mapAnchor",
       "icon": "clock",
-      "accent": "bg-rose-50 text-rose-700"
+      "accent": "bg-coral-mist text-coral-ink"
     }
   ],
   "visitNotes": [

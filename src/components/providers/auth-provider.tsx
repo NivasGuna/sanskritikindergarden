@@ -8,6 +8,7 @@ import {
   useCallback,
   type ReactNode,
 } from "react";
+import { FirebaseError } from "firebase/app";
 import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
@@ -51,17 +52,19 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       return true;
-    } catch (error: any) {
+    } catch (error: unknown) {
+      const code = error instanceof FirebaseError ? error.code : "";
+
       // Map Firebase error codes to user-friendly messages
-      if (error.code === "auth/user-not-found") {
+      if (code === "auth/user-not-found") {
         setAuthError("User not found.");
-      } else if (error.code === "auth/wrong-password") {
+      } else if (code === "auth/wrong-password") {
         setAuthError("Incorrect password.");
-      } else if (error.code === "auth/invalid-credential") {
+      } else if (code === "auth/invalid-credential") {
         setAuthError("Invalid email or password.");
-      } else if (error.code === "auth/invalid-email") {
+      } else if (code === "auth/invalid-email") {
         setAuthError("Invalid email address.");
-      } else if (error.code === "auth/too-many-requests") {
+      } else if (code === "auth/too-many-requests") {
         setAuthError("Too many failed attempts. Please try again later.");
       } else {
         setAuthError("Login failed. Please try again.");

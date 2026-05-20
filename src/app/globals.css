@@ -12,7 +12,9 @@
   --font-mono: var(--font-geist-mono);
   --font-heading: var(--font-sans);
   --font-playful-display: var(--playful-display-family);
+  --font-premium-display: var(--premium-display-family);
   --font-rounded-body: var(--rounded-body-family);
+  --font-rounded-heading: var(--playful-display-family);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-border: var(--border);
@@ -66,6 +68,18 @@
   --shadow-forest-avatar: var(--forest-avatar-shadow);
   --shadow-forest-value: var(--forest-value-shadow);
 
+  /* Playful Contact colors */
+  --color-playful-bg: var(--playful-bg);
+  --color-playful-text-dark: var(--playful-text-dark);
+  --color-playful-pink: var(--playful-pink);
+  --color-playful-pink-light: var(--playful-pink-light);
+  --color-playful-yellow: var(--playful-yellow);
+  --color-playful-yellow-light: var(--playful-yellow-light);
+  --color-playful-green: var(--playful-green);
+  --color-playful-green-light: var(--playful-green-light);
+  --color-playful-blue: var(--playful-blue);
+  --color-playful-blue-light: var(--playful-blue-light);
+
   /* ── Premium Design System Tokens ── */
   --color-premium-bg: var(--premium-bg);
   --color-premium-paper: var(--premium-paper);
@@ -81,13 +95,13 @@
 }
 
 :root {
-  --background: oklch(0.98 0.01 160); /* Premium Sage Mist */
-  --foreground: oklch(0.15 0.02 160);    /* Deep Forest Ink */
-  --primary: oklch(0.70 0.12 60);         /* Premium Amber */
+  --background: #f7fbf3;
+  --foreground: #17352f;
+  --primary: #ff7f6e;
   --primary-foreground: oklch(1 0 0);
-  --border: oklch(0.92 0.01 80);       /* premium-line */
-  --input: oklch(0.92 0.01 80);
-  --ring: oklch(0.35 0.06 160);
+  --border: #f3dfc8;
+  --input: #f3dfc8;
+  --ring: #ff7f6e;
   --radius: 0.625rem;
 
   /* Kindergarten color values */
@@ -139,37 +153,74 @@
   --forest-avatar-shadow: 0 12px 30px rgb(23 53 47 / 12%);
   --forest-value-shadow: 0 18px 45px rgb(23 53 47 / 8%);
 
+  /* Playful Contact colors values */
+  --playful-bg: #fdfbf3;
+  --playful-text-dark: #2b4b7c;
+  --playful-pink: #ec4e72;
+  --playful-pink-light: #f8dbdf;
+  --playful-yellow: #fdbb20;
+  --playful-yellow-light: #fbeac4;
+  --playful-green: #5ead48;
+  --playful-green-light: #cde1c3;
+  --playful-blue: #3b84c3;
+  --playful-blue-light: #d1e5f5;
+
   /* ── Premium System Variables ── */
   --premium-bg: var(--background);
   --premium-paper: oklch(1 0 0);
   --premium-ink: var(--foreground);
-  --premium-muted: oklch(0.45 0.02 160);
-  --premium-forest: var(--primary);
-  --premium-forest-soft: oklch(0.95 0.03 160);
-  --premium-accent: oklch(0.78 0.09 90); /* Sophisticated Gold */
-  --premium-line: oklch(0.90 0.01 160);
+  --premium-muted: #5f756e;
+  --premium-forest: #348fce;
+  --premium-forest-soft: #eef8ff;
+  --premium-accent: #ff7f6e;
+  --premium-line: #f3dfc8;
   --premium-radius: 2.5rem;
-  --premium-shadow-sm: 0 4px 30px oklch(0.15 0.02 160 / 5%);
-  --premium-shadow-md: 0 15px 50px oklch(0.15 0.02 160 / 8%);
+  --premium-shadow-sm: 0 4px 30px rgb(36 129 191 / 6%);
+  --premium-shadow-md: 0 15px 50px rgb(36 129 191 / 10%);
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   * {
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground font-rounded-body;
+    overflow-x: hidden;
   }
-  h1, h2, h3, h4 {
-    @apply font-sans;
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-playful-display tracking-normal;
   }
 }
 
 @keyframes slow-zoom {
-  0% { transform: scale(1); }
-  100% { transform: scale(1.1); }
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
 }
 
 .animate-slow-zoom {
   animation: slow-zoom 20s ease-out forwards;
+}
+
+@keyframes bounce-gentle {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+.animate-bounce-gentle {
+  animation: bounce-gentle 2.6s ease-in-out infinite;
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import {
   Baloo_2,
+  Fraunces,
   Geist_Mono,
   Nunito,
   Roboto,
@@ -30,6 +31,13 @@ const playfulDisplay = Baloo_2({
   display: "swap",
 });
 
+const premiumDisplay = Fraunces({
+  variable: "--premium-display-family",
+  subsets: ["latin"],
+  weight: ["600", "700", "800"],
+  display: "swap",
+});
+
 const roundedBody = Nunito({
   variable: "--rounded-body-family",
   subsets: ["latin"],
@@ -50,7 +58,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${sans.variable} ${geistMono.variable} ${playfulDisplay.variable} ${roundedBody.variable} h-full antialiased`}
+      className={`${sans.variable} ${geistMono.variable} ${playfulDisplay.variable} ${premiumDisplay.variable} ${roundedBody.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col" suppressHydrationWarning>
         <AuthProvider>

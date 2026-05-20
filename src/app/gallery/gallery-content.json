@@ -5,7 +5,11 @@
   },
   "hero": {
     "badge": "School Gallery",
-    "title": "Little moments, beautifully remembered",
+    "title": {
+      "line1": "Little moments,",
+      "highlight": "beautifully",
+      "line2": "remembered"
+    },
     "subtitle": "A warm look at the learning, play, celebrations, friendships, and everyday confidence growing inside Sanskriti Kindergarten.",
     "image": {
       "src": "/images/gallery-hero-banner.jpeg",
@@ -24,7 +28,10 @@
   },
   "media": {
     "badge": "Photos & Videos",
-    "title": "See the Sanskriti day in motion",
+    "title": {
+      "line1": "A closer look at",
+      "highlight": "school life"
+    },
     "description": "Switch between images and videos to explore the spaces, activities, and child-centered experiences that shape our school day.",
     "tabs": {
       "images": "Images",
@@ -34,78 +41,108 @@
   "images": [
     {
       "src": "/images/galleryImg1.jpeg",
-      "alt": "Sanskriti Kindergarten gallery moment 1",
-      "title": "Creative classroom"
+      "alt": "Children clapping together with teachers during an outdoor school gathering",
+      "title": "Morning Gathering",
+      "category": "Celebration",
+      "description": "Children join teachers in a lively courtyard moment filled with rhythm, attention, and group participation."
     },
     {
       "src": "/images/galleryImg2.jpeg",
-      "alt": "Sanskriti Kindergarten gallery moment 2",
-      "title": "Joyful learning"
+      "alt": "Children seated outdoors while a teacher speaks into a microphone",
+      "title": "Outdoor Story Circle",
+      "category": "Campus Life",
+      "description": "A shaded garden session where children sit together, listen, and take part in a shared school experience."
     },
     {
       "src": "/images/galleryImg3.jpeg",
-      "alt": "Sanskriti Kindergarten gallery moment 3",
-      "title": "Hands-on play"
+      "alt": "Children in traditional dress performing together in the school courtyard",
+      "title": "Cultural Dance",
+      "category": "Performance",
+      "description": "Children wear traditional attire and build confidence through music, movement, and stage practice."
     },
     {
       "src": "/images/galleryImg4.jpeg",
-      "alt": "Sanskriti Kindergarten gallery moment 4",
-      "title": "Celebration time"
+      "alt": "Children dressed as national leaders during an Independence Day activity",
+      "title": "Independence Day Role Play",
+      "category": "Celebration",
+      "description": "Children explore national pride through costumes, flags, and simple role-play guided by teachers."
     },
     {
       "src": "/images/galleryImg5.jpeg",
-      "alt": "Sanskriti Kindergarten gallery moment 5",
-      "title": "Story moments"
+      "alt": "Children and families near a small activity stall with toys and festive props",
+      "title": "Festival Activity Stall",
+      "category": "Family Event",
+      "description": "A hands-on festival corner where children interact with props, toys, and familiar real-world experiences."
     },
     {
       "src": "/images/galleryImg6.jpeg",
-      "alt": "Sanskriti Kindergarten gallery moment 6",
-      "title": "Playful discovery"
+      "alt": "Children seated near a decorated traditional hut and harvest festival display",
+      "title": "Traditional Festival Setup",
+      "category": "Culture",
+      "description": "Children gather around a festive harvest display, connecting classroom learning with cultural traditions."
     },
     {
       "src": "/images/galleryImg7.jpeg",
-      "alt": "Sanskriti Kindergarten gallery moment 7",
-      "title": "Building confidence"
+      "alt": "Children in traditional dress walking through the courtyard during a festival program",
+      "title": "Festive Courtyard Gathering",
+      "category": "Culture",
+      "description": "A colorful school celebration where children move through the courtyard in traditional dress."
     },
     {
       "src": "/images/galleryImg8.jpeg",
-      "alt": "Sanskriti Kindergarten gallery moment 8",
-      "title": "Group activities"
+      "alt": "Teacher helping a toddler explore colorful xylophones and percussion toys",
+      "title": "Music Exploration",
+      "category": "Early Learning",
+      "description": "A close learning moment with sound, color, and guided sensory exploration."
     },
     {
       "src": "/images/galleryImg9.jpeg",
-      "alt": "Sanskriti Kindergarten gallery moment 9",
-      "title": "Art and expression"
+      "alt": "Children performing with pom-poms on an outdoor stage",
+      "title": "Stage Performance",
+      "category": "Performance",
+      "description": "Young performers practice coordination and confidence during a bright outdoor dance program."
     },
     {
       "src": "/images/galleryImg10.jpeg",
-      "alt": "Sanskriti Kindergarten gallery moment 10",
-      "title": "Curious minds"
+      "alt": "Children taking part in a sports day race with adults guiding them",
+      "title": "Sports Day Race",
+      "category": "Sports Day",
+      "description": "Children participate in a track activity with encouragement from teachers and families."
     },
     {
       "src": "/images/galleryImg11.jpeg",
-      "alt": "Sanskriti Kindergarten gallery moment 11",
-      "title": "Classroom rhythm"
+      "alt": "Children lined up on a sports field track for an activity",
+      "title": "Track Line-Up",
+      "category": "Sports Day",
+      "description": "A structured outdoor activity that helps children practice listening, waiting, and movement."
     },
     {
       "src": "/images/galleryImg12.jpeg",
-      "alt": "Sanskriti Kindergarten gallery moment 12",
-      "title": "Early friendships"
+      "alt": "Child arranging bright colored blocks during an outdoor sports activity",
+      "title": "Block Balance Activity",
+      "category": "Sports Day",
+      "description": "A playful gross-motor task using colorful blocks, focus, and simple problem solving."
     },
     {
       "src": "/images/galleryImg13.jpeg",
-      "alt": "Sanskriti Kindergarten gallery moment 13",
-      "title": "School memories"
+      "alt": "Child receiving a medal after a sports day event",
+      "title": "Medal Moment",
+      "category": "Achievement",
+      "description": "A proud recognition moment after children complete their sports day activities."
     },
     {
       "src": "/images/galleryImg14.jpeg",
-      "alt": "Sanskriti Kindergarten gallery moment 14",
-      "title": "Learning through play"
+      "alt": "Children standing on a winners podium with medals after sports day",
+      "title": "Winners Podium",
+      "category": "Achievement",
+      "description": "Children celebrate participation and achievement with medals on the sports day podium."
     },
     {
       "src": "/images/galleryImg15.jpeg",
-      "alt": "Sanskriti Kindergarten gallery moment 15",
-      "title": "Happy beginnings"
+      "alt": "Children receiving medals from a guest during the sports day prize distribution",
+      "title": "Prize Distribution",
+      "category": "Achievement",
+      "description": "A warm closing moment where children receive medals and encouragement from the school community."
     }
   ],
   "videos": [

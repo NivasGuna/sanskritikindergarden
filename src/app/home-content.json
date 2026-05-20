@@ -9,7 +9,7 @@
         "description": "A nurturing space for curiosity, creativity, and joyful learning.",
         "primaryAction": {
           "text": "Apply Now",
-          "href": "/contact",
+          "href": "/admissions",
           "variant": "secondary"
         },
         "secondaryAction": {
@@ -26,7 +26,7 @@
         "description": "Gentle routines, kind teachers, and meaningful early childhood experiences.",
         "primaryAction": {
           "text": "Apply Now",
-          "href": "/contact",
+          "href": "/admissions",
           "variant": "secondary"
         },
         "secondaryAction": {
@@ -43,7 +43,7 @@
         "description": "A premium preschool setting designed for growth, wonder, and confidence.",
         "primaryAction": {
           "text": "Apply Now",
-          "href": "/contact",
+          "href": "/admissions",
           "variant": "secondary"
         },
         "secondaryAction": {

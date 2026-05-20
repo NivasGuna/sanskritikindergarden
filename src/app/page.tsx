@@ -9,6 +9,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import type { HeroSlide } from "@/components/reusable/HeroCarousel";
+import AnnouncementPopup from "@/components/AnnouncementPopup";
 import HeroCarousel from "@/components/reusable/HeroCarousel";
 import content from "./home-content.json";
 
@@ -112,14 +113,14 @@ function SectionIntro({
         align === "center" ? "mx-auto max-w-3xl text-center" : "max-w-3xl"
       }
     >
-      <span className="text-[11px] font-black text-amber-700 uppercase">
+      <span className="inline-flex rounded-full border border-coral-line bg-coral-mist px-4 py-2 text-[10px] font-black tracking-[0.24em] text-coral-ink uppercase">
         {badge}
       </span>
-      <h2 className="mt-4 text-2xl leading-tight font-semibold text-slate-950 md:text-4xl">
+      <h2 className="font-playful-display mt-5 text-4xl leading-[1.03] font-extrabold text-forest-dark md:text-6xl">
         {title}
       </h2>
       {description ? (
-        <p className="mt-4 text-base leading-7 text-slate-600 md:text-[17px] md:leading-8">
+        <p className="mt-4 text-base leading-7 font-semibold text-forest-muted md:text-[17px] md:leading-8">
           {description}
         </p>
       ) : null}
@@ -129,7 +130,8 @@ function SectionIntro({
 
 export default function Home() {
   return (
-    <main className="bg-white text-slate-950">
+    <main className="font-rounded-body bg-sage-mist text-forest-dark">
+      <AnnouncementPopup />
       <HeroCarousel slides={heroSlides} />
 
       <section className="bg-white py-16 md:py-24">
@@ -142,7 +144,7 @@ export default function Home() {
                 description="Families looking for a preschool in Velachery usually want more than a classroom. They want a place where children feel welcomed each morning, teachers guide them patiently, and early learning feels joyful instead of pressured."
               />
 
-              <div className="mt-7 space-y-4 text-base leading-8 text-slate-600">
+              <div className="mt-7 space-y-4 text-base leading-8 font-semibold text-forest-soft">
                 <p>
                   At Sanskriti Kindergarten, our programs are shaped around the
                   needs of young children who are learning to explore,
@@ -160,16 +162,16 @@ export default function Home() {
                 {whoWeAreBullets.map((text) => (
                   <div
                     key={text}
-                    className="rounded-[1.25rem] border border-slate-200 bg-[#fff8ed] p-4 text-sm leading-6 shadow-sm"
+                    className="rounded-[1.25rem] border border-peach-line bg-peach-mist p-4 text-sm leading-6 shadow-forest-value"
                   >
-                    <p className="font-semibold text-slate-900">{text}</p>
+                    <p className="font-bold text-forest-dark">{text}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             <div className="relative">
-              <div className="shadow-premium-md overflow-hidden rounded-[1.75rem] border border-slate-200 bg-[#fff8ed] p-2">
+              <div className="shadow-sky-media overflow-hidden rounded-[1.75rem] border border-sky-line bg-sky-mist p-2">
                 <div className="relative aspect-[4/3]">
                   <Image
                     src="/images/about.webp"
@@ -181,14 +183,14 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="shadow-premium-sm relative mt-5 rounded-[1.25rem] border border-slate-200 bg-white p-5 md:absolute md:right-6 md:-bottom-8 md:max-w-sm">
-                <p className="text-[11px] font-black text-amber-700 uppercase">
+              <div className="shadow-forest-floating relative mt-5 rounded-[1.25rem] border border-white/70 bg-white/92 p-5 backdrop-blur-md md:absolute md:right-6 md:-bottom-8 md:max-w-sm">
+                <p className="text-[10px] font-black tracking-[0.24em] text-gold-ink uppercase">
                   Nearby communities
                 </p>
-                <h3 className="mt-2 text-xl font-semibold text-slate-950">
+                <h3 className="font-playful-display mt-2 text-2xl leading-tight font-extrabold text-forest-dark">
                   Convenient for Guindy, Adambakkam, Madipakkam and beyond
                 </h3>
-                <p className="mt-3 text-sm leading-6 text-slate-600">
+                <p className="mt-3 text-sm leading-6 font-semibold text-forest-soft">
                   A warm, accessible start to school for families who want an
                   inspiring early learning environment close to home.
                 </p>
@@ -200,12 +202,12 @@ export default function Home() {
             {quickStats.map((stat) => (
               <div
                 key={stat.label}
-                className="shadow-premium-sm rounded-[1.25rem] border border-slate-200 bg-white p-5 text-center"
+                className="shadow-forest-value rounded-[1.25rem] border border-gold-line bg-gold-mist p-5 text-center"
               >
-                <p className="text-3xl font-black text-amber-700">
+                <p className="font-playful-display text-4xl font-extrabold text-gold-ink">
                   {stat.value}
                 </p>
-                <p className="mt-2 text-sm font-semibold text-slate-600">
+                <p className="mt-2 text-sm font-bold text-forest-soft">
                   {stat.label}
                 </p>
               </div>
@@ -214,7 +216,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-[#fff8ed] py-16 md:py-24">
+      <section className="bg-gold-mist py-16 md:py-24">
         <div className="container mx-auto px-6">
           <SectionIntro
             badge="Explore Programs"
@@ -227,18 +229,18 @@ export default function Home() {
               <Link
                 key={item.title}
                 href={item.href}
-                className="group shadow-premium-sm hover:shadow-premium-md block min-h-[210px] rounded-[1.25rem] border border-slate-200 bg-white p-6 text-left transition-all hover:-translate-y-0.5"
+                className="group block min-h-[210px] rounded-[1.25rem] border border-white/80 bg-white p-6 text-left shadow-forest-card transition-all hover:-translate-y-0.5 hover:shadow-forest-floating"
               >
-                <div className="mb-5 flex size-11 items-center justify-center rounded-2xl border border-amber-100 bg-amber-50 text-amber-700">
+                <div className="mb-5 flex size-12 items-center justify-center rounded-2xl border border-coral-line bg-coral-mist text-coral-ink">
                   <School className="size-5" />
                 </div>
-                <h3 className="text-lg font-bold text-slate-950">
+                <h3 className="font-playful-display text-2xl leading-tight font-extrabold text-forest-dark">
                   {item.title}
                 </h3>
-                <p className="mt-3 text-sm leading-6 text-slate-600">
+                <p className="mt-3 text-sm leading-6 font-semibold text-forest-soft">
                   {item.description}
                 </p>
-                <span className="mt-5 inline-flex items-center text-sm font-bold text-amber-700">
+                <span className="mt-5 inline-flex items-center text-sm font-black text-coral-ink">
                   Learn more
                   <ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
                 </span>
@@ -263,17 +265,17 @@ export default function Home() {
                 return (
                   <article
                     key={item.title}
-                    className="shadow-premium-sm rounded-[1.25rem] border border-slate-200 bg-[#fff8ed] p-6"
+                    className="rounded-[1.25rem] border border-peach-line bg-peach-mist p-6 shadow-forest-value"
                   >
                     <div
                       className={`mb-5 flex size-11 items-center justify-center rounded-2xl border ${item.className}`}
                     >
                       <Icon className="size-5" />
                     </div>
-                    <h3 className="text-lg font-bold text-slate-950">
+                    <h3 className="font-playful-display text-2xl font-extrabold text-forest-dark">
                       {item.title}
                     </h3>
-                    <p className="mt-3 text-sm leading-6 text-slate-600">
+                    <p className="mt-3 text-sm leading-6 font-semibold text-forest-soft">
                       {item.description}
                     </p>
                   </article>
@@ -286,7 +288,7 @@ export default function Home() {
 
       <section className="bg-white pb-16 md:pb-24">
         <div className="container mx-auto px-6">
-          <div className="shadow-premium-md relative overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-950">
+          <div className="shadow-sky-media relative overflow-hidden rounded-[2rem] border border-white/60 bg-forest-dark">
             <Image
               src="/images/contact-classroom.png"
               alt="A warm Sanskriti Kindergarten classroom"
@@ -294,16 +296,16 @@ export default function Home() {
               className="object-cover"
               sizes="100vw"
             />
-            <div className="absolute inset-0 bg-slate-950/70" />
+            <div className="absolute inset-0 bg-forest-dark/72" />
             <div className="relative z-10 grid min-h-[360px] gap-8 px-6 py-10 text-white md:grid-cols-[1fr_auto] md:items-end md:px-10 md:py-14">
               <div className="max-w-2xl">
                 <span className="inline-flex rounded-full border border-white/20 bg-white/12 px-4 py-2 text-[11px] font-black text-amber-100 uppercase backdrop-blur-md">
                   Admissions Open
                 </span>
-                <h2 className="mt-5 text-3xl leading-tight font-semibold md:text-4xl">
+                <h2 className="font-playful-display mt-5 text-4xl leading-tight font-extrabold md:text-5xl">
                   Give your child a joyful start to learning.
                 </h2>
-                <p className="mt-5 text-base leading-7 text-white/78 md:text-[17px]">
+                <p className="mt-5 text-base leading-7 font-semibold text-white/82 md:text-[17px]">
                   Visit our Velachery campus and experience the calm, caring
                   environment behind the learning journey.
                 </p>
@@ -311,15 +313,15 @@ export default function Home() {
 
               <div className="flex flex-col gap-3 sm:flex-row">
                 <Link
-                  href="/contact"
-                  className="inline-flex h-13 items-center justify-center rounded-full bg-white px-8 text-sm font-bold text-slate-950 transition hover:-translate-y-0.5 hover:bg-amber-50"
+                  href="/admissions"
+                  className="inline-flex h-[3.25rem] items-center justify-center rounded-full bg-white px-8 text-sm font-black text-forest-dark transition hover:-translate-y-0.5 hover:bg-gold-mist"
                 >
                   Start Admissions
                   <ArrowRight className="ml-2 size-4" />
                 </Link>
                 <Link
                   href="/curriculum"
-                  className="inline-flex h-13 items-center justify-center rounded-full border border-white/35 bg-white/8 px-8 text-sm font-bold text-white backdrop-blur-md transition hover:-translate-y-0.5 hover:bg-white/14"
+                  className="inline-flex h-[3.25rem] items-center justify-center rounded-full border border-white/35 bg-white/10 px-8 text-sm font-black text-white backdrop-blur-md transition hover:-translate-y-0.5 hover:bg-white/16"
                 >
                   View Curriculum
                 </Link>

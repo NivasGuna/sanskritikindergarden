@@ -54,20 +54,23 @@ function ContactDetailLink({ detail }: { detail: ContactDetail }) {
   return (
     <a
       href={getContactHref(detail.hrefType)}
-      className="group border-premium-line shadow-premium-sm hover:shadow-premium-md flex min-w-0 items-start gap-4 rounded-[1rem] border bg-white/96 p-4 transition-all hover:-translate-y-0.5"
+      className="group shadow-forest-card hover:shadow-forest-floating flex min-w-0 items-center gap-4 rounded-[1.25rem] border border-white/50 bg-white/96 p-5 transition-all duration-300 hover:-translate-y-1"
     >
       <span
-        className={`flex size-11 shrink-0 items-center justify-center rounded-2xl ${detail.accent}`}
+        className={`flex size-14 shrink-0 items-center justify-center rounded-2xl transition-transform duration-300 group-hover:scale-110 ${detail.accent}`}
       >
-        <Icon className="size-5" />
+        <Icon className="size-6" />
       </span>
-      <span className="max-w-full min-w-0">
-        <span className="text-premium-forest block text-[11px] font-black tracking-[0.25em] uppercase">
+      <span className="max-w-full min-w-0 flex-1">
+        <span className="text-forest-muted block text-[10px] font-black tracking-[0.25em] uppercase">
           {detail.title}
         </span>
-        <span className="text-premium-ink mt-1 block max-w-full text-sm leading-6 font-bold break-words whitespace-normal sm:text-base">
+        <span className="text-forest-dark mt-1 block max-w-full text-base leading-6 font-bold break-words whitespace-normal">
           {value}
         </span>
+      </span>
+      <span className="bg-forest-dark/5 text-forest-dark flex size-8 shrink-0 items-center justify-center rounded-full opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100">
+        <ArrowRight className="size-4" />
       </span>
     </a>
   );
@@ -78,45 +81,50 @@ export default function ContactPage() {
     content.contactDetails;
 
   return (
-    <main className="bg-premium-bg text-premium-ink min-h-screen overflow-hidden font-sans">
-      <HeroBanner image={content.hero.image}>
+    <main className="bg-sage-mist font-rounded-body text-forest-dark min-h-screen overflow-hidden">
+      <HeroBanner
+        image={content.hero.image}
+        imageClassName="object-[64%_center] md:object-center"
+        overlayClassName="bg-gradient-to-r from-slate-950/92 via-slate-950/70 to-slate-950/18"
+      >
         <div className="relative z-10 container mx-auto flex min-h-[100svh] items-center px-6 py-24">
-          <div className="motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-left-12 w-full max-w-[330px] min-w-0 overflow-hidden duration-1000 min-[1000px]:max-w-3xl min-[1000px]:overflow-visible sm:max-w-[620px]">
-            <div className="mb-6 inline-flex items-center gap-3 md:mb-8">
-              <span className="h-px w-6 bg-amber-600" />
-              <span className="text-[10px] font-black tracking-[0.3em] text-amber-700 uppercase">
+          <div className="motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-left-12 max-w-[32rem] duration-1000">
+            <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-white/24 bg-white/14 px-4 py-2 shadow-[0_14px_35px_rgb(15_23_42_/_18%)] backdrop-blur-md">
+              <span className="size-2 rounded-full bg-amber-200" />
+              <span className="text-[10px] font-black tracking-[0.26em] text-white uppercase">
                 {content.hero.badge}
               </span>
             </div>
 
-            <h1 className="text-premium-ink max-w-full text-4xl leading-[1.1] font-medium tracking-tight break-words drop-shadow-sm md:text-6xl">
+            <h1 className="font-premium-display max-w-[32rem] text-[2.85rem] leading-[1.04] font-bold text-white drop-shadow-[0_8px_28px_rgb(0_0_0_/_46%)] sm:text-5xl md:text-6xl">
               {content.hero.title.line1}{" "}
-              <span className="text-premium-forest block italic min-[1000px]:inline">
-                {content.hero.title.highlight}
-              </span>
+              <span className="text-amber-100">{content.hero.title.word1}</span>{" "}
+              <span className="text-sky-mist">{content.hero.title.word2}</span>{" "}
+              <span className="text-white">{content.hero.title.word3}</span>
             </h1>
 
-            <p className="text-premium-muted mt-6 max-w-xl text-base leading-relaxed font-medium break-words md:text-xl">
-              {content.hero.subtitle}
+            <p className="mt-6 max-w-[32rem] text-base leading-8 font-bold text-white drop-shadow-[0_4px_18px_rgb(0_0_0_/_52%)] md:text-xl">
+              {content.hero.subtitle}{" "}
+              <span className="text-amber-100">
+                {content.hero.subtitleHighlight}
+              </span>
             </p>
 
-            <div className="mt-8 w-full max-w-full">
-              <div className="flex w-full flex-col gap-4 sm:w-auto sm:flex-row">
-                <a
-                  href={phoneHref}
-                  className="bg-premium-forest shadow-premium-md hover:bg-premium-forest/90 inline-flex h-14 w-full items-center justify-center rounded-full px-8 text-base font-bold text-white transition-all hover:-translate-y-0.5 sm:w-auto"
-                >
-                  {content.hero.buttons.primary.text}
-                  <Phone className="ml-3 size-5" />
-                </a>
-                <a
-                  href={content.hero.buttons.secondary.link}
-                  className="border-premium-line text-premium-ink inline-flex h-14 w-full items-center justify-center rounded-full border bg-white/80 px-8 text-base font-bold backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-white sm:w-auto"
-                >
-                  {content.hero.buttons.secondary.text}
-                  <ArrowRight className="ml-3 size-5" />
-                </a>
-              </div>
+            <div className="mt-9 flex flex-wrap gap-4">
+              <a
+                href={phoneHref}
+                className="bg-coral shadow-coral-button hover:bg-coral-dark inline-flex h-14 items-center justify-center rounded-full px-8 text-base font-black text-white transition-all hover:-translate-y-0.5"
+              >
+                Call Us
+                <Phone className="ml-3 size-5" />
+              </a>
+              <a
+                href={emailHref}
+                className="inline-flex h-14 items-center justify-center rounded-full border border-white/45 bg-white/14 px-8 text-base font-black text-white backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-white/20"
+              >
+                Send a Message
+                <Mail className="ml-3 size-5" />
+              </a>
             </div>
           </div>
         </div>
@@ -182,27 +190,27 @@ export default function ContactPage() {
 
       <section
         id={content.mapSection.id}
-        className="bg-[#f4f9ef] py-14 md:py-24"
+        className="bg-sky-mist text-forest-dark py-16 md:py-24"
       >
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="shadow-premium-md overflow-hidden rounded-[1.5rem] border border-emerald-100 bg-white lg:grid lg:min-h-[460px] lg:grid-cols-[0.36fr_0.64fr]">
-            <div className="text-premium-ink flex flex-col justify-center bg-[#fbfff7] p-5 sm:p-7 lg:p-9">
-              <span className="text-premium-forest w-fit rounded-full border border-emerald-100 bg-white px-4 py-2 text-[10px] font-black tracking-[0.24em] uppercase sm:text-[11px]">
+        <div className="container mx-auto px-6">
+          <div className="border-sky-line shadow-sky-card overflow-hidden rounded-[2rem] border bg-white lg:grid lg:min-h-[460px] lg:grid-cols-[0.36fr_0.64fr]">
+            <div className="bg-sky-mist/50 flex flex-col justify-center p-8 lg:p-12">
+              <span className="border-sky-line text-sky-ink w-fit rounded-full border bg-white px-4 py-2 text-[10px] font-black tracking-[0.24em] uppercase">
                 {content.mapSection.badge}
               </span>
-              <h2 className="mt-5 text-2xl leading-tight font-bold sm:text-3xl md:text-4xl">
+              <h2 className="font-playful-display text-forest-dark mt-6 text-3xl leading-tight font-extrabold md:text-5xl">
                 {content.mapSection.title}
               </h2>
-              <p className="text-premium-muted mt-4 text-sm leading-6 break-words md:text-base md:leading-7">
+              <p className="text-forest-soft mt-5 text-sm leading-7 font-semibold md:text-base">
                 {content.contact.address}
               </p>
 
-              <div className="mt-5 flex flex-wrap items-center gap-3">
-                <span className="border-premium-line text-premium-ink inline-flex items-center gap-2 rounded-full border bg-white px-4 py-2 text-sm font-bold">
-                  <Star className="size-4 fill-amber-400 text-amber-400" />
+              <div className="mt-6 flex flex-wrap items-center gap-4">
+                <span className="border-gold-line bg-gold-mist text-gold-ink inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-black">
+                  <Star className="size-4 fill-amber-400 text-amber-500" />
                   {content.mapSection.rating}
                 </span>
-                <span className="text-premium-muted text-sm font-semibold">
+                <span className="text-forest-muted text-sm font-bold">
                   {content.mapSection.reviews}
                 </span>
               </div>
@@ -211,10 +219,10 @@ export default function ContactPage() {
                 href={mapsHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-premium-forest hover:bg-premium-forest/90 mt-7 inline-flex h-12 w-full items-center justify-center rounded-full px-7 text-sm font-bold text-white transition-all hover:-translate-y-0.5 sm:w-fit"
+                className="bg-sky shadow-sky-media hover:bg-sky-ink mt-8 inline-flex h-14 w-full items-center justify-center rounded-full px-8 text-base font-black text-white transition-all hover:-translate-y-0.5 sm:w-fit"
               >
                 {content.mapSection.button.text}
-                <ArrowRight className="ml-3 size-5" />
+                <ArrowRight className="ml-2 size-5" />
               </a>
             </div>
 
