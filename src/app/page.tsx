@@ -2,9 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
+  Blocks,
+  BookOpenCheck,
+  HeartHandshake,
+  MapPin,
+  Palette,
   School,
   ShieldCheck,
   Smile,
+  Sprout,
   Users,
   type LucideIcon,
 } from "lucide-react";
@@ -15,11 +21,31 @@ import content from "./home-content.json";
 
 const heroSlides = content.hero.slides as HeroSlide[];
 
-const whoWeAreBullets = [
-  "Warm, welcoming mornings that help children settle with confidence.",
-  "Play-based learning that gently builds speech, creativity, and social skills.",
-  "A secure campus supported by caring teachers and a structured routine.",
-  "Convenient location for families from Velachery, Guindy, and nearby neighborhoods.",
+const whoWeAreBullets: {
+  icon: LucideIcon;
+  text: string;
+  className: string;
+}[] = [
+  {
+    icon: Smile,
+    text: "Warm, welcoming mornings that help children settle with confidence.",
+    className: "border-gold-line bg-gold-mist text-gold-ink",
+  },
+  {
+    icon: Palette,
+    text: "Play-based learning that gently builds speech, creativity, and social skills.",
+    className: "border-sky-line bg-sky-mist text-sky-ink",
+  },
+  {
+    icon: ShieldCheck,
+    text: "A secure campus supported by caring teachers and a structured routine.",
+    className: "border-mint-line bg-mint-mist text-mint-ink",
+  },
+  {
+    icon: MapPin,
+    text: "Convenient location for families from Velachery, Guindy, and nearby neighborhoods.",
+    className: "border-peach-line bg-peach-mist text-peach-ink",
+  },
 ];
 
 const programLinks = [
@@ -61,6 +87,24 @@ const programLinks = [
   },
 ];
 
+const programAccents = [
+  "border-mint-line bg-mint-mist text-mint-ink",
+  "border-sky-line bg-sky-mist text-sky-ink",
+  "border-gold-line bg-gold-mist text-gold-ink",
+  "border-peach-line bg-peach-mist text-peach-ink",
+  "border-lavender-line bg-lavender-mist text-lavender-ink",
+  "border-coral-line bg-coral-mist text-coral-ink",
+] as const;
+
+const programIcons = [
+  Sprout,
+  HeartHandshake,
+  BookOpenCheck,
+  Blocks,
+  School,
+  ShieldCheck,
+] as const;
+
 const whyItems: {
   icon: LucideIcon;
   title: string;
@@ -101,22 +145,37 @@ function SectionIntro({
   title,
   description,
   align = "left",
+  accent = "mint",
+  titleClassName = "",
 }: {
   badge: string;
   title: string;
   description?: string;
   align?: "left" | "center";
+  accent?: "mint" | "sky" | "gold" | "peach";
+  titleClassName?: string;
 }) {
+  const badgeClassName = {
+    mint: "border-mint-line bg-mint-mist text-mint-ink",
+    sky: "border-sky-line bg-sky-mist text-sky-ink",
+    gold: "border-gold-line bg-white text-gold-ink",
+    peach: "border-peach-line bg-peach-mist text-peach-ink",
+  }[accent];
+
   return (
     <div
       className={
         align === "center" ? "mx-auto max-w-3xl text-center" : "max-w-3xl"
       }
     >
-      <span className="inline-flex rounded-full border border-coral-line bg-coral-mist px-4 py-2 text-[10px] font-black tracking-[0.24em] text-coral-ink uppercase">
+      <span
+        className={`inline-flex rounded-full border px-4 py-2 text-[10px] font-black tracking-[0.24em] uppercase ${badgeClassName}`}
+      >
         {badge}
       </span>
-      <h2 className="font-playful-display mt-5 text-4xl leading-[1.03] font-extrabold text-forest-dark md:text-6xl">
+      <h2
+        className={`font-playful-display mt-5 text-4xl leading-[1.04] font-extrabold text-forest-dark md:text-6xl ${titleClassName}`}
+      >
         {title}
       </h2>
       {description ? (
@@ -134,14 +193,17 @@ export default function Home() {
       <AnnouncementPopup />
       <HeroCarousel slides={heroSlides} />
 
-      <section className="bg-white py-16 md:py-24">
-        <div className="container mx-auto px-6">
-          <div className="grid gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
+      <section className="relative overflow-hidden bg-[linear-gradient(135deg,#ffffff_0%,#f7fbf3_48%,#eef8ff_100%)] py-16 md:py-24">
+        <div className="absolute top-12 right-[-4rem] h-40 w-40 rounded-full bg-gold-mist/70" />
+        <div className="absolute bottom-16 left-[-5rem] h-52 w-52 rounded-full bg-mint-mist/80" />
+        <div className="container relative mx-auto px-6">
+          <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
             <div>
               <SectionIntro
                 badge="Who We Are"
                 title="Best Preschool in Velachery, Chennai"
                 description="Families looking for a preschool in Velachery usually want more than a classroom. They want a place where children feel welcomed each morning, teachers guide them patiently, and early learning feels joyful instead of pressured."
+                accent="mint"
               />
 
               <div className="mt-7 space-y-4 text-base leading-8 font-semibold text-forest-soft">
@@ -159,93 +221,108 @@ export default function Home() {
               </div>
 
               <div className="mt-8 grid gap-3 sm:grid-cols-2">
-                {whoWeAreBullets.map((text) => (
-                  <div
-                    key={text}
-                    className="rounded-[1.25rem] border border-peach-line bg-peach-mist p-4 text-sm leading-6 shadow-forest-value"
-                  >
-                    <p className="font-bold text-forest-dark">{text}</p>
-                  </div>
-                ))}
+                {whoWeAreBullets.map((item) => {
+                  const Icon = item.icon;
+
+                  return (
+                    <div
+                      key={item.text}
+                      className="group rounded-[1.25rem] border border-white/80 bg-white/90 p-4 text-sm leading-6 shadow-forest-value transition-all hover:-translate-y-0.5 hover:shadow-forest-card"
+                    >
+                      <div className="flex items-start gap-3">
+                        <span
+                          className={`flex size-10 shrink-0 items-center justify-center rounded-2xl border ${item.className}`}
+                        >
+                          <Icon className="size-5" />
+                        </span>
+                        <p className="font-bold text-forest-dark">
+                          {item.text}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
 
             <div className="relative">
-              <div className="shadow-sky-media overflow-hidden rounded-[1.75rem] border border-sky-line bg-sky-mist p-2">
-                <div className="relative aspect-[4/3]">
+              <div className="shadow-sky-media overflow-hidden rounded-[2rem] border border-white bg-white p-3">
+                <div className="relative aspect-[4/3] overflow-hidden rounded-[1.55rem] bg-sky-mist">
                   <Image
-                    src="/images/about.webp"
+                    src="/images/who-we-are-kindergarten-learning.png"
                     alt="Teachers and children engaging in creative classroom activities"
                     fill
-                    className="rounded-[1.35rem] object-cover"
+                    className="object-cover"
                     sizes="(min-width: 1024px) 50vw, 100vw"
                   />
                 </div>
               </div>
 
-              <div className="shadow-forest-floating relative mt-5 rounded-[1.25rem] border border-white/70 bg-white/92 p-5 backdrop-blur-md md:absolute md:right-6 md:-bottom-8 md:max-w-sm">
-                <p className="text-[10px] font-black tracking-[0.24em] text-gold-ink uppercase">
-                  Nearby communities
-                </p>
-                <h3 className="font-playful-display mt-2 text-2xl leading-tight font-extrabold text-forest-dark">
-                  Convenient for Guindy, Adambakkam, Madipakkam and beyond
-                </h3>
-                <p className="mt-3 text-sm leading-6 font-semibold text-forest-soft">
-                  A warm, accessible start to school for families who want an
-                  inspiring early learning environment close to home.
-                </p>
+              <div className="grid gap-4 pt-5 sm:grid-cols-3 lg:absolute lg:right-6 lg:-bottom-8 lg:left-6 lg:pt-0">
+                {quickStats.map((stat, index) => (
+                  <div
+                    key={stat.label}
+                    className={`rounded-[1.15rem] border bg-white/94 p-4 text-center shadow-forest-floating backdrop-blur-md ${
+                      index === 0
+                        ? "border-gold-line"
+                        : index === 1
+                          ? "border-mint-line"
+                          : "border-sky-line"
+                    }`}
+                  >
+                    <p className="font-playful-display text-3xl font-extrabold text-forest-dark">
+                      {stat.value}
+                    </p>
+                    <p className="mt-1 text-xs leading-5 font-black text-forest-soft uppercase">
+                      {stat.label}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
-          </div>
-
-          <div className="mt-14 grid gap-4 md:grid-cols-3">
-            {quickStats.map((stat) => (
-              <div
-                key={stat.label}
-                className="shadow-forest-value rounded-[1.25rem] border border-gold-line bg-gold-mist p-5 text-center"
-              >
-                <p className="font-playful-display text-4xl font-extrabold text-gold-ink">
-                  {stat.value}
-                </p>
-                <p className="mt-2 text-sm font-bold text-forest-soft">
-                  {stat.label}
-                </p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-gold-mist py-16 md:py-24">
+      <section className="bg-[linear-gradient(180deg,#fff8de_0%,#fff5e7_100%)] py-16 md:py-24">
         <div className="container mx-auto px-6">
           <SectionIntro
             badge="Explore Programs"
             title="A trusted preschool choice for families across Velachery and nearby neighborhoods."
             align="center"
+            accent="gold"
+            titleClassName="mx-auto max-w-4xl text-3xl md:text-5xl"
           />
 
-          <div className="mt-10 grid gap-4 lg:grid-cols-3">
-            {programLinks.map((item) => (
-              <Link
-                key={item.title}
-                href={item.href}
-                className="group block min-h-[210px] rounded-[1.25rem] border border-white/80 bg-white p-6 text-left shadow-forest-card transition-all hover:-translate-y-0.5 hover:shadow-forest-floating"
-              >
-                <div className="mb-5 flex size-12 items-center justify-center rounded-2xl border border-coral-line bg-coral-mist text-coral-ink">
-                  <School className="size-5" />
-                </div>
-                <h3 className="font-playful-display text-2xl leading-tight font-extrabold text-forest-dark">
-                  {item.title}
-                </h3>
-                <p className="mt-3 text-sm leading-6 font-semibold text-forest-soft">
-                  {item.description}
-                </p>
-                <span className="mt-5 inline-flex items-center text-sm font-black text-coral-ink">
-                  Learn more
-                  <ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
-                </span>
-              </Link>
-            ))}
+          <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {programLinks.map((item, index) => {
+              const Icon = programIcons[index % programIcons.length];
+
+              return (
+                <Link
+                  key={item.title}
+                  href={item.href}
+                  className="group relative block min-h-[240px] overflow-hidden rounded-[1.5rem] border border-white/80 bg-white p-6 text-left shadow-forest-card transition-all hover:-translate-y-1 hover:shadow-forest-floating"
+                >
+                  <div
+                    className={`mb-6 flex size-13 items-center justify-center rounded-2xl border ${programAccents[index % programAccents.length]}`}
+                  >
+                    <Icon className="size-6" />
+                  </div>
+                  <h3 className="font-playful-display text-2xl leading-tight font-extrabold text-forest-dark">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-6 font-semibold text-forest-soft">
+                    {item.description}
+                  </p>
+                  <span className="mt-6 inline-flex items-center text-sm font-black text-mint-ink">
+                    Learn more
+                    <ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
+                  </span>
+                  <div className="absolute right-5 bottom-5 h-14 w-14 rounded-full bg-sky-mist opacity-0 transition-opacity group-hover:opacity-100" />
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -288,24 +365,25 @@ export default function Home() {
 
       <section className="bg-white pb-16 md:pb-24">
         <div className="container mx-auto px-6">
-          <div className="shadow-sky-media relative overflow-hidden rounded-[2rem] border border-white/60 bg-forest-dark">
+          <div className="shadow-sky-media relative overflow-hidden rounded-[2rem] border border-white/70 bg-white">
             <Image
-              src="/images/contact-classroom.png"
-              alt="A warm Sanskriti Kindergarten classroom"
+              src="/images/who-we-are-kindergarten-learning.png"
+              alt="Children enjoying a warm Sanskriti Kindergarten classroom"
               fill
-              className="object-cover"
+              className="object-cover object-center"
               sizes="100vw"
             />
-            <div className="absolute inset-0 bg-[#2f3446]/64" />
-            <div className="relative z-10 grid min-h-[360px] gap-8 px-6 py-10 text-white md:grid-cols-[1fr_auto] md:items-end md:px-10 md:py-14">
+            <div className="absolute inset-0 bg-white/62" />
+            <div className="absolute inset-0 bg-gradient-to-r from-cream-glow via-white/76 to-white/20" />
+            <div className="text-forest-dark relative z-10 grid min-h-[360px] gap-8 px-6 py-10 md:grid-cols-[1fr_auto] md:items-end md:px-10 md:py-14">
               <div className="max-w-2xl">
-                <span className="inline-flex rounded-full border border-white/20 bg-white/12 px-4 py-2 text-[11px] font-black text-amber-100 uppercase backdrop-blur-md">
+                <span className="border-gold-line bg-gold-mist text-gold-ink inline-flex rounded-full border px-4 py-2 text-[11px] font-black uppercase backdrop-blur-md">
                   Admissions Open
                 </span>
                 <h2 className="font-playful-display mt-5 text-4xl leading-tight font-extrabold md:text-5xl">
                   Give your child a joyful start to learning.
                 </h2>
-                <p className="mt-5 text-base leading-7 font-semibold text-white/82 md:text-[17px]">
+                <p className="text-forest-soft font-hero-subtitle mt-5 text-base leading-7 font-semibold md:text-[17px]">
                   Visit our Velachery campus and experience the calm, caring
                   environment behind the learning journey.
                 </p>
@@ -314,14 +392,14 @@ export default function Home() {
               <div className="flex flex-col gap-3 sm:flex-row">
                 <Link
                   href="/admissions"
-                  className="inline-flex h-[3.25rem] items-center justify-center rounded-full bg-white px-8 text-sm font-black text-forest-dark transition hover:-translate-y-0.5 hover:bg-gold-mist"
+                  className="bg-mint hover:bg-mint-ink inline-flex h-[3.25rem] items-center justify-center rounded-full px-8 text-sm font-black text-white shadow-[0_18px_45px_rgb(22_97_63_/_18%)] transition hover:-translate-y-0.5"
                 >
                   Start Admissions
                   <ArrowRight className="ml-2 size-4" />
                 </Link>
                 <Link
                   href="/curriculum"
-                  className="inline-flex h-[3.25rem] items-center justify-center rounded-full border border-white/35 bg-white/10 px-8 text-sm font-black text-white backdrop-blur-md transition hover:-translate-y-0.5 hover:bg-white/16"
+                  className="text-forest-dark inline-flex h-[3.25rem] items-center justify-center rounded-full border border-forest-dark/18 bg-white/78 px-8 text-sm font-black backdrop-blur-md transition hover:-translate-y-0.5 hover:bg-white"
                 >
                   View Curriculum
                 </Link>

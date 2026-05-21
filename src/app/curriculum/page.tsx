@@ -17,6 +17,7 @@ import {
   Heart,
   Languages,
   Lightbulb,
+  MapPin,
   MessageCircle,
   Move,
   Palette,
@@ -28,6 +29,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import HeroBanner from "@/components/reusable/HeroBanner";
+import { cn } from "@/lib/utils";
 import content from "./curriculum-content.json";
 
 export const metadata: Metadata = constructMetadata({
@@ -75,6 +77,32 @@ const cigmaBreakdown = [
   { letter: "A", label: "Assessment" },
 ];
 
+const coCurricularIcons = [
+  Users,
+  MessageCircle,
+  BookOpenCheck,
+  Sparkles,
+  Palette,
+  Heart,
+  Eye,
+  Handshake,
+  Blocks,
+  MapPin,
+  Dumbbell,
+] as const;
+
+const extraCurricularIcons = [
+  Languages,
+  Move,
+  BookOpenCheck,
+  Users,
+  Palette,
+  Sparkles,
+  Hand,
+  Scissors,
+  Heart,
+] as const;
+
 type IconName = keyof typeof iconMap;
 
 function getIcon(icon: string) {
@@ -86,22 +114,37 @@ function SectionIntro({
   title,
   description,
   align = "left",
+  accent = "mint",
+  titleClassName = "",
 }: {
   badge: string;
   title: string;
   description?: string;
   align?: "left" | "center";
+  accent?: "mint" | "sky" | "gold" | "peach";
+  titleClassName?: string;
 }) {
+  const badgeClassName = {
+    mint: "border-mint-line bg-mint-mist text-mint-ink",
+    sky: "border-sky-line bg-sky-mist text-sky-ink",
+    gold: "border-gold-line bg-white text-gold-ink",
+    peach: "border-peach-line bg-peach-mist text-peach-ink",
+  }[accent];
+
   return (
     <div
       className={
         align === "center" ? "mx-auto max-w-3xl text-center" : "max-w-3xl"
       }
     >
-      <span className="border-coral-line bg-coral-mist text-coral-ink inline-flex rounded-full border px-4 py-2 text-[10px] font-black tracking-[0.24em] uppercase">
+      <span
+        className={`inline-flex rounded-full border px-4 py-2 text-[10px] font-black tracking-[0.24em] uppercase ${badgeClassName}`}
+      >
         {badge}
       </span>
-      <h2 className="font-playful-display text-forest-dark mt-5 text-4xl leading-[1.03] font-extrabold md:text-6xl">
+      <h2
+        className={`font-playful-display text-forest-dark mt-5 text-4xl leading-[1.04] font-extrabold md:text-6xl ${titleClassName}`}
+      >
         {title}
       </h2>
       {description ? (
@@ -113,12 +156,12 @@ function SectionIntro({
   );
 }
 
-function FramedImage({
+function LearningImagePanel({
   image,
   badge,
   title,
-  aspectClassName = "aspect-[4/3]",
-  imageClassName = "object-contain p-2",
+  className,
+  imageClassName = "object-cover",
 }: {
   image: {
     src: string;
@@ -126,27 +169,32 @@ function FramedImage({
   };
   badge: string;
   title: string;
-  aspectClassName?: string;
+  className?: string;
   imageClassName?: string;
 }) {
   return (
-    <div className="border-premium-line shadow-premium-md relative overflow-hidden rounded-[1.5rem] border bg-white">
-      <div className={`relative bg-[#fff8ed] ${aspectClassName}`}>
-        <Image
-          src={image.src}
-          alt={image.alt}
-          fill
-          className={imageClassName}
-          sizes="(min-width: 1024px) 48vw, 100vw"
-        />
-      </div>
-      <div className="shadow-premium-sm absolute inset-x-4 bottom-4 rounded-2xl border border-white/60 bg-white/90 p-4 backdrop-blur-md">
-        <p className="text-premium-forest text-[11px] font-black uppercase">
-          {badge}
-        </p>
-        <p className="text-premium-ink mt-1 text-lg leading-tight font-bold md:text-xl">
-          {title}
-        </p>
+    <div
+      className={cn(
+        "shadow-sky-media relative min-h-[420px] overflow-hidden rounded-[1.75rem] border border-white bg-white md:min-h-[500px]",
+        className
+      )}
+    >
+      <Image
+        src={image.src}
+        alt={image.alt}
+        fill
+        className={imageClassName}
+        sizes="(min-width: 1024px) 48vw, 100vw"
+      />
+      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-white/94 via-white/66 to-transparent p-5 pt-24">
+        <div className="max-w-sm rounded-[1.2rem] border border-white/80 bg-white/88 p-4 shadow-premium-sm backdrop-blur-sm">
+          <p className="text-premium-forest text-[10px] font-black tracking-[0.22em] uppercase">
+            {badge}
+          </p>
+          <p className="text-premium-ink mt-1 text-base leading-snug font-extrabold md:text-lg">
+            {title}
+          </p>
+        </div>
       </div>
     </div>
   );
@@ -167,44 +215,111 @@ function ActivityListSection({
   surface?: "white" | "muted";
   accent?: "amber" | "teal";
 }) {
-  const accentClassName =
-    accent === "amber"
-      ? "border-amber-100 bg-amber-50 text-amber-700"
-      : "border-teal-100 bg-teal-50 text-teal-700";
-  const dotClassName = accent === "amber" ? "text-amber-600" : "text-teal-600";
+  const isAmber = accent === "amber";
+  const accentClassName = isAmber
+    ? "border-gold-line bg-gold-mist text-gold-ink"
+    : "border-mint-line bg-mint-mist text-mint-ink";
+  const softAccentClassName = isAmber
+    ? "bg-gold-mist text-gold-ink"
+    : "bg-mint-mist text-mint-ink";
+  const icons = isAmber ? coCurricularIcons : extraCurricularIcons;
 
   return (
     <section
       id={id}
-      className={`py-16 md:py-24 ${
-        surface === "white" ? "bg-white" : "bg-[#fff8ed]"
-      }`}
+      className={cn(
+        "relative overflow-hidden py-14 md:py-20",
+        surface === "white"
+          ? "bg-[linear-gradient(135deg,#ffffff_0%,#fff8de_58%,#f7fbf3_100%)]"
+          : "bg-[linear-gradient(135deg,#eef8ff_0%,#ffffff_52%,#effff6_100%)]"
+      )}
     >
-      <div className="container mx-auto px-6">
-        <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
-          <SectionIntro badge={badge} title={title} />
+      <div
+        className={cn(
+          "absolute top-12 right-[-4rem] h-44 w-44 rounded-full",
+          isAmber ? "bg-gold-mist/80" : "bg-mint-mist/80"
+        )}
+      />
+      <div className="absolute bottom-16 left-[-5rem] h-56 w-56 rounded-full bg-sky-mist/70" />
+      <div className="container relative mx-auto px-6">
+        <div
+          className={cn(
+            "grid gap-6",
+            surface === "white"
+              ? "lg:grid-cols-[0.62fr_1.38fr] lg:items-stretch"
+              : "lg:grid-cols-[1.36fr_0.64fr] lg:items-stretch"
+          )}
+        >
+          <div
+            className={cn(
+              "rounded-[1.5rem] border border-white/80 bg-white/84 p-6 shadow-forest-card backdrop-blur-sm md:p-7",
+              surface === "muted" && "lg:order-2"
+            )}
+          >
+            <SectionIntro
+              badge={badge}
+              title={title}
+              accent={isAmber ? "gold" : "mint"}
+              titleClassName="!text-2xl sm:!text-3xl md:!text-4xl"
+            />
+            <div
+              className={cn(
+                "mt-6 rounded-[1.15rem] border p-4",
+                accentClassName
+              )}
+            >
+              <p className="font-hero-subtitle text-sm leading-6 font-bold">
+                {isAmber
+                  ? "Children practice expression, confidence, collaboration, and celebration through shared school experiences."
+                  : "Creative movement, arts, nature, and role play add joyful variety to the learning week."}
+              </p>
+            </div>
+          </div>
 
-          <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+          <div
+            className={cn(
+              "grid gap-3 sm:grid-cols-2",
+              surface === "white" ? "xl:grid-cols-4" : "xl:grid-cols-3"
+            )}
+          >
             {items.map((item, index) => (
-              <div
+              <article
                 key={item}
-                className="border-premium-line text-premium-ink shadow-premium-sm flex min-h-14 items-center gap-3 rounded-xl border bg-white px-4 py-3 text-sm font-bold"
-              >
-                {index < 3 ? (
-                  <span
-                    className={`flex size-8 shrink-0 items-center justify-center rounded-xl border text-xs font-black ${accentClassName}`}
-                  >
-                    {(index + 1).toString().padStart(2, "0")}
-                  </span>
-                ) : (
-                  <CircleDot
-                    className={`size-4 shrink-0 ${
-                      index % 2 === 0 ? dotClassName : "text-sky-600"
-                    }`}
-                  />
+                className={cn(
+                  "group relative flex min-h-[116px] items-center gap-4 overflow-hidden rounded-[1.15rem] border border-white/80 bg-white p-4 shadow-premium-sm transition-all hover:-translate-y-0.5 hover:shadow-premium-md",
+                  surface === "muted" && index === 0 && "sm:col-span-2 xl:col-span-1"
                 )}
-                {item}
-              </div>
+              >
+                <div className="absolute right-3 bottom-3 h-11 w-11 rounded-full bg-sky-mist/70 transition-transform group-hover:scale-125" />
+                <span
+                  className={cn(
+                    "relative z-10 flex size-10 shrink-0 items-center justify-center rounded-2xl border",
+                    index % 3 === 1
+                      ? "border-sky-line bg-sky-mist text-sky-ink"
+                      : index % 3 === 2
+                        ? "border-peach-line bg-peach-mist text-peach-ink"
+                        : accentClassName
+                  )}
+                >
+                  {(() => {
+                    const Icon = icons[index % icons.length] ?? CircleDot;
+                    return <Icon className="size-5" />;
+                  })()}
+                </span>
+                <div className="relative z-10 min-w-0">
+                  <h3 className="text-premium-ink text-sm leading-snug font-extrabold md:text-base">
+                    {item}
+                  </h3>
+                  <span
+                    className={cn(
+                      "mt-2 inline-flex rounded-full px-2.5 py-1 text-[9px] font-black tracking-[0.16em] uppercase",
+                      softAccentClassName
+                    )}
+                  >
+                    {isAmber ? "Participate" : "Explore"}
+                  </span>
+                </div>
+              </article>
             ))}
           </div>
         </div>
@@ -219,28 +334,29 @@ export default function CurriculumPage() {
       <HeroBanner
         image={content.hero.image}
         imageClassName="object-[68%_center] min-[1000px]:object-center"
+        overlayClassName="bg-[linear-gradient(90deg,rgb(255_248_232_/_84%)_0%,rgb(255_248_232_/_62%)_48%,rgb(255_255_255_/_16%)_100%)] lg:bg-[linear-gradient(90deg,rgb(255_248_232_/_78%)_0%,rgb(255_248_232_/_48%)_42%,rgb(255_255_255_/_4%)_100%)]"
       >
         <div className="relative z-10 container mx-auto flex min-h-[100svh] items-center px-6 py-28">
-          <div className="motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-left-12 max-w-[32rem] duration-1000">
+          <div className="motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-left-12 max-w-[34rem] duration-1000">
             <div className="mb-8 inline-flex items-center gap-3">
-              <span className="size-2 rounded-full bg-mint" />
-              <span className="text-mint-ink text-[10px] font-black tracking-[0.26em] uppercase drop-shadow-[0_2px_8px_rgb(255_255_255_/_90%)]">
+              <span className="size-2 rounded-full bg-gold" />
+              <span className="text-gold-ink text-[10px] font-black tracking-[0.26em] uppercase drop-shadow-[0_3px_12px_rgb(255_255_255_/_90%)]">
                 {content.hero.badge}
               </span>
             </div>
 
-            <h1 className="font-premium-display text-forest-dark max-w-[32rem] text-[2.85rem] leading-[1.04] font-bold drop-shadow-[0_4px_14px_rgb(255_255_255_/_88%)] sm:text-5xl md:text-6xl">
+            <h1 className="font-premium-display text-forest-dark max-w-[34rem] text-[2.85rem] leading-[1.04] font-bold drop-shadow-[0_4px_14px_rgb(255_255_255_/_88%)] sm:text-5xl md:text-6xl">
               {content.hero.title.line1}{" "}
               <span className="text-gold-ink">
                 {content.hero.title.highlight}
               </span>
             </h1>
 
-            <p className="text-sky-ink mt-5 max-w-[32rem] text-lg leading-snug font-bold drop-shadow-[0_3px_12px_rgb(255_255_255_/_90%)] md:text-2xl">
+            <p className="font-hero-subtitle text-forest-dark mt-5 max-w-[32rem] text-lg leading-snug font-bold drop-shadow-[0_3px_12px_rgb(255_255_255_/_90%)] md:text-2xl">
               {content.hero.subtitle}
             </p>
 
-            <p className="text-forest-soft mt-6 max-w-[32rem] text-base leading-relaxed font-semibold drop-shadow-[0_3px_12px_rgb(255_255_255_/_90%)] md:text-lg">
+            <p className="font-hero-subtitle text-forest-soft mt-6 max-w-[32rem] text-base leading-relaxed font-semibold drop-shadow-[0_3px_12px_rgb(255_255_255_/_90%)] md:text-lg">
               {content.hero.description}
             </p>
 
@@ -248,7 +364,7 @@ export default function CurriculumPage() {
               <Button
                 render={<Link href={content.hero.buttons.primary.link} />}
                 nativeButton={false}
-                className="bg-coral shadow-coral-button hover:bg-coral-dark h-14 rounded-full px-8 text-base font-black text-white transition-all hover:-translate-y-0.5 sm:px-10"
+                className="bg-gold shadow-[0_18px_45px_rgb(245_173_47_/_24%)] hover:bg-gold-ink h-14 rounded-full px-8 text-base font-black text-forest-dark transition-all hover:-translate-y-0.5 hover:text-white sm:px-10"
               >
                 {content.hero.buttons.primary.text}
                 <ArrowRight className="ml-2 size-5" />
@@ -257,7 +373,7 @@ export default function CurriculumPage() {
                 render={<Link href={content.hero.buttons.secondary.link} />}
                 nativeButton={false}
                 variant="outline"
-                className="text-forest-dark h-14 rounded-full border-forest-dark/20 bg-white/76 px-8 text-base font-black backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-white/88 sm:px-10"
+                className="text-forest-dark h-14 rounded-full border-forest-dark/20 bg-white/78 px-8 text-base font-black backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-white sm:px-10"
               >
                 {content.hero.buttons.secondary.text}
               </Button>
@@ -302,15 +418,17 @@ export default function CurriculumPage() {
             title={content.cigma.title}
             description={content.cigma.description}
             align="center"
+            accent="sky"
+            titleClassName="md:text-5xl"
           />
 
           <div className="mx-auto mt-8 grid max-w-4xl grid-cols-2 gap-3 md:grid-cols-5">
             {cigmaBreakdown.map((item) => (
               <div
                 key={item.letter}
-                className="border-premium-line shadow-premium-sm rounded-[1rem] border bg-[#fff8ed] p-4 text-center"
+                className="border-sky-line shadow-premium-sm rounded-[1rem] border bg-sky-mist p-4 text-center"
               >
-                <p className="text-3xl font-black text-amber-700">
+                <p className="text-3xl font-black text-sky-ink">
                   {item.letter}
                 </p>
                 <p className="text-premium-muted mt-1 text-xs font-bold">
@@ -345,43 +463,51 @@ export default function CurriculumPage() {
         </div>
       </section>
 
-      <section className="bg-gold-mist py-16 md:py-24">
-        <div className="container mx-auto px-6">
-          <div className="grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr]">
-            <FramedImage
+      <section className="relative overflow-hidden bg-[linear-gradient(135deg,#fff8de_0%,#ffffff_46%,#fff5e7_100%)] py-14 md:py-20">
+        <div className="absolute top-12 left-[-4rem] h-48 w-48 rounded-full bg-gold-mist/80" />
+        <div className="absolute right-[-5rem] bottom-16 h-64 w-64 rounded-full bg-peach-mist/80" />
+        <div className="container relative mx-auto px-6">
+          <div className="grid items-stretch gap-6 lg:grid-cols-[0.95fr_1.05fr]">
+            <LearningImagePanel
               image={content.activityLearning.image}
               badge="Learning by doing"
               title="Hands-on clarity through play"
-              aspectClassName="aspect-[4/3]"
             />
 
-            <div>
+            <div className="rounded-[1.75rem] border border-white/80 bg-white/86 p-6 shadow-forest-card backdrop-blur-sm md:p-8">
               <SectionIntro
                 badge={content.activityLearning.badge}
                 title={content.activityLearning.title}
                 description={content.activityLearning.description}
+                accent="gold"
+                titleClassName="!text-2xl sm:!text-3xl md:!text-4xl"
               />
 
-              <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              <div className="mt-6 grid gap-3 sm:grid-cols-2">
                 {content.activityLearning.items.map((item, index) => {
                   const Icon = getIcon(item.icon);
 
                   return (
                     <article
                       key={item.title}
-                      className="border-premium-line shadow-premium-sm min-h-[210px] rounded-[1.25rem] border bg-white p-5"
+                      className={cn(
+                        "group min-h-[154px] rounded-[1.15rem] border p-4 transition-all hover:-translate-y-0.5 hover:shadow-premium-md",
+                        index === 0
+                          ? "border-gold-line bg-gold-mist"
+                          : "border-white bg-white"
+                      )}
                     >
                       <div className="mb-4 flex items-center gap-3">
                         <span
-                          className={`flex size-10 items-center justify-center rounded-2xl border ${cardAccentClassNames[index]}`}
+                          className={`flex size-11 items-center justify-center rounded-2xl border bg-white/86 shadow-premium-sm ${cardAccentClassNames[index]}`}
                         >
                           <Icon className="size-5" />
                         </span>
-                        <h3 className="text-premium-ink text-base font-bold">
+                        <h3 className="text-premium-ink text-sm leading-snug font-extrabold md:text-base">
                           {item.title}
                         </h3>
                       </div>
-                      <p className="text-premium-muted text-sm leading-6">
+                      <p className="font-hero-subtitle text-premium-muted text-sm leading-6 font-semibold">
                         {item.description}
                       </p>
                     </article>
@@ -393,51 +519,72 @@ export default function CurriculumPage() {
         </div>
       </section>
 
-      <section className="bg-white py-16 md:py-24">
-        <div className="container mx-auto px-6">
-          <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
-            <div>
-              <SectionIntro
-                badge={content.skillDevelopment.badge}
-                title={content.skillDevelopment.title}
-                description={content.skillDevelopment.description}
-              />
+      <section className="relative overflow-hidden bg-[linear-gradient(180deg,#eef8ff_0%,#ffffff_50%,#effff6_100%)] py-14 md:py-20">
+        <div className="absolute top-16 right-[-5rem] h-56 w-56 rounded-full bg-sky-mist" />
+        <div className="absolute bottom-12 left-[-4rem] h-44 w-44 rounded-full bg-mint-mist/80" />
+        <div className="container relative mx-auto px-6">
+          <SectionIntro
+            badge={content.skillDevelopment.badge}
+            title={content.skillDevelopment.title}
+            description={content.skillDevelopment.description}
+            align="center"
+            accent="sky"
+            titleClassName="!text-2xl sm:!text-3xl md:!text-4xl"
+          />
 
-              <div className="mt-8 grid gap-5">
+          <div className="mt-8 grid items-stretch gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+            <LearningImagePanel
+              image={content.skillDevelopment.image}
+              badge="Fine + gross motor practice"
+              title="Confidence built through movement and play"
+              className="lg:order-2"
+            />
+            <div>
+              <div className="grid h-full gap-4">
                 {content.skillDevelopment.groups.map((group, index) => {
                   const Icon = getIcon(group.icon);
 
                   return (
                     <article
                       key={group.title}
-                      className="border-premium-line shadow-premium-sm rounded-[1.5rem] border bg-[#fff8ed] p-5 md:p-6"
+                      className="group overflow-hidden rounded-[1.4rem] border border-white/80 bg-white shadow-premium-sm transition-all hover:-translate-y-0.5 hover:shadow-premium-md"
                     >
-                      <div className="grid gap-5 md:grid-cols-[0.95fr_1.05fr]">
-                        <div className="flex items-start gap-4">
+                      <div className="grid gap-0 md:grid-cols-[0.78fr_1.22fr]">
+                        <div
+                          className={cn(
+                            "p-5 md:p-6",
+                            index === 0 ? "bg-mint-mist" : "bg-sky-mist"
+                          )}
+                        >
+                          <div className="flex items-start gap-4">
                           <div
-                            className={`flex size-12 shrink-0 items-center justify-center rounded-2xl border ${cardAccentClassNames[index]}`}
+                            className={`flex size-13 shrink-0 items-center justify-center rounded-2xl border bg-white shadow-premium-sm ${cardAccentClassNames[index]}`}
                           >
                             <Icon className="size-6" />
                           </div>
                           <div>
-                            <p className="text-premium-forest text-[11px] font-black uppercase">
+                            <p className="text-premium-forest text-[11px] font-black tracking-[0.18em] uppercase">
                               {group.label}
                             </p>
-                            <h3 className="text-premium-ink mt-2 text-xl font-bold md:text-2xl">
+                            <h3 className="text-premium-ink mt-2 text-lg font-bold md:text-xl">
                               {group.title}
                             </h3>
-                            <p className="text-premium-muted mt-3 text-sm leading-6">
+                            <p className="font-hero-subtitle text-premium-muted mt-3 text-sm leading-6 font-semibold">
                               {group.description}
                             </p>
                           </div>
+                          </div>
                         </div>
 
-                        <div>
+                        <div className="p-5 md:p-6">
+                          <p className="text-forest-dark mb-3 text-[11px] font-black tracking-[0.2em] uppercase">
+                            Core gains
+                          </p>
                           <div className="grid gap-2 sm:grid-cols-2">
                             {group.skills.map((skill) => (
                               <div
                                 key={skill}
-                                className="border-premium-line text-premium-ink flex min-h-11 items-center gap-3 rounded-xl border bg-white px-3 py-2 text-sm font-bold"
+                                className="border-mint-line text-premium-ink flex min-h-11 items-center gap-3 rounded-xl border bg-mint-mist/55 px-3 py-2 text-sm font-bold"
                               >
                                 <Check className="text-premium-forest size-4 shrink-0" />
                                 {skill}
@@ -445,11 +592,14 @@ export default function CurriculumPage() {
                             ))}
                           </div>
 
+                          <p className="text-forest-dark mt-5 mb-3 text-[11px] font-black tracking-[0.2em] uppercase">
+                            Classroom activities
+                          </p>
                           <div className="mt-4 flex flex-wrap gap-2">
                             {group.activities.map((activity) => (
                               <span
                                 key={activity}
-                                className="border-premium-line text-premium-muted rounded-full border bg-white px-3 py-1.5 text-xs font-semibold"
+                                className="border-sky-line text-sky-ink rounded-full border bg-sky-mist px-3 py-1.5 text-xs font-black"
                               >
                                 {activity}
                               </span>
@@ -462,13 +612,6 @@ export default function CurriculumPage() {
                 })}
               </div>
             </div>
-
-            <FramedImage
-              image={content.skillDevelopment.image}
-              badge="Fine + gross motor practice"
-              title="Confidence built through movement and play"
-              aspectClassName="aspect-[16/10]"
-            />
           </div>
         </div>
       </section>
@@ -480,6 +623,8 @@ export default function CurriculumPage() {
             title={content.developmentSpheres.title}
             description={content.developmentSpheres.description}
             align="center"
+            accent="peach"
+            titleClassName="md:text-5xl"
           />
 
           <div className="border-premium-line shadow-premium-md relative mt-10 overflow-hidden rounded-[1.5rem] border bg-white">
@@ -531,48 +676,66 @@ export default function CurriculumPage() {
         </div>
       </section>
 
-      <section className="bg-white py-16 md:py-24">
+      <section className="relative overflow-hidden bg-white py-14 md:py-20">
+        <div className="absolute top-16 left-[-4rem] h-48 w-48 rounded-full bg-mint-mist/80" />
         <div className="container mx-auto px-6">
-          <div className="grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr]">
-            <div>
+          <div className="grid items-stretch gap-6 lg:grid-cols-[1fr_1fr]">
+            <LearningImagePanel
+              image={content.pedagogy.image}
+              badge="Teaching pedagogy"
+              title="Guided conversation, exploration, and child-led responses"
+              className="lg:order-2"
+            />
+
+            <div className="rounded-[1.75rem] border border-mint-line/60 bg-mint-mist/55 p-6 shadow-forest-card md:p-8">
               <SectionIntro
                 badge={content.pedagogy.badge}
                 title={content.pedagogy.title}
                 description={content.pedagogy.description}
+                accent="mint"
+                titleClassName="!text-2xl sm:!text-3xl md:!text-4xl"
               />
 
-              <div className="mt-8 grid gap-4 md:grid-cols-3">
+              <div className="relative mt-6 grid gap-3">
+                <div className="absolute top-6 bottom-6 left-6 hidden w-px bg-mint-line md:block" />
                 {content.pedagogy.items.map((item, index) => {
                   const Icon = getIcon(item.icon);
 
                   return (
                     <article
                       key={item.title}
-                      className="border-premium-line shadow-premium-sm min-h-[230px] rounded-[1.25rem] border bg-[#fff8ed] p-5"
+                      className={cn(
+                        "relative rounded-[1.2rem] border p-4 shadow-premium-sm transition-all hover:-translate-y-0.5 hover:shadow-premium-md md:ml-10",
+                        index === 0
+                          ? "border-mint-line bg-mint-mist"
+                          : index === 1
+                            ? "border-gold-line bg-gold-mist"
+                            : "border-sky-line bg-sky-mist"
+                      )}
                     >
-                      <div
-                        className={`mb-5 flex size-11 items-center justify-center rounded-2xl border ${cardAccentClassNames[index]}`}
-                      >
-                        <Icon className="size-5" />
+                      <div className="flex gap-4">
+                        <div
+                          className={`flex size-12 shrink-0 items-center justify-center rounded-2xl border bg-white shadow-premium-sm ${cardAccentClassNames[index]}`}
+                        >
+                          <Icon className="size-6" />
+                        </div>
+                        <div>
+                          <p className="text-premium-forest text-[10px] font-black tracking-[0.22em] uppercase">
+                            Method {index + 1}
+                          </p>
+                          <h3 className="text-premium-ink mt-1 text-base font-extrabold md:text-lg">
+                            {item.title}
+                          </h3>
+                          <p className="font-hero-subtitle text-premium-muted mt-2 text-sm leading-6 font-semibold">
+                            {item.description}
+                          </p>
+                        </div>
                       </div>
-                      <h3 className="text-premium-ink text-lg font-bold">
-                        {item.title}
-                      </h3>
-                      <p className="text-premium-muted mt-3 text-sm leading-6">
-                        {item.description}
-                      </p>
                     </article>
                   );
                 })}
               </div>
             </div>
-
-            <FramedImage
-              image={content.pedagogy.image}
-              badge="Teaching pedagogy"
-              title="Guided conversation, exploration, and child-led responses"
-              aspectClassName="aspect-[16/10]"
-            />
           </div>
         </div>
       </section>
@@ -583,6 +746,8 @@ export default function CurriculumPage() {
             badge={content.teacherRatio.badge}
             title={content.teacherRatio.title}
             align="center"
+            accent="gold"
+            titleClassName="md:text-5xl"
           />
 
           <div className="mt-10 grid gap-5 md:grid-cols-3">
@@ -633,7 +798,7 @@ export default function CurriculumPage() {
 
       <section id="admissions-open" className="bg-white py-16 md:py-24">
         <div className="container mx-auto px-6">
-          <div className="border-premium-line shadow-premium-md relative min-h-[430px] overflow-hidden rounded-[2rem] border bg-[#2f3446]">
+          <div className="border-white/70 shadow-sky-media relative min-h-[430px] overflow-hidden rounded-[2rem] border bg-white">
             <Image
               src={content.cta.image.src}
               alt={content.cta.image.alt}
@@ -641,16 +806,17 @@ export default function CurriculumPage() {
               className="object-cover"
               sizes="100vw"
             />
-            <div className="absolute inset-0 bg-[#2f3446]/62" />
-            <div className="relative z-10 grid min-h-[430px] gap-8 px-6 py-10 text-white md:grid-cols-[1fr_auto] md:items-end md:px-10 md:py-14 lg:px-14">
+            <div className="absolute inset-0 bg-white/60" />
+            <div className="absolute inset-0 bg-gradient-to-r from-cream-glow via-white/74 to-white/18" />
+            <div className="text-forest-dark relative z-10 grid min-h-[430px] gap-8 px-6 py-10 md:grid-cols-[1fr_auto] md:items-end md:px-10 md:py-14 lg:px-14">
               <div className="max-w-3xl">
-                <span className="inline-flex rounded-full border border-white/20 bg-white/12 px-4 py-2 text-[11px] font-black text-amber-100 uppercase backdrop-blur-md">
+                <span className="border-gold-line bg-gold-mist text-gold-ink inline-flex rounded-full border px-4 py-2 text-[11px] font-black uppercase backdrop-blur-md">
                   {content.cta.badge}
                 </span>
                 <h2 className="mt-5 text-3xl leading-tight font-semibold md:text-4xl">
                   {content.cta.title}
                 </h2>
-                <p className="mt-5 max-w-2xl text-base leading-7 text-white/78 md:text-[17px] md:leading-8">
+                <p className="font-hero-subtitle text-forest-soft mt-5 max-w-2xl text-base leading-7 font-semibold md:text-[17px] md:leading-8">
                   {content.cta.description}
                 </p>
               </div>
@@ -659,7 +825,7 @@ export default function CurriculumPage() {
                 <Button
                   render={<Link href={content.cta.buttons.primary.link} />}
                   nativeButton={false}
-                  className="text-premium-ink h-[3.25rem] rounded-full bg-white px-8 text-sm font-bold transition-all hover:-translate-y-0.5 hover:bg-amber-50"
+                  className="bg-mint hover:bg-mint-ink h-[3.25rem] rounded-full px-8 text-sm font-black text-white shadow-[0_18px_45px_rgb(22_97_63_/_18%)] transition-all hover:-translate-y-0.5"
                 >
                   {content.cta.buttons.primary.text}
                   <ArrowRight className="ml-2 size-4" />
@@ -668,7 +834,7 @@ export default function CurriculumPage() {
                   render={<Link href={content.cta.buttons.secondary.link} />}
                   nativeButton={false}
                   variant="outline"
-                  className="h-[3.25rem] rounded-full border-white/35 bg-white/8 px-8 text-sm font-bold text-white backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-white/14"
+                  className="text-forest-dark h-[3.25rem] rounded-full border-forest-dark/18 bg-white/78 px-8 text-sm font-black backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-white"
                 >
                   {content.cta.buttons.secondary.text}
                 </Button>

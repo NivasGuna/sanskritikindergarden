@@ -51,6 +51,7 @@ export default function Navbar() {
               alt={content.brand.logoAlt}
               fill
               className="object-contain p-1"
+              priority
               sizes="56px"
             />
           </div>
@@ -83,10 +84,10 @@ export default function Navbar() {
                   className={`relative rounded-full px-3.5 py-2 text-[15px] font-extrabold transition-all duration-300 ${
                     isActive
                       ? scrolled
-                        ? "bg-coral-mist text-coral-ink shadow-[0_10px_22px_rgba(255,127,110,0.14)]"
+                        ? "bg-mint-mist text-mint-ink shadow-[0_10px_22px_rgba(47,125,91,0.12)]"
                         : "text-forest-dark bg-white/92 shadow-[0_10px_22px_rgba(15,23,42,0.16)] backdrop-blur-md"
                       : scrolled
-                        ? "text-forest-soft hover:bg-peach-mist hover:text-coral-ink"
+                        ? "text-forest-soft hover:bg-sky-mist hover:text-sky-ink"
                         : "text-white drop-shadow-[0_2px_8px_rgba(15,23,42,0.45)] hover:bg-white/22 hover:text-white hover:backdrop-blur-md"
                   }`}
                 >
@@ -104,10 +105,10 @@ export default function Navbar() {
                 className={`relative rounded-full px-3.5 py-2 text-[15px] font-extrabold transition-all duration-300 ${
                   pathname === "/applications"
                     ? scrolled
-                      ? "bg-coral-mist text-coral-ink shadow-[0_10px_22px_rgba(255,127,110,0.14)]"
+                      ? "bg-mint-mist text-mint-ink shadow-[0_10px_22px_rgba(47,125,91,0.12)]"
                       : "text-forest-dark bg-white/92 shadow-[0_10px_22px_rgba(15,23,42,0.16)] backdrop-blur-md"
                     : scrolled
-                      ? "text-forest-soft hover:bg-peach-mist hover:text-coral-ink"
+                      ? "text-forest-soft hover:bg-sky-mist hover:text-sky-ink"
                       : "text-white drop-shadow-[0_2px_8px_rgba(15,23,42,0.45)] hover:bg-white/22 hover:text-white hover:backdrop-blur-md"
                 }`}
               >
@@ -122,7 +123,7 @@ export default function Navbar() {
           onClick={() => setMobileOpen(!mobileOpen)}
           className={`flex size-11 items-center justify-center rounded-xl transition-all duration-300 xl:hidden ${
             scrolled
-              ? "text-forest-dark hover:bg-coral-mist hover:text-coral-ink"
+              ? "text-forest-dark hover:bg-mint-mist hover:text-mint-ink"
               : "bg-white/24 text-white shadow-[0_10px_22px_rgba(15,23,42,0.12)] backdrop-blur-md hover:bg-white/32"
           }`}
           aria-label="Toggle menu"
@@ -148,8 +149,8 @@ export default function Navbar() {
                     onClick={() => setMobileOpen(false)}
                     className={`block rounded-xl px-4 py-3 text-sm font-semibold transition-all duration-200 ${
                       isActive
-                        ? "bg-coral-mist text-coral-ink"
-                        : "text-forest-soft hover:bg-peach-mist hover:text-coral-ink"
+                        ? "bg-mint-mist text-mint-ink"
+                        : "text-forest-soft hover:bg-sky-mist hover:text-sky-ink"
                     }`}
                   >
                     {link.name}
@@ -166,8 +167,8 @@ export default function Navbar() {
                   onClick={() => setMobileOpen(false)}
                   className={`block rounded-xl px-4 py-3 text-sm font-semibold transition-all duration-200 ${
                     pathname === "/applications"
-                      ? "bg-coral-mist text-coral-ink"
-                      : "text-forest-soft hover:bg-peach-mist hover:text-coral-ink"
+                      ? "bg-mint-mist text-mint-ink"
+                      : "text-forest-soft hover:bg-sky-mist hover:text-sky-ink"
                   }`}
                 >
                   Applications

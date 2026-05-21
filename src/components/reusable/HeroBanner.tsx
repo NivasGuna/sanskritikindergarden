@@ -24,6 +24,9 @@ export default function HeroBanner({
   priority = true,
   sizes = "100vw",
 }: HeroBannerProps) {
+  const mobileOverlayClassName =
+    "bg-[linear-gradient(90deg,rgb(255_248_232_/_76%)_0%,rgb(255_248_232_/_62%)_48%,rgb(255_255_255_/_30%)_100%)] lg:hidden";
+
   return (
     <section
       className={cn(
@@ -41,7 +44,9 @@ export default function HeroBanner({
       />
       {overlayClassName ? (
         <div className={cn("pointer-events-none absolute inset-0", overlayClassName)} />
-      ) : null}
+      ) : (
+        <div className={cn("pointer-events-none absolute inset-0", mobileOverlayClassName)} />
+      )}
       {children}
     </section>
   );

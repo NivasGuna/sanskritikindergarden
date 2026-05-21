@@ -13,6 +13,7 @@
   --font-heading: var(--font-sans);
   --font-playful-display: var(--font-sans);
   --font-premium-display: var(--premium-display-family);
+  --font-hero-subtitle: var(--font-hero-readable);
   --font-rounded-body: var(--rounded-body-family);
   --font-rounded-heading: var(--font-sans);
   --color-primary: var(--primary);
@@ -97,11 +98,11 @@
 :root {
   --background: #f7fbf3;
   --foreground: #17352f;
-  --primary: #ff7f6e;
+  --primary: #2f7d5b;
   --primary-foreground: oklch(1 0 0);
-  --border: #f3dfc8;
-  --input: #f3dfc8;
-  --ring: #ff7f6e;
+  --border: #dfe9d5;
+  --input: #dfe9d5;
+  --ring: #2f7d5b;
   --radius: 0.625rem;
 
   /* Kindergarten color values */
@@ -120,9 +121,9 @@
   --sky-glow: rgb(231 248 255 / 30%);
   --amber-line: #ffd798;
   --amber-ink: #b86912;
-  --coral: #ff7f6e;
-  --coral-dark: #ef6f5f;
-  --coral-line: #ffb09a;
+  --coral: #f47d65;
+  --coral-dark: #dd654f;
+  --coral-line: #f9b29f;
   --coral-mist: #fff1ea;
   --coral-ink: #a33d31;
   --gold: #f5ad2f;
@@ -144,7 +145,7 @@
   --peach-mist: #fff5e7;
   --peach-ink: #9a5a16;
   --warm-badge-shadow: 0 14px 35px rgb(245 173 47 / 16%);
-  --coral-button-shadow: 0 18px 45px rgb(255 127 110 / 28%);
+  --coral-button-shadow: 0 18px 45px rgb(244 125 101 / 20%);
   --forest-card-shadow: 0 22px 55px rgb(23 53 47 / 8%);
   --forest-icon-shadow: 0 16px 30px rgb(23 53 47 / 12%);
   --sky-media-shadow: 0 24px 70px rgb(21 91 139 / 14%);
@@ -170,10 +171,10 @@
   --premium-paper: oklch(1 0 0);
   --premium-ink: var(--foreground);
   --premium-muted: #5f756e;
-  --premium-forest: #348fce;
-  --premium-forest-soft: #eef8ff;
-  --premium-accent: #ff7f6e;
-  --premium-line: #f3dfc8;
+  --premium-forest: #2f7d5b;
+  --premium-forest-soft: #effff6;
+  --premium-accent: #f5ad2f;
+  --premium-line: #dfe9d5;
   --premium-radius: 2.5rem;
   --premium-shadow-sm: 0 4px 30px rgb(36 129 191 / 6%);
   --premium-shadow-md: 0 15px 50px rgb(36 129 191 / 10%);
@@ -195,6 +196,16 @@
   h3,
   h4 {
     @apply font-playful-display tracking-normal;
+  }
+}
+
+@layer components {
+  .hero-copy-panel {
+    @apply border-0 bg-transparent p-0 shadow-none backdrop-blur-none;
+  }
+
+  .hero-subheading {
+    @apply font-hero-subtitle text-base leading-8 font-semibold tracking-normal;
   }
 }
 

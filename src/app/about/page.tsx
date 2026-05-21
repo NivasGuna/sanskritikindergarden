@@ -62,9 +62,9 @@ const visionIconMap = {
 
 const featureAccentMap = {
   coral: {
-    card: "border-coral-line bg-coral-mist",
-    icon: "bg-coral text-white",
-    text: "text-coral-ink",
+    card: "border-peach-line bg-peach-mist",
+    icon: "bg-peach-ink text-white",
+    text: "text-peach-ink",
   },
   gold: {
     card: "border-gold-line bg-gold-mist",
@@ -89,12 +89,12 @@ const visionAccentMap = {
 } satisfies Record<VisionAccent, string>;
 
 const valueColorClasses = [
-  "border-coral-line bg-coral-mist text-coral-ink",
   "border-mint-line bg-mint-mist text-mint-ink",
   "border-sky-line bg-sky-mist text-sky-ink",
   "border-gold-line bg-gold-mist text-gold-ink",
-  "border-lavender-line bg-lavender-mist text-lavender-ink",
   "border-peach-line bg-peach-mist text-peach-ink",
+  "border-lavender-line bg-lavender-mist text-lavender-ink",
+  "border-coral-line bg-coral-mist text-coral-ink",
 ] as const;
 
 function getInitials(name: string) {
@@ -121,7 +121,7 @@ export default function AboutPage() {
         imageClassName="object-[64%_center] md:object-center"
       >
         <div className="relative z-10 container mx-auto flex min-h-[100svh] items-center px-6 py-24">
-          <div className="motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-left-12 max-w-[32rem] duration-1000">
+          <div className="hero-copy-panel motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-left-12 max-w-[32rem] duration-1000">
             <div className="mb-7 inline-flex items-center gap-3">
               <span className="size-2 rounded-full bg-gold" />
               <span className="text-gold-ink text-[10px] font-black tracking-[0.26em] uppercase drop-shadow-[0_2px_8px_rgb(255_255_255_/_90%)]">
@@ -137,7 +137,7 @@ export default function AboutPage() {
               <span className="text-sky-ink">{content.hero.title.line2}</span>
             </h1>
 
-            <p className="text-forest-soft mt-6 max-w-[32rem] text-base leading-8 font-bold drop-shadow-[0_3px_12px_rgb(255_255_255_/_90%)] md:text-xl">
+            <p className="hero-subheading text-forest-soft mt-6 max-w-[32rem] drop-shadow-[0_3px_12px_rgb(255_255_255_/_90%)] md:text-xl">
               {content.hero.subtitle}
             </p>
 
@@ -145,7 +145,7 @@ export default function AboutPage() {
               <Button
                 render={<Link href={content.hero.buttons.primary.link} />}
                 nativeButton={false}
-                className="bg-coral shadow-coral-button hover:bg-coral-dark h-14 rounded-full px-8 text-base font-black text-white transition-all hover:-translate-y-0.5"
+                className="bg-mint shadow-[0_18px_45px_rgb(22_97_63_/_22%)] hover:bg-mint-ink h-14 rounded-full px-8 text-base font-black text-white transition-all hover:-translate-y-0.5"
               >
                 {content.hero.buttons.primary.text}
                 <ArrowRight className="ml-2 size-5" />
@@ -180,7 +180,7 @@ export default function AboutPage() {
           </div>
 
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {content.whyChoose.features.map((feature, index) => {
+            {content.whyChoose.features.map((feature) => {
               const Icon = featureIconMap[feature.icon as FeatureIcon];
               const accent =
                 featureAccentMap[feature.accent as FeatureAccent] ??
@@ -190,13 +190,10 @@ export default function AboutPage() {
                 <article
                   key={feature.title}
                   className={cn(
-                    "shadow-forest-card relative min-h-[250px] overflow-hidden rounded-[1.5rem] border p-6 transition-all hover:-translate-y-1",
+                    "shadow-forest-card group relative min-h-[250px] overflow-hidden rounded-[1.5rem] border p-6 transition-all hover:-translate-y-1",
                     accent.card
                   )}
                 >
-                  <div className="absolute top-5 right-5 text-5xl font-black text-white/72">
-                    0{index + 1}
-                  </div>
                   <div
                     className={cn(
                       "shadow-forest-icon relative z-10 mb-6 flex size-14 items-center justify-center rounded-2xl",
@@ -211,12 +208,7 @@ export default function AboutPage() {
                   <p className="text-forest-soft relative z-10 mt-3 text-sm leading-6 font-semibold">
                     {feature.description}
                   </p>
-                  <div
-                    className={cn(
-                      "absolute bottom-0 left-0 h-2 w-full",
-                      accent.icon
-                    )}
-                  />
+                  <div className="absolute right-5 bottom-5 h-12 w-12 rounded-full bg-white/34 transition-transform group-hover:scale-125" />
                 </article>
               );
             })}
@@ -236,7 +228,7 @@ export default function AboutPage() {
                 sizes="(min-width: 1024px) 54vw, 100vw"
               />
               <div className="shadow-forest-floating absolute bottom-5 left-5 max-w-xs rounded-[1.25rem] bg-white/90 p-5 backdrop-blur-md">
-                <p className="font-playful-display text-coral text-2xl leading-tight font-extrabold">
+                <p className="font-playful-display text-gold-ink text-2xl leading-tight font-extrabold">
                   {content.philosophy.floatingQuote}
                 </p>
               </div>
@@ -339,7 +331,7 @@ export default function AboutPage() {
       <section className="bg-white py-16 md:py-24">
         <div className="container mx-auto px-6">
           <div className="mx-auto max-w-3xl text-center">
-            <span className="border-coral-line bg-coral-mist text-coral-ink inline-flex rounded-full border px-4 py-2 text-[10px] font-black tracking-[0.24em] uppercase">
+            <span className="border-sky-line bg-sky-mist text-sky-ink inline-flex rounded-full border px-4 py-2 text-[10px] font-black tracking-[0.24em] uppercase">
               {content.teachersSection.badge}
             </span>
             <h2 className="font-playful-display text-forest-dark mt-5 text-4xl leading-[1.03] font-extrabold md:text-6xl">
@@ -435,18 +427,22 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-gold-mist py-16 md:py-24">
+      <section className="bg-[linear-gradient(135deg,#fff8de_0%,#f7fbf3_52%,#eef8ff_100%)] py-16 md:py-24">
         <div className="container mx-auto px-6">
           <div className="mb-10 max-w-3xl">
             <span className="border-gold-line text-gold-ink inline-flex rounded-full border bg-white px-4 py-2 text-[10px] font-black tracking-[0.24em] uppercase">
               {content.values.badge.text}
             </span>
-            <h2 className="font-playful-display text-forest-dark mt-5 text-4xl leading-[1.03] font-extrabold md:text-6xl">
+            <h2 className="font-playful-display text-forest-dark mt-5 text-4xl leading-[1.03] font-extrabold md:text-5xl">
               {content.values.title}
             </h2>
+            <p className="text-forest-muted mt-4 max-w-2xl text-base leading-7 font-semibold md:text-lg">
+              These values guide the way children are welcomed, encouraged, and
+              cared for every day.
+            </p>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-6">
             {content.values.items.map((item, index) => {
               const Icon = valueIconMap[item.icon as ValueIcon];
 
@@ -454,24 +450,73 @@ export default function AboutPage() {
                 <article
                   key={item.title}
                   className={cn(
-                    "shadow-forest-value flex min-h-[155px] gap-4 rounded-[1.25rem] border p-5",
+                    "shadow-forest-value relative overflow-hidden rounded-[1.5rem] border p-6 transition-all hover:-translate-y-0.5 hover:shadow-forest-card lg:col-span-2",
+                    (index === 0 || index === 5) && "lg:col-span-3",
                     valueColorClasses[index % valueColorClasses.length]
                   )}
                 >
-                  <div className="text-forest-dark flex size-12 shrink-0 items-center justify-center rounded-2xl bg-white/86">
-                    <Icon className="size-6" />
-                  </div>
-                  <div>
+                  <div className="relative z-10 flex items-start gap-4">
+                    <div className="text-forest-dark flex size-13 shrink-0 items-center justify-center rounded-2xl bg-white/86 shadow-forest-icon">
+                      <Icon className="size-6" />
+                    </div>
+                    <div>
                     <h3 className="font-playful-display text-forest-dark text-2xl font-extrabold">
                       {item.title}
                     </h3>
                     <p className="text-forest-soft mt-2 text-sm leading-6 font-semibold">
                       {item.description}
                     </p>
+                    </div>
                   </div>
+                  <div className="absolute right-4 bottom-4 h-16 w-16 rounded-full bg-white/35" />
                 </article>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white pt-4 pb-20 md:pb-28">
+        <div className="container mx-auto px-6">
+          <div className="shadow-sky-media relative overflow-hidden rounded-[2rem] border border-white/70 bg-white">
+            <Image
+              src="/images/about-philosophy-learning-moment.png"
+              alt="Teacher caring for children in the Sanskriti Kindergarten classroom"
+              fill
+              className="object-cover object-center"
+              sizes="100vw"
+            />
+            <div className="absolute inset-0 bg-white/60" />
+            <div className="absolute inset-0 bg-gradient-to-r from-cream-glow via-white/76 to-white/18" />
+            <div className="text-forest-dark relative z-10 grid min-h-[360px] gap-8 px-6 py-10 md:grid-cols-[1fr_auto] md:items-end md:px-10 md:py-14">
+              <div className="max-w-2xl">
+                <span className="border-mint-line bg-mint-mist text-mint-ink inline-flex rounded-full border px-4 py-2 text-[11px] font-black uppercase backdrop-blur-md">
+                  About Sanskriti
+                </span>
+                <h2 className="font-playful-display mt-5 text-4xl leading-tight font-extrabold md:text-5xl">
+                  {content.cta.title}
+                </h2>
+                <p className="font-hero-subtitle text-forest-soft mt-5 text-base leading-7 font-semibold md:text-[17px]">
+                  {content.cta.description}
+                </p>
+              </div>
+
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <Link
+                  href={content.cta.buttons.primary.link}
+                  className="bg-mint hover:bg-mint-ink inline-flex h-[3.25rem] items-center justify-center rounded-full px-8 text-sm font-black text-white shadow-[0_18px_45px_rgb(22_97_63_/_18%)] transition hover:-translate-y-0.5"
+                >
+                  {content.cta.buttons.primary.text}
+                  <ArrowRight className="ml-2 size-4" />
+                </Link>
+                <Link
+                  href={content.cta.buttons.secondary.link}
+                  className="text-forest-dark inline-flex h-[3.25rem] items-center justify-center rounded-full border border-forest-dark/18 bg-white/78 px-8 text-sm font-black backdrop-blur-md transition hover:-translate-y-0.5 hover:bg-white"
+                >
+                  {content.cta.buttons.secondary.text}
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>

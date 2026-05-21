@@ -28,7 +28,7 @@ const phonePattern = /^\+?[\d\s().-]{7,18}$/;
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const inputClassName =
-  "h-[3.25rem] w-full rounded-2xl border border-peach-line bg-white/95 px-4 text-base font-semibold text-forest-dark shadow-sm outline-none transition-all placeholder:text-forest-muted/60 focus:border-coral focus:ring-4 focus:ring-coral/18 disabled:cursor-not-allowed disabled:opacity-70";
+  "h-[3.25rem] w-full rounded-2xl border border-mint-line bg-white/95 px-4 text-base font-semibold text-forest-dark shadow-sm outline-none transition-all placeholder:text-forest-muted/60 focus:border-mint focus:ring-4 focus:ring-mint/18 disabled:cursor-not-allowed disabled:opacity-70";
 
 const textAreaClassName = cn(inputClassName, "min-h-32 py-4 leading-7");
 
@@ -177,7 +177,7 @@ export default function AdmissionForm() {
               <option value="5">5 years</option>
               <option value="6">6 years</option>
             </select>
-            <ChevronDown className="pointer-events-none absolute top-1/2 right-4 size-5 -translate-y-1/2 text-coral-ink" />
+            <ChevronDown className="pointer-events-none absolute top-1/2 right-4 size-5 -translate-y-1/2 text-mint-ink" />
           </div>
         </Field>
       </div>
@@ -221,7 +221,7 @@ export default function AdmissionForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="mt-6 inline-flex h-14 w-full items-center justify-center rounded-full bg-coral px-8 text-base font-black text-white shadow-coral-button transition-all hover:-translate-y-0.5 hover:bg-coral-dark disabled:translate-y-0 disabled:cursor-not-allowed disabled:opacity-65"
+        className="mt-6 inline-flex h-14 w-full items-center justify-center rounded-full bg-mint px-8 text-base font-black text-white shadow-[0_18px_45px_rgb(22_97_63_/_22%)] transition-all hover:-translate-y-0.5 hover:bg-mint-ink disabled:translate-y-0 disabled:cursor-not-allowed disabled:opacity-65"
       >
         {isSubmitting ? (
           <>

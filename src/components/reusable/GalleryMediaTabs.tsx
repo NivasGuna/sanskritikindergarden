@@ -46,8 +46,8 @@ function GalleryImageTile({
   priority?: boolean;
 }) {
   return (
-    <figure className="group shadow-forest-card flex h-full flex-col overflow-hidden rounded-lg border border-slate-200/70 bg-white">
-      <div className="relative aspect-[4/3] overflow-hidden bg-slate-100">
+    <figure className="group shadow-forest-card flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-white/80 bg-white transition-all hover:-translate-y-1 hover:shadow-forest-floating">
+      <div className="relative aspect-[4/3] overflow-hidden bg-sky-mist">
         <Image
           src={image.src}
           alt={image.alt}
@@ -57,7 +57,7 @@ function GalleryImageTile({
           priority={priority}
         />
       </div>
-      <figcaption className="flex flex-1 flex-col p-5">
+      <figcaption className="flex flex-1 flex-col p-5 md:p-6">
         <span
           className={cn(
             "w-fit rounded-full border px-3 py-1 text-[10px] font-black tracking-[0.18em] uppercase",
@@ -79,8 +79,8 @@ function GalleryImageTile({
 
 function GalleryVideoCard({ video }: { video: GalleryVideo }) {
   return (
-    <div className="shadow-forest-card overflow-hidden rounded-lg border border-slate-200/70 bg-white p-2">
-      <div className="bg-forest-dark relative aspect-video overflow-hidden rounded-md">
+    <div className="shadow-forest-card overflow-hidden rounded-[1.5rem] border border-white/80 bg-white p-2 transition-all hover:-translate-y-1 hover:shadow-forest-floating">
+      <div className="bg-forest-dark relative aspect-video overflow-hidden rounded-[1.15rem]">
         <iframe
           src={video.src}
           title={video.title}
@@ -90,7 +90,7 @@ function GalleryVideoCard({ video }: { video: GalleryVideo }) {
         />
       </div>
       <div className="flex items-center gap-3 px-3 py-4">
-        <span className="bg-sky-mist text-sky-ink flex size-10 items-center justify-center rounded-full">
+        <span className="bg-mint-mist text-mint-ink flex size-10 items-center justify-center rounded-full">
           <PlayCircle className="size-5" />
         </span>
         <p className="text-forest-dark font-sans text-lg font-extrabold">
@@ -120,8 +120,8 @@ function MediaSwitchButton({
       className={cn(
         "inline-flex h-12 flex-1 items-center justify-center gap-2 rounded-full px-5 text-sm font-black transition-all sm:flex-none sm:px-7",
         active
-          ? "bg-sky shadow-sky-card text-white"
-          : "text-forest-soft hover:text-sky-ink hover:bg-white"
+          ? "bg-mint shadow-[0_14px_35px_rgb(22_97_63_/_18%)] text-white"
+          : "text-forest-soft hover:bg-sky-mist hover:text-sky-ink"
       )}
     >
       <Icon className="size-4" />
@@ -139,7 +139,7 @@ export default function GalleryMediaTabs({
 
   return (
     <div>
-      <div className="border-sky-line bg-sky-mist shadow-forest-value mx-auto flex w-full max-w-md rounded-full border p-1 sm:w-fit sm:max-w-none">
+      <div className="border-white bg-white/92 shadow-forest-value mx-auto flex w-full max-w-md rounded-full border p-1.5 backdrop-blur-sm sm:w-fit sm:max-w-none">
         <MediaSwitchButton
           active={activeTab === "images"}
           icon={Images}

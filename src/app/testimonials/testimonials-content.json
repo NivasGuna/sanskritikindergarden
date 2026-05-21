@@ -6,9 +6,9 @@
   "hero": {
     "badge": "Testimonials",
     "title": {
-      "line1": "Trusted guidance",
-      "highlight": "for every child",
-      "line2": "within a premium kindergarten experience"
+      "line1": "Parent voices",
+      "highlight": "you can trust",
+      "line2": ""
     },
     "subtitle": "Discover the voices of families who trust Sanskriti for thoughtful care, joyful learning, and real growth.",
     "image": {
@@ -22,7 +22,7 @@
       },
       "secondary": {
         "text": "See Admissions",
-        "link": "/contact"
+        "link": "/admissions"
       }
     }
   },
@@ -33,16 +33,28 @@
   },
   "testimonials": [
     {
-      "quote": "Really it's a good, safe and friendly place for our kids. My daughter loves Sanskriti very much. She likes all food in daycare also. All teachers and other staff also so kind to my daughter. We missed Sanskriti so much due to my transfer!",
-      "author": "Sathya B."
+      "quote": "Am satisfied with all teachers. Teachers are doing well. Class atmosphere and activities giving for kids are good. My daughter telling rhymes in home daily. Thank u for management and teaches for bringing out my kid talents.",
+      "author": "Joshini Niha"
+    },
+    {
+      "quote": "Best preschool in this surrounding. My son studied in this preschool. Good teaching, teachers are too good. Pleasant place for kids. Play area was good.",
+      "author": "Kalpu Naren"
+    },
+    {
+      "quote": "Really it's a good, safe and friendly place for our kids. My daughter loves Sanskriti very much. She likes all food in daycare also. All teachers and other staff also so kind to my daughter. We missed Sanskriti so much due to my transfer.",
+      "author": "Sathya B"
     },
     {
       "quote": "I would highly recommend Sanskriti school as it is run by an excellent team. They do a great job of making learning fun for kids and thereby making it easy for the parents too. They ensure overall development and not just academics. This will definitely be a great place to start your child's education.",
-      "author": "Chan Drika."
+      "author": "Chan Drika"
     },
     {
-      "quote": "Good activity centre near by this area. Daycare also well maintained by the management.",
-      "author": "Ashwini Shiva."
+      "quote": "We are very happy and highly recommend Sanskriti School for their well qualified modern teaching methods, Excellent teachers. Here, they will make sure individual attention to all kids and kind cooperative with Parents too. My Kid grasped well through fun activities and enjoyed the whole term. Kudos to Sanskriti Team !!!",
+      "author": "Sathish Kumar"
+    },
+    {
+      "quote": "Satisfied daycare in this area. My kids enjoyed the daycare very much. Food and snacks also very well provided by the school.",
+      "author": "Padmavathi Mohan"
     }
   ],
   "cta": {

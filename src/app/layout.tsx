@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import {
   Baloo_2,
   Geist_Mono,
+  Nunito_Sans,
   Quicksand,
 } from "next/font/google";
 import "./globals.css";
@@ -32,6 +33,13 @@ const premiumDisplay = Baloo_2({
   display: "swap",
 });
 
+const heroSubtitle = Nunito_Sans({
+  variable: "--font-hero-readable",
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  display: "swap",
+});
+
 export const metadata: Metadata = constructMetadata({
   title: "Best Preschool & Daycare in Velachery",
   description: "Best preschool and daycare in Velachery, Chennai offering activity-based learning, phonics, and child-focused education.",
@@ -52,7 +60,7 @@ export default function RootLayout({
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${sans.variable} ${geistMono.variable} ${premiumDisplay.variable} h-full antialiased`}
+      className={`${sans.variable} ${geistMono.variable} ${premiumDisplay.variable} ${heroSubtitle.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col" suppressHydrationWarning>
         <AuthProvider>

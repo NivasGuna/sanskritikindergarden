@@ -76,16 +76,18 @@ export default function HeroCarousel({
         </div>
       ))}
 
+      <div className="pointer-events-none absolute inset-0 z-[15] bg-[linear-gradient(90deg,rgb(255_248_232_/_78%)_0%,rgb(255_248_232_/_64%)_48%,rgb(255_255_255_/_32%)_100%)] lg:hidden" />
+
       <div className="relative z-20 container mx-auto flex min-h-[100svh] items-center justify-center px-6 pt-32 pb-20 text-center">
         <div className="w-full max-w-5xl">
           <div className="mx-auto max-w-5xl">
-            <p className="inline-flex items-center gap-2 text-xs font-black tracking-[0.24em] text-amber-50 uppercase drop-shadow-[0_4px_14px_rgba(15,23,42,0.78)]">
+            <p className="inline-flex items-center gap-2 text-xs font-black tracking-[0.24em] text-gold-ink uppercase drop-shadow-[0_4px_14px_rgba(255,255,255,0.78)] lg:text-amber-50 lg:drop-shadow-[0_4px_14px_rgba(15,23,42,0.78)]">
               {slide.eyebrow}
             </p>
-            <h1 className="font-premium-display mx-auto mt-6 max-w-5xl text-5xl leading-[0.98] font-extrabold tracking-normal text-white drop-shadow-[0_10px_34px_rgba(15,23,42,0.74)] sm:text-6xl md:text-7xl lg:text-8xl">
+            <h1 className="font-premium-display text-forest-dark mx-auto mt-6 max-w-5xl text-5xl leading-[0.98] font-extrabold tracking-normal drop-shadow-[0_5px_18px_rgb(255_255_255_/_82%)] sm:text-6xl md:text-7xl lg:text-8xl lg:text-white lg:drop-shadow-[0_10px_34px_rgba(15,23,42,0.74)]">
               {slide.title}
             </h1>
-            <p className="mx-auto mt-6 max-w-3xl text-base leading-8 font-black text-white drop-shadow-[0_6px_22px_rgba(15,23,42,0.72)] sm:text-lg md:text-2xl">
+            <p className="hero-subheading text-forest-soft mx-auto mt-6 max-w-3xl drop-shadow-[0_4px_14px_rgb(255_255_255_/_82%)] sm:text-lg md:text-2xl lg:text-white lg:drop-shadow-[0_6px_22px_rgba(15,23,42,0.72)]">
               {slide.description}
             </p>
           </div>
@@ -96,7 +98,7 @@ export default function HeroCarousel({
                 render={<Link href={slide.primaryAction.href} />}
                 nativeButton={false}
                 variant={slide.primaryAction.variant ?? "secondary"}
-                className="h-14 rounded-full border border-coral bg-coral px-10 text-base font-black text-white shadow-coral-button transition hover:-translate-y-0.5 hover:bg-coral-dark"
+                className="h-14 rounded-full border border-mint bg-mint px-10 text-base font-black text-white shadow-[0_18px_45px_rgb(22_97_63_/_24%)] transition hover:-translate-y-0.5 hover:bg-mint-ink"
               >
                 {slide.primaryAction.text}
                 <ArrowRight className="ml-2 size-4" />
@@ -123,7 +125,7 @@ export default function HeroCarousel({
             type="button"
             onClick={() => setActiveIndex(index)}
             className={`h-3 w-3 rounded-full transition-all ${
-              index === activeIndex ? "w-8 bg-coral" : "bg-white/70"
+              index === activeIndex ? "w-8 bg-gold" : "bg-white/70"
             }`}
             aria-label={`Show slide ${index + 1}`}
           />

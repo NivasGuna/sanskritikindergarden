@@ -153,10 +153,10 @@ function actionClassName(variant?: string, fill = false) {
   const widthClassName = fill ? "w-full" : "w-full sm:w-auto";
 
   if (variant === "primary") {
-    return `h-13 box-border ${widthClassName} max-w-[calc(100vw-3rem)] rounded-full bg-white px-6 text-center text-sm leading-tight font-bold whitespace-normal text-slate-950 transition-all hover:-translate-y-0.5 hover:bg-amber-50 sm:px-8`;
+    return `h-13 box-border ${widthClassName} max-w-[calc(100vw-3rem)] rounded-full bg-emerald-600 px-6 text-center text-sm leading-tight font-bold whitespace-normal text-white shadow-premium-sm transition-all hover:-translate-y-0.5 hover:bg-emerald-700 sm:px-8`;
   }
 
-  return `h-13 box-border ${widthClassName} max-w-[calc(100vw-3rem)] rounded-full border-white/35 bg-white/8 px-6 text-center text-sm leading-tight font-bold whitespace-normal text-white backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-white/14 sm:px-8`;
+  return `h-13 box-border ${widthClassName} max-w-[calc(100vw-3rem)] rounded-full border border-slate-900/15 bg-white/78 px-6 text-center text-sm leading-tight font-bold whitespace-normal text-slate-950 backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-white sm:px-8`;
 }
 
 export default function LocationProgramPage({
@@ -183,7 +183,7 @@ export default function LocationProgramPage({
               <h1 className="max-w-[18ch] wrap-break-word text-[2rem] leading-[1.15] font-semibold text-slate-950 sm:max-w-3xl sm:text-4xl md:text-5xl">
                 {content.hero.title}
               </h1>
-              <p className="mt-6 max-w-2xl text-base leading-8 text-slate-700 md:text-lg md:leading-8">
+              <p className="font-hero-subtitle mt-6 max-w-2xl text-base leading-8 font-semibold text-slate-700 md:text-lg md:leading-8">
                 {content.hero.description}
               </p>
 
@@ -389,7 +389,7 @@ export default function LocationProgramPage({
 
       <section className="box-border bg-white py-16 md:py-24">
         <div className="mx-auto box-border w-full max-w-7xl px-6">
-          <div className="relative min-h-[470px] overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-950 shadow-premium-md">
+          <div className="relative min-h-[470px] overflow-hidden rounded-[2rem] border border-white/70 bg-white shadow-sky-media">
             <Image
               src={content.cta.image.src}
               alt={content.cta.image.alt}
@@ -397,17 +397,17 @@ export default function LocationProgramPage({
               className="object-cover object-center"
               sizes="100vw"
             />
-            <div className="absolute inset-0 bg-slate-950/24" />
-            <div className="absolute inset-0 bg-gradient-to-r from-slate-950/66 via-slate-950/34 to-transparent" />
-            <div className="relative z-10 grid min-h-[470px] gap-8 px-6 py-10 text-white md:grid-cols-[1fr_0.98fr] md:items-end md:px-10 md:py-14 lg:px-14">
+            <div className="absolute inset-0 bg-white/58" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#fff8e8]/88 via-white/72 to-white/16" />
+            <div className="text-forest-dark relative z-10 grid min-h-[470px] gap-8 px-6 py-10 md:grid-cols-[1fr_0.98fr] md:items-end md:px-10 md:py-14 lg:px-14">
               <div className="max-w-3xl">
-                <span className="inline-flex rounded-full border border-white/20 bg-white/12 px-4 py-2 text-[11px] font-black uppercase text-amber-100 backdrop-blur-md">
+                <span className="inline-flex rounded-full border border-amber-200 bg-amber-50 px-4 py-2 text-[11px] font-black uppercase text-amber-700 backdrop-blur-md">
                   {content.cta.badge}
                 </span>
                 <h2 className="mt-5 text-3xl leading-tight font-semibold md:text-4xl">
                   {content.cta.title}
                 </h2>
-                <p className="mt-5 max-w-2xl text-base leading-7 text-white/86 md:text-[17px] md:leading-8">
+                <p className="font-hero-subtitle mt-5 max-w-2xl text-base leading-7 font-semibold text-slate-700 md:text-[17px] md:leading-8">
                   {content.cta.description}
                 </p>
               </div>
