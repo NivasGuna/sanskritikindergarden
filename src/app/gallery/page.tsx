@@ -1,11 +1,11 @@
 import Link from "next/link";
-import Image from "next/image";
 import type { Metadata } from "next";
 import { constructMetadata } from "@/lib/seo";
 import { ArrowRight, Camera, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import GalleryMediaTabs from "@/components/reusable/GalleryMediaTabs";
 import HeroBanner from "@/components/reusable/HeroBanner";
+import FinalCta from "@/components/reusable/FinalCta";
 import content from "./gallery-content.json";
 
 export const metadata: Metadata = constructMetadata({
@@ -110,47 +110,26 @@ export default function GalleryPage() {
 
       <section className="bg-white pb-16 md:pb-24">
         <div className="container mx-auto px-6">
-          <div className="shadow-sky-media relative overflow-hidden rounded-[2rem] border border-white/60 bg-white">
-            <Image
-              src="/images/gallery-hero-banner.jpeg"
-              alt="Playful school memories arranged like a bright photo wall"
-              fill
-              className="object-cover object-center"
-              sizes="100vw"
-            />
-            <div className="absolute inset-0 bg-white/60" />
-            <div className="absolute inset-0 bg-gradient-to-r from-cream-glow via-white/72 to-white/20" />
-            <div className="text-forest-dark relative z-10 grid min-h-[360px] gap-8 px-6 py-10 md:grid-cols-[1fr_auto] md:items-end md:px-10 md:py-14">
-              <div className="max-w-2xl">
-                <span className="border-sky-line bg-sky-mist text-sky-ink inline-flex rounded-full border px-4 py-2 text-[11px] font-black uppercase backdrop-blur-md">
-                  Campus Visit
-                </span>
-                <h2 className="mt-5 font-sans text-3xl leading-tight font-extrabold md:text-5xl">
-                  {content.cta.title}
-                </h2>
-                <p className="font-hero-subtitle text-forest-soft mt-5 text-base leading-7 font-semibold md:text-[17px]">
-                  {content.cta.description}
-                </p>
-              </div>
-
-              <div className="flex flex-col gap-3 sm:flex-row">
-                <Link
-                  href={content.cta.button.link}
-                  className="bg-sky hover:bg-sky-ink inline-flex h-[3.25rem] items-center justify-center rounded-full px-8 text-sm font-black text-white shadow-[0_18px_45px_rgb(21_91_139_/_18%)] transition hover:-translate-y-0.5"
-                >
-                  {content.cta.button.text}
-                  <ArrowRight className="ml-2 size-4" />
-                </Link>
-                <Link
-                  href="#gallery-media"
-                  className="text-forest-dark inline-flex h-[3.25rem] items-center justify-center rounded-full border border-forest-dark/18 bg-white/78 px-8 text-sm font-black backdrop-blur-md transition hover:-translate-y-0.5 hover:bg-white"
-                >
-                  View Moments
-                  <Sparkles className="ml-2 size-4" />
-                </Link>
-              </div>
-            </div>
-          </div>
+          <FinalCta
+            image={{
+              src: "/images/gallery-hero-banner.jpeg",
+              alt: "Playful school memories arranged like a bright photo wall",
+            }}
+            className="border-white/60"
+            badge="Campus Visit"
+            title={content.cta.title}
+            description={content.cta.description}
+            primaryAction={{
+              text: content.cta.button.text,
+              href: content.cta.button.link,
+            }}
+            secondaryAction={{
+              text: "View Moments",
+              href: "#gallery-media",
+              icon: <Sparkles className="ml-2 size-4" />,
+            }}
+            accent="sky"
+          />
         </div>
       </section>
     </main>

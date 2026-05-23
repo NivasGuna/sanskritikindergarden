@@ -16,6 +16,7 @@ import { ArrowRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import HeroBanner from "@/components/reusable/HeroBanner";
+import FinalCta from "@/components/reusable/FinalCta";
 import content from "./faq-content.json";
 
 export const metadata: Metadata = constructMetadata({
@@ -170,52 +171,28 @@ export default function FAQPage() {
       {/* ───────────────── CTA SECTION ───────────────── */}
       <section className="bg-white pt-12 pb-24">
         <div className="container mx-auto px-6">
-          <div className="shadow-sky-media relative overflow-hidden rounded-[2rem] border border-white/70 bg-white">
-            <Image
-              src="/images/faq-banner.jpeg"
-              alt="Friendly parent support and preschool questions"
-              fill
-              className="object-cover object-center"
-              sizes="100vw"
-            />
-            <div className="absolute inset-0 bg-white/64" />
-            <div className="absolute inset-0 bg-gradient-to-r from-cream-glow via-white/76 to-white/24" />
-            <div className="text-forest-dark relative z-10 grid min-h-[340px] items-end gap-10 px-8 py-12 md:grid-cols-[1fr_auto] md:px-14 md:py-16">
-              {/* Left Side */}
-              <div>
-                <span className="border-sky-line bg-sky-mist text-sky-ink inline-flex items-center rounded-full border px-4 py-1.5 text-[11px] font-black tracking-[0.28em] uppercase backdrop-blur-md">
-                  {content.cta.badge}
+          <FinalCta
+            image={{
+              src: "/images/faq-banner.jpeg",
+              alt: "Friendly parent support and preschool questions",
+            }}
+            contentClassName="items-end gap-10 px-8 py-12 md:px-14 md:py-16"
+            badge={content.cta.badge}
+            title={
+              <>
+                {content.cta.title.main}{" "}
+                <span className="text-gold-ink">
+                  {content.cta.title.highlight}
                 </span>
-
-                <h2 className="font-playful-display mt-5 text-3xl leading-[1.08] font-extrabold md:text-5xl lg:text-[clamp(2.5rem,4vw,3.4rem)]">
-                  {content.cta.title.main}{" "}
-                  <span className="text-gold-ink">
-                    {content.cta.title.highlight}
-                  </span>
-                </h2>
-
-                <p className="font-hero-subtitle text-forest-soft mt-6 max-w-2xl text-base leading-relaxed font-semibold md:text-lg">
-                  {content.cta.description}
-                </p>
-              </div>
-
-              {/* Right Side */}
-              <div className="flex flex-col items-start gap-4 md:items-end">
-                <Button
-                  render={<Link href={content.cta.button.link} />}
-                  nativeButton={false}
-                  className="bg-mint hover:bg-mint-ink h-16 rounded-full px-10 text-base font-black text-white shadow-[0_18px_45px_rgb(22_97_63_/_18%)] transition-all duration-300 hover:-translate-y-0.5"
-                >
-                  {content.cta.button.text}
-                  <ArrowRight className="ml-2 size-5" />
-                </Button>
-
-                <p className="text-forest-muted text-sm font-medium">
-                  Quick response within 24 hours
-                </p>
-              </div>
-            </div>
-          </div>
+              </>
+            }
+            description={content.cta.description}
+            primaryAction={{
+              text: content.cta.button.text,
+              href: content.cta.button.link,
+            }}
+            accent="mint"
+          />
         </div>
       </section>
     </main>

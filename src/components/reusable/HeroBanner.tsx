@@ -25,7 +25,7 @@ export default function HeroBanner({
   sizes = "100vw",
 }: HeroBannerProps) {
   const mobileOverlayClassName =
-    "bg-[linear-gradient(90deg,rgb(255_248_232_/_76%)_0%,rgb(255_248_232_/_62%)_48%,rgb(255_255_255_/_30%)_100%)] lg:hidden";
+    "bg-[linear-gradient(90deg,rgba(255,255,255,0.96)_0%,rgba(255,255,255,0.85)_60%,rgba(255,255,255,0.4)_100%)] backdrop-blur-[3px] md:bg-[linear-gradient(90deg,rgba(255,255,255,0.92)_0%,rgba(255,255,255,0.75)_50%,rgba(255,255,255,0.2)_100%)] lg:hidden";
 
   return (
     <section

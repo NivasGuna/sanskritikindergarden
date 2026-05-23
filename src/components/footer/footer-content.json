@@ -1,7 +1,7 @@
 {
   "brand": {
     "name": "Sanskriti Kindergarten",
-    "logo": "/images/sans_logo.jpg",
+    "logo": "/images/sans_logo.png",
     "logoAlt": "Sanskriti Kindergarten Logo",
     "tagline": "Nurturing young minds with love, creativity, and a foundation for lifelong learning.",
     "badge": "Since 2012"
@@ -24,7 +24,7 @@
     "email": "sanskritivelachery@gmail.com",
     "phone": "+91 78455 19020",
     "address": "No. 20B, Cart Track Road, Gopalakrishnan Street, Opposite Kala Flats, Chennai, Tamil Nadu 600032",
-    "hours": "Mon-Fri: 8:30 AM - 4:00 PM"
+    "hours": "Mon-Fri: 9 AM to 6 PM"
   },
   "social": {
     "label": "Follow Us"

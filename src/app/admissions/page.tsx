@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { constructMetadata } from "@/lib/seo";
@@ -16,6 +15,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import HeroBanner from "@/components/reusable/HeroBanner";
+import FinalCta from "@/components/reusable/FinalCta";
 import { cn } from "@/lib/utils";
 import AdmissionForm from "./AdmissionForm";
 import content from "./admissions-content.json";
@@ -223,39 +223,26 @@ export default function AdmissionsPage() {
 
       <section className="bg-white py-14 md:py-20">
         <div className="container mx-auto px-6">
-          <div className="shadow-sky-media relative overflow-hidden rounded-[2rem] border border-white/70 bg-white">
-            <Image
-              src="/images/admission-page-hero-banner.jpeg"
-              alt="Child exploring learning materials during a welcoming school visit"
-              fill
-              className="object-cover object-center"
-              sizes="100vw"
-            />
-            <div className="absolute inset-0 bg-white/62" />
-            <div className="absolute inset-0 bg-gradient-to-r from-cream-glow via-white/76 to-white/20" />
-            <div className="text-forest-dark relative z-10 grid min-h-[340px] gap-8 px-6 py-10 md:grid-cols-[1fr_auto] md:items-end md:px-10 md:py-14">
-              <div className="max-w-3xl">
-                <span className="border-gold-line bg-gold-mist text-gold-ink inline-flex items-center gap-2 rounded-full border px-4 py-2 text-[11px] font-black tracking-[0.2em] uppercase backdrop-blur-md">
-                  <Sparkles className="size-4" />
-                  {content.closing.badge}
-                </span>
-                <h2 className="font-playful-display mt-5 text-3xl leading-tight font-extrabold md:text-5xl">
-                  {content.closing.title}
-                </h2>
-                <p className="font-hero-subtitle text-forest-soft mt-5 max-w-2xl text-base leading-7 font-semibold md:text-lg">
-                  {content.closing.description}
-                </p>
-              </div>
-
-              <a
-                href={phoneHref}
-                className="bg-mint hover:bg-mint-ink inline-flex h-14 items-center justify-center rounded-full px-8 text-base font-black text-white shadow-[0_18px_45px_rgb(22_97_63_/_18%)] transition-all hover:-translate-y-0.5"
-              >
-                {content.closing.button.text}
-                <HeartHandshake className="ml-3 size-5" />
-              </a>
-            </div>
-          </div>
+          <FinalCta
+            image={{
+              src: "/images/admission-page-hero-banner.jpeg",
+              alt: "Child exploring learning materials during a welcoming school visit",
+            }}
+            badge={
+              <>
+                <Sparkles className="size-4" />
+                {content.closing.badge}
+              </>
+            }
+            title={content.closing.title}
+            description={content.closing.description}
+            primaryAction={{
+              text: content.closing.button.text,
+              href: phoneHref,
+              icon: <HeartHandshake className="ml-3 size-5" />,
+            }}
+            accent="mint"
+          />
         </div>
       </section>
     </main>

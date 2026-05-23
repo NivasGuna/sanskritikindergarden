@@ -17,6 +17,7 @@ import {
 import type { HeroSlide } from "@/components/reusable/HeroCarousel";
 import AnnouncementPopup from "@/components/AnnouncementPopup";
 import HeroCarousel from "@/components/reusable/HeroCarousel";
+import FinalCta from "@/components/reusable/FinalCta";
 import content from "./home-content.json";
 
 const heroSlides = content.hero.slides as HeroSlide[];
@@ -365,47 +366,18 @@ export default function Home() {
 
       <section className="bg-white pb-16 md:pb-24">
         <div className="container mx-auto px-6">
-          <div className="shadow-sky-media relative overflow-hidden rounded-[2rem] border border-white/70 bg-white">
-            <Image
-              src="/images/who-we-are-kindergarten-learning.png"
-              alt="Children enjoying a warm Sanskriti Kindergarten classroom"
-              fill
-              className="object-cover object-center"
-              sizes="100vw"
-            />
-            <div className="absolute inset-0 bg-white/62" />
-            <div className="absolute inset-0 bg-gradient-to-r from-cream-glow via-white/76 to-white/20" />
-            <div className="text-forest-dark relative z-10 grid min-h-[360px] gap-8 px-6 py-10 md:grid-cols-[1fr_auto] md:items-end md:px-10 md:py-14">
-              <div className="max-w-2xl">
-                <span className="border-gold-line bg-gold-mist text-gold-ink inline-flex rounded-full border px-4 py-2 text-[11px] font-black uppercase backdrop-blur-md">
-                  Admissions Open
-                </span>
-                <h2 className="font-playful-display mt-5 text-4xl leading-tight font-extrabold md:text-5xl">
-                  Give your child a joyful start to learning.
-                </h2>
-                <p className="text-forest-soft font-hero-subtitle mt-5 text-base leading-7 font-semibold md:text-[17px]">
-                  Visit our Velachery campus and experience the calm, caring
-                  environment behind the learning journey.
-                </p>
-              </div>
-
-              <div className="flex flex-col gap-3 sm:flex-row">
-                <Link
-                  href="/admissions"
-                  className="bg-mint hover:bg-mint-ink inline-flex h-[3.25rem] items-center justify-center rounded-full px-8 text-sm font-black text-white shadow-[0_18px_45px_rgb(22_97_63_/_18%)] transition hover:-translate-y-0.5"
-                >
-                  Start Admissions
-                  <ArrowRight className="ml-2 size-4" />
-                </Link>
-                <Link
-                  href="/curriculum"
-                  className="text-forest-dark inline-flex h-[3.25rem] items-center justify-center rounded-full border border-forest-dark/18 bg-white/78 px-8 text-sm font-black backdrop-blur-md transition hover:-translate-y-0.5 hover:bg-white"
-                >
-                  View Curriculum
-                </Link>
-              </div>
-            </div>
-          </div>
+          <FinalCta
+            image={{
+              src: "/images/who-we-are-kindergarten-learning.png",
+              alt: "Children enjoying a warm Sanskriti Kindergarten classroom",
+            }}
+            badge="Admissions Open"
+            title="Give your child a joyful start to learning."
+            description="Visit our Velachery campus and experience the calm, caring environment behind the learning journey."
+            primaryAction={{ text: "Start Admissions", href: "/admissions" }}
+            secondaryAction={{ text: "View Curriculum", href: "/curriculum" }}
+            accent="mint"
+          />
         </div>
       </section>
     </main>

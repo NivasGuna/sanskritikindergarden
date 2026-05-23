@@ -81,7 +81,7 @@ export default function LoginPage() {
           <div className="login-logo-wrap">
             <div className="login-logo">
               <Image
-                src="/images/sans_logo.jpg"
+                src="/images/sans_logo.png"
                 alt="Sanskriti Kindergarten Logo"
                 width={80}
                 height={80}

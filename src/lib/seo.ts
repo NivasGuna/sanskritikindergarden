@@ -32,7 +32,7 @@ export function constructMetadata({
   title?: string;
   description?: string;
   image?: string;
-  icons?: string;
+  icons?: Metadata["icons"];
   noIndex?: boolean;
   canonicalUrl?: string; // relative path, e.g., "/about"
 } = {}): Metadata {
@@ -67,7 +67,7 @@ export function constructMetadata({
       description,
       images: [image],
     },
-    icons,
+    ...(icons && { icons }),
     metadataBase: new URL(siteConfig.url),
     ...(canonicalUrl && {
       alternates: {

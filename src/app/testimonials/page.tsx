@@ -1,10 +1,10 @@
-import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { constructMetadata } from "@/lib/seo";
 import { ArrowRight, Quote, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import HeroBanner from "@/components/reusable/HeroBanner";
+import FinalCta from "@/components/reusable/FinalCta";
 import content from "./testimonials-content.json";
 
 export const metadata: Metadata = constructMetadata({
@@ -179,40 +179,21 @@ export default function TestimonialsPage() {
 
       <section className="bg-white py-16 md:py-20">
         <div className="container mx-auto px-6">
-          <div className="shadow-sky-media relative overflow-hidden rounded-[2rem] border border-white/70 bg-white">
-            <Image
-              src="/images/testimonials.jpeg"
-              alt="Happy parent and child sharing a warm school moment"
-              fill
-              className="object-cover object-center"
-              sizes="100vw"
-            />
-            <div className="absolute inset-0 bg-white/60" />
-            <div className="absolute inset-0 bg-gradient-to-r from-cream-glow via-white/74 to-white/18" />
-            <div className="text-forest-dark relative z-10 grid min-h-[340px] items-end gap-8 px-6 py-10 md:grid-cols-[1fr_auto] md:px-10 md:py-14">
-              <div className="max-w-2xl">
-                <span className="border-gold-line bg-gold-mist text-gold-ink inline-flex rounded-full border px-4 py-2 text-[11px] font-black uppercase backdrop-blur-md">
-                  Family Stories
-                </span>
-                <h2 className="font-playful-display mt-5 text-3xl leading-tight font-extrabold md:text-5xl">
-                  {content.cta.title}
-                </h2>
-                <p className="font-hero-subtitle text-forest-soft mt-5 max-w-2xl text-base leading-7 font-semibold">
-                  {content.cta.description}
-                </p>
-              </div>
-              <div className="flex flex-col gap-3 sm:flex-row md:justify-end">
-                <Button
-                  render={<Link href={content.cta.button.link} />}
-                  nativeButton={false}
-                  className="bg-mint hover:bg-mint-ink h-12 rounded-full px-8 text-sm font-black text-white shadow-[0_18px_45px_rgb(22_97_63_/_18%)] transition-all hover:-translate-y-0.5"
-                >
-                  {content.cta.button.text}
-                  <ArrowRight className="ml-2 size-4" />
-                </Button>
-              </div>
-            </div>
-          </div>
+          <FinalCta
+            image={{
+              src: "/images/testimonials.jpeg",
+              alt: "Happy parent and child sharing a warm school moment",
+            }}
+            contentClassName="items-end"
+            badge="Family Stories"
+            title={content.cta.title}
+            description={content.cta.description}
+            primaryAction={{
+              text: content.cta.button.text,
+              href: content.cta.button.link,
+            }}
+            accent="gold"
+          />
         </div>
       </section>
     </main>

@@ -205,7 +205,7 @@
   }
 
   .hero-subheading {
-    @apply font-hero-subtitle text-base leading-8 font-semibold tracking-normal;
+    @apply font-hero-subtitle text-[17px] leading-relaxed font-semibold tracking-normal sm:text-lg;
   }
 }
 
@@ -234,4 +234,27 @@
 
 .animate-bounce-gentle {
   animation: bounce-gentle 2.6s ease-in-out infinite;
+}
+
+@keyframes education-float {
+  0%,
+  100% {
+    opacity: 0.34;
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    opacity: 0.62;
+    transform: translate3d(var(--float-x, 14px), var(--float-y, -18px), 0)
+      rotate(var(--float-rotate, 6deg));
+  }
+}
+
+.hero-floating-icon {
+  animation: education-float var(--float-duration, 15s) ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-floating-icon {
+    animation: none;
+  }
 }

@@ -5,7 +5,6 @@ import { getBreadcrumbSchema } from "@/lib/schema";
 import Schema from "@/components/Schema";
 import {
   ArrowRight,
-  CalendarDays,
   Clock,
   Mail,
   MapPin,
@@ -13,6 +12,7 @@ import {
   Star,
 } from "lucide-react";
 import HeroBanner from "@/components/reusable/HeroBanner";
+import FinalCta from "@/components/reusable/FinalCta";
 import content from "./contact-content.json";
 
 export const metadata: Metadata = constructMetadata({
@@ -163,26 +163,6 @@ export default function ContactPage() {
                 <ContactDetailLink detail={hoursDetail} />
               </div>
 
-              <div className="shadow-premium-sm mt-6 flex min-w-0 flex-col gap-4 rounded-[1.25rem] border border-sky-100 bg-sky-50/50 p-5 sm:flex-row sm:items-center">
-                <span className="text-premium-forest flex size-12 shrink-0 items-center justify-center rounded-2xl bg-white">
-                  <CalendarDays className="size-5" />
-                </span>
-                <span className="min-w-0 flex-1">
-                  <span className="text-premium-ink block text-base font-bold">
-                    {content.visitCta.title}
-                  </span>
-                  <span className="text-premium-muted mt-1 block text-sm leading-6">
-                    {content.visitCta.text}
-                  </span>
-                </span>
-                <a
-                  href={phoneHref}
-                  className="bg-premium-forest hover:bg-premium-forest/90 inline-flex h-12 shrink-0 items-center justify-center rounded-full px-6 text-sm font-bold text-white transition-all hover:-translate-y-0.5"
-                >
-                  {content.visitCta.button.text}
-                  <ArrowRight className="ml-3 size-4" />
-                </a>
-              </div>
             </div>
 
             <div className="relative min-w-0">
@@ -208,11 +188,11 @@ export default function ContactPage() {
           src="/images/contact-hero-sanskriti-reception.png"
           alt=""
           fill
-          className="object-cover object-center opacity-[0.24]"
+          className="object-cover object-center opacity-[0.42]"
           sizes="100vw"
           aria-hidden="true"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(135deg,rgb(255_248_232_/_90%)_0%,rgb(255_255_255_/_86%)_52%,rgb(238_248_255_/_82%)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(135deg,rgb(255_248_232_/_58%)_0%,rgb(255_255_255_/_52%)_52%,rgb(238_248_255_/_42%)_100%)]" />
         <div className="container relative mx-auto px-6">
           <div className="border-sky-line shadow-sky-card overflow-hidden rounded-[2rem] border bg-white lg:grid lg:min-h-[460px] lg:grid-cols-[0.36fr_0.64fr]">
             <div className="bg-sky-mist/50 flex flex-col justify-center p-8 lg:p-12">
