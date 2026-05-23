@@ -30,7 +30,7 @@ const socialLinks = [
 export default function Footer() {
   return (
     <footer className="border-mint-line/70 text-forest-dark border-t bg-[#fff8ed]">
-      <div className="container mx-auto px-6 py-14 md:py-[4.5rem]">
+      <div className="container mx-auto px-6 py-14 md:py-18">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.2fr_0.75fr_1fr_0.8fr]">
           <div className="max-w-sm">
             <div className="mb-4 inline-flex items-center gap-3">
@@ -39,7 +39,7 @@ export default function Footer() {
                   src={content.brand.logo}
                   alt={content.brand.logoAlt}
                   fill
-                  className="object-contain p-1.5"
+                  className="object-contain p-0.5"
                   sizes="64px"
                 />
               </div>
