@@ -34,12 +34,13 @@ export default function Footer() {
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.2fr_0.75fr_1fr_0.8fr]">
           <div className="max-w-sm">
             <div className="mb-4 inline-flex items-center gap-3">
-              <div className="relative size-16 overflow-hidden rounded-full border border-white bg-white shadow-[0_14px_34px_rgba(23,53,47,0.10)]">
+              <div className="relative flex size-20 shrink-0 items-center justify-center rounded-full border-[3px] border-white bg-white shadow-sm transition-all duration-300 group-hover:scale-105 sm:size-20">
                 <Image
                   src={content.brand.logo}
                   alt={content.brand.logoAlt}
                   fill
-                  className="object-contain p-0.5"
+                  className="scale-110 rounded-full object-contain"
+                  priority
                   sizes="64px"
                 />
               </div>

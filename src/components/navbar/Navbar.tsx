@@ -47,12 +47,12 @@ export default function Navbar() {
           href="/"
           className="group flex min-w-0 items-center gap-3 transition-all duration-300 sm:gap-4"
         >
-          <div className="relative flex size-16 shrink-0 items-center justify-center rounded-full border-[3px] border-white bg-white shadow-sm transition-all duration-300 group-hover:scale-105 sm:size-[4.5rem]">
+          <div className="relative flex size-20 shrink-0 items-center justify-center rounded-full border-[3px] border-white bg-white shadow-sm transition-all duration-300 group-hover:scale-105 sm:size-20">
             <Image
               src={content.brand.logo}
               alt={content.brand.logoAlt}
               fill
-              className="scale-150 object-contain p-1"
+              className="scale-110 rounded-full object-contain"
               priority
               sizes="64px"
             />
