@@ -3,8 +3,8 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { usePathname, useRouter } from "next/navigation";
+import { Menu, X, LogOut } from "lucide-react";
 import { useAuth } from "@/components/providers/auth-provider";
 import content from "./navbar-content.json";
 
@@ -12,8 +12,15 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
-  const { isLoggedIn } = useAuth();
+  const router = useRouter();
+  const { isLoggedIn, logout } = useAuth();
   const isSolid = scrolled || mobileOpen;
+
+  const handleLogout = async () => {
+    await logout();
+    setMobileOpen(false);
+    router.push("/");
+  };
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -38,23 +45,23 @@ export default function Navbar() {
         {/* ── Logo ── */}
         <Link
           href="/"
-          className="group flex min-w-0 items-center gap-3 rounded-2xl bg-white/80 p-2 shadow-sm backdrop-blur-md transition-all duration-300 hover:bg-white/95 sm:gap-3.5 sm:px-3 sm:py-2"
+          className="group flex min-w-0 items-center gap-3 transition-all duration-300 sm:gap-4"
         >
-          <div className="relative size-11 shrink-0 transition-all duration-300 group-hover:scale-105 sm:size-12">
+          <div className="relative flex size-16 shrink-0 items-center justify-center rounded-full border-[3px] border-white bg-white shadow-sm transition-all duration-300 group-hover:scale-105 sm:size-[4.5rem]">
             <Image
               src={content.brand.logo}
               alt={content.brand.logoAlt}
               fill
-              className="object-contain"
+              className="scale-150 object-contain p-1"
               priority
-              sizes="48px"
+              sizes="64px"
             />
           </div>
           <span className="hidden min-w-0 leading-none sm:block">
-            <span className="font-premium-display text-forest-dark block text-[1.15rem] leading-tight font-bold tracking-normal">
+            <span className="font-premium-display text-forest-dark block text-[1.3rem] leading-tight font-extrabold tracking-normal">
               {content.brand.name}
             </span>
-            <span className="text-mint-ink mt-1 block text-[10px] font-black tracking-[0.2em] uppercase">
+            <span className="text-mint-ink mt-1 block text-[11px] font-black tracking-[0.2em] uppercase">
               {content.brand.subline}
             </span>
           </span>
@@ -72,10 +79,10 @@ export default function Navbar() {
                     isActive
                       ? isSolid
                         ? "bg-mint-mist text-mint-ink"
-                        : "bg-white/76 text-mint-ink"
+                        : "text-mint-ink bg-white/76"
                       : isSolid
                         ? "text-forest-dark hover:bg-sky-mist hover:text-sky-ink"
-                        : "text-forest-dark hover:bg-white/72 hover:text-sky-ink"
+                        : "text-forest-dark hover:text-sky-ink hover:bg-white/72"
                   }`}
                 >
                   {link.name}
@@ -84,24 +91,39 @@ export default function Navbar() {
             );
           })}
 
-          {/* ── App Name (shown only when logged in) ── */}
+          {/* ── App Name & Auth (shown conditionally) ── */}
           {isLoggedIn && (
-            <li>
-              <Link
-                href="/applications"
-                className={`relative rounded-full px-3.5 py-2 text-base font-extrabold transition-all duration-300 ${
-                  pathname === "/applications"
-                    ? isSolid
-                      ? "bg-mint-mist text-mint-ink"
-                      : "bg-white/76 text-mint-ink"
-                    : isSolid
-                      ? "text-forest-dark hover:bg-sky-mist hover:text-sky-ink"
-                      : "text-forest-dark hover:bg-white/72 hover:text-sky-ink"
-                }`}
-              >
-                Applications
-              </Link>
-            </li>
+            <>
+              <li>
+                <Link
+                  href="/applications"
+                  className={`relative rounded-full px-3.5 py-2 text-base font-extrabold transition-all duration-300 ${
+                    pathname === "/applications"
+                      ? isSolid
+                        ? "bg-mint-mist text-mint-ink"
+                        : "text-mint-ink bg-white/76"
+                      : isSolid
+                        ? "text-forest-dark hover:bg-sky-mist hover:text-sky-ink"
+                        : "text-forest-dark hover:text-sky-ink hover:bg-white/72"
+                  }`}
+                >
+                  Applications
+                </Link>
+              </li>
+              <li>
+                <button
+                  onClick={handleLogout}
+                  className={`flex items-center gap-2 rounded-full px-4 py-2 text-base font-extrabold transition-all duration-300 ${
+                    isSolid
+                      ? "bg-coral-mist text-coral-ink hover:bg-coral hover:text-white"
+                      : "text-coral-ink hover:bg-coral bg-white/76 hover:text-white"
+                  }`}
+                >
+                  Logout
+                  <LogOut className="size-4" />
+                </button>
+              </li>
+            </>
           )}
         </ul>
 
@@ -111,7 +133,7 @@ export default function Navbar() {
           className={`flex size-11 items-center justify-center rounded-xl transition-all duration-300 xl:hidden ${
             isSolid
               ? "text-forest-dark hover:bg-mint-mist hover:text-mint-ink"
-              : "bg-white/88 text-forest-dark hover:bg-white hover:text-mint-ink"
+              : "text-forest-dark hover:text-mint-ink bg-white/88 hover:bg-white"
           }`}
           aria-label="Toggle menu"
         >
@@ -146,21 +168,32 @@ export default function Navbar() {
               );
             })}
 
-            {/* ── Mobile: App Name (shown only when logged in) ── */}
+            {/* ── Mobile: Auth Links ── */}
             {isLoggedIn && (
-              <li>
-                <Link
-                  href="/applications"
-                  onClick={() => setMobileOpen(false)}
-                  className={`block rounded-xl px-4 py-3 text-sm font-semibold transition-all duration-200 ${
-                    pathname === "/applications"
-                      ? "bg-mint-mist text-mint-ink"
-                      : "text-forest-soft hover:bg-sky-mist hover:text-sky-ink"
-                  }`}
-                >
-                  Applications
-                </Link>
-              </li>
+              <>
+                <li>
+                  <Link
+                    href="/applications"
+                    onClick={() => setMobileOpen(false)}
+                    className={`block rounded-xl px-4 py-3 text-sm font-semibold transition-all duration-200 ${
+                      pathname === "/applications"
+                        ? "bg-mint-mist text-mint-ink"
+                        : "text-forest-soft hover:bg-sky-mist hover:text-sky-ink"
+                    }`}
+                  >
+                    Applications
+                  </Link>
+                </li>
+                <li>
+                  <button
+                    onClick={handleLogout}
+                    className="text-coral-ink hover:bg-coral-mist flex w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-semibold transition-all duration-200"
+                  >
+                    Logout
+                    <LogOut className="size-4" />
+                  </button>
+                </li>
+              </>
             )}
           </ul>
         </div>

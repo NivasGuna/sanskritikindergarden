@@ -76,6 +76,17 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const logout = useCallback(async () => {
     await signOut(auth);
     setUser(null);
+    try {
+      sessionStorage.clear();
+      // Clear cookies by setting them to expire
+      document.cookie.split(";").forEach((c) => {
+        document.cookie = c
+          .replace(/^ +/, "")
+          .replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+      });
+    } catch (e) {
+      console.error("Error clearing session data:", e);
+    }
   }, []);
 
   /* Avoid hydration mismatch — render children only after client rehydration */

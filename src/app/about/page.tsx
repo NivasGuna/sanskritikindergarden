@@ -138,7 +138,7 @@ export default function AboutPage() {
               <span className="text-sky-ink">{content.hero.title.line2}</span>
             </h1>
 
-            <p className="hero-subheading text-forest-soft mt-6 max-w-[32rem] drop-shadow-[0_3px_12px_rgb(255_255_255_/_90%)] md:text-xl">
+            <p className="hero-subheading text-premium-ink mt-6 max-w-[32rem] drop-shadow-[0_3px_12px_rgb(255_255_255_/_90%)] md:text-xl">
               {content.hero.subtitle}
             </p>
 
@@ -443,7 +443,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-6">
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-6">
             {content.values.items.map((item, index) => {
               const Icon = valueIconMap[item.icon as ValueIcon];
 
@@ -451,25 +451,27 @@ export default function AboutPage() {
                 <article
                   key={item.title}
                   className={cn(
-                    "shadow-forest-value relative overflow-hidden rounded-[1.5rem] border p-6 transition-all hover:-translate-y-0.5 hover:shadow-forest-card lg:col-span-2",
+                    "shadow-forest-value group relative overflow-hidden rounded-[2rem] border p-8 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-forest-card lg:col-span-2",
                     (index === 0 || index === 5) && "lg:col-span-3",
                     valueColorClasses[index % valueColorClasses.length]
                   )}
                 >
-                  <div className="relative z-10 flex items-start gap-4">
-                    <div className="text-forest-dark flex size-13 shrink-0 items-center justify-center rounded-2xl bg-white/86 shadow-forest-icon">
-                      <Icon className="size-6" />
+                  <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-white/40 transition-transform duration-500 group-hover:scale-150" />
+                  <div className="absolute -bottom-6 -left-6 h-24 w-24 rounded-full bg-white/40 transition-transform duration-500 group-hover:scale-125" />
+                  
+                  <div className="relative z-10 flex flex-col items-center text-center gap-5 sm:flex-row sm:text-left sm:items-start">
+                    <div className="flex size-16 shrink-0 items-center justify-center rounded-[1.2rem] bg-white shadow-forest-icon transition-transform group-hover:scale-110">
+                      <Icon className="size-7" />
                     </div>
-                    <div>
-                    <h3 className="font-playful-display text-forest-dark text-2xl font-extrabold">
-                      {item.title}
-                    </h3>
-                    <p className="text-forest-soft mt-2 text-sm leading-6 font-semibold">
-                      {item.description}
-                    </p>
+                    <div className="min-w-0">
+                      <h3 className="font-playful-display text-2xl font-extrabold">
+                        {item.title}
+                      </h3>
+                      <p className="mt-2.5 text-[15px] leading-relaxed font-semibold opacity-90">
+                        {item.description}
+                      </p>
                     </div>
                   </div>
-                  <div className="absolute right-4 bottom-4 h-16 w-16 rounded-full bg-white/35" />
                 </article>
               );
             })}

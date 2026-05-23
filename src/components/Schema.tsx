@@ -1,4 +1,4 @@
-export default function Schema({ data }: { data: any }) {
+export default function Schema({ data }: { data: unknown }) {
   return (
     <script
       type="application/ld+json"

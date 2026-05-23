@@ -176,7 +176,7 @@ function LearningImagePanel({
   return (
     <div
       className={cn(
-        "shadow-sky-media relative min-h-[420px] overflow-hidden rounded-[1.75rem] border border-white bg-white md:min-h-[500px]",
+        "shadow-sky-media relative min-h-105 overflow-hidden rounded-[1.75rem] border border-white bg-white md:min-h-[500px]",
         className
       )}
     >
@@ -187,7 +187,7 @@ function LearningImagePanel({
         className={imageClassName}
         sizes="(min-width: 1024px) 48vw, 100vw"
       />
-      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-white/94 via-white/66 to-transparent p-5 pt-24">
+      <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-white/94 via-white/66 to-transparent p-5 pt-24">
         <div className="max-w-sm rounded-[1.2rem] border border-white/80 bg-white/88 p-4 shadow-premium-sm backdrop-blur-sm">
           <p className="text-premium-forest text-[10px] font-black tracking-[0.22em] uppercase">
             {badge}
@@ -335,7 +335,7 @@ export default function CurriculumPage() {
       <HeroBanner
         image={content.hero.image}
         imageClassName="object-[68%_center] min-[1000px]:object-center"
-        overlayClassName="bg-[linear-gradient(90deg,rgba(255,255,255,0.95)_0%,rgba(255,255,255,0.8)_48%,rgba(255,255,255,0.2)_100%)] backdrop-blur-[3px] lg:backdrop-blur-sm lg:bg-[linear-gradient(90deg,rgba(255,255,255,0.85)_0%,rgba(255,255,255,0.5)_42%,rgba(255,255,255,0.05)_100%)]"
+        overlayClassName="hidden"
       >
         <div className="relative z-10 container mx-auto flex min-h-[100svh] items-center px-6 py-28">
           <div className="motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-left-12 max-w-[34rem] duration-1000">
@@ -353,11 +353,11 @@ export default function CurriculumPage() {
               </span>
             </h1>
 
-            <p className="font-hero-subtitle text-forest-dark mt-5 max-w-[32rem] text-lg leading-snug font-bold drop-shadow-[0_3px_12px_rgb(255_255_255_/_90%)] md:text-2xl">
+            <p className="hero-subheading text-premium-ink mt-6 max-w-[32rem] drop-shadow-[0_3px_12px_rgb(255_255_255_/_90%)] md:text-xl">
               {content.hero.subtitle}
             </p>
 
-            <p className="font-hero-subtitle text-forest-dark mt-6 max-w-[32rem] text-[17px] leading-relaxed font-semibold drop-shadow-[0_3px_12px_rgb(255_255_255_/_90%)] md:text-lg">
+            <p className="hero-subheading text-premium-ink mt-6 max-w-[32rem] drop-shadow-[0_3px_12px_rgb(255_255_255_/_90%)] md:text-xl">
               {content.hero.description}
             </p>
 
@@ -524,98 +524,99 @@ export default function CurriculumPage() {
         <div className="absolute top-16 right-[-5rem] h-56 w-56 rounded-full bg-sky-mist" />
         <div className="absolute bottom-12 left-[-4rem] h-44 w-44 rounded-full bg-mint-mist/80" />
         <div className="container relative mx-auto px-6">
-          <div className="grid items-stretch gap-6 lg:grid-cols-[0.94fr_1.06fr]">
-            <div className="rounded-[1.75rem] border border-white/80 bg-white/88 p-6 shadow-forest-card backdrop-blur-sm md:p-8">
-              <SectionIntro
-                badge={content.skillDevelopment.badge}
-                title={content.skillDevelopment.title}
-                description={content.skillDevelopment.description}
-                accent="sky"
-                titleClassName="!text-2xl sm:!text-3xl md:!text-4xl"
-              />
+          <SectionIntro
+            badge={content.skillDevelopment.badge}
+            title={content.skillDevelopment.title}
+            description={content.skillDevelopment.description}
+            align="center"
+            accent="sky"
+            titleClassName="md:text-5xl"
+          />
 
-              <div className="mt-6 rounded-[1.2rem] border border-sky-line bg-sky-mist/80 p-4">
-                <p className="font-hero-subtitle text-sky-ink text-sm leading-6 font-bold">
-                  Fine and gross motor practice is woven into classroom routines
-                  so children build control, balance, and creative confidence
-                  without the experience feeling formal or pressured.
-                </p>
-              </div>
-
-              <div className="mt-5 grid gap-4">
-                {content.skillDevelopment.groups.map((group, index) => {
-                  const Icon = getIcon(group.icon);
-
-                  return (
-                    <article
-                      key={group.title}
-                      className="group rounded-[1.3rem] border border-white bg-white p-5 shadow-premium-sm transition-all hover:-translate-y-0.5 hover:shadow-premium-md"
-                    >
-                      <div className="flex items-start gap-4">
-                        <div
-                          className={`flex size-12 shrink-0 items-center justify-center rounded-2xl border bg-white shadow-premium-sm ${cardAccentClassNames[index]}`}
-                        >
-                          <Icon className="size-6" />
-                        </div>
-                        <div className="min-w-0">
-                          <p className="text-premium-forest text-[10px] font-black tracking-[0.2em] uppercase">
-                            {group.label}
-                          </p>
-                          <h3 className="text-premium-ink mt-1 text-lg leading-snug font-extrabold md:text-xl">
-                            {group.title}
-                          </h3>
-                          <p className="font-hero-subtitle text-premium-muted mt-2 text-sm leading-6 font-semibold">
-                            {group.description}
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="mt-5 grid gap-4 md:grid-cols-2">
-                        <div>
-                          <p className="text-forest-dark mb-3 text-[10px] font-black tracking-[0.2em] uppercase">
-                            Core gains
-                          </p>
-                          <div className="grid gap-2">
-                            {group.skills.map((skill) => (
-                              <div
-                                key={skill}
-                                className="border-mint-line text-premium-ink flex min-h-10 items-center gap-3 rounded-xl border bg-mint-mist/55 px-3 py-2 text-sm font-bold"
-                              >
-                                <Check className="text-premium-forest size-4 shrink-0" />
-                                {skill}
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-
-                        <div>
-                          <p className="text-forest-dark mb-3 text-[10px] font-black tracking-[0.2em] uppercase">
-                            Classroom activities
-                          </p>
-                          <div className="flex flex-wrap gap-2">
-                            {group.activities.map((activity) => (
-                              <span
-                                key={activity}
-                                className="border-sky-line text-sky-ink rounded-full border bg-sky-mist px-3 py-1.5 text-xs font-black"
-                              >
-                                {activity}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    </article>
-                  );
-                })}
-              </div>
-            </div>
-
+          <div className="mx-auto mt-10 max-w-5xl">
             <LearningImagePanel
               image={content.skillDevelopment.image}
               badge="Fine + gross motor practice"
               title="Confidence built through movement and play"
-              className="lg:order-2 lg:min-h-[620px]"
+              className="h-[350px] bg-sky-wash md:h-[450px]"
+              imageClassName="object-contain object-bottom p-4"
             />
+          </div>
+
+          <div className="mx-auto mt-8 max-w-4xl rounded-[1.2rem] border border-sky-line bg-sky-mist/80 p-5 text-center">
+            <p className="font-hero-subtitle text-sky-ink text-sm leading-6 font-bold sm:text-base">
+              Fine and gross motor practice is woven into classroom routines
+              so children build control, balance, and creative confidence
+              without the experience feeling formal or pressured.
+            </p>
+          </div>
+
+          <div className="mx-auto mt-8 grid max-w-5xl gap-6 md:grid-cols-2">
+            {content.skillDevelopment.groups.map((group, index) => {
+              const Icon = getIcon(group.icon);
+
+              return (
+                <article
+                  key={group.title}
+                  className="group rounded-[1.5rem] border border-white/80 bg-white/88 p-6 shadow-premium-sm backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:shadow-premium-md md:p-8"
+                >
+                  <div className="flex items-start gap-4">
+                    <div
+                      className={`flex size-14 shrink-0 items-center justify-center rounded-2xl border bg-white shadow-premium-sm ${cardAccentClassNames[index]}`}
+                    >
+                      <Icon className="size-7" />
+                    </div>
+                    <div className="min-w-0">
+                      <p className="text-premium-forest text-[11px] font-black tracking-[0.2em] uppercase">
+                        {group.label}
+                      </p>
+                      <h3 className="text-premium-ink mt-1.5 text-xl leading-snug font-extrabold md:text-2xl">
+                        {group.title}
+                      </h3>
+                    </div>
+                  </div>
+                  
+                  <p className="font-hero-subtitle text-premium-muted mt-4 text-sm leading-6 font-semibold">
+                    {group.description}
+                  </p>
+
+                  <div className="mt-6 space-y-5">
+                    <div>
+                      <p className="text-forest-dark mb-3 text-[11px] font-black tracking-[0.2em] uppercase">
+                        Core gains
+                      </p>
+                      <div className="grid gap-2">
+                        {group.skills.map((skill) => (
+                          <div
+                            key={skill}
+                            className="border-mint-line text-premium-ink flex min-h-10 items-center gap-3 rounded-xl border bg-mint-mist/55 px-3 py-2 text-sm font-bold"
+                          >
+                            <Check className="text-premium-forest size-4 shrink-0" />
+                            {skill}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div>
+                      <p className="text-forest-dark mb-3 text-[11px] font-black tracking-[0.2em] uppercase">
+                        Classroom activities
+                      </p>
+                      <div className="flex flex-wrap gap-2">
+                        {group.activities.map((activity) => (
+                          <span
+                            key={activity}
+                            className="border-sky-line text-sky-ink rounded-full border bg-sky-mist px-3 py-1.5 text-xs font-black"
+                          >
+                            {activity}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>

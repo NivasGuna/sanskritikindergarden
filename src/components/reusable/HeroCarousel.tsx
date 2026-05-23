@@ -164,8 +164,8 @@ export default function HeroCarousel({
 }: HeroCarouselProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const slide = slides[activeIndex];
-  const CAROUSEL_ICONS = [BookOpenCheck, Smile, Star];
-  const SlideIcon = CAROUSEL_ICONS[activeIndex % CAROUSEL_ICONS.length];
+  const CAROUSEL_EMOJIS = ["🌟", "📚", "🎨"];
+  const SlideEmoji = CAROUSEL_EMOJIS[activeIndex % CAROUSEL_EMOJIS.length];
 
   useEffect(() => {
     if (!slides.length) return;
@@ -224,11 +224,11 @@ export default function HeroCarousel({
         ))}
       </div>
 
-      <div className="relative z-20 container mx-auto flex min-h-[100svh] items-center justify-center px-6 pt-30 pb-18 text-center md:pt-32 md:pb-20">
+      <div className="relative z-20 container mx-auto flex min-h-[100svh] items-center justify-center px-4 pt-30 pb-18 text-center md:pt-32 md:pb-20">
         <div className="w-full max-w-4xl -mt-16 md:-mt-20">
           <div className="mx-auto max-w-4xl flex flex-col items-center">
-            <div className="mb-4 animate-bounce">
-              <SlideIcon className="size-10 sm:size-12 text-yellow-300 drop-shadow-md" />
+            <div className="mb-4 animate-bounce text-5xl md:text-6xl drop-shadow-md">
+              {SlideEmoji}
             </div>
             <p className="inline-flex items-center gap-2 text-[10.5px] font-black tracking-[0.2em] text-yellow-300 uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] sm:text-[11px] md:text-xs">
               {slide.eyebrow}
@@ -250,7 +250,6 @@ export default function HeroCarousel({
                 className="h-12 rounded-full border border-mint bg-mint px-7 text-sm font-black text-white shadow-[0_16px_36px_rgb(22_97_63_/_22%)] transition hover:-translate-y-0.5 hover:bg-mint-ink sm:h-[3.15rem] sm:px-8 sm:text-[15px]"
               >
                 {slide.primaryAction.text}
-                <ArrowRight className="ml-2 size-4" />
               </Button>
             ) : null}
             {slide.secondaryAction ? (

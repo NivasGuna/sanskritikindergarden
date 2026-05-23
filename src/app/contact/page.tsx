@@ -115,7 +115,7 @@ export default function ContactPage() {
               <span className="text-forest-dark">{content.hero.title.word3}</span>
             </h1>
 
-            <p className="hero-subheading text-forest-soft mt-6 max-w-[32rem] drop-shadow-[0_3px_12px_rgb(255_255_255_/_90%)] md:text-xl">
+            <p className="hero-subheading text-premium-ink mt-6 max-w-[32rem] drop-shadow-[0_3px_12px_rgb(255_255_255_/_90%)] md:text-xl">
               {content.hero.subtitle}{" "}
               <span className="text-gold-ink">
                 {content.hero.subtitleHighlight}
