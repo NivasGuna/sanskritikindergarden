@@ -1,4 +1,8 @@
-export type FeatureIcon = "GraduationCap" | "Palette" | "ShieldCheck" | "Sparkles";
+export type FeatureIcon =
+  | "GraduationCap"
+  | "Palette"
+  | "ShieldCheck"
+  | "Sparkles";
 
 export type ValueIcon =
   | "Handshake"

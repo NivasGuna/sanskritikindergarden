@@ -1,13 +1,26 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { deleteDoc, doc, getDoc, serverTimestamp, setDoc } from "firebase/firestore";
+import { useCallback, useEffect, useRef, useState } from "react";
+import NextImage from "next/image";
+import {
+  deleteDoc,
+  doc,
+  getDoc,
+  serverTimestamp,
+  setDoc,
+} from "firebase/firestore";
 import { db } from "@/lib/firebase";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogClose, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Image, Loader2, Trash2, Upload, X } from "lucide-react";
+import { Image as ImageIcon, Loader2, Trash2, Upload } from "lucide-react";
 
 type AnnouncementManageModalProps = {
   open: boolean;
@@ -16,21 +29,23 @@ type AnnouncementManageModalProps = {
 
 const ANNOUNCEMENT_DOC = doc(db, "settings", "announcement");
 
-export default function AnnouncementManageModal({ open, onOpenChange }: AnnouncementManageModalProps) {
+export default function AnnouncementManageModal({
+  open,
+  onOpenChange,
+}: AnnouncementManageModalProps) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [imagePreview, setImagePreview] = useState("");
   const [loading, setLoading] = useState(false);
   const [fetching, setFetching] = useState(false);
   const [exists, setExists] = useState(false);
-  const [notice, setNotice] = useState<{ type: "success" | "error"; message: string } | null>(null);
+  const [notice, setNotice] = useState<{
+    type: "success" | "error";
+    message: string;
+  } | null>(null);
   const fileRef = useRef<HTMLInputElement>(null);
 
-  useEffect(() => {
-    if (open) fetchAnnouncement();
-  }, [open]);
-
-  const fetchAnnouncement = async () => {
+  const fetchAnnouncement = useCallback(async () => {
     setFetching(true);
     setNotice(null);
 
@@ -54,7 +69,17 @@ export default function AnnouncementManageModal({ open, onOpenChange }: Announce
     } finally {
       setFetching(false);
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    if (!open) return;
+
+    const timeoutId = window.setTimeout(() => {
+      void fetchAnnouncement();
+    }, 0);
+
+    return () => window.clearTimeout(timeoutId);
+  }, [fetchAnnouncement, open]);
 
   const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -91,7 +116,12 @@ export default function AnnouncementManageModal({ open, onOpenChange }: Announce
         createdAt: serverTimestamp(),
       });
       setExists(true);
-      setNotice({ type: "success", message: exists ? "Announcement updated successfully." : "Announcement created successfully." });
+      setNotice({
+        type: "success",
+        message: exists
+          ? "Announcement updated successfully."
+          : "Announcement created successfully.",
+      });
       onOpenChange(false);
     } catch (error) {
       console.error("SAVE ERROR:", error);
@@ -123,11 +153,15 @@ export default function AnnouncementManageModal({ open, onOpenChange }: Announce
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-2xl w-[95vw] bg-white shadow-2xl">
+      <DialogContent className="w-[95vw] bg-white shadow-2xl sm:max-w-2xl">
         <DialogHeader>
-          <DialogTitle>{exists ? "Edit Announcement" : "Add Announcement"}</DialogTitle>
+          <DialogTitle>
+            {exists ? "Edit Announcement" : "Add Announcement"}
+          </DialogTitle>
           <DialogDescription>
-            {exists ? "Update or delete the current announcement." : "Create an announcement to display on the home page."}
+            {exists
+              ? "Update or delete the current announcement."
+              : "Create an announcement to display on the home page."}
           </DialogDescription>
         </DialogHeader>
 
@@ -136,7 +170,7 @@ export default function AnnouncementManageModal({ open, onOpenChange }: Announce
             <Loader2 className="size-6 animate-spin text-slate-500" />
           </div>
         ) : (
-          <div className="space-y-4 overflow-y-auto max-h-[75vh] px-1 pb-4">
+          <div className="max-h-[75vh] space-y-4 overflow-y-auto px-1 pb-4">
             {notice ? (
               <div
                 className={`rounded-lg border px-4 py-3 text-sm ${
@@ -149,26 +183,57 @@ export default function AnnouncementManageModal({ open, onOpenChange }: Announce
               </div>
             ) : null}
             <div>
-              <label className="mb-1 block text-sm font-medium">Title
+              <label className="mb-1 block text-sm font-medium">
+                Title
                 <span className="text-amber-500">*</span>
               </label>
-              <Input value={title} onChange={(e) => setTitle(e.target.value)} placeholder="e.g. Summer Camp" maxLength={60} />
+              <Input
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                placeholder="e.g. Summer Camp"
+                maxLength={60}
+              />
             </div>
             <div>
-              <label className="mb-1 block text-sm font-medium">Description
+              <label className="mb-1 block text-sm font-medium">
+                Description
                 <span className="text-amber-500">*</span>
               </label>
-              <Textarea value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Announcement details..." rows={4}  />
+              <Textarea
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+                placeholder="Announcement details..."
+                rows={4}
+              />
             </div>
             <div>
-              <label className="mb-1 block text-sm font-medium">Image
+              <label className="mb-1 block text-sm font-medium">
+                Image
                 <span className="text-amber-500">*</span>
               </label>
-              <input ref={fileRef} type="file" accept="image/*" className="hidden" onChange={handleImageChange} />
+              <input
+                ref={fileRef}
+                type="file"
+                accept="image/*"
+                className="hidden"
+                onChange={handleImageChange}
+              />
               {imagePreview ? (
-                <div className="relative">
-                  <img src={imagePreview} alt="Preview" className="h-40 w-full rounded-lg object-cover" />
-                  <Button size="sm" variant="outline" className="absolute bottom-2 right-2 bg-white/90" onClick={() => fileRef.current?.click()}>
+                <div className="relative h-40 w-full overflow-hidden rounded-lg">
+                  <NextImage
+                    src={imagePreview}
+                    alt="Announcement preview"
+                    fill
+                    unoptimized
+                    className="object-cover"
+                    sizes="(max-width: 768px) 95vw, 640px"
+                  />
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    className="absolute right-2 bottom-2 bg-white/90"
+                    onClick={() => fileRef.current?.click()}
+                  >
                     <Upload className="mr-1 size-3" /> Change
                   </Button>
                 </div>
@@ -176,10 +241,10 @@ export default function AnnouncementManageModal({ open, onOpenChange }: Announce
                 <button
                   type="button"
                   onClick={() => fileRef.current?.click()}
-                  className="flex h-32 w-full cursor-pointer items-center justify-center rounded-lg border-2 border-dashed border-slate-300 text-slate-500 hover:border-slate-500 hover:text-slate-700 transition-colors"
+                  className="flex h-32 w-full cursor-pointer items-center justify-center rounded-lg border-2 border-dashed border-slate-300 text-slate-500 transition-colors hover:border-slate-500 hover:text-slate-700"
                 >
                   <div className="flex flex-col items-center gap-1">
-                    <Image className="size-6" />
+                    <ImageIcon className="size-6" />
                     <span className="text-xs">Click to upload</span>
                   </div>
                 </button>
@@ -187,12 +252,22 @@ export default function AnnouncementManageModal({ open, onOpenChange }: Announce
             </div>
 
             <div className="flex gap-2 pt-2">
-              <Button onClick={handleSave} disabled={loading} className="flex-1">
-                {loading ? <Loader2 className="mr-1 size-4 animate-spin" /> : null}
+              <Button
+                onClick={handleSave}
+                disabled={loading}
+                className="flex-1"
+              >
+                {loading ? (
+                  <Loader2 className="mr-1 size-4 animate-spin" />
+                ) : null}
                 {exists ? "Update Announcement" : "Add Announcement"}
               </Button>
               {exists && (
-                <Button variant="outline" onClick={handleDelete} disabled={loading}>
+                <Button
+                  variant="outline"
+                  onClick={handleDelete}
+                  disabled={loading}
+                >
                   <Trash2 className="size-4" />
                 </Button>
               )}

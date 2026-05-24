@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import type { CSSProperties } from "react";
 import { useEffect, useState } from "react";
-import { ArrowRight, BookOpenCheck, Smile, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -46,7 +45,8 @@ const floatingIcons: {
 }[] = [
   {
     symbol: "📚",
-    className: "top-[15%] left-[5%] text-lg sm:left-[8%] sm:text-2xl md:text-3xl",
+    className:
+      "top-[15%] left-[5%] text-lg sm:left-[8%] sm:text-2xl md:text-3xl",
     style: {
       "--float-x": "18px",
       "--float-y": "-20px",
@@ -57,7 +57,8 @@ const floatingIcons: {
   },
   {
     symbol: "✏️",
-    className: "top-[18%] right-[7%] text-lg sm:right-[11%] sm:text-xl md:text-2xl",
+    className:
+      "top-[18%] right-[7%] text-lg sm:right-[11%] sm:text-xl md:text-2xl",
     style: {
       "--float-x": "-14px",
       "--float-y": "-18px",
@@ -68,7 +69,8 @@ const floatingIcons: {
   },
   {
     symbol: "☁️",
-    className: "top-[34%] left-[4%] hidden text-lg sm:block sm:left-[12%] sm:text-xl md:text-2xl",
+    className:
+      "top-[34%] left-[4%] hidden text-lg sm:block sm:left-[12%] sm:text-xl md:text-2xl",
     style: {
       "--float-x": "16px",
       "--float-y": "18px",
@@ -79,7 +81,8 @@ const floatingIcons: {
   },
   {
     symbol: "🧸",
-    className: "bottom-[17%] right-[6%] hidden text-xl sm:block sm:right-[9%] sm:text-2xl md:text-3xl",
+    className:
+      "bottom-[17%] right-[6%] hidden text-xl sm:block sm:right-[9%] sm:text-2xl md:text-3xl",
     style: {
       "--float-x": "-18px",
       "--float-y": "16px",
@@ -90,7 +93,8 @@ const floatingIcons: {
   },
   {
     symbol: "🍃",
-    className: "top-[42%] right-[5%] hidden text-lg md:block md:text-2xl lg:right-[12%]",
+    className:
+      "top-[42%] right-[5%] hidden text-lg md:block md:text-2xl lg:right-[12%]",
     style: {
       "--float-x": "12px",
       "--float-y": "-16px",
@@ -101,7 +105,8 @@ const floatingIcons: {
   },
   {
     symbol: "⭐",
-    className: "bottom-[18%] right-[8%] text-lg sm:top-[43%] sm:right-[17%] sm:bottom-auto sm:text-xl md:text-2xl lg:right-[20%]",
+    className:
+      "bottom-[18%] right-[8%] text-lg sm:top-[43%] sm:right-[17%] sm:bottom-auto sm:text-xl md:text-2xl lg:right-[20%]",
     style: {
       "--float-x": "-12px",
       "--float-y": "-14px",
@@ -144,7 +149,7 @@ function ColorfulTitle({ text }: { text: string }) {
     "text-green-300",
     "text-sky-300",
     "text-white",
-    "text-orange-300"
+    "text-orange-300",
   ];
   return (
     <>
@@ -225,9 +230,9 @@ export default function HeroCarousel({
       </div>
 
       <div className="relative z-20 container mx-auto flex min-h-[100svh] items-center justify-center px-4 pt-30 pb-18 text-center md:pt-32 md:pb-20">
-        <div className="w-full max-w-4xl -mt-16 md:-mt-20">
-          <div className="mx-auto max-w-4xl flex flex-col items-center">
-            <div className="mb-4 animate-bounce text-5xl md:text-6xl drop-shadow-md">
+        <div className="-mt-16 w-full max-w-4xl md:-mt-20">
+          <div className="mx-auto flex max-w-4xl flex-col items-center">
+            <div className="mb-4 animate-bounce text-5xl drop-shadow-md md:text-6xl">
               {SlideEmoji}
             </div>
             <p className="inline-flex items-center gap-2 text-[10.5px] font-black tracking-[0.2em] text-yellow-300 uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] sm:text-[11px] md:text-xs">
@@ -236,7 +241,7 @@ export default function HeroCarousel({
             <h1 className="font-premium-display mx-auto mt-5 max-w-4xl text-[2.4rem] leading-[1.1] font-extrabold tracking-normal drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] sm:text-5xl md:text-6xl lg:text-[4.35rem]">
               <ColorfulTitle text={slide.title} />
             </h1>
-            <p className="hero-subheading text-white mx-auto mt-4 max-w-2xl drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] sm:text-lg md:text-xl lg:text-[1.35rem] font-medium leading-relaxed">
+            <p className="hero-subheading mx-auto mt-4 max-w-2xl leading-relaxed font-medium text-white drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] sm:text-lg md:text-xl lg:text-[1.35rem]">
               {slide.description}
             </p>
           </div>
@@ -247,7 +252,7 @@ export default function HeroCarousel({
                 render={<Link href={slide.primaryAction.href} />}
                 nativeButton={false}
                 variant={slide.primaryAction.variant ?? "secondary"}
-                className="h-12 rounded-full border border-mint bg-mint px-7 text-sm font-black text-white shadow-[0_16px_36px_rgb(22_97_63_/_22%)] transition hover:-translate-y-0.5 hover:bg-mint-ink sm:h-[3.15rem] sm:px-8 sm:text-[15px]"
+                className="border-mint bg-mint hover:bg-mint-ink h-12 rounded-full border px-7 text-sm font-black text-white shadow-[0_16px_36px_rgb(22_97_63_/_22%)] transition hover:-translate-y-0.5 sm:h-[3.15rem] sm:px-8 sm:text-[15px]"
               >
                 {slide.primaryAction.text}
               </Button>
@@ -257,7 +262,7 @@ export default function HeroCarousel({
                 render={<Link href={slide.secondaryAction.href} />}
                 nativeButton={false}
                 variant={slide.secondaryAction.variant ?? "outline"}
-                className="h-12 rounded-full border border-white/80 bg-white/92 px-7 text-sm font-black text-forest-dark shadow-[0_14px_34px_rgba(15,23,42,0.12)] backdrop-blur-sm transition hover:-translate-y-0.5 hover:bg-white sm:h-[3.15rem] sm:px-8 sm:text-[15px]"
+                className="text-forest-dark h-12 rounded-full border border-white/80 bg-white/92 px-7 text-sm font-black shadow-[0_14px_34px_rgba(15,23,42,0.12)] backdrop-blur-sm transition hover:-translate-y-0.5 hover:bg-white sm:h-[3.15rem] sm:px-8 sm:text-[15px]"
               >
                 {slide.secondaryAction.text}
               </Button>
@@ -273,7 +278,7 @@ export default function HeroCarousel({
             type="button"
             onClick={() => setActiveIndex(index)}
             className={`h-2.5 w-2.5 rounded-full transition-all ${
-              index === activeIndex ? "w-7 bg-gold" : "bg-white/72"
+              index === activeIndex ? "bg-gold w-7" : "bg-white/72"
             }`}
             aria-label={`Show slide ${index + 1}`}
           />

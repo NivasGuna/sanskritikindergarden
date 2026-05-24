@@ -33,7 +33,7 @@ export default function Footer() {
       <div className="container mx-auto px-6 py-14 md:py-18">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.2fr_0.75fr_1fr_0.8fr]">
           <div className="max-w-sm">
-            <div className="mb-4 inline-flex items-center gap-3">
+            <div className="mb-4 flex items-start gap-3">
               <div className="relative flex size-18 shrink-0 items-center justify-center overflow-hidden transition-all duration-300 group-hover:scale-105 group-hover:-rotate-1 sm:size-20">
                 <Image
                   src={content.brand.logo}
@@ -44,13 +44,17 @@ export default function Footer() {
                   sizes="64px"
                 />
               </div>
-              <span className="font-premium-display text-2xl leading-tight font-bold tracking-normal">
-                {content.brand.name}
-              </span>
+              <div className="min-w-0 space-y-1">
+                {content.brand.lines.map((line) => (
+                  <p
+                    key={line}
+                    className="text-forest-soft text-sm leading-6 font-semibold"
+                  >
+                    {line}
+                  </p>
+                ))}
+              </div>
             </div>
-            <p className="text-forest-soft text-sm leading-6 font-semibold">
-              {content.brand.tagline}
-            </p>
             <div className="border-gold-line text-gold-ink mt-5 inline-flex items-center gap-2 rounded-full border bg-white px-4 py-1.5 text-[10px] font-black tracking-[0.25em] uppercase">
               <div className="bg-gold size-1.5 rounded-full" />
               {content.brand.badge}

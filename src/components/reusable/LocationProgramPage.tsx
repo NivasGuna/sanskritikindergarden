@@ -130,15 +130,13 @@ function SectionIntro({
   return (
     <div
       className={
-        align === "center"
-          ? "mx-auto max-w-3xl text-center"
-          : "max-w-3xl"
+        align === "center" ? "mx-auto max-w-3xl text-center" : "max-w-3xl"
       }
     >
-      <span className="text-[11px] font-black uppercase text-amber-700">
+      <span className="text-[11px] font-black text-amber-700 uppercase">
         {eyebrow}
       </span>
-      <h2 className="mt-4 wrap-break-word text-2xl leading-tight font-semibold text-slate-950 md:text-4xl">
+      <h2 className="mt-4 text-2xl leading-tight font-semibold wrap-break-word text-slate-950 md:text-4xl">
         {title}
       </h2>
       {description ? (
@@ -172,12 +170,12 @@ export default function LocationProgramPage({
             <div className="min-w-0">
               <div className="mb-7 inline-flex items-center gap-3">
                 <span className="h-px w-8 bg-amber-600" />
-                <span className="text-[11px] font-black uppercase text-amber-700">
+                <span className="text-[11px] font-black text-amber-700 uppercase">
                   {content.hero.badge}
                 </span>
               </div>
 
-              <h1 className="max-w-[18ch] wrap-break-word text-[2rem] leading-[1.15] font-semibold text-slate-950 sm:max-w-3xl sm:text-4xl md:text-5xl">
+              <h1 className="max-w-[18ch] text-[2rem] leading-[1.15] font-semibold wrap-break-word text-slate-950 sm:max-w-3xl sm:text-4xl md:text-5xl">
                 {content.hero.title}
               </h1>
               <p className="font-hero-subtitle mt-6 max-w-2xl text-base leading-8 font-semibold text-slate-700 md:text-lg md:leading-8">
@@ -193,19 +191,21 @@ export default function LocationProgramPage({
                     variant={index === 0 ? "default" : "outline"}
                     className={
                       index === 0
-                        ? "h-13 box-border w-full max-w-[calc(100vw-3rem)] rounded-full border border-amber-600 bg-amber-600 px-6 text-center text-sm leading-tight font-bold whitespace-normal text-white shadow-premium-sm transition hover:-translate-y-0.5 hover:bg-amber-700 sm:w-auto sm:px-8"
-                        : "h-13 box-border w-full max-w-[calc(100vw-3rem)] rounded-full border-slate-200 bg-white/75 px-6 text-center text-sm leading-tight font-bold whitespace-normal text-slate-950 backdrop-blur-md transition hover:-translate-y-0.5 hover:bg-white sm:w-auto sm:px-8"
+                        ? "shadow-premium-sm box-border h-13 w-full max-w-[calc(100vw-3rem)] rounded-full border border-amber-600 bg-amber-600 px-6 text-center text-sm leading-tight font-bold whitespace-normal text-white transition hover:-translate-y-0.5 hover:bg-amber-700 sm:w-auto sm:px-8"
+                        : "box-border h-13 w-full max-w-[calc(100vw-3rem)] rounded-full border-slate-200 bg-white/75 px-6 text-center text-sm leading-tight font-bold whitespace-normal text-slate-950 backdrop-blur-md transition hover:-translate-y-0.5 hover:bg-white sm:w-auto sm:px-8"
                     }
                   >
                     {action.text}
-                    {index === 0 ? <ArrowRight className="ml-2 size-4" /> : null}
+                    {index === 0 ? (
+                      <ArrowRight className="ml-2 size-4" />
+                    ) : null}
                   </Button>
                 ))}
               </div>
             </div>
 
             <div className="relative min-w-0">
-              <div className="w-full overflow-hidden rounded-[1.75rem] border border-white bg-white p-2 shadow-premium-md">
+              <div className="shadow-premium-md w-full overflow-hidden rounded-[1.75rem] border border-white bg-white p-2">
                 <div className="relative aspect-[1672/941] overflow-hidden rounded-[1.35rem] bg-[#fff8ed]">
                   <Image
                     src={content.hero.image.src}
@@ -218,8 +218,8 @@ export default function LocationProgramPage({
                 </div>
               </div>
 
-              <div className="relative mt-5 max-w-full rounded-[1.25rem] border border-slate-200 bg-white p-5 shadow-premium-sm md:absolute md:-bottom-8 md:left-8 md:max-w-sm">
-                <p className="text-[11px] font-black uppercase text-amber-700">
+              <div className="shadow-premium-sm relative mt-5 max-w-full rounded-[1.25rem] border border-slate-200 bg-white p-5 md:absolute md:-bottom-8 md:left-8 md:max-w-sm">
+                <p className="text-[11px] font-black text-amber-700 uppercase">
                   {heroCallout.eyebrow}
                 </p>
                 <p className="mt-2 text-lg leading-snug font-bold text-slate-950">
@@ -231,7 +231,7 @@ export default function LocationProgramPage({
         </div>
       </section>
 
-      <section className="relative z-10 box-border -mt-6 pb-10 md:-mt-10 md:pb-14">
+      <section className="relative z-10 -mt-6 box-border pb-10 md:-mt-10 md:pb-14">
         <div className="mx-auto box-border w-full max-w-7xl px-6">
           <div className="grid min-w-0 gap-4 md:grid-cols-3">
             {content.highlights.map((item, index) => {
@@ -240,17 +240,17 @@ export default function LocationProgramPage({
               return (
                 <article
                   key={item.title}
-                  className="min-h-[210px] min-w-0 rounded-[1.25rem] border border-slate-200 bg-white p-6 shadow-premium-sm transition hover:-translate-y-0.5 hover:shadow-premium-md"
+                  className="shadow-premium-sm hover:shadow-premium-md min-h-[210px] min-w-0 rounded-[1.25rem] border border-slate-200 bg-white p-6 transition hover:-translate-y-0.5"
                 >
                   <div
                     className={`mb-5 flex size-11 items-center justify-center rounded-2xl border ${accentClassNames[index]}`}
                   >
                     <Icon className="size-5" />
                   </div>
-                  <h2 className="break-words text-lg font-bold text-slate-950">
+                  <h2 className="text-lg font-bold break-words text-slate-950">
                     {item.title}
                   </h2>
-                  <p className="mt-3 break-words text-sm leading-6 text-slate-600">
+                  <p className="mt-3 text-sm leading-6 break-words text-slate-600">
                     {item.description}
                   </p>
                 </article>
@@ -276,7 +276,7 @@ export default function LocationProgramPage({
               return (
                 <div
                   key={item.title}
-                  className="flex min-h-[132px] gap-4 rounded-[1.25rem] border border-slate-200 bg-[#fff8ed] p-4 shadow-premium-sm"
+                  className="shadow-premium-sm flex min-h-[132px] gap-4 rounded-[1.25rem] border border-slate-200 bg-[#fff8ed] p-4"
                 >
                   <div
                     className={`flex size-10 shrink-0 items-center justify-center rounded-2xl border ${accentClassNames[index]}`}
@@ -301,7 +301,7 @@ export default function LocationProgramPage({
               return (
                 <article
                   key={section.title}
-                  className="min-w-0 rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-premium-sm md:p-7"
+                  className="shadow-premium-sm min-w-0 rounded-[1.5rem] border border-slate-200 bg-white p-6 md:p-7"
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div
@@ -314,7 +314,7 @@ export default function LocationProgramPage({
                     </span>
                   </div>
 
-                  <p className="mt-6 text-[11px] font-black uppercase text-amber-700">
+                  <p className="mt-6 text-[11px] font-black text-amber-700 uppercase">
                     {section.eyebrow}
                   </p>
                   <h2 className="mt-2 text-xl leading-tight font-semibold text-slate-950 md:text-2xl">
@@ -355,7 +355,7 @@ export default function LocationProgramPage({
               description={content.families.description}
             />
 
-            <div className="min-w-0 rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-premium-md md:p-8">
+            <div className="shadow-premium-md min-w-0 rounded-[1.5rem] border border-slate-200 bg-white p-6 md:p-8">
               <div className="grid gap-3 sm:grid-cols-3">
                 {content.families.notes.map((note) => (
                   <div
@@ -366,7 +366,7 @@ export default function LocationProgramPage({
                   </div>
                 ))}
               </div>
-              <p className="mt-6 text-sm font-bold uppercase text-amber-700">
+              <p className="mt-6 text-sm font-bold text-amber-700 uppercase">
                 Commonly served neighborhoods
               </p>
               <div className="mt-5 flex flex-wrap gap-3">

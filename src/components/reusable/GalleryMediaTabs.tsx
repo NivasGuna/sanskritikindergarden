@@ -46,8 +46,8 @@ function GalleryImageTile({
   priority?: boolean;
 }) {
   return (
-    <figure className="group shadow-forest-card flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-white/80 bg-white transition-all hover:-translate-y-1 hover:shadow-forest-floating">
-      <div className="relative aspect-[4/3] overflow-hidden bg-sky-mist">
+    <figure className="group shadow-forest-card hover:shadow-forest-floating flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-white/80 bg-white transition-all hover:-translate-y-1">
+      <div className="bg-sky-mist relative aspect-[4/3] overflow-hidden">
         <Image
           src={image.src}
           alt={image.alt}
@@ -79,7 +79,7 @@ function GalleryImageTile({
 
 function GalleryVideoCard({ video }: { video: GalleryVideo }) {
   return (
-    <div className="shadow-forest-card overflow-hidden rounded-[1.5rem] border border-white/80 bg-white p-2 transition-all hover:-translate-y-1 hover:shadow-forest-floating">
+    <div className="shadow-forest-card hover:shadow-forest-floating overflow-hidden rounded-[1.5rem] border border-white/80 bg-white p-2 transition-all hover:-translate-y-1">
       <div className="bg-forest-dark relative aspect-video overflow-hidden rounded-[1.15rem]">
         <iframe
           src={video.src}
@@ -120,7 +120,7 @@ function MediaSwitchButton({
       className={cn(
         "inline-flex h-12 flex-1 items-center justify-center gap-2 rounded-full px-5 text-sm font-black transition-all sm:flex-none sm:px-7",
         active
-          ? "bg-mint shadow-[0_14px_35px_rgb(22_97_63_/_18%)] text-white"
+          ? "bg-mint text-white shadow-[0_14px_35px_rgb(22_97_63_/_18%)]"
           : "text-forest-soft hover:bg-sky-mist hover:text-sky-ink"
       )}
     >
@@ -139,7 +139,7 @@ export default function GalleryMediaTabs({
 
   return (
     <div>
-      <div className="border-white bg-white/92 shadow-forest-value mx-auto flex w-full max-w-md rounded-full border p-1.5 backdrop-blur-sm sm:w-fit sm:max-w-none">
+      <div className="shadow-forest-value mx-auto flex w-full max-w-md rounded-full border border-white bg-white/92 p-1.5 backdrop-blur-sm sm:w-fit sm:max-w-none">
         <MediaSwitchButton
           active={activeTab === "images"}
           icon={Images}

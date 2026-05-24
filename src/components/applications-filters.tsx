@@ -41,13 +41,15 @@ export function ApplicationsFilters({
   onExport,
 }: ApplicationsFiltersProps) {
   return (
-    <Card className="border border-slate-200 shadow-sm rounded-3xl bg-white">
+    <Card className="rounded-3xl border border-slate-200 bg-white shadow-sm">
       <CardContent className="space-y-5 p-6">
         <div className="grid gap-4 xl:grid-cols-[1.4fr_0.8fr_0.8fr_0.8fr]">
           <div className="flex flex-col gap-2">
-            <label className="text-sm font-semibold text-slate-700">Search</label>
+            <label className="text-sm font-semibold text-slate-700">
+              Search
+            </label>
             <div className="relative">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
+              <Search className="absolute top-1/2 left-4 -translate-y-1/2 text-slate-400" />
               <Input
                 type="text"
                 value={searchQuery}
@@ -59,8 +61,13 @@ export function ApplicationsFilters({
           </div>
 
           <div className="flex flex-col gap-2">
-            <label className="text-sm font-semibold text-slate-700">Status</label>
-            <Select value={statusFilter} onValueChange={(value) => setStatusFilter(value ?? "all")}>
+            <label className="text-sm font-semibold text-slate-700">
+              Status
+            </label>
+            <Select
+              value={statusFilter}
+              onValueChange={(value) => setStatusFilter(value ?? "all")}
+            >
               <SelectTrigger className="w-full bg-slate-50 text-base">
                 <SelectValue placeholder="All statuses" />
               </SelectTrigger>
@@ -74,9 +81,11 @@ export function ApplicationsFilters({
           </div>
 
           <div className="flex flex-col gap-2">
-            <label className="text-sm font-semibold text-slate-700">From date</label>
+            <label className="text-sm font-semibold text-slate-700">
+              From date
+            </label>
             <div className="relative">
-              <Calendar className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
+              <Calendar className="absolute top-1/2 left-4 -translate-y-1/2 text-slate-400" />
               <Input
                 type="date"
                 value={fromDate}
@@ -87,9 +96,11 @@ export function ApplicationsFilters({
           </div>
 
           <div className="flex flex-col gap-2">
-            <label className="text-sm font-semibold text-slate-700">To date</label>
+            <label className="text-sm font-semibold text-slate-700">
+              To date
+            </label>
             <div className="relative">
-              <Calendar className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
+              <Calendar className="absolute top-1/2 left-4 -translate-y-1/2 text-slate-400" />
               <Input
                 type="date"
                 value={toDate}
@@ -101,13 +112,28 @@ export function ApplicationsFilters({
         </div>
 
         <div className="flex flex-wrap items-center gap-3">
-          <Button variant="secondary" size="lg" className="gap-2" onClick={onSearch}>
+          <Button
+            variant="secondary"
+            size="lg"
+            className="gap-2"
+            onClick={onSearch}
+          >
             <Search className="size-4" /> Search
           </Button>
-          <Button variant="outline" size="lg" className="gap-2" onClick={onReset}>
+          <Button
+            variant="outline"
+            size="lg"
+            className="gap-2"
+            onClick={onReset}
+          >
             <RotateCcw className="size-4" /> Reset
           </Button>
-          <Button variant="outline" size="lg" className="gap-2" onClick={onExport}>
+          <Button
+            variant="outline"
+            size="lg"
+            className="gap-2"
+            onClick={onExport}
+          >
             <Download className="size-4" /> Export
           </Button>
         </div>

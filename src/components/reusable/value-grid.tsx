@@ -49,13 +49,13 @@ export function ValueGrid({ items, className }: ValueGridProps) {
             style={{ animationDelay: `${i * 80}ms` }}
           >
             <div className="mb-8 flex items-center gap-4">
-              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[var(--premium-forest-soft)] text-[var(--premium-forest)] group-hover:bg-[var(--premium-forest)] group-hover:text-white transition-colors duration-500">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[var(--premium-forest-soft)] text-[var(--premium-forest)] transition-colors duration-500 group-hover:bg-[var(--premium-forest)] group-hover:text-white">
                 <IconComponent size={22} />
               </div>
               <div className="h-px flex-1 bg-[var(--premium-line)]" />
             </div>
 
-            <h4 className="font-serif text-2xl font-medium leading-tight text-[var(--premium-ink)]">
+            <h4 className="font-serif text-2xl leading-tight font-medium text-[var(--premium-ink)]">
               {item.title}
             </h4>
             <p className="mt-5 text-base leading-relaxed text-[var(--premium-muted)]">

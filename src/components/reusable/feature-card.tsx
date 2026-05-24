@@ -81,7 +81,7 @@ export function FeatureCard({
               <div className="h-px flex-1 bg-[var(--premium-line)]" />
             </div>
 
-            <h3 className="font-serif text-2xl font-medium leading-tight text-[var(--premium-ink)]">
+            <h3 className="font-serif text-2xl leading-tight font-medium text-[var(--premium-ink)]">
               {title}
             </h3>
             <p className="mt-5 text-base leading-relaxed text-[var(--premium-muted)]">
@@ -90,7 +90,7 @@ export function FeatureCard({
 
             <div className="mt-auto pt-8">
               <div className="flex items-center gap-3 text-xs font-bold tracking-widest text-[var(--premium-forest)] uppercase">
-                <div className="h-1.5 w-1.5 rounded-full bg-[var(--premium-forest)] animate-pulse" />
+                <div className="h-1.5 w-1.5 animate-pulse rounded-full bg-[var(--premium-forest)]" />
                 Premium Care
               </div>
             </div>

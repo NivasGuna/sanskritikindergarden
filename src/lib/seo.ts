@@ -2,12 +2,14 @@ import { Metadata } from "next";
 
 export const siteConfig = {
   name: "Sanskriti Kindergarten",
-  description: "Best preschool and daycare in Velachery, Chennai offering activity-based learning, phonics, and child-focused education.",
+  description:
+    "Best preschool and daycare in Velachery, Chennai offering activity-based learning, phonics, and child-focused education.",
   url: "https://www.sanskritikindergarden.com",
   ogImage: "https://www.sanskritikindergarden.com/images/hero-bg.jpg",
   locale: "en_IN",
   address: {
-    streetAddress: "No. 20B, Cart Track Road, Gopalakrishnan Street, Opposite Kala Flats",
+    streetAddress:
+      "No. 20B, Cart Track Road, Gopalakrishnan Street, Opposite Kala Flats",
     addressLocality: "Chennai",
     addressRegion: "Tamil Nadu",
     postalCode: "600032",

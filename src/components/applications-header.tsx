@@ -9,7 +9,9 @@ type ApplicationsHeaderProps = {
   totalApplications: number;
 };
 
-export function ApplicationsHeader({ totalApplications }: ApplicationsHeaderProps) {
+export function ApplicationsHeader({
+  totalApplications,
+}: ApplicationsHeaderProps) {
   const [announcementOpen, setAnnouncementOpen] = useState(false);
 
   return (
@@ -20,7 +22,7 @@ export function ApplicationsHeader({ totalApplications }: ApplicationsHeaderProp
             <GraduationCap className="size-6" />
           </div>
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-500">
+            <p className="text-sm font-semibold tracking-[0.24em] text-slate-500 uppercase">
               Admissions Dashboard
             </p>
             <h1 className="mt-2 text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
@@ -30,21 +32,32 @@ export function ApplicationsHeader({ totalApplications }: ApplicationsHeaderProp
         </div>
 
         <p className="max-w-2xl text-base leading-7 text-slate-600">
-          Review, filter, and manage application statuses for Sanskriti Kindergarten.
+          Review, filter, and manage application statuses for Sanskriti
+          Kindergarten.
         </p>
       </div>
 
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
         <div className="flex items-center gap-2 rounded-2xl bg-slate-100 px-4 py-3 text-slate-700">
           <Sparkles className="size-4" />
-          <span className="text-sm font-semibold">{totalApplications} total applications</span>
+          <span className="text-sm font-semibold">
+            {totalApplications} total applications
+          </span>
         </div>
-        <Button variant="outline" size="lg" onClick={() => setAnnouncementOpen(true)} className="gap-2">
+        <Button
+          variant="outline"
+          size="lg"
+          onClick={() => setAnnouncementOpen(true)}
+          className="gap-2"
+        >
           <Megaphone className="size-4" /> Manage Announcement
         </Button>
       </div>
 
-      <AnnouncementManageModal open={announcementOpen} onOpenChange={setAnnouncementOpen} />
+      <AnnouncementManageModal
+        open={announcementOpen}
+        onOpenChange={setAnnouncementOpen}
+      />
     </header>
   );
 }

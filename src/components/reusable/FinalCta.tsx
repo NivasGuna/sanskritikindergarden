@@ -58,7 +58,8 @@ function CtaActionLink({
   const content = (
     <>
       {action.text}
-      {action.icon ?? (showDefaultIcon ? <ArrowRight className="ml-2 size-4" /> : null)}
+      {action.icon ??
+        (showDefaultIcon ? <ArrowRight className="ml-2 size-4" /> : null)}
     </>
   );
 
@@ -116,7 +117,7 @@ export default function FinalCta({
         <h2 className="font-playful-display mt-5 text-3xl leading-tight font-extrabold md:text-5xl">
           {title}
         </h2>
-        <p className="font-hero-subtitle text-white/90 mt-5 max-w-2xl text-base leading-7 font-semibold md:text-[17px] md:leading-8">
+        <p className="font-hero-subtitle mt-5 max-w-2xl text-base leading-7 font-semibold text-white/90 md:text-[17px] md:leading-8">
           {description}
         </p>
       </div>
@@ -132,7 +133,7 @@ export default function FinalCta({
             action={secondaryAction}
             className={cn(
               baseButtonClassName,
-              "text-forest-dark border border-forest-dark/18 bg-white/78 backdrop-blur-sm hover:bg-white"
+              "text-forest-dark border-forest-dark/18 border bg-white/78 backdrop-blur-sm hover:bg-white"
             )}
           />
         ) : null}

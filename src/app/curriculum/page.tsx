@@ -188,7 +188,7 @@ function LearningImagePanel({
         sizes="(min-width: 1024px) 48vw, 100vw"
       />
       <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-white/94 via-white/66 to-transparent p-5 pt-24">
-        <div className="max-w-sm rounded-[1.2rem] border border-white/80 bg-white/88 p-4 shadow-premium-sm backdrop-blur-sm">
+        <div className="shadow-premium-sm max-w-sm rounded-[1.2rem] border border-white/80 bg-white/88 p-4 backdrop-blur-sm">
           <p className="text-premium-forest text-[10px] font-black tracking-[0.22em] uppercase">
             {badge}
           </p>
@@ -241,8 +241,8 @@ function ActivityListSection({
           isAmber ? "bg-gold-mist/80" : "bg-mint-mist/80"
         )}
       />
-      <div className="absolute bottom-16 left-[-5rem] h-56 w-56 rounded-full bg-sky-mist/70" />
-      <div className="container relative mx-auto px-6">
+      <div className="bg-sky-mist/70 absolute bottom-16 left-[-5rem] h-56 w-56 rounded-full" />
+      <div className="relative container mx-auto px-6">
         <div
           className={cn(
             "grid gap-6",
@@ -253,7 +253,7 @@ function ActivityListSection({
         >
           <div
             className={cn(
-              "rounded-[1.5rem] border border-white/80 bg-white/84 p-6 shadow-forest-card backdrop-blur-sm md:p-7",
+              "shadow-forest-card rounded-[1.5rem] border border-white/80 bg-white/84 p-6 backdrop-blur-sm md:p-7",
               surface === "muted" && "lg:order-2"
             )}
           >
@@ -287,11 +287,13 @@ function ActivityListSection({
               <article
                 key={item}
                 className={cn(
-                  "group relative flex min-h-[116px] items-center gap-4 overflow-hidden rounded-[1.15rem] border border-white/80 bg-white p-4 shadow-premium-sm transition-all hover:-translate-y-0.5 hover:shadow-premium-md",
-                  surface === "muted" && index === 0 && "sm:col-span-2 xl:col-span-1"
+                  "group shadow-premium-sm hover:shadow-premium-md relative flex min-h-[116px] items-center gap-4 overflow-hidden rounded-[1.15rem] border border-white/80 bg-white p-4 transition-all hover:-translate-y-0.5",
+                  surface === "muted" &&
+                    index === 0 &&
+                    "sm:col-span-2 xl:col-span-1"
                 )}
               >
-                <div className="absolute right-3 bottom-3 h-11 w-11 rounded-full bg-sky-mist/70 transition-transform group-hover:scale-125" />
+                <div className="bg-sky-mist/70 absolute right-3 bottom-3 h-11 w-11 rounded-full transition-transform group-hover:scale-125" />
                 <span
                   className={cn(
                     "relative z-10 flex size-10 shrink-0 items-center justify-center rounded-2xl border",
@@ -340,7 +342,7 @@ export default function CurriculumPage() {
         <div className="relative z-10 container mx-auto flex min-h-[100svh] items-center px-6 py-28">
           <div className="motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-left-12 max-w-[34rem] duration-1000">
             <div className="mb-8 inline-flex items-center gap-3">
-              <span className="size-2 rounded-full bg-gold" />
+              <span className="bg-gold size-2 rounded-full" />
               <span className="text-gold-ink text-[10px] font-black tracking-[0.26em] uppercase drop-shadow-[0_3px_12px_rgb(255_255_255_/_90%)]">
                 {content.hero.badge}
               </span>
@@ -365,7 +367,7 @@ export default function CurriculumPage() {
               <Button
                 render={<Link href={content.hero.buttons.primary.link} />}
                 nativeButton={false}
-                className="bg-gold shadow-[0_18px_45px_rgb(245_173_47_/_24%)] hover:bg-gold-ink h-14 rounded-full px-8 text-base font-black text-forest-dark transition-all hover:-translate-y-0.5 hover:text-white sm:px-10"
+                className="bg-gold hover:bg-gold-ink text-forest-dark h-14 rounded-full px-8 text-base font-black shadow-[0_18px_45px_rgb(245_173_47_/_24%)] transition-all hover:-translate-y-0.5 hover:text-white sm:px-10"
               >
                 {content.hero.buttons.primary.text}
                 <ArrowRight className="ml-2 size-5" />
@@ -374,7 +376,7 @@ export default function CurriculumPage() {
                 render={<Link href={content.hero.buttons.secondary.link} />}
                 nativeButton={false}
                 variant="outline"
-                className="text-forest-dark h-14 rounded-full border-forest-dark/20 bg-white/78 px-8 text-base font-black backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-white sm:px-10"
+                className="text-forest-dark border-forest-dark/20 h-14 rounded-full bg-white/78 px-8 text-base font-black backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-white sm:px-10"
               >
                 {content.hero.buttons.secondary.text}
               </Button>
@@ -427,9 +429,9 @@ export default function CurriculumPage() {
             {cigmaBreakdown.map((item) => (
               <div
                 key={item.letter}
-                className="border-sky-line shadow-premium-sm rounded-[1rem] border bg-sky-mist p-4 text-center"
+                className="border-sky-line shadow-premium-sm bg-sky-mist rounded-[1rem] border p-4 text-center"
               >
-                <p className="text-3xl font-black text-sky-ink">
+                <p className="text-sky-ink text-3xl font-black">
                   {item.letter}
                 </p>
                 <p className="text-premium-muted mt-1 text-xs font-bold">
@@ -465,9 +467,9 @@ export default function CurriculumPage() {
       </section>
 
       <section className="relative overflow-hidden bg-[linear-gradient(135deg,#fff8de_0%,#ffffff_46%,#fff5e7_100%)] py-14 md:py-20">
-        <div className="absolute top-12 left-[-4rem] h-48 w-48 rounded-full bg-gold-mist/80" />
-        <div className="absolute right-[-5rem] bottom-16 h-64 w-64 rounded-full bg-peach-mist/80" />
-        <div className="container relative mx-auto px-6">
+        <div className="bg-gold-mist/80 absolute top-12 left-[-4rem] h-48 w-48 rounded-full" />
+        <div className="bg-peach-mist/80 absolute right-[-5rem] bottom-16 h-64 w-64 rounded-full" />
+        <div className="relative container mx-auto px-6">
           <div className="grid items-stretch gap-6 lg:grid-cols-[0.95fr_1.05fr]">
             <LearningImagePanel
               image={content.activityLearning.image}
@@ -475,7 +477,7 @@ export default function CurriculumPage() {
               title="Hands-on clarity through play"
             />
 
-            <div className="rounded-[1.75rem] border border-white/80 bg-white/86 p-6 shadow-forest-card backdrop-blur-sm md:p-8">
+            <div className="shadow-forest-card rounded-[1.75rem] border border-white/80 bg-white/86 p-6 backdrop-blur-sm md:p-8">
               <SectionIntro
                 badge={content.activityLearning.badge}
                 title={content.activityLearning.title}
@@ -492,7 +494,7 @@ export default function CurriculumPage() {
                     <article
                       key={item.title}
                       className={cn(
-                        "group min-h-[154px] rounded-[1.15rem] border p-4 transition-all hover:-translate-y-0.5 hover:shadow-premium-md",
+                        "group hover:shadow-premium-md min-h-[154px] rounded-[1.15rem] border p-4 transition-all hover:-translate-y-0.5",
                         index === 0
                           ? "border-gold-line bg-gold-mist"
                           : "border-white bg-white"
@@ -500,7 +502,7 @@ export default function CurriculumPage() {
                     >
                       <div className="mb-4 flex items-center gap-3">
                         <span
-                          className={`flex size-11 items-center justify-center rounded-2xl border bg-white/86 shadow-premium-sm ${cardAccentClassNames[index]}`}
+                          className={`shadow-premium-sm flex size-11 items-center justify-center rounded-2xl border bg-white/86 ${cardAccentClassNames[index]}`}
                         >
                           <Icon className="size-5" />
                         </span>
@@ -521,9 +523,9 @@ export default function CurriculumPage() {
       </section>
 
       <section className="relative overflow-hidden bg-[linear-gradient(180deg,#eef8ff_0%,#ffffff_50%,#effff6_100%)] py-14 md:py-20">
-        <div className="absolute top-16 right-[-5rem] h-56 w-56 rounded-full bg-sky-mist" />
-        <div className="absolute bottom-12 left-[-4rem] h-44 w-44 rounded-full bg-mint-mist/80" />
-        <div className="container relative mx-auto px-6">
+        <div className="bg-sky-mist absolute top-16 right-[-5rem] h-56 w-56 rounded-full" />
+        <div className="bg-mint-mist/80 absolute bottom-12 left-[-4rem] h-44 w-44 rounded-full" />
+        <div className="relative container mx-auto px-6">
           <SectionIntro
             badge={content.skillDevelopment.badge}
             title={content.skillDevelopment.title}
@@ -538,16 +540,16 @@ export default function CurriculumPage() {
               image={content.skillDevelopment.image}
               badge="Fine + gross motor practice"
               title="Confidence built through movement and play"
-              className="h-[350px] bg-sky-wash md:h-[450px]"
+              className="bg-sky-wash h-[350px] md:h-[450px]"
               imageClassName="object-contain object-bottom p-4"
             />
           </div>
 
-          <div className="mx-auto mt-8 max-w-4xl rounded-[1.2rem] border border-sky-line bg-sky-mist/80 p-5 text-center">
+          <div className="border-sky-line bg-sky-mist/80 mx-auto mt-8 max-w-4xl rounded-[1.2rem] border p-5 text-center">
             <p className="font-hero-subtitle text-sky-ink text-sm leading-6 font-bold sm:text-base">
-              Fine and gross motor practice is woven into classroom routines
-              so children build control, balance, and creative confidence
-              without the experience feeling formal or pressured.
+              Fine and gross motor practice is woven into classroom routines so
+              children build control, balance, and creative confidence without
+              the experience feeling formal or pressured.
             </p>
           </div>
 
@@ -558,11 +560,11 @@ export default function CurriculumPage() {
               return (
                 <article
                   key={group.title}
-                  className="group rounded-[1.5rem] border border-white/80 bg-white/88 p-6 shadow-premium-sm backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:shadow-premium-md md:p-8"
+                  className="group shadow-premium-sm hover:shadow-premium-md rounded-[1.5rem] border border-white/80 bg-white/88 p-6 backdrop-blur-sm transition-all hover:-translate-y-0.5 md:p-8"
                 >
                   <div className="flex items-start gap-4">
                     <div
-                      className={`flex size-14 shrink-0 items-center justify-center rounded-2xl border bg-white shadow-premium-sm ${cardAccentClassNames[index]}`}
+                      className={`shadow-premium-sm flex size-14 shrink-0 items-center justify-center rounded-2xl border bg-white ${cardAccentClassNames[index]}`}
                     >
                       <Icon className="size-7" />
                     </div>
@@ -575,7 +577,7 @@ export default function CurriculumPage() {
                       </h3>
                     </div>
                   </div>
-                  
+
                   <p className="font-hero-subtitle text-premium-muted mt-4 text-sm leading-6 font-semibold">
                     {group.description}
                   </p>
@@ -589,7 +591,7 @@ export default function CurriculumPage() {
                         {group.skills.map((skill) => (
                           <div
                             key={skill}
-                            className="border-mint-line text-premium-ink flex min-h-10 items-center gap-3 rounded-xl border bg-mint-mist/55 px-3 py-2 text-sm font-bold"
+                            className="border-mint-line text-premium-ink bg-mint-mist/55 flex min-h-10 items-center gap-3 rounded-xl border px-3 py-2 text-sm font-bold"
                           >
                             <Check className="text-premium-forest size-4 shrink-0" />
                             {skill}
@@ -606,7 +608,7 @@ export default function CurriculumPage() {
                         {group.activities.map((activity) => (
                           <span
                             key={activity}
-                            className="border-sky-line text-sky-ink rounded-full border bg-sky-mist px-3 py-1.5 text-xs font-black"
+                            className="border-sky-line text-sky-ink bg-sky-mist rounded-full border px-3 py-1.5 text-xs font-black"
                           >
                             {activity}
                           </span>
@@ -682,7 +684,7 @@ export default function CurriculumPage() {
       </section>
 
       <section className="relative overflow-hidden bg-white py-14 md:py-20">
-        <div className="absolute top-16 left-[-4rem] h-48 w-48 rounded-full bg-mint-mist/80" />
+        <div className="bg-mint-mist/80 absolute top-16 left-[-4rem] h-48 w-48 rounded-full" />
         <div className="container mx-auto px-6">
           <div className="grid items-stretch gap-6 lg:grid-cols-[1fr_1fr]">
             <LearningImagePanel
@@ -693,7 +695,7 @@ export default function CurriculumPage() {
               imageClassName="object-cover object-[24%_center]"
             />
 
-            <div className="rounded-[1.75rem] border border-mint-line/60 bg-mint-mist/55 p-6 shadow-forest-card md:p-8">
+            <div className="border-mint-line/60 bg-mint-mist/55 shadow-forest-card rounded-[1.75rem] border p-6 md:p-8">
               <SectionIntro
                 badge={content.pedagogy.badge}
                 title={content.pedagogy.title}
@@ -703,7 +705,7 @@ export default function CurriculumPage() {
               />
 
               <div className="relative mt-6 grid gap-3">
-                <div className="absolute top-6 bottom-6 left-6 hidden w-px bg-mint-line md:block" />
+                <div className="bg-mint-line absolute top-6 bottom-6 left-6 hidden w-px md:block" />
                 {content.pedagogy.items.map((item, index) => {
                   const Icon = getIcon(item.icon);
 
@@ -711,7 +713,7 @@ export default function CurriculumPage() {
                     <article
                       key={item.title}
                       className={cn(
-                        "relative rounded-[1.2rem] border p-4 shadow-premium-sm transition-all hover:-translate-y-0.5 hover:shadow-premium-md md:ml-10",
+                        "shadow-premium-sm hover:shadow-premium-md relative rounded-[1.2rem] border p-4 transition-all hover:-translate-y-0.5 md:ml-10",
                         index === 0
                           ? "border-mint-line bg-mint-mist"
                           : index === 1
@@ -721,7 +723,7 @@ export default function CurriculumPage() {
                     >
                       <div className="flex gap-4">
                         <div
-                          className={`flex size-12 shrink-0 items-center justify-center rounded-2xl border bg-white shadow-premium-sm ${cardAccentClassNames[index]}`}
+                          className={`shadow-premium-sm flex size-12 shrink-0 items-center justify-center rounded-2xl border bg-white ${cardAccentClassNames[index]}`}
                         >
                           <Icon className="size-6" />
                         </div>

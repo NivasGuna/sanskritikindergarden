@@ -27,7 +27,7 @@ export default function CtaBackground({
   return (
     <div
       className={cn(
-        "shadow-sky-media relative isolate overflow-hidden rounded-[2rem] border border-white/70 bg-cream-glow",
+        "shadow-sky-media bg-cream-glow relative isolate overflow-hidden rounded-[2rem] border border-white/70",
         className
       )}
     >
@@ -46,7 +46,7 @@ export default function CtaBackground({
       />
       <div
         className={cn(
-          "text-white drop-shadow-md relative z-10 grid gap-8 px-6 py-10 md:grid-cols-[1fr_auto] md:items-end md:px-10 md:py-14 lg:px-12",
+          "relative z-10 grid gap-8 px-6 py-10 text-white drop-shadow-md md:grid-cols-[1fr_auto] md:items-end md:px-10 md:py-14 lg:px-12",
           contentClassName,
           "min-h-[420px] md:min-h-[440px] lg:min-h-[460px]"
         )}

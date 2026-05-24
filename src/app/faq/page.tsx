@@ -36,13 +36,11 @@ export default function FAQPage() {
         ])}
       />
       {/* ───────────────── HERO SECTION ───────────────── */}
-      <HeroBanner
-        image={content.hero.image}
-      >
+      <HeroBanner image={content.hero.image}>
         <div className="relative z-10 container mx-auto flex min-h-[100svh] items-center px-6 py-24">
           <div className="hero-copy-panel motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-left-12 max-w-[32rem] duration-1000">
             <div className="mb-8 inline-flex items-center gap-3">
-              <span className="size-2 rounded-full bg-sky" />
+              <span className="bg-sky size-2 rounded-full" />
               <span className="text-sky-ink text-[10px] font-black tracking-[0.26em] uppercase drop-shadow-[0_2px_8px_rgb(255_255_255_/_90%)]">
                 {content.hero.badge}
               </span>
@@ -63,7 +61,7 @@ export default function FAQPage() {
               <Button
                 render={<Link href={content.hero.buttons.primary.link} />}
                 nativeButton={false}
-                className="bg-mint shadow-[0_18px_45px_rgb(22_97_63_/_22%)] hover:bg-mint-ink h-14 rounded-full px-10 text-base font-black text-white transition-all duration-300 hover:-translate-y-1"
+                className="bg-mint hover:bg-mint-ink h-14 rounded-full px-10 text-base font-black text-white shadow-[0_18px_45px_rgb(22_97_63_/_22%)] transition-all duration-300 hover:-translate-y-1"
               >
                 {content.hero.buttons.primary.text}
                 <ArrowRight className="ml-2 size-5" />
@@ -73,7 +71,7 @@ export default function FAQPage() {
                 render={<Link href={content.hero.buttons.secondary.link} />}
                 nativeButton={false}
                 variant="outline"
-                className="text-forest-dark h-14 rounded-full border-forest-dark/20 bg-white/76 px-10 text-base font-black backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:bg-white/88"
+                className="text-forest-dark border-forest-dark/20 h-14 rounded-full bg-white/76 px-10 text-base font-black backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:bg-white/88"
               >
                 {content.hero.buttons.secondary.text}
               </Button>

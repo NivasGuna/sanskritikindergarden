@@ -3,16 +3,8 @@ import type { Metadata } from "next";
 import { constructMetadata } from "@/lib/seo";
 import { getBreadcrumbSchema } from "@/lib/schema";
 import Schema from "@/components/Schema";
-import {
-  ArrowRight,
-  Clock,
-  Mail,
-  MapPin,
-  Phone,
-  Star,
-} from "lucide-react";
+import { ArrowRight, Clock, Mail, MapPin, Phone, Star } from "lucide-react";
 import HeroBanner from "@/components/reusable/HeroBanner";
-import FinalCta from "@/components/reusable/FinalCta";
 import content from "./contact-content.json";
 
 export const metadata: Metadata = constructMetadata({
@@ -102,7 +94,7 @@ export default function ContactPage() {
         <div className="relative z-10 container mx-auto flex min-h-[100svh] items-center px-6 py-24">
           <div className="hero-copy-panel motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-left-12 max-w-[32rem] duration-1000">
             <div className="mb-7 inline-flex items-center gap-3">
-              <span className="size-2 rounded-full bg-sky" />
+              <span className="bg-sky size-2 rounded-full" />
               <span className="text-sky-ink text-[10px] font-black tracking-[0.26em] uppercase drop-shadow-[0_2px_8px_rgb(255_255_255_/_90%)]">
                 {content.hero.badge}
               </span>
@@ -112,7 +104,9 @@ export default function ContactPage() {
               {content.hero.title.line1}{" "}
               <span className="text-gold-ink">{content.hero.title.word1}</span>{" "}
               <span className="text-sky-ink">{content.hero.title.word2}</span>{" "}
-              <span className="text-forest-dark">{content.hero.title.word3}</span>
+              <span className="text-forest-dark">
+                {content.hero.title.word3}
+              </span>
             </h1>
 
             <p className="hero-subheading text-premium-ink mt-6 max-w-[32rem] drop-shadow-[0_3px_12px_rgb(255_255_255_/_90%)] md:text-xl">
@@ -125,14 +119,14 @@ export default function ContactPage() {
             <div className="mt-9 flex flex-wrap gap-4">
               <a
                 href={phoneHref}
-                className="bg-mint shadow-[0_18px_45px_rgb(22_97_63_/_22%)] hover:bg-mint-ink inline-flex h-14 items-center justify-center rounded-full px-8 text-base font-black text-white transition-all hover:-translate-y-0.5"
+                className="bg-mint hover:bg-mint-ink inline-flex h-14 items-center justify-center rounded-full px-8 text-base font-black text-white shadow-[0_18px_45px_rgb(22_97_63_/_22%)] transition-all hover:-translate-y-0.5"
               >
                 Call Us
                 <Phone className="ml-3 size-5" />
               </a>
               <a
                 href={emailHref}
-                className="text-forest-dark inline-flex h-14 items-center justify-center rounded-full border border-forest-dark/20 bg-white/76 px-8 text-base font-black backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-white/88"
+                className="text-forest-dark border-forest-dark/20 inline-flex h-14 items-center justify-center rounded-full border bg-white/76 px-8 text-base font-black backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-white/88"
               >
                 Send a Message
                 <Mail className="ml-3 size-5" />
@@ -162,7 +156,6 @@ export default function ContactPage() {
                 <ContactDetailLink detail={emailDetail} />
                 <ContactDetailLink detail={hoursDetail} />
               </div>
-
             </div>
 
             <div className="relative min-w-0">
@@ -182,7 +175,7 @@ export default function ContactPage() {
 
       <section
         id={content.mapSection.id}
-        className="relative overflow-hidden bg-sky-mist text-forest-dark py-16 md:py-24"
+        className="bg-sky-mist text-forest-dark relative overflow-hidden py-16 md:py-24"
       >
         <Image
           src="/images/contact-hero-sanskriti-reception.png"
@@ -193,7 +186,7 @@ export default function ContactPage() {
           aria-hidden="true"
         />
         <div className="absolute inset-0 bg-[linear-gradient(135deg,rgb(255_248_232_/_58%)_0%,rgb(255_255_255_/_52%)_52%,rgb(238_248_255_/_42%)_100%)]" />
-        <div className="container relative mx-auto px-6">
+        <div className="relative container mx-auto px-6">
           <div className="border-sky-line shadow-sky-card overflow-hidden rounded-[2rem] border bg-white lg:grid lg:min-h-[460px] lg:grid-cols-[0.36fr_0.64fr]">
             <div className="bg-sky-mist/50 flex flex-col justify-center p-8 lg:p-12">
               <span className="border-sky-line text-sky-ink w-fit rounded-full border bg-white px-4 py-2 text-[10px] font-black tracking-[0.24em] uppercase">

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type ReactNode } from "react";
+import emailjs from "@emailjs/browser";
 import { useForm } from "react-hook-form";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import {
@@ -26,6 +27,9 @@ type SubmitStatus = "idle" | "success" | "error";
 
 const phonePattern = /^\+?[\d\s().-]{7,18}$/;
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const emailJsServiceId = "service_7absf1g";
+const emailJsTemplateId = "template_yvhbv97";
+const emailJsPublicKey = "jAwRQonBGzmbvzvS3";
 
 const inputClassName =
   "h-[3.25rem] w-full rounded-2xl border border-mint-line bg-white/95 px-4 text-base font-semibold text-forest-dark shadow-sm outline-none transition-all placeholder:text-forest-muted/60 focus:border-mint focus:ring-4 focus:ring-mint/18 disabled:cursor-not-allowed disabled:opacity-70";
@@ -55,13 +59,31 @@ export default function AdmissionForm() {
     setStatus("idle");
 
     try {
-      await addDoc(collection(db, "applications"), {
+      const application = {
         studentName: data.studentName.trim(),
         parentName: data.parentName.trim(),
         phone: data.phone.trim(),
         email: data.email.trim().toLowerCase(),
         age: data.age,
         message: data.message?.trim() || "",
+      };
+
+      await emailjs.send(
+        emailJsServiceId,
+        emailJsTemplateId,
+        {
+          studentName: application.studentName,
+          parentName: application.parentName,
+          phone: application.phone,
+          email: application.email,
+          age: application.age,
+          message: application.message || "No message",
+        },
+        emailJsPublicKey
+      );
+
+      await addDoc(collection(db, "applications"), {
+        ...application,
         status: "pending",
         createdAt: serverTimestamp(),
       });
@@ -77,7 +99,7 @@ export default function AdmissionForm() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="rounded-[2rem] border border-peach-line bg-white/95 p-5 shadow-forest-card backdrop-blur-md sm:p-7 lg:p-8"
+      className="border-peach-line shadow-forest-card rounded-[2rem] border bg-white/95 p-5 backdrop-blur-md sm:p-7 lg:p-8"
       noValidate
     >
       <div className="grid gap-5 sm:grid-cols-2">
@@ -177,7 +199,7 @@ export default function AdmissionForm() {
               <option value="5">5 years</option>
               <option value="6">6 years</option>
             </select>
-            <ChevronDown className="pointer-events-none absolute top-1/2 right-4 size-5 -translate-y-1/2 text-mint-ink" />
+            <ChevronDown className="text-mint-ink pointer-events-none absolute top-1/2 right-4 size-5 -translate-y-1/2" />
           </div>
         </Field>
       </div>
@@ -221,7 +243,7 @@ export default function AdmissionForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="mt-6 inline-flex h-14 w-full items-center justify-center rounded-full bg-mint px-8 text-base font-black text-white shadow-[0_18px_45px_rgb(22_97_63_/_22%)] transition-all hover:-translate-y-0.5 hover:bg-mint-ink disabled:translate-y-0 disabled:cursor-not-allowed disabled:opacity-65"
+        className="bg-mint hover:bg-mint-ink mt-6 inline-flex h-14 w-full items-center justify-center rounded-full px-8 text-base font-black text-white shadow-[0_18px_45px_rgb(22_97_63_/_22%)] transition-all hover:-translate-y-0.5 disabled:translate-y-0 disabled:cursor-not-allowed disabled:opacity-65"
       >
         {isSubmitting ? (
           <>
@@ -253,9 +275,9 @@ function Field({
   return (
     <label className="block min-w-0">
       <span className="mb-2 flex items-center justify-between gap-3">
-        <span className="text-sm font-black text-forest-dark">{label}</span>
+        <span className="text-forest-dark text-sm font-black">{label}</span>
         {hint ? (
-          <span className="text-xs font-bold text-forest-muted">{hint}</span>
+          <span className="text-forest-muted text-xs font-bold">{hint}</span>
         ) : null}
       </span>
       {children}

@@ -1,9 +1,11 @@
 {
   "brand": {
-    "name": "Sanskriti Kindergarten",
     "logo": "/images/sans_logo.png",
     "logoAlt": "Sanskriti Kindergarten Logo",
-    "tagline": "Nurturing young minds with love, creativity, and a foundation for lifelong learning.",
+    "lines": [
+      "A caring space where little learners feel safe, seen, and ready to grow.",
+      "Playful routines, creative discovery, and steady support for every child's first steps."
+    ],
     "badge": "Since 2012"
   },
   "navigation": {
@@ -14,9 +16,7 @@
       { "name": "Gallery", "href": "/gallery" },
       { "name": "Curriculum", "href": "/curriculum" },
       { "name": "Admissions", "href": "/admissions" },
-      { "name": "Testimonials", "href": "/testimonials" },
-      { "name": "FAQ", "href": "/faq" },
-      { "name": "Contact", "href": "/contact" }
+      { "name": "Testimonials", "href": "/testimonials" }
     ]
   },
   "contact": {

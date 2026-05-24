@@ -51,7 +51,7 @@ export default function AdmissionsPage() {
         <div className="relative z-10 container mx-auto flex min-h-[100svh] items-center px-6 pt-32 pb-20">
           <div className="hero-copy-panel motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-left-12 max-w-[32rem] duration-1000">
             <div className="mb-7 inline-flex items-center gap-3">
-              <span className="size-2 rounded-full bg-mint" />
+              <span className="bg-mint size-2 rounded-full" />
               <span className="text-mint-ink text-[10px] font-black tracking-[0.26em] uppercase drop-shadow-[0_2px_8px_rgb(255_255_255_/_90%)]">
                 {content.hero.badge}
               </span>
@@ -72,7 +72,7 @@ export default function AdmissionsPage() {
               <Button
                 render={<Link href={content.hero.buttons.primary.link} />}
                 nativeButton={false}
-                className="bg-mint shadow-[0_18px_45px_rgb(22_97_63_/_22%)] hover:bg-mint-ink h-14 rounded-full px-8 text-base font-black text-white transition-all hover:-translate-y-0.5"
+                className="bg-mint hover:bg-mint-ink h-14 rounded-full px-8 text-base font-black text-white shadow-[0_18px_45px_rgb(22_97_63_/_22%)] transition-all hover:-translate-y-0.5"
               >
                 {content.hero.buttons.primary.text}
                 <ArrowRight className="ml-2 size-5" />
@@ -81,7 +81,7 @@ export default function AdmissionsPage() {
                 render={<a href={phoneHref} />}
                 nativeButton={false}
                 variant="outline"
-                className="text-forest-dark h-14 rounded-full border-forest-dark/20 bg-white/76 px-8 text-base font-black backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-white/88"
+                className="text-forest-dark border-forest-dark/20 h-14 rounded-full bg-white/76 px-8 text-base font-black backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-white/88"
               >
                 {content.hero.buttons.secondary.text}
                 <Phone className="ml-2 size-5" />
@@ -133,10 +133,10 @@ export default function AdmissionsPage() {
                 <article
                   key={step.title}
                   className={cn(
-                    "shadow-forest-card group relative min-h-[260px] overflow-hidden rounded-[1.5rem] border border-white/80 bg-white p-6 transition-all hover:-translate-y-1 hover:shadow-forest-floating"
+                    "shadow-forest-card group hover:shadow-forest-floating relative min-h-[260px] overflow-hidden rounded-[1.5rem] border border-white/80 bg-white p-6 transition-all hover:-translate-y-1"
                   )}
                 >
-                  <div className="absolute right-0 bottom-0 h-24 w-24 translate-x-8 translate-y-8 rounded-full bg-sky-mist transition-transform group-hover:translate-x-6 group-hover:translate-y-6" />
+                  <div className="bg-sky-mist absolute right-0 bottom-0 h-24 w-24 translate-x-8 translate-y-8 rounded-full transition-transform group-hover:translate-x-6 group-hover:translate-y-6" />
                   <div
                     className={cn(
                       "shadow-forest-icon relative z-10 mb-6 flex size-14 items-center justify-center rounded-2xl border",

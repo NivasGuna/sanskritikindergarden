@@ -30,10 +30,12 @@ export default function AnnouncementPopup() {
         if (snap.exists()) {
           const data = snap.data() as Announcement;
           setAnnouncement(data);
-          
+
           // Only show if they haven't dismissed this EXACT announcement before
           const currentHash = getAnnouncementHash(data);
-          const dismissedHash = window.localStorage.getItem(ANNOUNCEMENT_DISMISS_KEY);
+          const dismissedHash = window.localStorage.getItem(
+            ANNOUNCEMENT_DISMISS_KEY
+          );
           setOpen(dismissedHash !== currentHash);
         }
       } catch (error) {
@@ -48,7 +50,10 @@ export default function AnnouncementPopup() {
     setOpen(value);
     // When they close it, remember this exact announcement so we don't show it again
     if (!value && announcement) {
-      window.localStorage.setItem(ANNOUNCEMENT_DISMISS_KEY, getAnnouncementHash(announcement));
+      window.localStorage.setItem(
+        ANNOUNCEMENT_DISMISS_KEY,
+        getAnnouncementHash(announcement)
+      );
     }
   };
 
@@ -57,9 +62,12 @@ export default function AnnouncementPopup() {
   return (
     <>
       <Dialog open={open} onOpenChange={handleClose}>
-        <DialogContent className="!flex max-h-[92svh] w-[min(94vw,760px)] overflow-hidden rounded-[28px] p-0 shadow-2xl sm:max-w-[760px]" showCloseButton={false}>
+        <DialogContent
+          className="!flex max-h-[92svh] w-[min(94vw,760px)] overflow-hidden rounded-[28px] p-0 shadow-2xl sm:max-w-[760px]"
+          showCloseButton={false}
+        >
           <div className="relative flex max-h-[92svh] min-h-0 w-full flex-col overflow-hidden">
-            <DialogClose className="absolute right-4 top-4 z-10 rounded-full bg-white/90 p-2 shadow hover:bg-white">
+            <DialogClose className="absolute top-4 right-4 z-10 rounded-full bg-white/90 p-2 shadow hover:bg-white">
               <X className="size-5 text-slate-900" />
               <span className="sr-only">Close announcement</span>
             </DialogClose>
@@ -80,17 +88,24 @@ export default function AnnouncementPopup() {
             ) : null}
 
             <div className="min-h-0 flex-1 overflow-y-auto bg-white p-6 sm:p-8">
-              <h2 className="text-3xl font-semibold text-slate-900 break-words">{announcement.title}</h2>
-              <p className="mt-4 text-base leading-7 text-slate-600 whitespace-pre-line break-words">{announcement.description}</p>
+              <h2 className="text-3xl font-semibold break-words text-slate-900">
+                {announcement.title}
+              </h2>
+              <p className="mt-4 text-base leading-7 break-words whitespace-pre-line text-slate-600">
+                {announcement.description}
+              </p>
             </div>
           </div>
         </DialogContent>
       </Dialog>
 
       <Dialog open={lightboxOpen} onOpenChange={setLightboxOpen}>
-        <DialogContent className="w-[min(98vw,1160px)] max-h-[92vh] overflow-hidden rounded-[28px] bg-black/95 p-4 shadow-2xl" showCloseButton={false}>
+        <DialogContent
+          className="max-h-[92vh] w-[min(98vw,1160px)] overflow-hidden rounded-[28px] bg-black/95 p-4 shadow-2xl"
+          showCloseButton={false}
+        >
           <div className="relative overflow-hidden">
-            <DialogClose className="absolute right-4 top-4 z-10 rounded-full bg-white/20 p-2 hover:bg-white/30">
+            <DialogClose className="absolute top-4 right-4 z-10 rounded-full bg-white/20 p-2 hover:bg-white/30">
               <X className="size-5 text-white" />
               <span className="sr-only">Close lightbox</span>
             </DialogClose>
@@ -100,7 +115,7 @@ export default function AnnouncementPopup() {
                   src={announcement.imageUrl!}
                   alt={announcement.title}
                   fill
-                  className="object-contain rounded-3xl"
+                  className="rounded-3xl object-contain"
                 />
               </div>
             </div>

@@ -1,10 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import {
-  Baloo_2,
-  Geist_Mono,
-  Nunito_Sans,
-  Quicksand,
-} from "next/font/google";
+import { Baloo_2, Geist_Mono, Nunito_Sans, Quicksand } from "next/font/google";
 import "./globals.css";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { MotionProvider } from "@/components/providers/motion-provider";
@@ -42,7 +37,8 @@ const heroSubtitle = Nunito_Sans({
 
 export const metadata: Metadata = constructMetadata({
   title: "Best Preschool & Daycare in Velachery",
-  description: "Best preschool and daycare in Velachery, Chennai offering activity-based learning, phonics, and child-focused education.",
+  description:
+    "Best preschool and daycare in Velachery, Chennai offering activity-based learning, phonics, and child-focused education.",
 });
 
 export const viewport: Viewport = {

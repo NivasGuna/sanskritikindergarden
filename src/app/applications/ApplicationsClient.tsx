@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import {
   collection,
@@ -23,16 +23,32 @@ import type { Application, SortField } from "@/lib/application-types";
 
 const ITEMS_PER_PAGE = 10;
 
+type ActiveFilters = {
+  statusFilter: string;
+  fromDate: string;
+  toDate: string;
+  searchQuery: string;
+};
+
+const DEFAULT_ACTIVE_FILTERS: ActiveFilters = {
+  statusFilter: "all",
+  fromDate: "",
+  toDate: "",
+  searchQuery: "",
+};
+
 export default function ApplicationsClient() {
   const router = useRouter();
   const { isLoggedIn } = useAuth();
   const [allApplications, setAllApplications] = useState<Application[]>([]);
-  const [applications, setApplications] = useState<Application[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [statusFilter, setStatusFilter] = useState<string>("all");
   const [fromDate, setFromDate] = useState<string>("");
   const [toDate, setToDate] = useState<string>("");
   const [searchQuery, setSearchQuery] = useState<string>("");
+  const [activeFilters, setActiveFilters] = useState<ActiveFilters>(
+    DEFAULT_ACTIVE_FILTERS
+  );
   const [sortField, setSortField] = useState<SortField>("createdAt");
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("desc");
 
@@ -42,7 +58,10 @@ export default function ApplicationsClient() {
       return;
     }
 
-    const q = query(collection(db, "applications"), orderBy("createdAt", "desc"));
+    const q = query(
+      collection(db, "applications"),
+      orderBy("createdAt", "desc")
+    );
     const unsubscribe = onSnapshot(q, (snapshot) => {
       const data = snapshot.docs.map((doc) => ({
         id: doc.id,
@@ -50,44 +69,32 @@ export default function ApplicationsClient() {
       })) as Application[];
 
       setAllApplications(data);
-      setApplications(data);
     });
 
     return () => unsubscribe();
   }, [isLoggedIn, router]);
 
-  const handleStatusChange = async (id: string, newStatus: Application["status"]) => {
-    try {
-      await updateDoc(doc(db, "applications", id), {
-        status: newStatus,
-      });
-
-      setApplications((prev) =>
-        prev.map((app) => (app.id === id ? { ...app, status: newStatus } : app)),
-      );
-    } catch (error) {
-      console.error("Error updating status:", error);
-    }
-  };
-
-  const handleSearch = () => {
+  const applications = useMemo(() => {
     let filtered = [...allApplications];
 
-    if (searchQuery.trim()) {
-      const q = searchQuery.toLowerCase();
-      filtered = filtered.filter((app) =>
-        app.studentName?.toLowerCase().includes(q) ||
-        app.parentName?.toLowerCase().includes(q) ||
-        app.phone?.toLowerCase().includes(q),
+    if (activeFilters.searchQuery.trim()) {
+      const q = activeFilters.searchQuery.toLowerCase();
+      filtered = filtered.filter(
+        (app) =>
+          app.studentName?.toLowerCase().includes(q) ||
+          app.parentName?.toLowerCase().includes(q) ||
+          app.phone?.toLowerCase().includes(q)
       );
     }
 
-    if (statusFilter !== "all") {
-      filtered = filtered.filter((app) => app.status === statusFilter);
+    if (activeFilters.statusFilter !== "all") {
+      filtered = filtered.filter(
+        (app) => app.status === activeFilters.statusFilter
+      );
     }
 
-    if (fromDate) {
-      const from = new Date(fromDate);
+    if (activeFilters.fromDate) {
+      const from = new Date(activeFilters.fromDate);
       filtered = filtered.filter((app) => {
         if (!app.createdAt?.seconds) return false;
         const appDate = new Date(app.createdAt.seconds * 1000);
@@ -95,8 +102,8 @@ export default function ApplicationsClient() {
       });
     }
 
-    if (toDate) {
-      const to = new Date(toDate);
+    if (activeFilters.toDate) {
+      const to = new Date(activeFilters.toDate);
       to.setHours(23, 59, 59, 999);
       filtered = filtered.filter((app) => {
         if (!app.createdAt?.seconds) return false;
@@ -148,7 +155,33 @@ export default function ApplicationsClient() {
       return 0;
     });
 
-    setApplications(filtered);
+    return filtered;
+  }, [activeFilters, allApplications, sortField, sortOrder]);
+
+  const handleStatusChange = async (
+    id: string,
+    newStatus: Application["status"]
+  ) => {
+    try {
+      await updateDoc(doc(db, "applications", id), {
+        status: newStatus,
+      });
+
+      setAllApplications((prev) =>
+        prev.map((app) => (app.id === id ? { ...app, status: newStatus } : app))
+      );
+    } catch (error) {
+      console.error("Error updating status:", error);
+    }
+  };
+
+  const handleSearch = () => {
+    setActiveFilters({
+      statusFilter,
+      fromDate,
+      toDate,
+      searchQuery,
+    });
     setCurrentPage(1);
   };
 
@@ -159,6 +192,7 @@ export default function ApplicationsClient() {
       setSortField(field);
       setSortOrder("asc");
     }
+    setCurrentPage(1);
   };
 
   const handleReset = () => {
@@ -166,25 +200,18 @@ export default function ApplicationsClient() {
     setStatusFilter("all");
     setFromDate("");
     setToDate("");
-    setApplications(allApplications);
+    setActiveFilters(DEFAULT_ACTIVE_FILTERS);
     setCurrentPage(1);
   };
 
-  useEffect(() => {
-    handleSearch();
-  }, [sortOrder, sortField]);
-
-  useEffect(() => {
-    if (searchQuery === "") {
-      handleSearch();
-    }
-  }, [searchQuery]);
-
-  const totalPages = Math.max(1, Math.ceil(applications.length / ITEMS_PER_PAGE));
+  const totalPages = Math.max(
+    1,
+    Math.ceil(applications.length / ITEMS_PER_PAGE)
+  );
 
   const paginatedApplications = applications.slice(
     (currentPage - 1) * ITEMS_PER_PAGE,
-    currentPage * ITEMS_PER_PAGE,
+    currentPage * ITEMS_PER_PAGE
   );
 
   const handleExportExcel = () => {

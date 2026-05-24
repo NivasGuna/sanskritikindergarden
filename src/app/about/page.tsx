@@ -124,7 +124,7 @@ export default function AboutPage() {
         <div className="relative z-10 container mx-auto flex min-h-[100svh] items-center px-6 py-24">
           <div className="hero-copy-panel motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-left-12 max-w-[32rem] duration-1000">
             <div className="mb-7 inline-flex items-center gap-3">
-              <span className="size-2 rounded-full bg-gold" />
+              <span className="bg-gold size-2 rounded-full" />
               <span className="text-gold-ink text-[10px] font-black tracking-[0.26em] uppercase drop-shadow-[0_2px_8px_rgb(255_255_255_/_90%)]">
                 {content.hero.badge}
               </span>
@@ -146,7 +146,7 @@ export default function AboutPage() {
               <Button
                 render={<Link href={content.hero.buttons.primary.link} />}
                 nativeButton={false}
-                className="bg-mint shadow-[0_18px_45px_rgb(22_97_63_/_22%)] hover:bg-mint-ink h-14 rounded-full px-8 text-base font-black text-white transition-all hover:-translate-y-0.5"
+                className="bg-mint hover:bg-mint-ink h-14 rounded-full px-8 text-base font-black text-white shadow-[0_18px_45px_rgb(22_97_63_/_22%)] transition-all hover:-translate-y-0.5"
               >
                 {content.hero.buttons.primary.text}
                 <ArrowRight className="ml-2 size-5" />
@@ -155,7 +155,7 @@ export default function AboutPage() {
                 render={<Link href={content.hero.buttons.secondary.link} />}
                 nativeButton={false}
                 variant="outline"
-                className="text-forest-dark h-14 rounded-full border-forest-dark/20 bg-white/76 px-8 text-base font-black backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-white/88"
+                className="text-forest-dark border-forest-dark/20 h-14 rounded-full bg-white/76 px-8 text-base font-black backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-white/88"
               >
                 {content.hero.buttons.secondary.text}
               </Button>
@@ -451,16 +451,16 @@ export default function AboutPage() {
                 <article
                   key={item.title}
                   className={cn(
-                    "shadow-forest-value group relative overflow-hidden rounded-[2rem] border p-8 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-forest-card lg:col-span-2",
+                    "shadow-forest-value group hover:shadow-forest-card relative overflow-hidden rounded-[2rem] border p-8 transition-all duration-300 hover:-translate-y-1.5 lg:col-span-2",
                     (index === 0 || index === 5) && "lg:col-span-3",
                     valueColorClasses[index % valueColorClasses.length]
                   )}
                 >
-                  <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-white/40 transition-transform duration-500 group-hover:scale-150" />
+                  <div className="absolute -top-8 -right-8 h-32 w-32 rounded-full bg-white/40 transition-transform duration-500 group-hover:scale-150" />
                   <div className="absolute -bottom-6 -left-6 h-24 w-24 rounded-full bg-white/40 transition-transform duration-500 group-hover:scale-125" />
-                  
-                  <div className="relative z-10 flex flex-col items-center text-center gap-5 sm:flex-row sm:text-left sm:items-start">
-                    <div className="flex size-16 shrink-0 items-center justify-center rounded-[1.2rem] bg-white shadow-forest-icon transition-transform group-hover:scale-110">
+
+                  <div className="relative z-10 flex flex-col items-center gap-5 text-center sm:flex-row sm:items-start sm:text-left">
+                    <div className="shadow-forest-icon flex size-16 shrink-0 items-center justify-center rounded-[1.2rem] bg-white transition-transform group-hover:scale-110">
                       <Icon className="size-7" />
                     </div>
                     <div className="min-w-0">

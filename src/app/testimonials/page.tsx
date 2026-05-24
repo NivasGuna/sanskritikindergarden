@@ -51,7 +51,7 @@ export default function TestimonialsPage() {
         <div className="relative z-10 container mx-auto flex min-h-[100svh] items-center px-6 py-24">
           <div className="hero-copy-panel motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-left-12 max-w-[32rem] duration-1000">
             <div className="mb-8 inline-flex items-center gap-3">
-              <span className="size-2 rounded-full bg-gold" />
+              <span className="bg-gold size-2 rounded-full" />
               <span className="text-gold-ink text-[10px] font-black tracking-[0.26em] uppercase drop-shadow-[0_2px_8px_rgb(255_255_255_/_90%)]">
                 {content.hero.badge}
               </span>
@@ -78,7 +78,7 @@ export default function TestimonialsPage() {
               <Button
                 render={<Link href={content.hero.buttons.primary.link} />}
                 nativeButton={false}
-                className="bg-mint shadow-[0_18px_45px_rgb(22_97_63_/_22%)] hover:bg-mint-ink h-14 rounded-full px-10 text-base font-black text-white transition-all hover:-translate-y-0.5"
+                className="bg-mint hover:bg-mint-ink h-14 rounded-full px-10 text-base font-black text-white shadow-[0_18px_45px_rgb(22_97_63_/_22%)] transition-all hover:-translate-y-0.5"
               >
                 {content.hero.buttons.primary.text}
                 <ArrowRight className="ml-2 size-5" />
@@ -87,7 +87,7 @@ export default function TestimonialsPage() {
                 render={<Link href={content.hero.buttons.secondary.link} />}
                 nativeButton={false}
                 variant="outline"
-                className="text-forest-dark h-14 rounded-full border-forest-dark/20 bg-white/76 px-10 text-base font-black backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-white/88"
+                className="text-forest-dark border-forest-dark/20 h-14 rounded-full bg-white/76 px-10 text-base font-black backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-white/88"
               >
                 {content.hero.buttons.secondary.text}
               </Button>
@@ -100,11 +100,11 @@ export default function TestimonialsPage() {
         id="parent-stories"
         className="relative overflow-hidden bg-[linear-gradient(135deg,#fff8de_0%,#ffffff_42%,#eef8ff_100%)] py-16 md:py-24"
       >
-        <div className="absolute top-10 left-[-3rem] h-44 w-44 rounded-full bg-mint-mist/80" />
-        <div className="absolute right-[-4rem] bottom-16 h-56 w-56 rounded-full bg-peach-mist/80" />
-        <div className="container relative mx-auto px-6">
+        <div className="bg-mint-mist/80 absolute top-10 left-[-3rem] h-44 w-44 rounded-full" />
+        <div className="bg-peach-mist/80 absolute right-[-4rem] bottom-16 h-56 w-56 rounded-full" />
+        <div className="relative container mx-auto px-6">
           <div className="mx-auto max-w-3xl text-center">
-            <span className="border-mint-line bg-white/88 text-mint-ink inline-flex rounded-full border px-4 py-2 text-[10px] font-black tracking-[0.24em] uppercase shadow-warm-badge">
+            <span className="border-mint-line text-mint-ink shadow-warm-badge inline-flex rounded-full border bg-white/88 px-4 py-2 text-[10px] font-black tracking-[0.24em] uppercase">
               {content.testimonialsSection.badge}
             </span>
             <h2 className="font-playful-display text-forest-dark mt-5 text-4xl leading-[1.03] font-extrabold md:text-6xl">
@@ -116,23 +116,25 @@ export default function TestimonialsPage() {
           </div>
 
           <div className="mx-auto mt-8 flex max-w-3xl flex-wrap justify-center gap-3">
-            {["5-star parent stories", "Safe, friendly care", "Joyful classroom routines"].map(
-              (label, index) => (
-                <span
-                  key={label}
-                  className={`rounded-full border px-4 py-2 text-xs font-black uppercase ${testimonialAccents[index]}`}
-                >
-                  {label}
-                </span>
-              )
-            )}
+            {[
+              "5-star parent stories",
+              "Safe, friendly care",
+              "Joyful classroom routines",
+            ].map((label, index) => (
+              <span
+                key={label}
+                className={`rounded-full border px-4 py-2 text-xs font-black uppercase ${testimonialAccents[index]}`}
+              >
+                {label}
+              </span>
+            ))}
           </div>
 
           <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {content.testimonials.map((testimonial, index) => (
               <article
                 key={testimonial.author}
-                className="group relative flex min-h-[380px] flex-col overflow-hidden rounded-[1.75rem] border border-white/80 bg-white p-7 shadow-forest-card transition-all hover:-translate-y-1 hover:shadow-forest-floating"
+                className="group shadow-forest-card hover:shadow-forest-floating relative flex min-h-[380px] flex-col overflow-hidden rounded-[1.75rem] border border-white/80 bg-white p-7 transition-all hover:-translate-y-1"
               >
                 <div
                   className={`absolute inset-x-0 top-0 h-1.5 ${
@@ -145,7 +147,7 @@ export default function TestimonialsPage() {
                   >
                     <Quote className="size-6" />
                   </span>
-                  <div className="flex items-center gap-1 text-gold">
+                  <div className="text-gold flex items-center gap-1">
                     {Array.from({ length: 5 }).map((_, starIndex) => (
                       <Star
                         key={starIndex}
@@ -158,15 +160,15 @@ export default function TestimonialsPage() {
                 <p className="text-forest-dark flex-1 text-base leading-8 font-semibold md:text-[17px]">
                   {testimonial.quote}
                 </p>
-                <div className="mt-8 flex items-center gap-4 border-t border-mint-line/70 pt-5">
-                  <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-forest-dark text-sm font-black text-white">
+                <div className="border-mint-line/70 mt-8 flex items-center gap-4 border-t pt-5">
+                  <span className="bg-forest-dark flex size-12 shrink-0 items-center justify-center rounded-full text-sm font-black text-white">
                     {getInitials(testimonial.author)}
                   </span>
                   <div>
                     <p className="text-forest-dark text-sm font-black tracking-[0.18em] uppercase">
-                    {testimonial.author}
-                  </p>
-                    <p className="mt-1 text-xs font-bold text-forest-muted">
+                      {testimonial.author}
+                    </p>
+                    <p className="text-forest-muted mt-1 text-xs font-bold">
                       Sanskriti parent
                     </p>
                   </div>

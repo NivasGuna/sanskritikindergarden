@@ -38,14 +38,27 @@ export default function HeroBanner({
         src={image.src}
         alt={image.alt}
         fill
-        className={cn("object-cover object-[75%_center] md:object-center", imageClassName)}
+        className={cn(
+          "object-cover object-[75%_center] md:object-center",
+          imageClassName
+        )}
         priority={priority}
         sizes={sizes}
       />
       {overlayClassName ? (
-        <div className={cn("pointer-events-none absolute inset-0", overlayClassName)} />
+        <div
+          className={cn(
+            "pointer-events-none absolute inset-0",
+            overlayClassName
+          )}
+        />
       ) : (
-        <div className={cn("pointer-events-none absolute inset-0", mobileOverlayClassName)} />
+        <div
+          className={cn(
+            "pointer-events-none absolute inset-0",
+            mobileOverlayClassName
+          )}
+        />
       )}
       {children}
     </section>

@@ -175,12 +175,12 @@ function SectionIntro({
         {badge}
       </span>
       <h2
-        className={`font-playful-display mt-5 text-4xl leading-[1.04] font-extrabold text-forest-dark md:text-6xl ${titleClassName}`}
+        className={`font-playful-display text-forest-dark mt-5 text-4xl leading-[1.04] font-extrabold md:text-6xl ${titleClassName}`}
       >
         {title}
       </h2>
       {description ? (
-        <p className="mt-4 text-base leading-7 font-semibold text-forest-muted md:text-[17px] md:leading-8">
+        <p className="text-forest-muted mt-4 text-base leading-7 font-semibold md:text-[17px] md:leading-8">
           {description}
         </p>
       ) : null}
@@ -195,9 +195,9 @@ export default function Home() {
       <HeroCarousel slides={heroSlides} />
 
       <section className="relative overflow-hidden bg-[linear-gradient(135deg,#ffffff_0%,#f7fbf3_48%,#eef8ff_100%)] py-16 md:py-24">
-        <div className="absolute top-12 right-[-4rem] h-40 w-40 rounded-full bg-gold-mist/70" />
-        <div className="absolute bottom-16 left-[-5rem] h-52 w-52 rounded-full bg-mint-mist/80" />
-        <div className="container relative mx-auto px-6">
+        <div className="bg-gold-mist/70 absolute top-12 right-[-4rem] h-40 w-40 rounded-full" />
+        <div className="bg-mint-mist/80 absolute bottom-16 left-[-5rem] h-52 w-52 rounded-full" />
+        <div className="relative container mx-auto px-6">
           <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
             <div>
               <SectionIntro
@@ -207,7 +207,7 @@ export default function Home() {
                 accent="mint"
               />
 
-              <div className="mt-7 space-y-4 text-base leading-8 font-semibold text-forest-soft">
+              <div className="text-forest-soft mt-7 space-y-4 text-base leading-8 font-semibold">
                 <p>
                   At Sanskriti Kindergarten, our programs are shaped around the
                   needs of young children who are learning to explore,
@@ -228,7 +228,7 @@ export default function Home() {
                   return (
                     <div
                       key={item.text}
-                      className="group rounded-[1.25rem] border border-white/80 bg-white/90 p-4 text-sm leading-6 shadow-forest-value transition-all hover:-translate-y-0.5 hover:shadow-forest-card"
+                      className="group shadow-forest-value hover:shadow-forest-card rounded-[1.25rem] border border-white/80 bg-white/90 p-4 text-sm leading-6 transition-all hover:-translate-y-0.5"
                     >
                       <div className="flex items-start gap-3">
                         <span
@@ -236,7 +236,7 @@ export default function Home() {
                         >
                           <Icon className="size-5" />
                         </span>
-                        <p className="font-bold text-forest-dark">
+                        <p className="text-forest-dark font-bold">
                           {item.text}
                         </p>
                       </div>
@@ -248,7 +248,7 @@ export default function Home() {
 
             <div className="relative">
               <div className="shadow-sky-media overflow-hidden rounded-[2rem] border border-white bg-white p-3">
-                <div className="relative aspect-[4/3] overflow-hidden rounded-[1.55rem] bg-sky-mist">
+                <div className="bg-sky-mist relative aspect-[4/3] overflow-hidden rounded-[1.55rem]">
                   <Image
                     src="/images/who-we-are-kindergarten-learning.png"
                     alt="Teachers and children engaging in creative classroom activities"
@@ -263,7 +263,7 @@ export default function Home() {
                 {quickStats.map((stat, index) => (
                   <div
                     key={stat.label}
-                    className={`rounded-[1.15rem] border bg-white/94 p-4 text-center shadow-forest-floating backdrop-blur-md ${
+                    className={`shadow-forest-floating rounded-[1.15rem] border bg-white/94 p-4 text-center backdrop-blur-md ${
                       index === 0
                         ? "border-gold-line"
                         : index === 1
@@ -271,10 +271,10 @@ export default function Home() {
                           : "border-sky-line"
                     }`}
                   >
-                    <p className="font-playful-display text-3xl font-extrabold text-forest-dark">
+                    <p className="font-playful-display text-forest-dark text-3xl font-extrabold">
                       {stat.value}
                     </p>
-                    <p className="mt-1 text-xs leading-5 font-black text-forest-soft uppercase">
+                    <p className="text-forest-soft mt-1 text-xs leading-5 font-black uppercase">
                       {stat.label}
                     </p>
                   </div>
@@ -303,24 +303,24 @@ export default function Home() {
                 <Link
                   key={item.title}
                   href={item.href}
-                  className="group relative block min-h-[240px] overflow-hidden rounded-[1.5rem] border border-white/80 bg-white p-6 text-left shadow-forest-card transition-all hover:-translate-y-1 hover:shadow-forest-floating"
+                  className="group shadow-forest-card hover:shadow-forest-floating relative block min-h-[240px] overflow-hidden rounded-[1.5rem] border border-white/80 bg-white p-6 text-left transition-all hover:-translate-y-1"
                 >
                   <div
                     className={`mb-6 flex size-13 items-center justify-center rounded-2xl border ${programAccents[index % programAccents.length]}`}
                   >
                     <Icon className="size-6" />
                   </div>
-                  <h3 className="font-playful-display text-2xl leading-tight font-extrabold text-forest-dark">
+                  <h3 className="font-playful-display text-forest-dark text-2xl leading-tight font-extrabold">
                     {item.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-6 font-semibold text-forest-soft">
+                  <p className="text-forest-soft mt-3 text-sm leading-6 font-semibold">
                     {item.description}
                   </p>
-                  <span className="mt-6 inline-flex items-center text-sm font-black text-mint-ink">
+                  <span className="text-mint-ink mt-6 inline-flex items-center text-sm font-black">
                     Learn more
                     <ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
                   </span>
-                  <div className="absolute right-5 bottom-5 h-14 w-14 rounded-full bg-sky-mist opacity-0 transition-opacity group-hover:opacity-100" />
+                  <div className="bg-sky-mist absolute right-5 bottom-5 h-14 w-14 rounded-full opacity-0 transition-opacity group-hover:opacity-100" />
                 </Link>
               );
             })}
@@ -343,17 +343,17 @@ export default function Home() {
                 return (
                   <article
                     key={item.title}
-                    className="rounded-[1.25rem] border border-peach-line bg-peach-mist p-6 shadow-forest-value"
+                    className="border-peach-line bg-peach-mist shadow-forest-value rounded-[1.25rem] border p-6"
                   >
                     <div
                       className={`mb-5 flex size-11 items-center justify-center rounded-2xl border ${item.className}`}
                     >
                       <Icon className="size-5" />
                     </div>
-                    <h3 className="font-playful-display text-2xl font-extrabold text-forest-dark">
+                    <h3 className="font-playful-display text-forest-dark text-2xl font-extrabold">
                       {item.title}
                     </h3>
-                    <p className="mt-3 text-sm leading-6 font-semibold text-forest-soft">
+                    <p className="text-forest-soft mt-3 text-sm leading-6 font-semibold">
                       {item.description}
                     </p>
                   </article>
