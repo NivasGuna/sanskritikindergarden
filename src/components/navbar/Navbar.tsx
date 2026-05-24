@@ -45,23 +45,27 @@ export default function Navbar() {
         {/* ── Logo ── */}
         <Link
           href="/"
-          className="group flex min-w-0 items-center gap-3 transition-all duration-300 sm:gap-4"
+          className="group flex min-w-0 items-center gap-3.5 transition-all duration-300 hover:-translate-y-0.5 sm:gap-4"
         >
-          <div className="relative flex size-20 shrink-0 items-center justify-center rounded-full border-[3px] border-white bg-white shadow-sm transition-all duration-300 group-hover:scale-105 sm:size-20">
+          <div className="relative flex size-18 shrink-0 items-center justify-center overflow-hidden  transition-all duration-300 group-hover:scale-105 group-hover:-rotate-1 sm:size-20">
             <Image
               src={content.brand.logo}
               alt={content.brand.logoAlt}
               fill
-              className="scale-110 rounded-full object-contain"
+              className="scale-[1.08] object-cover contrast-[1.04] saturate-[1.08]"
               priority
               sizes="64px"
             />
           </div>
           <span className="hidden min-w-0 leading-none sm:block">
-            <span className="font-premium-display text-forest-dark block text-[1.3rem] leading-tight font-extrabold tracking-normal">
+            <span
+              className={`font-premium-display block text-[1.48rem] leading-[0.96] font-extrabold tracking-normal drop-shadow-[0_3px_12px_rgba(255,255,255,0.92)] transition-colors duration-300 ${
+                isSolid ? "text-forest-dark" : "text-forest-deep"
+              }`}
+            >
               {content.brand.name}
             </span>
-            <span className="text-mint-ink mt-1 block text-[11px] font-black tracking-[0.2em] uppercase">
+            <span className="text-mint-ink mt-2 block text-[10px] font-black tracking-[0.3em] uppercase drop-shadow-[0_2px_8px_rgba(255,255,255,0.96)]">
               {content.brand.subline}
             </span>
           </span>
