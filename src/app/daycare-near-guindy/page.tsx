@@ -16,25 +16,25 @@ const pageConfig = {
   ],
   heroCallout: {
     eyebrow: "Care close to the route",
-    text: "A Velachery daycare option shaped for Guindy families who need warmth, supervision, and practical access.",
+    text: "A Velachery daycare option for Guindy families needing warmth, supervision, and practical access.",
   },
   experience: {
     eyebrow: "Guindy Daycare",
-    title: "A nearby daycare option for working family routines.",
+    title: "A nearby daycare option for working families.",
     description:
-      "Parents can compare daily travel, child comfort, supervision, and continuity in one clear view.",
+      "Compare daily travel, child comfort, supervision, and continuity in one view.",
     assurances: [
       {
         icon: "MapPin",
         title: "Practical access",
         description:
-          "A Velachery base can fit families moving through Guindy and nearby South Chennai routes.",
+          "A Velachery base can suit Guindy and nearby South Chennai routes.",
       },
       {
         icon: "ShieldCheck",
         title: "Warm supervision",
         description:
-          "Children are cared for in a calm setting with steady adults and repeated routines.",
+          "Children are cared for in a calm setting with familiar adults and routines.",
       },
       {
         icon: "Clock3",

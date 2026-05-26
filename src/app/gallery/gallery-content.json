@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Gallery | Sanskriti Kindergarten",
-    "description": "Explore photos and videos from Sanskriti Kindergarten, including classroom moments, play-based learning, celebrations, and joyful early childhood experiences."
+    "description": "Explore photos and videos from Sanskriti Kindergarten classrooms, events, and daily learning moments."
   },
   "hero": {
     "badge": "School Gallery",
@@ -10,7 +10,7 @@
       "highlight": "beautifully",
       "line2": "remembered"
     },
-    "subtitle": "A warm look at the learning, play, celebrations, friendships, and everyday confidence growing inside Sanskriti Kindergarten.",
+    "subtitle": "A warm view of learning, play, celebrations, and confidence growing at Sanskriti.",
     "image": {
       "src": "/images/gallery-hero-banner.jpeg",
       "alt": "A warm kindergarten gallery wall with photos of children learning and playing"
@@ -32,7 +32,7 @@
       "line1": "A closer look at",
       "highlight": "school life"
     },
-    "description": "Switch between images and videos to explore the spaces, activities, and child-centered experiences that shape our school day.",
+    "description": "Switch between images and videos to explore our spaces, activities, and daily routines.",
     "tabs": {
       "images": "Images",
       "videos": "Videos"
@@ -44,105 +44,105 @@
       "alt": "Children clapping together with teachers during an outdoor school gathering",
       "title": "Morning Gathering",
       "category": "Celebration",
-      "description": "Children join teachers in a lively courtyard moment filled with rhythm, attention, and group participation."
+      "description": "A lively courtyard session with songs, rhythm, and group participation."
     },
     {
       "src": "/images/galleryImg2.jpeg",
       "alt": "Children seated outdoors while a teacher speaks into a microphone",
       "title": "Outdoor Story Circle",
       "category": "Campus Life",
-      "description": "A shaded garden session where children sit together, listen, and take part in a shared school experience."
+      "description": "A shaded group circle where children listen and respond together."
     },
     {
       "src": "/images/galleryImg3.jpeg",
       "alt": "Children in traditional dress performing together in the school courtyard",
       "title": "Cultural Dance",
       "category": "Performance",
-      "description": "Children wear traditional attire and build confidence through music, movement, and stage practice."
+      "description": "Children build stage confidence through music and movement."
     },
     {
       "src": "/images/galleryImg4.jpeg",
       "alt": "Children dressed as national leaders during an Independence Day activity",
       "title": "Independence Day Role Play",
       "category": "Celebration",
-      "description": "Children explore national pride through costumes, flags, and simple role-play guided by teachers."
+      "description": "Children explore history and pride through costumes and role play."
     },
     {
       "src": "/images/galleryImg5.jpeg",
       "alt": "Children and families near a small activity stall with toys and festive props",
       "title": "Festival Activity Stall",
       "category": "Family Event",
-      "description": "A hands-on festival corner where children interact with props, toys, and familiar real-world experiences."
+      "description": "A hands-on festival corner with props, toys, and family interaction."
     },
     {
       "src": "/images/galleryImg6.jpeg",
       "alt": "Children seated near a decorated traditional hut and harvest festival display",
       "title": "Traditional Festival Setup",
       "category": "Culture",
-      "description": "Children gather around a festive harvest display, connecting classroom learning with cultural traditions."
+      "description": "Children connect classroom learning with local cultural traditions."
     },
     {
       "src": "/images/galleryImg7.jpeg",
       "alt": "Children in traditional dress walking through the courtyard during a festival program",
       "title": "Festive Courtyard Gathering",
       "category": "Culture",
-      "description": "A colorful school celebration where children move through the courtyard in traditional dress."
+      "description": "A colorful celebration with children in traditional attire."
     },
     {
       "src": "/images/galleryImg8.jpeg",
       "alt": "Teacher helping a toddler explore colorful xylophones and percussion toys",
       "title": "Music Exploration",
       "category": "Early Learning",
-      "description": "A close learning moment with sound, color, and guided sensory exploration."
+      "description": "A sensory learning moment with sound, color, and guided play."
     },
     {
       "src": "/images/galleryImg9.jpeg",
       "alt": "Children performing with pom-poms on an outdoor stage",
       "title": "Stage Performance",
       "category": "Performance",
-      "description": "Young performers practice coordination and confidence during a bright outdoor dance program."
+      "description": "Children practice coordination and confidence through dance."
     },
     {
       "src": "/images/galleryImg10.jpeg",
       "alt": "Children taking part in a sports day race with adults guiding them",
       "title": "Sports Day Race",
       "category": "Sports Day",
-      "description": "Children participate in a track activity with encouragement from teachers and families."
+      "description": "Children enjoy guided outdoor races with teacher and parent support."
     },
     {
       "src": "/images/galleryImg11.jpeg",
       "alt": "Children lined up on a sports field track for an activity",
       "title": "Track Line-Up",
       "category": "Sports Day",
-      "description": "A structured outdoor activity that helps children practice listening, waiting, and movement."
+      "description": "A structured track activity that builds listening and patience."
     },
     {
       "src": "/images/galleryImg12.jpeg",
       "alt": "Child arranging bright colored blocks during an outdoor sports activity",
       "title": "Block Balance Activity",
       "category": "Sports Day",
-      "description": "A playful gross-motor task using colorful blocks, focus, and simple problem solving."
+      "description": "A playful gross-motor task combining balance and problem solving."
     },
     {
       "src": "/images/galleryImg13.jpeg",
       "alt": "Child receiving a medal after a sports day event",
       "title": "Medal Moment",
       "category": "Achievement",
-      "description": "A proud recognition moment after children complete their sports day activities."
+      "description": "A proud recognition moment after sports day participation."
     },
     {
       "src": "/images/galleryImg14.jpeg",
       "alt": "Children standing on a winners podium with medals after sports day",
       "title": "Winners Podium",
       "category": "Achievement",
-      "description": "Children celebrate participation and achievement with medals on the sports day podium."
+      "description": "Children celebrate effort and achievement on the podium."
     },
     {
       "src": "/images/galleryImg15.jpeg",
       "alt": "Children receiving medals from a guest during the sports day prize distribution",
       "title": "Prize Distribution",
       "category": "Achievement",
-      "description": "A warm closing moment where children receive medals and encouragement from the school community."
+      "description": "A warm closing ceremony with medals and encouragement."
     }
   ],
   "videos": [
@@ -157,7 +157,7 @@
   ],
   "cta": {
     "title": "Come see the warmth in person.",
-    "description": "Photos show the moments. A visit helps you feel the rhythm, care, and calm of the school day.",
+    "description": "Photos capture moments. A campus visit lets you feel the care and rhythm of the day.",
     "button": {
       "text": "Contact Us",
       "link": "/contact"

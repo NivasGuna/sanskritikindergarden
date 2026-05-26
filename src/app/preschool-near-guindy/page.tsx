@@ -16,31 +16,31 @@ const pageConfig = {
   ],
   heroCallout: {
     eyebrow: "Nearby and nurturing",
-    text: "A Velachery preschool option shaped for Guindy families who want warmth, routine, and practical access.",
+    text: "A Velachery preschool option for Guindy families who value warmth, routine, and access.",
   },
   experience: {
     eyebrow: "Guindy Families",
     title: "A nearby preschool option that still feels warm.",
     description:
-      "Parents can compare daily practicality, teacher warmth, and child-friendly learning in one clear view.",
+      "Compare daily practicality, teacher warmth, and child-friendly learning in one view.",
     assurances: [
       {
         icon: "MapPin",
         title: "Practical location",
         description:
-          "A Velachery base can work well for families moving through Guindy and South Chennai.",
+          "A Velachery base can work well for families commuting through Guindy.",
       },
       {
         icon: "HeartHandshake",
         title: "Warm settling",
         description:
-          "Children are supported as they become comfortable with adults, groups, and routines.",
+          "Children are supported as they settle into routines, teachers, and groups.",
       },
       {
         icon: "BookOpenCheck",
         title: "Play-based learning",
         description:
-          "Stories, movement, observation, and hands-on exploration keep early learning natural.",
+          "Stories, movement, and hands-on exploration keep early learning natural.",
       },
     ],
     icons: ["MapPin", "HeartHandshake", "MapPin"],

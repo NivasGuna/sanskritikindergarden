@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Contact | Sanskriti Kindergarten",
-    "description": "Contact Sanskriti Kindergarten for admissions, campus tours, classroom routines, and parent support."
+    "description": "Contact Sanskriti Kindergarten for admissions, campus visits, routines, and parent support."
   },
   "school": {
     "name": "Sanskriti Kindergarten Guindy",
@@ -19,19 +19,19 @@
       "line1": "We'd Love to",
       "word1": "Hear",
       "word2": "From",
-      "word3": "You!"
+      "word3": "You"
     },
-    "subtitle": "Have a question, want to schedule a visit, or learn more about our preschool?",
-    "subtitleHighlight": "We're here to help!",
+    "subtitle": "Questions about admissions or campus visits?",
+    "subtitleHighlight": "Our team is here to help.",
     "image": {
       "src": "/images/contact-banner.jpeg",
       "alt": "Happy children playing"
     }
   },
   "detailsSection": {
-    "badge": "Contact details",
+    "badge": "Contact Details",
     "title": "Talk to us before you visit.",
-    "description": "Our team can help with admission questions, tour availability, school hours, and the right program for your child.",
+    "description": "We can help with program fit, tour availability, timings, and admissions guidance.",
     "image": {
       "src": "/images/contact-hero-sanskriti-reception.png",
       "alt": "Children learning in a warm Sanskriti classroom"
@@ -87,14 +87,14 @@
   ],
   "visitCta": {
     "title": "Ready to visit?",
-    "text": "Call us to schedule a guided tour and meet our teachers.",
+    "text": "Call us to schedule a guided campus tour.",
     "button": {
-      "text": "Book a tour"
+      "text": "Book a Tour"
     }
   },
   "mapSection": {
     "id": "map",
-    "badge": "Visit us",
+    "badge": "Visit Us",
     "title": "Find our location",
     "rating": "4.9",
     "reviews": "50 Google reviews",

@@ -271,8 +271,8 @@ function ActivityListSection({
             >
               <p className="font-hero-subtitle text-sm leading-6 font-bold">
                 {isAmber
-                  ? "Children practice expression, confidence, collaboration, and celebration through shared school experiences."
-                  : "Creative movement, arts, nature, and role play add joyful variety to the learning week."}
+                  ? "Children build expression, confidence, and collaboration through shared school experiences."
+                  : "Movement, arts, nature, and role play add joyful variety to the school week."}
               </p>
             </div>
           </div>
@@ -337,7 +337,6 @@ export default function CurriculumPage() {
       <HeroBanner
         image={content.hero.image}
         imageClassName="object-[68%_center] min-[1000px]:object-center"
-        overlayClassName="hidden"
       >
         <div className="relative z-10 container mx-auto flex min-h-[100svh] items-center px-6 py-28">
           <div className="motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-left-12 max-w-[34rem] duration-1000">
@@ -547,9 +546,8 @@ export default function CurriculumPage() {
 
           <div className="border-sky-line bg-sky-mist/80 mx-auto mt-8 max-w-4xl rounded-[1.2rem] border p-5 text-center">
             <p className="font-hero-subtitle text-sky-ink text-sm leading-6 font-bold sm:text-base">
-              Fine and gross motor practice is woven into classroom routines so
-              children build control, balance, and creative confidence without
-              the experience feeling formal or pressured.
+              Fine and gross motor practice is part of daily routines, helping
+              children build control, balance, and confidence in a joyful way.
             </p>
           </div>
 

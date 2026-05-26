@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "About | Sanskriti Kindergarten",
-    "description": "Learn about Sanskriti Kindergarten's early childhood philosophy, values, mission, and nurturing learning environment."
+    "description": "Learn about Sanskriti Kindergarten's philosophy, values, mission, and caring early-years environment."
   },
   "hero": {
     "badge": "Established 2012",
@@ -10,14 +10,14 @@
       "highlight": "Infinite",
       "line2": "Possibilities."
     },
-    "subtitle": "A sanctuary of early childhood excellence, where architectural grace meets a world-class curriculum.",
+    "subtitle": "A warm, thoughtfully designed early-learning space with a child-first curriculum.",
     "cta": {
       "text": "Discover Excellence",
       "link": "/contact"
     },
     "buttons": {
       "primary": {
-        "text": "Discover Excellence",
+        "text": "Our Vision",
         "link": "#vision-mission"
       },
       "secondary": {
@@ -34,31 +34,31 @@
     "badge": {
       "text": "THE SANSKRITI DIFFERENCE"
     },
-    "title": "Why Choose Sanskriti?",
-    "subtitle": "Every detail is designed with intention — from the sunlit classrooms to the handcrafted curriculum.",
+    "title": "Why Sanskriti",
+    "subtitle": "Every detail, from classrooms to curriculum, is designed to help young children feel secure and engaged.",
     "features": [
       {
         "icon": "Palette",
         "title": "Play-Based Learning",
-        "description": "Learning through fun activities that boost creativity, curiosity, and a lifelong love of discovery.",
+        "description": "Hands-on activities to build curiosity and creativity.",
         "accent": "gold"
       },
       {
         "icon": "GraduationCap",
         "title": "Experienced Teachers",
-        "description": "Caring and qualified staff who nurture every child with patience, empathy, and expert guidance.",
+        "description": "Caring educators guiding your child's early years.",
         "accent": "mint"
       },
       {
         "icon": "ShieldCheck",
         "title": "Safe Environment",
-        "description": "Secure campus with child-friendly infrastructure, CCTV monitoring, and thoughtful safety protocols.",
+        "description": "Secure campus with CCTV and clear routines.",
         "accent": "sky"
       },
       {
         "icon": "Sparkles",
-        "title": "Creative Activities",
-        "description": "Art, music, dance, and imaginative play to develop holistic skills and self-expression.",
+        "title": "Creative Experiences",
+        "description": "Art, music, and play to build confidence.",
         "accent": "coral"
       }
     ]
@@ -73,14 +73,14 @@
         "id": "vision",
         "emoji": "🎯",
         "label": "Our Vision",
-        "content": "To be the most trusted and beloved kindergarten, empowering children to become confident, compassionate, and creative learners for life.",
+        "content": "To be a trusted kindergarten where children grow into confident, compassionate, and creative learners.",
         "accent": "gold"
       },
       {
         "id": "mission",
         "emoji": "💡",
         "label": "Our Mission",
-        "content": "We provide a warm, inclusive environment with a play-based curriculum that respects each child's unique pace of growth, fostering intellectual, social, and emotional development.",
+        "content": "A warm, play-based environment supporting every child's growth.",
         "accent": "mint"
       }
     ]
@@ -91,18 +91,18 @@
     },
     "title": {
       "main": "Beyond Education.",
-      "accent": "Pure Inspiration."
+      "accent": "Inspired Beginnings."
     },
-    "description": "At Sanskriti, we curate thoughtful early learning experiences where play, discovery, and social confidence grow naturally.",
+    "description": "We design early-learning experiences where play, discovery, and confidence grow naturally.",
     "pillars": [
       {
         "title": "Safe Haven",
-        "description": "A reassuring environment shaped by careful supervision, hygiene, and child-friendly routines.",
+        "description": "Attentive supervision, hygiene, and reassuring routines.",
         "accent": "gold"
       },
       {
-        "title": "Global Vision",
-        "description": "Rooted in values while preparing children to think, express, and collaborate with confidence.",
+        "title": "Future Ready",
+        "description": "Building communication and curiosity rooted in strong values.",
         "accent": "mint"
       }
     ],
@@ -110,7 +110,7 @@
       "src": "/images/about-philosophy-learning-moment.png",
       "alt": "Our Philosophy"
     },
-    "floatingQuote": "Where brilliance begins."
+    "floatingQuote": "Where confidence begins."
   },
   "values": {
     "badge": {
@@ -121,42 +121,42 @@
       {
         "icon": "Heart",
         "title": "Compassion",
-        "description": "We nurture kindness and empathy in every interaction."
+        "description": "We lead with kindness in every interaction."
       },
       {
         "icon": "Handshake",
         "title": "Inclusivity",
-        "description": "Celebrating diversity and welcoming every child equally."
+        "description": "Every child is welcomed, respected, and supported."
       },
       {
         "icon": "TreePine",
         "title": "Growth",
-        "description": "Supporting steady development at each child's unique pace."
+        "description": "We support steady progress at each child's pace."
       },
       {
         "icon": "Star",
         "title": "Excellence",
-        "description": "Striving for the highest standards in everything we do."
+        "description": "We hold high standards in care, teaching, and safety."
       },
       {
         "icon": "Smile",
         "title": "Joy",
-        "description": "Making learning a joyful and memorable experience."
+        "description": "We make learning joyful and memorable."
       },
       {
         "icon": "Users",
         "title": "Community",
-        "description": "Building strong bonds between families, children, and educators."
+        "description": "Strong family-school partnerships shape every child's journey."
       }
     ]
   },
   "quote": {
-    "text": "Our vision is to nurture a generation that is globally conscious, locally rooted, and eternally curious."
+    "text": "We nurture children who are curious, kind, and ready for the world ahead."
   },
   "teachersSection": {
     "badge": "Our Educators",
-    "title": "Experienced, caring, and qualified",
-    "subtitle": "Each team member is committed to helping children grow with confidence, curiosity, and joy."
+    "title": "Experienced and caring teachers",
+    "subtitle": "Our team helps children grow with confidence, curiosity, and joy."
   },
   "teachers": [
     {
@@ -190,7 +190,7 @@
     {
       "name": "M. Sabila Banu",
       "role": "Educator",
-      "experience": "Overall 3 years of teaching experience.",
+      "experience": "3 years of teaching experience.",
       "experienceDetails": [
         "1 year at Al-Hikma (Anjuman Campus, T. Nagar)",
         "2 years at Sanskriti Kindergarten"
@@ -209,9 +209,9 @@
     {
       "name": "S. Ashwini",
       "role": "Educator",
-      "experience": "Working at Sanskriti Kindergarten since August 2023.",
+      "experience": "With Sanskriti Kindergarten since August 2023.",
       "experienceDetails": [
-        "3 years of teaching experience at Sanskriti Kindergarten"
+        "3 years of classroom teaching experience"
       ],
       "qualifications": ["B.Com (General)", "Phonics Certified"],
       "achievement": "",
@@ -223,7 +223,7 @@
     {
       "name": "M. Gomathi",
       "role": "Senior Educator",
-      "experience": "Overall 15 years of teaching experience.",
+      "experience": "15 years of teaching experience.",
       "experienceDetails": [],
       "qualifications": ["MBA (HR)", "Advanced Diploma in Montessori"],
       "achievement": "",
@@ -235,8 +235,8 @@
     {
       "name": "E. Vasupradha",
       "role": "Educator",
-      "experience": "Working at Sanskriti Kindergarten since April 2025.",
-      "experienceDetails": ["Began service in 2025"],
+      "experience": "With Sanskriti Kindergarten since April 2025.",
+      "experienceDetails": ["Joined the team in 2025"],
       "qualifications": ["BCA (Bachelor of Computer Applications)"],
       "achievement": "",
       "image": {
@@ -247,9 +247,9 @@
     {
       "name": "Musheera Fathima S.",
       "role": "Educator",
-      "experience": "Working at Sanskriti Kindergarten since May 2023.",
+      "experience": "With Sanskriti Kindergarten since May 2023.",
       "experienceDetails": [
-        "3 years of teaching experience at Sanskriti Kindergarten"
+        "3 years of classroom teaching experience"
       ],
       "qualifications": ["B.A. Corporate Economics", "Montessori in Teaching"],
       "achievement": "",
@@ -261,7 +261,7 @@
   ],
   "cta": {
     "title": "Begin Your Child's Journey",
-    "description": "Every great story starts with the first step. Schedule a visit and see why families trust Sanskriti for their child's foundation years.",
+    "description": "Schedule a visit and see why families trust Sanskriti for their child's foundation years.",
     "buttons": {
       "primary": {
         "text": "Schedule a Visit",

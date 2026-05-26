@@ -29,22 +29,22 @@ const whoWeAreBullets: {
 }[] = [
   {
     icon: Smile,
-    text: "Warm, welcoming mornings that help children settle with confidence.",
+    text: "Warm mornings for a confident start.",
     className: "border-gold-line bg-gold-mist text-gold-ink",
   },
   {
     icon: Palette,
-    text: "Play-based learning that gently builds speech, creativity, and social skills.",
+    text: "Play-based learning for creativity & language.",
     className: "border-sky-line bg-sky-mist text-sky-ink",
   },
   {
     icon: ShieldCheck,
-    text: "A secure campus supported by caring teachers and a structured routine.",
+    text: "Secure campus with caring routines.",
     className: "border-mint-line bg-mint-mist text-mint-ink",
   },
   {
     icon: MapPin,
-    text: "Convenient location for families from Velachery, Guindy, and nearby neighborhoods.",
+    text: "Easy access for Velachery & Guindy families.",
     className: "border-peach-line bg-peach-mist text-peach-ink",
   },
 ];
@@ -52,38 +52,32 @@ const whoWeAreBullets: {
 const programLinks = [
   {
     title: "Preschool in Velachery",
-    description:
-      "A fuller look at our preschool environment, learning approach, and family experience.",
+    description: "Explore our playful learning approach and daily rhythm.",
     href: "/preschool-in-velachery",
   },
   {
     title: "Daycare in Velachery",
-    description:
-      "Information for parents balancing reliable care, daily routine, and convenience.",
+    description: "Reliable care routines for working families.",
     href: "/daycare-in-velachery",
   },
   {
     title: "Kindergarten in Velachery",
-    description:
-      "How we support children moving into more confident and independent learning.",
+    description: "Building school readiness with confidence.",
     href: "/kindergarten-in-velachery",
   },
   {
     title: "Play School in Velachery",
-    description:
-      "A gentle introduction to group learning for younger children and first-time school families.",
+    description: "A gentle group learning start for little ones.",
     href: "/play-school-in-velachery",
   },
   {
     title: "Preschool Near Guindy",
-    description:
-      "A nearby option for Guindy families considering a Velachery preschool setting.",
+    description: "Premium early education options near Guindy.",
     href: "/preschool-near-guindy",
   },
   {
     title: "Daycare Near Guindy",
-    description:
-      "Guidance for working families looking for daycare access close to Guindy and Velachery.",
+    description: "Practical daycare access for nearby families.",
     href: "/daycare-near-guindy",
   },
 ];
@@ -115,28 +109,25 @@ const whyItems: {
   {
     icon: ShieldCheck,
     title: "Safe Environment",
-    description:
-      "Fully secured campus with CCTV, trained staff, and child-safe facilities.",
+    description: "Secured campus with CCTV and child-safe facilities.",
     className: "border-amber-100 bg-amber-50 text-amber-700",
   },
   {
     icon: Users,
     title: "Experienced Teachers",
-    description:
-      "Dedicated educators with years of experience in early childhood development.",
+    description: "Dedicated educators in early childhood development.",
     className: "border-teal-100 bg-teal-50 text-teal-700",
   },
   {
     icon: Smile,
     title: "Fun Learning",
-    description:
-      "Play-based curriculum that sparks imagination and builds foundational skills.",
+    description: "Play-based curriculum to spark imagination.",
     className: "border-sky-100 bg-sky-50 text-sky-700",
   },
 ];
 
 const quickStats = [
-  { value: "2012", label: "Nurturing children since" },
+  { value: "2012", label: "Serving families since" },
   { value: "1:6", label: "Playgroup care ratio" },
   { value: "3", label: "Core early-years programs" },
 ];
@@ -203,21 +194,16 @@ export default function Home() {
               <SectionIntro
                 badge="Who We Are"
                 title="Best Preschool in Velachery, Chennai"
-                description="Families looking for a preschool in Velachery usually want more than a classroom. They want a place where children feel welcomed each morning, teachers guide them patiently, and early learning feels joyful instead of pressured."
+                description="Families choose us for a calm start, caring teachers, and joyful early learning."
                 accent="mint"
               />
 
               <div className="text-forest-soft mt-7 space-y-4 text-base leading-8 font-semibold">
                 <p>
-                  At Sanskriti Kindergarten, our programs are shaped around the
-                  needs of young children who are learning to explore,
-                  communicate, build friendships, and grow in confidence.
+                  We encourage children to explore, express, and grow in confidence.
                 </p>
                 <p>
-                  We support preschool, kindergarten, play school, and daycare
-                  in Velachery with a play-based approach that encourages
-                  curiosity, language development, movement, creativity, and
-                  everyday independence.
+                  Our programs use play-based learning to build curiosity, language, and independence.
                 </p>
               </div>
 
@@ -289,7 +275,7 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <SectionIntro
             badge="Explore Programs"
-            title="A trusted preschool choice for families across Velachery and nearby neighborhoods."
+            title="Trusted early-years programs for Velachery and nearby families."
             align="center"
             accent="gold"
             titleClassName="mx-auto max-w-4xl text-3xl md:text-5xl"
@@ -334,7 +320,7 @@ export default function Home() {
             <SectionIntro
               badge="Why Families Choose Us"
               title="Warm, secure, and joyful early learning."
-              description="The school day is designed to feel calm, caring, and active, with a balance of safety, teacher attention, and meaningful play."
+              description="Our school day balances safety, teacher attention, and meaningful play."
             />
 
             <div className="grid gap-4 md:grid-cols-3">
@@ -373,7 +359,7 @@ export default function Home() {
             }}
             badge="Admissions Open"
             title="Give your child a joyful start to learning."
-            description="Visit our Velachery campus and experience the calm, caring environment behind the learning journey."
+            description="Visit our Velachery campus and experience the calm, caring school day."
             primaryAction={{ text: "Start Admissions", href: "/admissions" }}
             secondaryAction={{ text: "View Curriculum", href: "/curriculum" }}
             accent="mint"

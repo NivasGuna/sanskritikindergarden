@@ -16,31 +16,31 @@ const pageConfig = {
   ],
   heroCallout: {
     eyebrow: "Warm from day one",
-    text: "A preschool experience shaped around safety, curiosity, and parent trust.",
+    text: "A preschool experience built on safety, curiosity, and parent trust.",
   },
   experience: {
     eyebrow: "Preschool Care",
-    title: "A clear, calm way to understand the Sanskriti experience.",
+    title: "A clear view of the Sanskriti preschool experience.",
     description:
-      "Parents can scan the page like a campus visit: first the feeling, then the learning, then the location fit.",
+      "Understand the environment, learning approach, and location fit in one place.",
     assurances: [
       {
         icon: "ShieldCheck",
         title: "Secure start",
         description:
-          "Children settle into a calm space where teachers notice comfort, mood, and confidence.",
+          "Children settle in a calm space with attentive teacher support.",
       },
       {
         icon: "BookOpenCheck",
         title: "Play-based learning",
         description:
-          "Stories, movement, conversation, and hands-on work help early concepts feel natural.",
+          "Stories, movement, and hands-on activities make early concepts natural.",
       },
       {
         icon: "Clock3",
         title: "Family-friendly rhythm",
         description:
-          "A predictable day supports children while making drop-off and pick-up easier for parents.",
+          "A predictable day supports children and simplifies family routines.",
       },
     ],
     icons: ["HeartHandshake", "BookOpenCheck", "MapPin"],

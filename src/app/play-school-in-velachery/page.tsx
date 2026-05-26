@@ -16,13 +16,13 @@ const pageConfig = {
   ],
   heroCallout: {
     eyebrow: "A gentle first step",
-    text: "A play school rhythm shaped around trust, familiarity, and joyful participation.",
+    text: "A play school rhythm built on trust, familiarity, and joyful participation.",
   },
   experience: {
     eyebrow: "Play School Start",
     title: "A soft, encouraging beginning to school life.",
     description:
-      "Parents can see how children settle, play, communicate, and become comfortable with group learning.",
+      "See how children settle, play, communicate, and grow comfortable in group learning.",
     assurances: [
       {
         icon: "HeartHandshake",
@@ -34,13 +34,13 @@ const pageConfig = {
         icon: "Sparkles",
         title: "Joyful play",
         description:
-          "Simple play, movement, stories, and creative tasks make school feel familiar.",
+          "Play, stories, movement, and creative tasks make school feel familiar.",
       },
       {
         icon: "ShieldCheck",
         title: "Parent reassurance",
         description:
-          "Clear communication and patient routines help families feel included and confident.",
+          "Clear communication and patient routines keep families informed and confident.",
       },
     ],
     icons: ["HeartHandshake", "Sparkles", "MapPin"],
