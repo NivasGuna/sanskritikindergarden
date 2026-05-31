@@ -1,72 +1,109 @@
 {
   "metadata": {
     "title": "Kindergarten in Velachery, Chennai | Sanskriti Kindergarten",
-    "description": "Sanskriti Kindergarten offers age-appropriate kindergarten in Velachery with steady routines, child-friendly learning, and convenient access for nearby families."
+    "description": "Sanskriti Kindergarten offers age-appropriate kindergarten in Velachery with steady routines, child-friendly learning, and convenient access for South Chennai families."
   },
   "hero": {
     "badge": "Velachery Kindergarten",
     "title": "Kindergarten in Velachery, Chennai",
-    "description": "Families look for a balance of structure and warmth for confident learning.",
+    "description": "A warm kindergarten in Velachery that helps children grow in confidence.",
     "image": {
       "src": "/images/kindergarten-velachery-hero-banner.jpeg",
       "alt": "A bright kindergarten classroom with children learning through creative activities"
     }
   },
+  "heroActions": [
+    {
+      "text": "Apply for Kindergarten Admission",
+      "href": "/contact"
+    },
+    {
+      "text": "Read FAQ",
+      "href": "/faq"
+    }
+  ],
+  "heroCallout": {
+    "eyebrow": "Ready for the next stage",
+    "text": "A kindergarten rhythm built around structure, warmth, and everyday confidence."
+  },
+  "experience": {
+    "eyebrow": "Kindergarten Growth",
+    "title": "Structure, warmth, and readiness in one steady day.",
+    "description": "A quick view of habits, confidence, and readiness.",
+    "assurances": [
+      {
+        "icon": "ShieldCheck",
+        "title": "Supported confidence",
+        "description": "Children grow into group learning with guidance."
+      },
+      {
+        "icon": "BookOpenCheck",
+        "title": "School readiness",
+        "description": "Language, attention, and participation grow through practice."
+      },
+      {
+        "icon": "Clock3",
+        "title": "Age-appropriate routine",
+        "description": "The day stays structured, warm, and joyful."
+      }
+    ],
+    "icons": ["Clock3", "BookOpenCheck", "MapPin"]
+  },
   "highlights": [
     {
-      "title": "Preschool Programs",
-      "description": "Age-appropriate learning paths from early exploration to participation."
+      "title": "School Readiness",
+      "description": "Listening, expression, attention, and participation build step by step."
     },
     {
-      "title": "Daycare Support",
-      "description": "A warm routine with supervised care for working families."
+      "title": "Confident Habits",
+      "description": "A steady rhythm helps children grow more independent."
     },
     {
-      "title": "Convenient Location",
-      "description": "Accessible from Velachery, Guindy, and nearby areas."
+      "title": "Warm Structure",
+      "description": "Guided learning without making the early years feel rushed."
     }
   ],
   "sections": [
     {
       "eyebrow": "Routine",
       "title": "Steady, age-appropriate learning",
-      "lead": "Building group-learning confidence without losing the joy of childhood.",
+      "lead": "Kindergarten should build confidence while keeping learning joyful.",
       "points": [
-        "A steady bridge between playful preschool and structured habits.",
-        "Support for listening, expression, independence, and participation.",
-        "Gentle guidance that builds school readiness without pressure."
+        "A bridge from playful preschool to school habits.",
+        "Support for listening, expression, and independence.",
+        "Readiness without rushing the child."
       ],
-      "closing": "Building communication, curiosity, and positive participation."
+      "closing": "Readiness grows through attention, communication, and happy participation."
     },
     {
       "eyebrow": "Learning",
       "title": "Growth through meaningful experiences",
-      "lead": "Daily activities strengthen language and early thinking practically.",
+      "lead": "A good kindergarten program strengthens language, thinking, and classroom habits.",
       "points": [
-        "Stories, movement, songs, and guided play.",
-        "Child-friendly methods that avoid making learning too formal.",
-        "Teachers who notice progress and support each child."
+        "Movement, stories, songs, creative tasks, and guided play.",
+        "Child-friendly learning without becoming too formal too soon.",
+        "Teachers notice progress and build trust."
       ],
-      "closing": "When learning feels natural, confidence grows at school and at home."
+      "closing": "Natural learning builds everyday confidence."
     },
     {
       "eyebrow": "Location",
-      "title": "Practical for family schedules",
-      "lead": "Choosing a location that supports child comfort and daily routine.",
+      "title": "Practical for Velachery families",
+      "lead": "The location should work for the family schedule and the child.",
       "points": [
-        "A manageable commute helps mornings stay calm and consistent.",
-        "Convenient for Velachery and nearby South Chennai neighborhoods.",
-        "Best explored through a campus visit and discussion."
+        "A manageable commute makes mornings smoother.",
+        "Convenient for Velachery, Guindy, and nearby areas.",
+        "Best understood through admissions details and a visit."
       ],
-      "closing": "A stable routine helps children settle into kindergarten with confidence."
+      "closing": "A steady routine helps children settle with confidence."
     }
   ],
   "families": {
-    "title": "Families We Commonly Serve",
-    "description": "Our kindergarten programs serve Velachery and are convenient for South Chennai.",
+    "title": "Kindergarten Families We Support",
+    "description": "Our kindergarten program supports Velachery families and nearby parents who want a steady bridge into formal schooling.",
     "notes": [
-      "Velachery kindergarten for growing independence",
-      "Practical access for nearby neighborhoods",
+      "Velachery kindergarten for independence",
+      "Convenient for Guindy and South Chennai families",
       "A steady bridge into structured learning"
     ],
     "areas": [
@@ -83,7 +120,7 @@
   "cta": {
     "badge": "Plan Your Next Step",
     "title": "Explore kindergarten admissions at Sanskriti",
-    "description": "Review the school and contact us when you are ready to discuss kindergarten or daycare options.",
+    "description": "Talk to us about readiness, routines, and the kindergarten path that suits your child.",
     "image": {
       "src": "/images/kindergarten-velachery-hero-banner.jpeg",
       "alt": "A bright kindergarten classroom with children learning through creative activities"
@@ -97,16 +134,6 @@
       {
         "text": "View Gallery",
         "href": "/gallery",
-        "variant": "secondary"
-      },
-      {
-        "text": "Read FAQ",
-        "href": "/faq",
-        "variant": "secondary"
-      },
-      {
-        "text": "Contact Us",
-        "href": "/contact",
         "variant": "secondary"
       }
     ]

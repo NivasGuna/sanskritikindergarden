@@ -205,6 +205,7 @@ function ActivityListSection({
   id,
   badge,
   title,
+  summary,
   items,
   surface = "white",
   accent = "amber",
@@ -212,6 +213,7 @@ function ActivityListSection({
   id?: string;
   badge: string;
   title: string;
+  summary: string;
   items: readonly string[];
   surface?: "white" | "muted";
   accent?: "amber" | "teal";
@@ -270,9 +272,7 @@ function ActivityListSection({
               )}
             >
               <p className="font-hero-subtitle text-sm leading-6 font-bold">
-                {isAmber
-                  ? "Children build expression, confidence, and collaboration through shared school experiences."
-                  : "Movement, arts, nature, and role play add joyful variety to the school week."}
+                {summary}
               </p>
             </div>
           </div>
@@ -337,6 +337,7 @@ export default function CurriculumPage() {
       <HeroBanner
         image={content.hero.image}
         imageClassName="object-[68%_center] min-[1000px]:object-center"
+        overlayClassName="hidden"
       >
         <div className="relative z-10 container mx-auto flex min-h-[100svh] items-center px-6 py-28">
           <div className="motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-left-12 max-w-[34rem] duration-1000">
@@ -546,8 +547,7 @@ export default function CurriculumPage() {
 
           <div className="border-sky-line bg-sky-mist/80 mx-auto mt-8 max-w-4xl rounded-[1.2rem] border p-5 text-center">
             <p className="font-hero-subtitle text-sky-ink text-sm leading-6 font-bold sm:text-base">
-              Fine and gross motor practice is part of daily routines, helping
-              children build control, balance, and confidence in a joyful way.
+              {content.skillDevelopment.note}
             </p>
           </div>
 
@@ -746,49 +746,11 @@ export default function CurriculumPage() {
         </div>
       </section>
 
-      <section className="bg-gold-mist py-16 md:py-24">
-        <div className="container mx-auto px-6">
-          <SectionIntro
-            badge={content.teacherRatio.badge}
-            title={content.teacherRatio.title}
-            align="center"
-            accent="gold"
-            titleClassName="md:text-5xl"
-          />
-
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
-            {content.teacherRatio.items.map((item, index) => (
-              <article
-                key={item.program}
-                className="border-premium-line shadow-premium-sm hover:shadow-premium-md rounded-[1.25rem] border bg-white p-6 text-center transition-all hover:-translate-y-0.5"
-              >
-                <p className="text-premium-forest text-[11px] font-black uppercase">
-                  {item.program}
-                </p>
-                <div
-                  className={`mx-auto mt-5 flex size-24 items-center justify-center rounded-2xl ${
-                    index === 0
-                      ? "bg-amber-50 text-amber-700"
-                      : index === 1
-                        ? "bg-teal-50 text-teal-700"
-                        : "bg-sky-50 text-sky-700"
-                  }`}
-                >
-                  <span className="text-3xl font-black">{item.ratio}</span>
-                </div>
-                <p className="text-premium-muted mx-auto mt-5 max-w-xs text-sm leading-6">
-                  {item.description}
-                </p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <ActivityListSection
         id="co-curricular"
         badge={content.coCurricular.badge}
         title={content.coCurricular.title}
+        summary={content.coCurricular.summary}
         items={content.coCurricular.items}
         accent="amber"
       />
@@ -797,6 +759,7 @@ export default function CurriculumPage() {
         id="extra-curricular"
         badge={content.extraCurricular.badge}
         title={content.extraCurricular.title}
+        summary={content.extraCurricular.summary}
         items={content.extraCurricular.items}
         surface="muted"
         accent="teal"

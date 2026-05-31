@@ -19,7 +19,7 @@ export const siteConfig = {
     latitude: 13.0135,
     longitude: 80.2173,
   },
-  phone: "+91 78455 19020",
+  phone: "+91 99411 48333",
   email: "sanskritivelachery@gmail.com",
 };
 
@@ -41,14 +41,17 @@ export function constructMetadata({
   const fullCanonicalUrl = canonicalUrl
     ? `${siteConfig.url}${canonicalUrl}`
     : siteConfig.url;
+  const resolvedTitle = title
+    ? title.includes(siteConfig.name)
+      ? title
+      : `${title} | ${siteConfig.name}`
+    : siteConfig.name;
+
   return {
-    title: {
-      default: title ? `${title} | ${siteConfig.name}` : siteConfig.name,
-      template: `%s | ${siteConfig.name}`,
-    },
+    title: resolvedTitle,
     description,
     openGraph: {
-      title: title ? `${title} | ${siteConfig.name}` : siteConfig.name,
+      title: resolvedTitle,
       description,
       url: fullCanonicalUrl,
       siteName: siteConfig.name,
@@ -65,7 +68,7 @@ export function constructMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: title ? `${title} | ${siteConfig.name}` : siteConfig.name,
+      title: resolvedTitle,
       description,
       images: [image],
     },

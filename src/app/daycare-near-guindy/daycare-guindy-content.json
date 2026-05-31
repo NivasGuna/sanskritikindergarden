@@ -1,73 +1,110 @@
 {
   "metadata": {
     "title": "Daycare Near Guindy | Sanskriti Kindergarten",
-    "description": "Sanskriti Kindergarten offers daycare near Guindy through a Velachery campus with warm supervision, steady routines, and practical access."
+    "description": "Sanskriti Kindergarten offers daycare near Guindy through a Velachery campus with warm supervision, steady routines, and practical access for working families."
   },
   "hero": {
     "badge": "Nearby Daycare for Guindy",
     "title": "Daycare Near Guindy",
-    "description": "Families near Guindy often seek daycare that fits daily travel and still feels caring.",
+    "description": "A nearby Velachery daycare option for Guindy families who want practical access and caring routines.",
     "image": {
       "src": "/images/daycare-guindy-hero-banner.jpeg",
       "alt": "Children in a warm daycare room with a teacher guiding calm play near Guindy"
     }
   },
+  "heroActions": [
+    {
+      "text": "Enquire About Daycare Support",
+      "href": "/contact"
+    },
+    {
+      "text": "Read FAQ",
+      "href": "/faq"
+    }
+  ],
+  "heroCallout": {
+    "eyebrow": "Care close to the route",
+    "text": "A Velachery daycare option with warmth, routine, and practical access."
+  },
+  "experience": {
+    "eyebrow": "Guindy Daycare",
+    "title": "A nearby daycare option for working family routines.",
+    "description": "A quick view of route fit, child comfort, and daily care.",
+    "assurances": [
+      {
+        "icon": "MapPin",
+        "title": "Practical access",
+        "description": "A Velachery base can fit Guindy routes."
+      },
+      {
+        "icon": "ShieldCheck",
+        "title": "Warm supervision",
+        "description": "Children spend the day with steady adults."
+      },
+      {
+        "icon": "Clock3",
+        "title": "Predictable rhythm",
+        "description": "A familiar flow helps children settle."
+      }
+    ],
+    "icons": ["MapPin", "ShieldCheck", "Clock3"]
+  },
   "highlights": [
     {
-      "title": "Preschool Programs",
-      "description": "Age-appropriate learning routines for early years."
+      "title": "Guindy Route Access",
+      "description": "A Velachery location that can suit nearby commute patterns."
     },
     {
-      "title": "Daycare Support",
-      "description": "Warm supervision with a steady, child-friendly rhythm."
+      "title": "Dependable Care",
+      "description": "Warm supervision, familiar adults, and a predictable daily flow."
     },
     {
-      "title": "Convenient Location",
-      "description": "A Velachery campus with practical access from Guindy."
+      "title": "Parent Confidence",
+      "description": "Clear conversations around routines, timing, comfort, and next steps."
     }
   ],
   "sections": [
     {
       "eyebrow": "Working Day Support",
-      "title": "Care that fits family routines",
-      "lead": "Daycare choices are shaped by office hours, travel, and consistency.",
+      "title": "Care that makes daily routines manageable",
+      "lead": "Daycare near Guindy often comes down to hours, travel, and routine.",
       "points": [
-        "A nearby Velachery option for Guindy families needing dependable care.",
-        "A calm setting for children spending longer hours away from home.",
-        "Predictable routines that ease the day for both child and parent."
+        "A nearby Velachery option for consistent care.",
+        "A calm space for children away from home.",
+        "A caring routine that supports parents too."
       ],
-      "closing": "Daycare becomes part of a child's daily world — emotional comfort matters."
+      "closing": "The emotional tone of the day matters."
     },
     {
       "eyebrow": "Dependable Care",
-      "title": "Structure with flexibility",
-      "lead": "Children do best with familiar adults and clear routines.",
+      "title": "Structure with enough flexibility",
+      "lead": "Daily care works best with familiar adults and repeated routines.",
       "points": [
-        "Warm supervision that builds comfort and confidence.",
-        "Straightforward communication parents can rely on.",
-        "A connected early-years setting for preschool pathways too."
+        "Warm supervision through the day.",
+        "Clear communication for parent confidence.",
+        "A connected early-years setting."
       ],
-      "closing": "Dependable daycare supports both child comfort and parent confidence."
+      "closing": "Dependable daycare supports both child comfort and parent trust."
     },
     {
       "eyebrow": "Nearby Access",
-      "title": "A Velachery base that suits Guindy routes",
-      "lead": "The key question is whether the route works for your family's daily rhythm.",
+      "title": "A Velachery base that can suit Guindy routes",
+      "lead": "The route should work for your family every day.",
       "points": [
-        "Useful for families from Guindy and nearby neighborhoods.",
-        "A manageable route helps reduce stress and maintain routines.",
-        "Best explored through a campus visit and direct conversation."
+        "Useful for Guindy and nearby South Chennai routes.",
+        "A manageable route keeps routines consistent.",
+        "Best understood through admissions details and a visit."
       ],
-      "closing": "Clarity and convenience make daycare a practical long-term choice."
+      "closing": "Clarity and convenience make daycare easier to choose."
     }
   ],
   "families": {
-    "title": "Families We Commonly Serve",
-    "description": "For Guindy families considering a practical Velachery daycare option.",
+    "title": "Guindy Families We Support",
+    "description": "This page is for Guindy families who may find our Velachery daycare practical, along with nearby South Chennai neighborhoods.",
     "notes": [
       "Nearby daycare option for Guindy families",
-      "Velachery campus with working-parent access",
-      "Care and early learning in one place"
+      "Velachery access for working parents",
+      "Care and learning in one place"
     ],
     "areas": [
       "Guindy",
@@ -83,7 +120,7 @@
   "cta": {
     "badge": "Plan Your Next Step",
     "title": "Explore daycare support near Guindy",
-    "description": "Review the school and contact us when you are ready to discuss daycare or admissions options.",
+    "description": "Reach out to discuss your route, timings, and whether the daycare rhythm fits your child.",
     "image": {
       "src": "/images/daycare-guindy-hero-banner.jpeg",
       "alt": "Children in a warm daycare room with a teacher guiding calm play near Guindy"
@@ -97,16 +134,6 @@
       {
         "text": "View Gallery",
         "href": "/gallery",
-        "variant": "secondary"
-      },
-      {
-        "text": "Read FAQ",
-        "href": "/faq",
-        "variant": "secondary"
-      },
-      {
-        "text": "Contact Us",
-        "href": "/contact",
         "variant": "secondary"
       }
     ]

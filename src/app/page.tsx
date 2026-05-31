@@ -10,6 +10,7 @@ import {
   School,
   ShieldCheck,
   Smile,
+  Sparkles,
   Sprout,
   Users,
   type LucideIcon,
@@ -22,115 +23,37 @@ import content from "./home-content.json";
 
 const heroSlides = content.hero.slides as HeroSlide[];
 
-const whoWeAreBullets: {
-  icon: LucideIcon;
-  text: string;
-  className: string;
-}[] = [
-  {
-    icon: Smile,
-    text: "Warm mornings for a confident start.",
-    className: "border-gold-line bg-gold-mist text-gold-ink",
-  },
-  {
-    icon: Palette,
-    text: "Play-based learning for creativity & language.",
-    className: "border-sky-line bg-sky-mist text-sky-ink",
-  },
-  {
-    icon: ShieldCheck,
-    text: "Secure campus with caring routines.",
-    className: "border-mint-line bg-mint-mist text-mint-ink",
-  },
-  {
-    icon: MapPin,
-    text: "Easy access for Velachery & Guindy families.",
-    className: "border-peach-line bg-peach-mist text-peach-ink",
-  },
-];
-
-const programLinks = [
-  {
-    title: "Preschool in Velachery",
-    description: "Explore our playful learning approach and daily rhythm.",
-    href: "/preschool-in-velachery",
-  },
-  {
-    title: "Daycare in Velachery",
-    description: "Reliable care routines for working families.",
-    href: "/daycare-in-velachery",
-  },
-  {
-    title: "Kindergarten in Velachery",
-    description: "Building school readiness with confidence.",
-    href: "/kindergarten-in-velachery",
-  },
-  {
-    title: "Play School in Velachery",
-    description: "A gentle group learning start for little ones.",
-    href: "/play-school-in-velachery",
-  },
-  {
-    title: "Preschool Near Guindy",
-    description: "Premium early education options near Guindy.",
-    href: "/preschool-near-guindy",
-  },
-  {
-    title: "Daycare Near Guindy",
-    description: "Practical daycare access for nearby families.",
-    href: "/daycare-near-guindy",
-  },
-];
-
-const programAccents = [
-  "border-mint-line bg-mint-mist text-mint-ink",
-  "border-sky-line bg-sky-mist text-sky-ink",
-  "border-gold-line bg-gold-mist text-gold-ink",
-  "border-peach-line bg-peach-mist text-peach-ink",
-  "border-lavender-line bg-lavender-mist text-lavender-ink",
-  "border-coral-line bg-coral-mist text-coral-ink",
-] as const;
-
-const programIcons = [
+const iconMap = {
   Sprout,
   HeartHandshake,
   BookOpenCheck,
   Blocks,
   School,
   ShieldCheck,
-] as const;
+  Smile,
+  Palette,
+  MapPin,
+  Users,
+} as const satisfies Record<string, LucideIcon>;
 
-const whyItems: {
-  icon: LucideIcon;
-  title: string;
-  description: string;
-  className: string;
-}[] = [
-  {
-    icon: ShieldCheck,
-    title: "Safe Environment",
-    description: "Secured campus with CCTV and child-safe facilities.",
-    className: "border-amber-100 bg-amber-50 text-amber-700",
-  },
-  {
-    icon: Users,
-    title: "Experienced Teachers",
-    description: "Dedicated educators in early childhood development.",
-    className: "border-teal-100 bg-teal-50 text-teal-700",
-  },
-  {
-    icon: Smile,
-    title: "Fun Learning",
-    description: "Play-based curriculum to spark imagination.",
-    className: "border-sky-100 bg-sky-50 text-sky-700",
-  },
-];
+const accentClassNames = {
+  gold: "border-gold-line bg-gold-mist text-gold-ink",
+  sky: "border-sky-line bg-sky-mist text-sky-ink",
+  mint: "border-mint-line bg-mint-mist text-mint-ink",
+  peach: "border-peach-line bg-peach-mist text-peach-ink",
+  lavender: "border-lavender-line bg-lavender-mist text-lavender-ink",
+  coral: "border-coral-line bg-coral-mist text-coral-ink",
+} as const;
 
-const quickStats = [
-  { value: "2012", label: "Serving families since" },
-  { value: "1:6", label: "Playgroup care ratio" },
-  { value: "3", label: "Core early-years programs" },
-];
+type AccentKey = keyof typeof accentClassNames;
+
+function getIcon(name: string) {
+  return iconMap[name as keyof typeof iconMap] ?? Sparkles;
+}
+
+function getAccentClassName(name: string | undefined, fallback: AccentKey) {
+  return accentClassNames[name as AccentKey] ?? accentClassNames[fallback];
+}
 
 function SectionIntro({
   badge,
@@ -192,24 +115,21 @@ export default function Home() {
           <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
             <div>
               <SectionIntro
-                badge="Who We Are"
-                title="Best Preschool in Velachery, Chennai"
-                description="Families choose us for a calm start, caring teachers, and joyful early learning."
+                badge={content.whoWeAre.badge}
+                title={content.whoWeAre.title}
+                description={content.whoWeAre.description}
                 accent="mint"
               />
 
               <div className="text-forest-soft mt-7 space-y-4 text-base leading-8 font-semibold">
-                <p>
-                  We encourage children to explore, express, and grow in confidence.
-                </p>
-                <p>
-                  Our programs use play-based learning to build curiosity, language, and independence.
-                </p>
+                {content.whoWeAre.paragraphs.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
               </div>
 
               <div className="mt-8 grid gap-3 sm:grid-cols-2">
-                {whoWeAreBullets.map((item) => {
-                  const Icon = item.icon;
+                {content.whoWeAre.bullets.map((item) => {
+                  const Icon = getIcon(item.icon);
 
                   return (
                     <div
@@ -218,7 +138,10 @@ export default function Home() {
                     >
                       <div className="flex items-start gap-3">
                         <span
-                          className={`flex size-10 shrink-0 items-center justify-center rounded-2xl border ${item.className}`}
+                          className={`flex size-10 shrink-0 items-center justify-center rounded-2xl border ${getAccentClassName(
+                            item.accent,
+                            "mint"
+                          )}`}
                         >
                           <Icon className="size-5" />
                         </span>
@@ -236,37 +159,71 @@ export default function Home() {
               <div className="shadow-sky-media overflow-hidden rounded-[2rem] border border-white bg-white p-3">
                 <div className="bg-sky-mist relative aspect-[4/3] overflow-hidden rounded-[1.55rem]">
                   <Image
-                    src="/images/who-we-are-kindergarten-learning.png"
-                    alt="Teachers and children engaging in creative classroom activities"
+                    src={content.whoWeAre.image.src}
+                    alt={content.whoWeAre.image.alt}
                     fill
                     className="object-cover"
                     sizes="(min-width: 1024px) 50vw, 100vw"
                   />
                 </div>
               </div>
-
-              <div className="grid gap-4 pt-5 sm:grid-cols-3 lg:absolute lg:right-6 lg:-bottom-8 lg:left-6 lg:pt-0">
-                {quickStats.map((stat, index) => (
-                  <div
-                    key={stat.label}
-                    className={`shadow-forest-floating rounded-[1.15rem] border bg-white/94 p-4 text-center backdrop-blur-md ${
-                      index === 0
-                        ? "border-gold-line"
-                        : index === 1
-                          ? "border-mint-line"
-                          : "border-sky-line"
-                    }`}
-                  >
-                    <p className="font-playful-display text-forest-dark text-3xl font-extrabold">
-                      {stat.value}
-                    </p>
-                    <p className="text-forest-soft mt-1 text-xs leading-5 font-black uppercase">
-                      {stat.label}
-                    </p>
-                  </div>
-                ))}
-              </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden bg-[linear-gradient(135deg,#f7fbf3_0%,#ffffff_52%,#eef8ff_100%)] py-12 md:py-16">
+        <div className="bg-mint-mist/65 absolute top-8 left-[-4rem] h-40 w-40 rounded-full" />
+        <div className="bg-gold-mist/65 absolute right-[-4rem] bottom-8 h-44 w-44 rounded-full" />
+        <div className="relative container mx-auto px-6">
+          <div className="mx-auto max-w-2xl text-center">
+            <span className="border-sky-line bg-sky-mist text-sky-ink inline-flex rounded-full border px-4 py-2 text-[10px] font-black tracking-[0.24em] uppercase">
+              {content.socialMetrics.badge}
+            </span>
+            <h2 className="font-playful-display text-forest-dark mt-4 text-3xl leading-tight font-extrabold md:text-4xl">
+              {content.socialMetrics.title}
+            </h2>
+            <p className="text-forest-muted mt-3 text-sm leading-6 font-semibold md:text-base">
+              {content.socialMetrics.description}
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+            {content.socialMetrics.items.map((item) => {
+              const Icon = getIcon(item.icon);
+
+              return (
+                <article
+                  key={`${item.value}-${item.label || item.description}`}
+                  className="group shadow-forest-card hover:shadow-forest-floating relative overflow-hidden rounded-[1.25rem] border border-white/80 bg-white/92 p-5 transition-all hover:-translate-y-1"
+                >
+                  <div className="bg-sky-mist/70 absolute right-3 bottom-3 h-14 w-14 rounded-full transition-transform group-hover:scale-125" />
+                  <div className="relative z-10 flex items-start gap-4">
+                    <span
+                      className={`flex size-11 shrink-0 items-center justify-center rounded-2xl border ${getAccentClassName(
+                        item.accent,
+                        "sky"
+                      )}`}
+                    >
+                      <Icon className="size-5" />
+                    </span>
+                    <div className="min-w-0">
+                      <p className="font-playful-display text-forest-dark text-3xl leading-none font-extrabold">
+                        {item.value}
+                      </p>
+                      {item.label ? (
+                        <h3 className="text-forest-dark mt-2 text-xs font-black tracking-[0.16em] uppercase">
+                          {item.label}
+                        </h3>
+                      ) : null}
+                    </div>
+                  </div>
+                  <p className="text-forest-soft relative z-10 mt-4 text-sm leading-5 font-semibold">
+                    {item.description}
+                  </p>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -274,16 +231,16 @@ export default function Home() {
       <section className="bg-[linear-gradient(180deg,#fff8de_0%,#fff5e7_100%)] py-16 md:py-24">
         <div className="container mx-auto px-6">
           <SectionIntro
-            badge="Explore Programs"
-            title="Trusted early-years programs for Velachery and nearby families."
+            badge={content.programs.badge}
+            title={content.programs.title}
             align="center"
             accent="gold"
             titleClassName="mx-auto max-w-4xl text-3xl md:text-5xl"
           />
 
           <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {programLinks.map((item, index) => {
-              const Icon = programIcons[index % programIcons.length];
+            {content.programs.items.map((item) => {
+              const Icon = getIcon(item.icon);
 
               return (
                 <Link
@@ -292,7 +249,10 @@ export default function Home() {
                   className="group shadow-forest-card hover:shadow-forest-floating relative block min-h-[240px] overflow-hidden rounded-[1.5rem] border border-white/80 bg-white p-6 text-left transition-all hover:-translate-y-1"
                 >
                   <div
-                    className={`mb-6 flex size-13 items-center justify-center rounded-2xl border ${programAccents[index % programAccents.length]}`}
+                    className={`mb-6 flex size-13 items-center justify-center rounded-2xl border ${getAccentClassName(
+                      item.accent,
+                      "mint"
+                    )}`}
                   >
                     <Icon className="size-6" />
                   </div>
@@ -318,21 +278,24 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
             <SectionIntro
-              badge="Why Families Choose Us"
-              title="Warm, secure, and joyful early learning."
-              description="Our school day balances safety, teacher attention, and meaningful play."
+              badge={content.whyFamiliesChoose.badge}
+              title={content.whyFamiliesChoose.title}
+              description={content.whyFamiliesChoose.description}
             />
 
             <div className="grid gap-4 md:grid-cols-3">
-              {whyItems.map((item) => {
-                const Icon = item.icon;
+              {content.whyFamiliesChoose.items.map((item) => {
+                const Icon = getIcon(item.icon);
                 return (
                   <article
                     key={item.title}
                     className="border-peach-line bg-peach-mist shadow-forest-value rounded-[1.25rem] border p-6"
                   >
                     <div
-                      className={`mb-5 flex size-11 items-center justify-center rounded-2xl border ${item.className}`}
+                      className={`mb-5 flex size-11 items-center justify-center rounded-2xl border ${getAccentClassName(
+                        item.accent,
+                        "gold"
+                      )}`}
                     >
                       <Icon className="size-5" />
                     </div>
@@ -353,15 +316,12 @@ export default function Home() {
       <section className="bg-white pb-16 md:pb-24">
         <div className="container mx-auto px-6">
           <FinalCta
-            image={{
-              src: "/images/who-we-are-kindergarten-learning.png",
-              alt: "Children enjoying a warm Sanskriti Kindergarten classroom",
-            }}
-            badge="Admissions Open"
-            title="Give your child a joyful start to learning."
-            description="Visit our Velachery campus and experience the calm, caring school day."
-            primaryAction={{ text: "Start Admissions", href: "/admissions" }}
-            secondaryAction={{ text: "View Curriculum", href: "/curriculum" }}
+            image={content.finalCta.image}
+            badge={content.finalCta.badge}
+            title={content.finalCta.title}
+            description={content.finalCta.description}
+            primaryAction={content.finalCta.primaryAction}
+            secondaryAction={content.finalCta.secondaryAction}
             accent="mint"
           />
         </div>

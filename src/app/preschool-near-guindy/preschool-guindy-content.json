@@ -1,73 +1,110 @@
 {
   "metadata": {
     "title": "Preschool Near Guindy | Sanskriti Kindergarten",
-    "description": "Sanskriti Kindergarten is a nurturing preschool near Guindy with a Velachery campus, play-based learning, and practical daily access."
+    "description": "Sanskriti Kindergarten is a nurturing preschool near Guindy, based in Velachery, with play-based learning, daycare support, and practical access for nearby families."
   },
   "hero": {
     "badge": "Guindy Families",
     "title": "Preschool Near Guindy",
-    "description": "Families near Guindy often look for nearby schools with practical routes and a warm start.",
+    "description": "A nearby Velachery preschool option for Guindy families who want warmth and a practical route.",
     "image": {
       "src": "/images/preschool-guindy-hero-banner.jpeg",
       "alt": "Children learning through blocks, drawing, and play in a bright preschool classroom near Guindy"
     }
   },
+  "heroActions": [
+    {
+      "text": "Apply for Preschool Admission",
+      "href": "/contact"
+    },
+    {
+      "text": "Read FAQ",
+      "href": "/faq"
+    }
+  ],
+  "heroCallout": {
+    "eyebrow": "Nearby and nurturing",
+    "text": "A Velachery preschool option with warmth, routine, and practical access."
+  },
+  "experience": {
+    "eyebrow": "Guindy Families",
+    "title": "A nearby preschool option that still feels warm.",
+    "description": "A quick view of route fit, teacher warmth, and child-friendly learning.",
+    "assurances": [
+      {
+        "icon": "MapPin",
+        "title": "Practical location",
+        "description": "A Velachery base can fit Guindy routes."
+      },
+      {
+        "icon": "HeartHandshake",
+        "title": "Warm settling",
+        "description": "Children settle into groups and routines with care."
+      },
+      {
+        "icon": "BookOpenCheck",
+        "title": "Play-based learning",
+        "description": "Stories, movement, and hands-on exploration keep learning natural."
+      }
+    ],
+    "icons": ["MapPin", "HeartHandshake", "BookOpenCheck"]
+  },
   "highlights": [
     {
-      "title": "Preschool Programs",
-      "description": "Age-appropriate routines that build confidence gradually."
+      "title": "Guindy Access",
+      "description": "A Velachery preschool option that may fit nearby daily routes."
     },
     {
-      "title": "Daycare Support",
-      "description": "Warm supervised care with a steady daily rhythm."
+      "title": "Warm Preschool Start",
+      "description": "Gentle routines, teacher care, and play-based participation."
     },
     {
-      "title": "Convenient Location",
-      "description": "A Velachery campus with practical access from Guindy."
+      "title": "Clear Next Steps",
+      "description": "Admissions, FAQs, gallery, and visit guidance in one place."
     }
   ],
   "sections": [
     {
       "eyebrow": "Daily Practicality",
-      "title": "Close enough for real routines",
-      "lead": "Families want a school that fits daily routes and still feels welcoming.",
+      "title": "Close enough for real family routines",
+      "lead": "Many Guindy families want a preschool that fits the daily route and feels child-friendly.",
       "points": [
-        "A practical Velachery option for Guindy-based parents.",
-        "A school day focused on comfort, care, and participation.",
-        "A morning atmosphere that feels secure and manageable."
+        "A practical Velachery option for Guindy parents.",
+        "A school day focused on comfort, play, and learning.",
+        "A secure, joyful morning atmosphere."
       ],
-      "closing": "Convenience matters, but the daily emotional tone matters just as much."
+      "closing": "The route matters, and so does the feeling of the school day."
     },
     {
       "eyebrow": "Parent Priorities",
       "title": "Warmth, confidence, and participation",
-      "lead": "Parents want children to settle well and enjoy learning.",
+      "lead": "Parents want children to settle and participate happily.",
       "points": [
         "Play-based learning through stories, movement, and exploration.",
-        "Support for comfort, communication, and age-appropriate growth.",
-        "A responsive setting for preschool and daycare needs."
+        "Support for comfort, communication, and readiness.",
+        "A responsive early-years environment."
       ],
-      "closing": "A preschool near Guindy should make early learning feel natural."
+      "closing": "Early learning should feel inviting and achievable."
     },
     {
       "eyebrow": "Velachery Base",
-      "title": "A nearby campus that works",
-      "lead": "Many Guindy families widen their search when the campus is strong and the route is practical.",
+      "title": "A nearby campus that can still work well",
+      "lead": "A nearby Velachery campus can work well when the route is practical.",
       "points": [
-        "Useful for families across Guindy and nearby neighborhoods.",
-        "A practical fit balancing commute and classroom quality.",
-        "Best understood through a campus visit and direct enquiry."
+        "Useful for Guindy, Velachery, and nearby South Chennai routes.",
+        "A fit for parents who value commute and classroom experience.",
+        "Best understood through admissions details and a visit."
       ],
-      "closing": "The right campus supports both family routine and child comfort."
+      "closing": "The best fit supports both routine and child comfort."
     }
   ],
   "families": {
-    "title": "Families We Commonly Serve",
-    "description": "Designed for Guindy families exploring a nearby Velachery preschool.",
+    "title": "Guindy Preschool Families",
+    "description": "This page is for Guindy families considering a nearby Velachery preschool, along with nearby South Chennai neighborhoods.",
     "notes": [
       "Nearby preschool option for Guindy families",
       "Velachery campus with South Chennai access",
-      "A warm start beyond neighborhood boundaries"
+      "A warm start close to your route"
     ],
     "areas": [
       "Guindy",
@@ -83,7 +120,7 @@
   "cta": {
     "badge": "Plan Your Next Step",
     "title": "Explore preschool admissions near Guindy",
-    "description": "Review the school and contact us when you are ready to discuss preschool or daycare options.",
+    "description": "Reach out to discuss admissions, visit options, and whether the route works for your family.",
     "image": {
       "src": "/images/preschool-guindy-hero-banner.jpeg",
       "alt": "Children learning through blocks, drawing, and play in a bright preschool classroom near Guindy"
@@ -97,16 +134,6 @@
       {
         "text": "View Gallery",
         "href": "/gallery",
-        "variant": "secondary"
-      },
-      {
-        "text": "Read FAQ",
-        "href": "/faq",
-        "variant": "secondary"
-      },
-      {
-        "text": "Contact Us",
-        "href": "/contact",
         "variant": "secondary"
       }
     ]

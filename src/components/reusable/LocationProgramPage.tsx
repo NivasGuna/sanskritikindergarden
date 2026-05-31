@@ -33,6 +33,18 @@ type LocationContent = {
     description: string;
     image: ImageAsset;
   };
+  heroActions: LocationAction[];
+  heroCallout: {
+    eyebrow: string;
+    text: string;
+  };
+  experience: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    assurances: AssuranceItem[];
+    icons: string[];
+  };
   highlights: {
     title: string;
     description: string;
@@ -69,18 +81,6 @@ type AssuranceItem = {
 
 type LocationProgramPageProps = {
   content: LocationContent;
-  heroActions: LocationAction[];
-  heroCallout: {
-    eyebrow: string;
-    text: string;
-  };
-  experience: {
-    eyebrow: string;
-    title: string;
-    description: string;
-    assurances: AssuranceItem[];
-    icons: string[];
-  };
 };
 
 const iconMap = {
@@ -150,11 +150,9 @@ function SectionIntro({
 
 export default function LocationProgramPage({
   content,
-  heroActions,
-  heroCallout,
-  experience,
 }: LocationProgramPageProps) {
   const ctaActions = getCtaActions(content);
+  const { experience, heroActions, heroCallout } = content;
   const primaryCtaAction = ctaActions[0] ?? {
     text: "Contact Us",
     href: "/contact",

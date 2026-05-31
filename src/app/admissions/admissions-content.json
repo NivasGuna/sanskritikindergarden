@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Admissions | Sanskriti Kindergarten Chennai",
-    "description": "Apply to Sanskriti Kindergarten and explore preschool, play school, kindergarten, and daycare admissions.",
+    "description": "Apply for admissions at Sanskriti Kindergarten Chennai and learn about preschool, play school, kindergarten, and daycare enrollment.",
     "canonical": "/admissions",
     "keywords": [
       "kindergarten admission Chennai",
@@ -11,7 +11,7 @@
     ]
   },
   "contact": {
-    "phone": "+91 78455 19020",
+    "phone": "+91 99411 48333",
     "email": "sanskritivelachery@gmail.com"
   },
   "hero": {
@@ -20,7 +20,7 @@
       "line1": "Begin a Joyful",
       "highlight": "Learning Journey"
     },
-    "subtitle": "Share your details and our team will guide you on the next steps.",
+    "subtitle": "Share your child's details and our admissions team will guide you through the right program, campus visit, and next steps.",
     "image": {
       "src": "/images/admission-page-hero-banner.jpeg",
       "alt": "Children beginning their learning journey at Sanskriti Kindergarten"
@@ -45,52 +45,52 @@
       },
       {
         "value": "2012",
-        "label": "Serving families since"
+        "label": "Nurturing children since"
       }
     ]
   },
   "process": {
     "badge": "Simple Process",
-    "title": "Admissions made clear and personal.",
-    "description": "Parent-friendly admissions: share details, plan a visit, and confirm the right fit.",
+    "title": "Admissions made calm, clear, and personal.",
+    "description": "We keep the process parent-friendly: understand your child's age and routine, invite you for a conversation, then help you choose the right program.",
     "steps": [
       {
         "icon": "ClipboardList",
         "title": "Share Details",
-        "description": "Tell us about your child and preferred program."
+        "description": "Tell us about your child, preferred program, and the best way to reach you."
       },
       {
         "icon": "CalendarDays",
         "title": "Plan a Visit",
-        "description": "Book a campus visit or talk to our admissions team."
+        "description": "Our team will help you schedule a campus visit or admissions call."
       },
       {
         "icon": "UserRoundCheck",
         "title": "Confirm Fit",
-        "description": "Review age fit, routines, and a suitable start date."
+        "description": "We guide you through age fit, routine, documents, and start date."
       }
     ]
   },
   "programs": {
     "badge": "Program Fit",
-    "title": "Choose what suits your child.",
-    "description": "We support preschool to kindergarten with warm routines and attentive teachers.",
+    "title": "Choose the path that suits your child.",
+    "description": "Sanskriti supports young children across preschool, play school, kindergarten, and daycare with a warm routine and steady teacher attention.",
     "items": [
-      "Play school and preschool foundations",
+      "Play School and Preschool foundations",
       "Kindergarten readiness for ages 4 to 6",
       "Daycare support for working families",
-      "Guided campus visit before enrollment"
+      "Guided campus visits before enrollment"
     ]
   },
   "form": {
     "badge": "Application Form",
-    "title": "Tell us about your child.",
-    "description": "Submit the form and our team will contact you to schedule a visit."
+    "title": "Tell us a little about your child.",
+    "description": "Complete the form and our team will contact you to discuss availability, age fit, and the next visit slot."
   },
   "closing": {
     "badge": "Need Help?",
-    "title": "Prefer to speak first?",
-    "description": "Call us for guidance on programs and admissions.",
+    "title": "Prefer to speak before applying?",
+    "description": "Call us and we will walk you through program options, school timings, and admission availability.",
     "button": {
       "text": "Call Sanskriti"
     }

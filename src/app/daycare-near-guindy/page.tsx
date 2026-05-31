@@ -9,44 +9,6 @@ export const metadata: Metadata = constructMetadata({
   canonicalUrl: "/daycare-near-guindy",
 });
 
-const pageConfig = {
-  heroActions: [
-    { text: "Enquire About Daycare Support", href: "/contact" },
-    { text: "Read FAQ", href: "/faq" },
-  ],
-  heroCallout: {
-    eyebrow: "Care close to the route",
-    text: "A Velachery daycare option for Guindy families needing warmth, supervision, and practical access.",
-  },
-  experience: {
-    eyebrow: "Guindy Daycare",
-    title: "A nearby daycare option for working families.",
-    description:
-      "Compare daily travel, child comfort, supervision, and continuity in one view.",
-    assurances: [
-      {
-        icon: "MapPin",
-        title: "Practical access",
-        description:
-          "A Velachery base can suit Guindy and nearby South Chennai routes.",
-      },
-      {
-        icon: "ShieldCheck",
-        title: "Warm supervision",
-        description:
-          "Children are cared for in a calm setting with familiar adults and routines.",
-      },
-      {
-        icon: "Clock3",
-        title: "Predictable rhythm",
-        description:
-          "A connected daily flow helps children settle from drop-off to pick-up.",
-      },
-    ],
-    icons: ["MapPin", "ShieldCheck", "MapPin"],
-  },
-};
-
 export default function DaycareNearGuindyPage() {
-  return <LocationProgramPage content={content} {...pageConfig} />;
+  return <LocationProgramPage content={content} />;
 }

@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Contact | Sanskriti Kindergarten",
-    "description": "Contact Sanskriti Kindergarten for admissions, campus visits, routines, and parent support."
+    "description": "Contact Sanskriti Kindergarten for admissions, campus tours, classroom routines, and parent support."
   },
   "school": {
     "name": "Sanskriti Kindergarten Guindy",
@@ -9,9 +9,9 @@
   },
   "contact": {
     "address": "No. 20B, Cart Track Road, Gopalakrishnan Street, Opposite Kala Flats, Chennai, Tamil Nadu 600032",
-    "phone": "+91 78455 19020",
+    "phone": "+91 99411 48333",
     "email": "sanskritivelachery@gmail.com",
-    "hours": "Mon-Fri: 9 AM to 6 PM"
+    "hours": "Mon-Sat: 9 AM to 6 PM"
   },
   "hero": {
     "badge": "Contact Sanskriti",
@@ -19,19 +19,19 @@
       "line1": "We'd Love to",
       "word1": "Hear",
       "word2": "From",
-      "word3": "You"
+      "word3": "You!"
     },
-    "subtitle": "Questions about admissions or campus visits?",
-    "subtitleHighlight": "Our team is here to help.",
+    "subtitle": "Have a question, want to schedule a visit, or learn more about our preschool?",
+    "subtitleHighlight": "We're here to help!",
     "image": {
       "src": "/images/contact-banner.jpeg",
       "alt": "Happy children playing"
     }
   },
   "detailsSection": {
-    "badge": "Contact Details",
+    "badge": "Contact details",
     "title": "Talk to us before you visit.",
-    "description": "We can help with program fit, tour availability, timings, and admissions guidance.",
+    "description": "Our team can help with admission questions, tour availability, school hours, and the right program for your child.",
     "image": {
       "src": "/images/contact-hero-sanskriti-reception.png",
       "alt": "Children learning in a warm Sanskriti classroom"
@@ -87,14 +87,14 @@
   ],
   "visitCta": {
     "title": "Ready to visit?",
-    "text": "Call us to schedule a guided campus tour.",
+    "text": "Call us to schedule a guided tour and meet our teachers.",
     "button": {
-      "text": "Book a Tour"
+      "text": "Book a tour"
     }
   },
   "mapSection": {
     "id": "map",
-    "badge": "Visit Us",
+    "badge": "Visit us",
     "title": "Find our location",
     "rating": "4.9",
     "reviews": "50 Google reviews",

@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Curriculum | Sanskriti Kindergarten",
-    "description": "Explore Sanskriti Kindergarten's CIGMA curriculum, activity-based learning, skill development, pedagogy, and co-curricular programs."
+    "description": "Explore Sanskriti Kindergarten's CIGMA curriculum, activity-based learning, skill development, developmental spheres, pedagogy, and activities."
   },
   "hero": {
     "badge": "Curriculum at Sanskriti Kindergarten",
@@ -10,7 +10,7 @@
       "highlight": "Curriculum"
     },
     "subtitle": "Playful learning for confident early years.",
-    "description": "A child-centered approach building thinking, language, and creativity.",
+    "description": "A child-centered curriculum that builds thinking, expression, movement, and creativity through joyful daily experiences.",
     "image": {
       "src": "/images/curriculum-hero-banner.png",
       "alt": "Children exploring classroom learning materials at Sanskriti Kindergarten"
@@ -28,57 +28,57 @@
     "highlights": [
       {
         "icon": "Blocks",
-        "title": "Child-Centered",
-        "description": "Learning paced to a child's natural exploration."
+        "title": "Child-Centered Learning",
+        "description": "Experiences are shaped around how young children explore and absorb ideas."
       },
       {
         "icon": "Brain",
-        "title": "Thinking First",
-        "description": "Connecting ideas for true understanding, not memorization."
+        "title": "Thinking and Understanding",
+        "description": "Children learn to notice, connect, and make sense of the world."
       },
       {
         "icon": "Sparkles",
-        "title": "Independent Choice",
-        "description": "Encouraging curiosity and confident participation."
+        "title": "Curiosity and Independence",
+        "description": "Children ask questions, make choices, and participate with confidence."
       },
       {
         "icon": "ClipboardCheck",
-        "title": "Gentle Observation",
-        "description": "Regular progress tracking with supportive guidance."
+        "title": "Continuous Observation",
+        "description": "Teachers observe progress and guide each child through the year."
       }
     ]
   },
   "cigma": {
     "badge": "What is CIGMA?",
-    "title": "Cognitive Intellectual Growth & Motivational Assessment",
-    "description": "CIGMA is our structured yet warm approach to help children think, explore, and grow with confidence.",
+    "title": "CIGMA: Thoughtful Early Learning",
+    "description": "CIGMA helps children think, understand, explore, and grow through meaningful engagement and continuous observation.",
     "pillars": [
       {
         "icon": "Blocks",
-        "title": "Child-Centered",
-        "description": "Learning paced to a child's natural exploration."
+        "title": "Child-Centered Learning",
+        "description": "Learning follows each child's natural pace of exploration."
       },
       {
         "icon": "Brain",
-        "title": "Thinking First",
-        "description": "Connecting ideas for true understanding, not memorization."
+        "title": "Thinking and Understanding",
+        "description": "Children build understanding through noticing, connecting, and trying."
       },
       {
         "icon": "Sparkles",
-        "title": "Independent Choice",
-        "description": "Encouraging curiosity and confident participation."
+        "title": "Curiosity and Independence",
+        "description": "Children ask questions, make choices, and join activities with confidence."
       },
       {
         "icon": "ClipboardCheck",
-        "title": "Gentle Observation",
-        "description": "Regular progress tracking with supportive guidance."
+        "title": "Continuous Observation",
+        "description": "Teachers observe progress and guide next steps with care."
       }
     ]
   },
   "activityLearning": {
     "badge": "Activity-Based Learning",
-    "title": "Children learn best when they do, speak, listen, and explore.",
-    "description": "Hands-on experiences help children observe, communicate, and understand concepts through active participation.",
+    "title": "Learning by doing, every day.",
+    "description": "Children observe, listen, speak, act, and revisit ideas through playful hands-on experiences.",
     "image": {
       "src": "/images/about-philosophy-learning-moment.png",
       "alt": "Teacher guiding children through hands-on classroom activities"
@@ -86,30 +86,31 @@
     "items": [
       {
         "icon": "Eye",
-        "title": "Observe & Speak",
-        "description": "Daily opportunities to communicate and participate."
+        "title": "Observe, listen, speak, act",
+        "description": "Children notice, respond, communicate, and take part actively."
       },
       {
         "icon": "Hand",
-        "title": "Learn by Doing",
-        "description": "Practical work to apply ideas in daily life."
+        "title": "Learning by doing",
+        "description": "Practical experiences help children connect ideas with action."
       },
       {
         "icon": "Puzzle",
-        "title": "Joyful Play",
-        "description": "Engaging tasks to build confidence and imagination."
+        "title": "Fun, engaging exploration",
+        "description": "Play keeps children interested while building confidence and imagination."
       },
       {
         "icon": "BookOpenCheck",
-        "title": "Clear Concepts",
-        "description": "Active play makes early concepts enjoyable."
+        "title": "Concept clarity through play",
+        "description": "Hands-on repetition makes early concepts feel clear and natural."
       }
     ]
   },
   "skillDevelopment": {
     "badge": "Skill Development",
-    "title": "Building confident learners through movement and play",
-    "description": "Building coordination, control, and confidence.",
+    "title": "Movement, coordination, and confidence",
+    "description": "Fine and gross motor activities build coordination, balance, creativity, and everyday independence.",
+    "note": "Motor practice is woven into classroom routines so children build control, balance, and confidence without pressure.",
     "image": {
       "src": "/images/curriculum-skill-development.png",
       "alt": "Children building fine and gross motor skills through play"
@@ -119,7 +120,7 @@
         "label": "Skill Development",
         "icon": "Scissors",
         "title": "Fine Motor Skills",
-        "description": "Building finger control and coordination.",
+        "description": "Playful practice strengthens finger control, hand-eye coordination, and writing readiness.",
         "skills": [
           "Hand-eye coordination",
           "Writing readiness",
@@ -133,7 +134,7 @@
         "label": "Skill Development",
         "icon": "Dumbbell",
         "title": "Gross Motor Skills",
-        "description": "Improving balance, strength, and confidence.",
+        "description": "Movement activities improve balance, strength, coordination, and physical confidence.",
         "skills": [
           "Body coordination",
           "Balance and posture",
@@ -147,8 +148,8 @@
   },
   "developmentSpheres": {
     "badge": "Seven Spheres of Development",
-    "title": "Holistic growth across key early-years areas.",
-    "description": "Supporting academic, social, and emotional growth.",
+    "title": "Holistic growth across seven areas.",
+    "description": "Our curriculum supports academic, emotional, social, physical, creative, and value-based growth.",
     "image": {
       "src": "/images/curriculum-seven-spheres.png",
       "alt": "Children exploring creative, social, physical, and cognitive activities together"
@@ -157,44 +158,44 @@
       {
         "icon": "Brain",
         "title": "Cognitive Development",
-        "description": "Memory and problem-solving."
+        "description": "Building memory, reasoning, problem-solving, and early concept understanding."
       },
       {
         "icon": "Languages",
         "title": "Language Development",
-        "description": "Listening, speaking, and expression."
+        "description": "Strengthening listening, speaking, vocabulary, and confident expression."
       },
       {
         "icon": "Move",
         "title": "Physical Development",
-        "description": "Balance and movement control."
+        "description": "Supporting balance, coordination, movement control, and overall fitness."
       },
       {
         "icon": "Users",
         "title": "Social Development",
-        "description": "Sharing and peer relationships."
+        "description": "Helping children share, cooperate, participate, and build healthy peer relationships."
       },
       {
         "icon": "Heart",
         "title": "Emotional Development",
-        "description": "Self-awareness and empathy."
+        "description": "Creating space for self-awareness, comfort, empathy, and emotional confidence."
       },
       {
         "icon": "Palette",
         "title": "Creative Development",
-        "description": "Imagination and art."
+        "description": "Encouraging imagination through art, storytelling, movement, and free expression."
       },
       {
         "icon": "Handshake",
         "title": "Moral / Value Development",
-        "description": "Kindness and positive habits."
+        "description": "Nurturing kindness, responsibility, respect, and positive everyday habits."
       }
     ]
   },
   "pedagogy": {
     "badge": "Teaching Pedagogy",
-    "title": "Thoughtful methods for meaningful early learning.",
-    "description": "Guided structure with active participation.",
+    "title": "Thoughtful teaching methods.",
+    "description": "Structured guidance and joyful participation keep learning active, supportive, and natural.",
     "image": {
       "src": "/images/curriculum-pedagogy.png",
       "alt": "Teacher encouraging interactive discussion and experiential learning"
@@ -203,77 +204,54 @@
       {
         "icon": "Lightbulb",
         "title": "Multiple Intelligence Approach",
-        "description": "Supporting holistic growth."
+        "description": "The classroom supports language, movement, music, creativity, logic, and social growth."
       },
       {
         "icon": "Blocks",
         "title": "Experiential Learning",
-        "description": "Hands-on conceptual learning."
+        "description": "Children learn through experiences they can see, touch, try, and revisit."
       },
       {
         "icon": "MessageCircle",
         "title": "Interactive Methods",
-        "description": "Active group participation."
-      }
-    ]
-  },
-  "teacherRatio": {
-    "badge": "Teacher-Child Ratio",
-    "title": "Small groups help every child feel seen and supported.",
-    "items": [
-      {
-        "program": "Playgroup",
-        "ratio": "1:6",
-        "description": "Closer care and personal attention"
-      },
-      {
-        "program": "Nursery",
-        "ratio": "1:10",
-        "description": "Balanced guidance with growing independence"
-      },
-      {
-        "program": "Jr. KG & Sr. KG",
-        "ratio": "1:12",
-        "description": "Structured learning with attentive supervision"
+        "description": "Conversation, demonstration, and group participation keep learning active."
       }
     ]
   },
   "coCurricular": {
     "badge": "Co-Curricular Activities",
-    "title": "Shared experiences that build confidence, expression, and participation.",
+    "title": "Shared experiences that build expression and participation.",
+    "summary": "Children practice confidence, collaboration, and celebration through shared school experiences.",
     "items": [
       "Assembly",
       "Recitation",
-      "Story telling",
+      "Storytelling",
       "Drama",
       "Drawing",
       "Dress Up Days",
-      "Exhibition",
       "Festival Celebration",
-      "Colour Days",
-      "Field trips",
-      "Sports and games"
+      "Sports and Games"
     ]
   },
   "extraCurricular": {
     "badge": "Extra-Curricular Activities",
-    "title": "Creative activities that add joy, movement, and life skills to the day.",
+    "title": "Creative experiences that add movement, imagination, and life skills.",
+    "summary": "Creative movement, arts, nature, and role play add joyful variety to the learning week.",
     "items": [
       "Singing",
       "Dancing",
-      "Story telling",
-      "Role Playing",
+      "Role Play",
       "Painting",
       "Gardening",
-      "Cleaning day",
-      "Art and craft",
+      "Practical Life Activities",
+      "Art and Craft",
       "Yoga"
     ]
   },
   "cta": {
     "badge": "Admissions Open",
     "title": "Give your child a joyful start to learning.",
-    "description": "Discover a curriculum built to grow curiosity, confidence, creativity, and care.",
+    "description": "Discover a curriculum built around curiosity, confidence, creativity, and caring guidance.",
     "image": {
       "src": "/images/curriculum-admissions-cta.png",
       "alt": "Teacher welcoming a parent and child into a warm kindergarten classroom"

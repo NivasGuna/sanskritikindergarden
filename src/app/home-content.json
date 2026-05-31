@@ -6,9 +6,9 @@
         "alt": "Children drawing together in a bright early learning classroom",
         "eyebrow": "Welcome to Sanskriti Kindergarten",
         "title": "Where every child shines bright!",
-        "description": "A warm space for curiosity, creativity, and joyful learning.",
+        "description": "A nurturing space for curiosity, creativity, and joyful learning.",
         "primaryAction": {
-          "text": "Apply Now",
+          "text": "Apply Now ✨",
           "href": "/admissions",
           "variant": "secondary"
         },
@@ -22,10 +22,10 @@
         "src": "/images/hero-bg2.jpg",
         "alt": "A warm preschool classroom with children engaged in play-based learning",
         "eyebrow": "Welcome to Sanskriti Kindergarten",
-        "title": "Inspiring little learners, daily.",
-        "description": "Gentle routines, kind teachers, and meaningful early-years experiences.",
+        "title": "Inspiring little learners every day.",
+        "description": "Gentle routines, kind teachers, and meaningful early childhood experiences.",
         "primaryAction": {
-          "text": "Apply Now",
+          "text": "Apply Now ✨",
           "href": "/admissions",
           "variant": "secondary"
         },
@@ -40,9 +40,9 @@
         "alt": "Happy children exploring creative activities with their teacher",
         "eyebrow": "Welcome to Sanskriti Kindergarten",
         "title": "Joyful learning begins here.",
-        "description": "A premium preschool setting for growth, wonder, and confidence.",
+        "description": "A premium preschool setting designed for growth, wonder, and confidence.",
         "primaryAction": {
-          "text": "Apply Now",
+          "text": "Apply Now ✨",
           "href": "/admissions",
           "variant": "secondary"
         },
@@ -53,5 +53,165 @@
         }
       }
     ]
+  },
+  "whoWeAre": {
+    "badge": "Who We Are",
+    "title": "A warm preschool start in Velachery.",
+    "description": "A warm early-years space where children feel welcomed, cared for, and ready to learn each day.",
+    "paragraphs": [
+      "At Sanskriti Kindergarten, learning is gentle, active, and joyful. Children explore through play, stories, movement, creativity, and simple daily routines that build confidence.",
+      "Our programs support language, social skills, independence, curiosity, and emotional growth in a safe, child-friendly environment."
+    ],
+    "image": {
+      "src": "/images/who-we-are-kindergarten-learning.png",
+      "alt": "Teachers and children engaging in creative classroom activities"
+    },
+    "bullets": [
+      {
+        "icon": "Smile",
+        "accent": "gold",
+        "text": "Gentle mornings with caring support"
+      },
+      {
+        "icon": "Palette",
+        "accent": "sky",
+        "text": "Play-led learning for growing minds"
+      },
+      {
+        "icon": "ShieldCheck",
+        "accent": "mint",
+        "text": "Safe routines with attentive teachers"
+      },
+      {
+        "icon": "MapPin",
+        "accent": "peach",
+        "text": "Easy access from Velachery and nearby areas"
+      }
+    ]
+  },
+  "socialMetrics": {
+    "badge": "Sanskriti Highlights",
+    "title": "Trusted by Families",
+    "description": "Growing with care, play, and confidence.",
+    "items": [
+      {
+        "icon": "Users",
+        "accent": "gold",
+        "value": "50+",
+        "label": "Children Learning",
+        "description": "Daily learning through play and guided routines."
+      },
+      {
+        "icon": "Sprout",
+        "accent": "mint",
+        "value": "Ages 2–6",
+        "label": "",
+        "description": "Programs for early learners."
+      },
+      {
+        "icon": "HeartHandshake",
+        "accent": "sky",
+        "value": "15:1",
+        "label": "Ratio",
+        "description": "Small groups with better attention."
+      },
+      {
+        "icon": "Smile",
+        "accent": "peach",
+        "value": "4.9",
+        "label": "Rating",
+        "description": "Trusted parent feedback."
+      }
+    ]
+  },
+  "programs": {
+    "badge": "Explore Programs",
+    "title": "Short previews for every early-years need.",
+    "items": [
+      {
+        "icon": "Sprout",
+        "accent": "mint",
+        "title": "Preschool in Velachery",
+        "description": "A warm look at our preschool routine, learning approach, and family experience.",
+        "href": "/preschool-in-velachery"
+      },
+      {
+        "icon": "HeartHandshake",
+        "accent": "sky",
+        "title": "Daycare in Velachery",
+        "description": "Reliable daily care with supervised routines and a calm environment.",
+        "href": "/daycare-in-velachery"
+      },
+      {
+        "icon": "BookOpenCheck",
+        "accent": "gold",
+        "title": "Kindergarten in Velachery",
+        "description": "Steady support for children moving into confident classroom habits.",
+        "href": "/kindergarten-in-velachery"
+      },
+      {
+        "icon": "Blocks",
+        "accent": "peach",
+        "title": "Play School in Velachery",
+        "description": "A gentle first step into group learning, play, and school routines.",
+        "href": "/play-school-in-velachery"
+      },
+      {
+        "icon": "School",
+        "accent": "lavender",
+        "title": "Preschool Near Guindy",
+        "description": "A nearby Velachery option for Guindy families considering preschool.",
+        "href": "/preschool-near-guindy"
+      },
+      {
+        "icon": "ShieldCheck",
+        "accent": "coral",
+        "title": "Daycare Near Guindy",
+        "description": "Daycare guidance for families balancing Guindy routes and Velachery access.",
+        "href": "/daycare-near-guindy"
+      }
+    ]
+  },
+  "whyFamiliesChoose": {
+    "badge": "Why Families Choose Us",
+    "title": "Warm, secure, and joyful early learning.",
+    "description": "The school day balances safety, teacher attention, and meaningful play.",
+    "items": [
+      {
+        "icon": "ShieldCheck",
+        "accent": "gold",
+        "title": "Safe Environment",
+        "description": "Secure campus, trained staff, and child-friendly facilities."
+      },
+      {
+        "icon": "Users",
+        "accent": "mint",
+        "title": "Caring Teachers",
+        "description": "Patient educators who understand early childhood needs."
+      },
+      {
+        "icon": "Smile",
+        "accent": "sky",
+        "title": "Fun Learning",
+        "description": "Play-based activities that build confidence and curiosity."
+      }
+    ]
+  },
+  "finalCta": {
+    "image": {
+      "src": "/images/who-we-are-kindergarten-learning.png",
+      "alt": "Children enjoying a warm Sanskriti Kindergarten classroom"
+    },
+    "badge": "Admissions Open",
+    "title": "Give your child a joyful start to learning.",
+    "description": "Visit our Velachery campus and experience the calm, caring environment behind the learning journey.",
+    "primaryAction": {
+      "text": "Start Admissions",
+      "href": "/admissions"
+    },
+    "secondaryAction": {
+      "text": "View Curriculum",
+      "href": "/curriculum"
+    }
   }
 }

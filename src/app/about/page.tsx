@@ -428,6 +428,46 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <section className="bg-gold-mist py-14 md:py-20">
+        <div className="container mx-auto px-6">
+          <div className="mx-auto max-w-3xl text-center">
+            <span className="border-gold-line bg-white text-gold-ink inline-flex rounded-full border px-4 py-2 text-[10px] font-black tracking-[0.24em] uppercase">
+              {content.teacherRatio.badge}
+            </span>
+            <h2 className="font-playful-display text-forest-dark mt-5 text-4xl leading-[1.03] font-extrabold md:text-5xl">
+              {content.teacherRatio.title}
+            </h2>
+            <p className="text-forest-muted mt-4 text-base leading-7 font-semibold md:text-lg">
+              {content.teacherRatio.description}
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
+            {content.teacherRatio.items.map((item, index) => (
+              <article
+                key={item.program}
+                className={cn(
+                  "shadow-forest-value rounded-[1.25rem] border bg-white p-6 text-center",
+                  valueColorClasses[index % valueColorClasses.length]
+                )}
+              >
+                <p className="text-xs font-black tracking-[0.2em] uppercase">
+                  {item.program}
+                </p>
+                <div className="mx-auto mt-5 flex size-24 items-center justify-center rounded-2xl bg-white/78">
+                  <span className="font-playful-display text-3xl font-black">
+                    {item.ratio}
+                  </span>
+                </div>
+                <p className="mt-5 text-sm leading-6 font-semibold opacity-90">
+                  {item.description}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="bg-[linear-gradient(135deg,#fff8de_0%,#f7fbf3_52%,#eef8ff_100%)] py-16 md:py-24">
         <div className="container mx-auto px-6">
           <div className="mb-10 max-w-3xl">

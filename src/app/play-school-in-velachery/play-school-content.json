@@ -1,72 +1,109 @@
 {
   "metadata": {
     "title": "Play School in Velachery, Chennai | Sanskriti Kindergarten",
-    "description": "Sanskriti Kindergarten offers a warm play school in Velachery with gentle transitions, play-based learning, and convenient access for nearby families."
+    "description": "Sanskriti Kindergarten offers a warm play school in Velachery with gentle separation, play-based early learning, and convenient access for nearby families."
   },
   "hero": {
     "badge": "Velachery Play School",
     "title": "Play School in Velachery, Chennai",
-    "description": "Families often want a soft, encouraging first school experience for young children.",
+    "description": "A gentle play school start that helps first school days feel familiar and positive.",
     "image": {
       "src": "/images/play-school-velachery-hero-banner.jpeg",
       "alt": "A warm play school classroom with children exploring toys, books, and creative play"
     }
   },
+  "heroActions": [
+    {
+      "text": "Enquire About Play School Admission",
+      "href": "/contact"
+    },
+    {
+      "text": "Read FAQ",
+      "href": "/faq"
+    }
+  ],
+  "heroCallout": {
+    "eyebrow": "A gentle first step",
+    "text": "A play school rhythm shaped around trust, familiarity, and joyful participation."
+  },
+  "experience": {
+    "eyebrow": "Play School Start",
+    "title": "A soft beginning to school life.",
+    "description": "A quick view of settling, play, and group comfort.",
+    "assurances": [
+      {
+        "icon": "HeartHandshake",
+        "title": "Gentle separation",
+        "description": "Children warm up to teachers, routines, and spaces."
+      },
+      {
+        "icon": "Sparkles",
+        "title": "Joyful play",
+        "description": "Play, movement, stories, and art make school familiar."
+      },
+      {
+        "icon": "ShieldCheck",
+        "title": "Parent reassurance",
+        "description": "Patient routines help families feel confident."
+      }
+    ],
+    "icons": ["HeartHandshake", "Sparkles", "MapPin"]
+  },
   "highlights": [
     {
-      "title": "Preschool Programs",
-      "description": "Playful beginnings leading to confident group participation."
+      "title": "Soft Separation",
+      "description": "Patient settling support for children new to group learning."
     },
     {
-      "title": "Daycare Support",
-      "description": "Warm supervised care with a reassuring daily rhythm."
+      "title": "Purposeful Play",
+      "description": "Songs, stories, movement, art, and pretend play build confidence."
     },
     {
-      "title": "Convenient Location",
-      "description": "Accessible from Velachery, Guindy, and nearby areas."
+      "title": "Family Fit",
+      "description": "A practical Velachery option for the first stage of school life."
     }
   ],
   "sections": [
     {
       "eyebrow": "Gentle Start",
-      "title": "Early separation made easier",
-      "lead": "A gentle first regular experience away from home.",
+      "title": "Early separation made softer",
+      "lead": "For many children, play school is the first regular step away from home.",
       "points": [
-        "Children settle gradually and build trust without pressure.",
-        "An engaging environment that feels calm and secure.",
-        "Children observe and join at their own pace."
+        "Children settle gradually and build trust.",
+        "The space stays lively, calm, and reassuring.",
+        "Teachers give each child time to warm up."
       ],
-      "closing": "Positive first experiences shape long-term comfort with learning."
+      "closing": "A gentle beginning helps children feel good about school."
     },
     {
       "eyebrow": "Play",
-      "title": "Play is the first learning language",
-      "lead": "Play drives language, imagination, and social confidence in early years.",
+      "title": "Play is the earliest learning language",
+      "lead": "Play helps young children discover language, movement, listening, and imagination.",
       "points": [
-        "Children sing, build, draw, and join group moments.",
-        "Repeated routines and caring adults help children feel at ease.",
-        "Participation is encouraged without noise or pressure."
+        "Children sing, build, draw, move, and pretend.",
+        "Repeated routines help children relax.",
+        "Participation is encouraged without pressure."
       ],
-      "closing": "A steady rhythm helps children engage fully in the classroom."
+      "closing": "Rhythm and relationships help children enjoy a shared classroom."
     },
     {
       "eyebrow": "Location",
-      "title": "Helpful for nearby families",
-      "lead": "A location that keeps first-school transitions simple and manageable.",
+      "title": "Helpful for Velachery and nearby families",
+      "lead": "A nearby school makes the first months easier.",
       "points": [
-        "Convenient for Velachery and nearby neighborhoods.",
-        "Useful for families from Guindy and neighboring areas.",
-        "Best understood through a campus visit and discussion."
+        "A convenient location supports children and parents.",
+        "Useful for Guindy and nearby South Chennai families.",
+        "Best understood through a visit or admissions call."
       ],
-      "closing": "A play school should feel practical for parents and familiar for children."
+      "closing": "Play school should feel practical for parents and familiar for children."
     }
   ],
   "families": {
-    "title": "Families We Commonly Serve",
-    "description": "Supporting Velachery families and helping nearby families evaluate fit.",
+    "title": "Play School Families We Support",
+    "description": "This play school page helps Velachery and nearby families understand our gentle early-years approach.",
     "notes": [
-      "Velachery play school for first school experiences",
-      "Helpful access for nearby neighborhoods",
+      "Velachery play school for first school days",
+      "Helpful access for Guindy and South Chennai families",
       "A gentle start to group learning"
     ],
     "areas": [
@@ -83,7 +120,7 @@
   "cta": {
     "badge": "Plan Your Next Step",
     "title": "Explore play school admissions at Sanskriti",
-    "description": "Review the school and contact us when you are ready to discuss admissions or daycare support.",
+    "description": "Talk to us about your child's first school days and the right time to begin.",
     "image": {
       "src": "/images/play-school-velachery-hero-banner.jpeg",
       "alt": "A warm play school classroom with children exploring toys, books, and creative play"
@@ -97,16 +134,6 @@
       {
         "text": "View Gallery",
         "href": "/gallery",
-        "variant": "secondary"
-      },
-      {
-        "text": "Read FAQ",
-        "href": "/faq",
-        "variant": "secondary"
-      },
-      {
-        "text": "Contact Us",
-        "href": "/contact",
         "variant": "secondary"
       }
     ]

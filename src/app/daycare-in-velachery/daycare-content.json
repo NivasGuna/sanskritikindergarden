@@ -1,73 +1,110 @@
 {
   "metadata": {
     "title": "Daycare in Velachery, Chennai | Sanskriti Kindergarten",
-    "description": "Sanskriti Kindergarten offers warm daycare in Velachery with supervised care, steady routines, and convenient access for South Chennai families."
+    "description": "Sanskriti Kindergarten offers warm daycare in Velachery with supervised care, child-friendly routines, and convenient access for South Chennai families."
   },
   "hero": {
     "badge": "Velachery Daycare",
     "title": "Daycare in Velachery, Chennai",
-    "description": "Families need daycare that balances child comfort with their daily schedules.",
+    "description": "Warm daycare in Velachery with steady supervision and a child-friendly rhythm.",
     "image": {
       "src": "/images/daycare-velachery-hero-banner.jpeg",
       "alt": "A bright daycare classroom with children and a teacher in a warm early learning environment"
     }
   },
+  "heroActions": [
+    {
+      "text": "Apply for Daycare Information",
+      "href": "/contact"
+    },
+    {
+      "text": "Read FAQ",
+      "href": "/faq"
+    }
+  ],
+  "heroCallout": {
+    "eyebrow": "Care with continuity",
+    "text": "A daycare rhythm shaped around warmth, supervision, and family trust."
+  },
+  "experience": {
+    "eyebrow": "Daycare Support",
+    "title": "Care, routine, and continuity for young children.",
+    "description": "A quick view of the daily care rhythm.",
+    "assurances": [
+      {
+        "icon": "ShieldCheck",
+        "title": "Warm supervision",
+        "description": "Children spend the day with caring adults."
+      },
+      {
+        "icon": "Clock3",
+        "title": "Reliable routine",
+        "description": "Play, rest, and transitions follow a familiar flow."
+      },
+      {
+        "icon": "BookOpenCheck",
+        "title": "Learning continuity",
+        "description": "Care connects with the early learning environment."
+      }
+    ],
+    "icons": ["HeartHandshake", "Clock3", "MapPin"]
+  },
   "highlights": [
     {
-      "title": "Preschool Programs",
-      "description": "Age-appropriate learning routines for confident participation."
+      "title": "Warm Supervision",
+      "description": "Caring adults, safe spaces, and calm attention through the day."
     },
     {
-      "title": "Daycare Support",
-      "description": "Supervised care with a calm rhythm of play and rest."
+      "title": "Steady Routine",
+      "description": "Activity, rest, conversation, and transition time in a familiar flow."
     },
     {
-      "title": "Convenient Location",
-      "description": "Accessible from Velachery, Guindy, and South Chennai."
+      "title": "Family Convenience",
+      "description": "A practical Velachery option for daily work and home schedules."
     }
   ],
   "sections": [
     {
       "eyebrow": "Care + Continuity",
       "title": "Dependable care through the day",
-      "lead": "Balancing work schedules, family needs, and a child's comfort.",
+      "lead": "Daycare should support family schedules while helping children feel settled.",
       "points": [
-        "A supervised setting where children feel emotionally secure.",
-        "Care that supports the whole child, beyond classroom tasks.",
-        "Familiar adults and routines that ease separation."
+        "A supervised space that feels comfortable away from home.",
+        "Care for comfort, play, rest, and routine.",
+        "Familiar adults who make separation easier."
       ],
-      "closing": "Daycare should feel warm, consistent, and reliable."
+      "closing": "Daycare should feel dependable, warm, and familiar."
     },
     {
       "eyebrow": "Daily Rhythm",
-      "title": "A routine children can follow",
-      "lead": "A balance of activity, rest, and gentle transitions.",
+      "title": "A routine children can understand",
+      "lead": "Children do best with activity, rest, conversation, and gentle transitions.",
       "points": [
-        "Children move through the day without pressure.",
-        "An environment offering both stimulation and calm reset moments.",
-        "Learning and care remain connected in one smooth routine."
+        "Children can settle, join activities, and move calmly through the day.",
+        "Busy moments are balanced with time to rest.",
+        "Learning and care feel connected."
       ],
-      "closing": "A steady flow helps children feel secure and supported."
+      "closing": "A steady routine helps children feel known and secure."
     },
     {
       "eyebrow": "Location",
       "title": "Practical for working families",
-      "lead": "Travel time matters when balancing home, school, and work.",
+      "lead": "Travel time matters for working parents.",
       "points": [
-        "Convenient for Velachery and South Chennai neighborhoods.",
-        "Helpful for families commuting from Guindy.",
-        "Best evaluated through communication and campus visits."
+        "Convenient for Velachery and nearby South Chennai families.",
+        "Helpful for parents commuting from Guindy and surrounding areas.",
+        "Best understood through a visit and direct conversation."
       ],
-      "closing": "A practical daycare option fitting real family schedules."
+      "closing": "A practical daycare should fit family schedules and child comfort."
     }
   ],
   "families": {
-    "title": "Families We Commonly Serve",
-    "description": "Supporting Velachery families and nearby commuters looking for trusted care.",
+    "title": "Daycare Families We Support",
+    "description": "Our daycare support serves Velachery families and parents commuting through nearby South Chennai routes.",
     "notes": [
       "Velachery daycare for daily family routines",
-      "Useful access for Guindy and nearby commuters",
-      "One trusted place for care and learning"
+      "Useful access for Guindy commuters",
+      "Care and early learning in one place"
     ],
     "areas": [
       "Velachery",
@@ -83,7 +120,7 @@
   "cta": {
     "badge": "Plan Your Next Step",
     "title": "Explore daycare support at Sanskriti",
-    "description": "Review the school, then contact us to discuss daycare or admissions options for your child.",
+    "description": "Talk to us about timings, routines, and the daycare option that fits your child.",
     "image": {
       "src": "/images/daycare-velachery-hero-banner.jpeg",
       "alt": "A calm daycare room with children and a teacher reading together"
@@ -97,16 +134,6 @@
       {
         "text": "View Gallery",
         "href": "/gallery",
-        "variant": "secondary"
-      },
-      {
-        "text": "Read FAQ",
-        "href": "/faq",
-        "variant": "secondary"
-      },
-      {
-        "text": "Contact Us",
-        "href": "/contact",
         "variant": "secondary"
       }
     ]
